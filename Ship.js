@@ -5,9 +5,10 @@ define(['./Actor', './data'], function(Actor, Data){
 	 * SHIP CLASS.
 	 * @argument {ShipType} type
 	 */
-	function Ship(type) {
+	function Ship(type, num) {
 		Actor.call(this);
 		this.className = 'Ship';
+		this.name   = type.name + ":" + num;
 		this.speed  = type.speed * Data.speedModifier;
 		this.turn   = type.turn  * Data.speedModifier;
 		this.thrust.magnitude = type.accel * Data.speedModifier;

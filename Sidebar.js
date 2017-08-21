@@ -6,6 +6,7 @@ define([], function(){
 	 */
 	function Sidebar(CanvasRenderingContext2D) {
 		this.ctx = CanvasRenderingContext2D;
+		this.targetText = "No Target";
 	}//879F85
 
 	// Render
@@ -19,7 +20,7 @@ define([], function(){
 		this.target();
 		this.cargo();
 		
-		this.targetText = "No Target";
+		
 	}
 
 	// Minimap/Radar

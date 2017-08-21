@@ -10,6 +10,7 @@ define([], function(){
 
 		// Ship Type.
 		this.rebelCruiser = {
+			name:    "Rebel Cruiser",
 			speed:    200 * 2 * this.sMod,//5.0,
 			accel:    280 * 3 * this.aMod,//0.2,
 			turn:     3.0 * 1.5, //4.0,
@@ -25,7 +26,7 @@ define([], function(){
 			turrets:    4,
 			cost:   14000000,
 			weapons: [],
-			sprite: "RebelCruiserSprite.png"
+			sprite: "content/RebelCruiserSprite.png"
 		};
 
 		this.laserCannon = {

@@ -27,6 +27,13 @@ define([], function(){
 			);
 		}
 	}
+	
+			// WRAP (temporary)
+		/*var me = stage.actors[0];
+		if (me.x < 0) { me.x = c.width; }
+		if (me.y < 0) { me.y = c.height; }
+		if (me.x > c.width) { me.x = 0; }
+		if (me.y > c.height) { me.y = 0; }*/
 
 	return Starfield;
 });
