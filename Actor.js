@@ -19,7 +19,6 @@ define(['./Vector'], function(Vector){
 			this.sprite.src = spob.sprite;
 			this.className = 'Spob';
 		}
-		
 	}
 
 	/**

@@ -358,9 +358,6 @@ require(
 		return Math.sqrt( a*a + b*b );
 	}
 
-	function message() { //function notification() {
-
-	}
 
 	$('#modalSpaceport').on('hidden.bs.modal', function() {
 		console.log("DEPART, modalSpaceport hidden ");
@@ -370,65 +367,3 @@ require(
 	})
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-// /**
- // * Apply Thrust.
- // * @argument {Spob} spob
- // */
-// function applyThrust(spob) {
-	// cc.fillText("Travel: " + JSON.stringify(spob.travel)	, 5, c.height - 60);
-	// cc.fillText("Thrust: " + JSON.stringify(spob.thrust)	, 5, c.height - 50);
-
-	// // Travel Vect
-	// var xVel = spob.travel.getX();
-	// var yVel = spob.travel.getY();
-
-	// // Thrust Vect
-	// var xThrustVel = spob.thrust.getX();
-	// var yThrustVel = spob.thrust.getY();
-
-	// // Sum to find new travel vect.
-	// var xNewVect = xVel + xThrustVel;
-	// var yNewVect = yVel + yThrustVel;
-
-	// // Apply sum to our travel vect.
-	// spob.travel.setXY(xNewVect, yNewVect);
-
-	// // Scale down the speed
-	// if (spob.travel.magnitude > spob.speed) {
-		// spob.travel.magnitude = spob.speed;
-	// }
-
-	// cc.fillText("[THRUST]"		, 5, c.height - 30);
-// }
-
-
-// /**
- // * Draw and rotate sprite.
- // * @argument {Image} img
- // * @argument {int} angle
- // */
-// function drawSprite(img, angle) {
-
-	// cc.save();
-	// cc.setTransform(1,0,0,1,0,0);
-	// cc.translate(me.x, me.y);
-
-	// var rotation = angle + 90;
-	// var angleInRadians = rotation * Math.PI / 180;
-	// cc.rotate(angleInRadians);
-
-	// cc.drawImage(img, (img.width / -2), (img.height / -2));
-	// cc.restore();
-// }

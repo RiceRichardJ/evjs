@@ -8,35 +8,9 @@ define(['./Actor', './data'], function(Actor, Data){
 	function Ship(type) {
 		Actor.call(this);
 		this.className = 'Ship';
-		/*this.sup = new Actor();
-		this.x = this.sup.x;
-		this.y = this.sup.y;
-		this.travel = this.sup.travel;
-		this.thrust = this.sup.thrust;
-		this.speed = this.sup.speed;
-		this.turn = this.sup.turn;
-		this.sprite = this.sup.sprite;
-		this.born = this.sup.born;
-		this.lifespan = this.sup.lifespan;*/
-
-		console.log("NEW SHIP!: " + JSON.stringify(this.travel)
-			+ JSON.stringify(this.thrust));////////
-		//console.log(this.prototype.Actor);
-
-
-		console.log("BEFORE: " + this.speed);
 		this.speed  = type.speed * Data.speedModifier;
-		console.log("AFTER: " + this.speed);
-
 		this.turn   = type.turn  * Data.speedModifier;
-
-		console.log("thrust.magnitude.BEFORE: "
-			+ this.thrust.magnitude
-			+ "," + this.thrust.name);
 		this.thrust.magnitude = type.accel * Data.speedModifier;
-		console.log("thrust.magnitude.AFTER: "
-			+ this.thrust.magnitude
-			+ "," + this.thrust.name);
 
 			//this.thrust = new Vector(-90.0, type.accel * speedModifier);
 		this.shields = 100;
@@ -51,21 +25,10 @@ define(['./Actor', './data'], function(Actor, Data){
 	 * Ship Class extends Actor.
 	 */
 	Ship.prototype = Actor.prototype;
-	//Ship.prototype = new Actor(); /// THIS IS THE REASON:
-	/* The PROTOTYPE (or class definition) of SHIP is being defined with
-	a new INSTANCE of ACTOR. In other words, AN INSTANCE IS DEFINING A CLASS
-	WHEN A CLASS SHOULD BE DEFINING A CLASS
-	AND AN INSTANCE DEFINING AN INSTANCE
-	Therefore to fix this...
-	Ship.prototype = Actor.prototype;
-	But how to create instance variables of super-Actor when sub-Ship is created?
-	Call new Actor() inside of the SHIP CONSTRUCTOR!!!!!
-	*/
 	Ship.prototype.constructor = Ship;
 
 	Ship.prototype.turnLeft = function() {
 		this.thrust.degrees -= this.turn;
-		//console.log();
 	};
 
 	Ship.prototype.turnRight = function() {
