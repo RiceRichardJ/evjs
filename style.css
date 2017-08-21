@@ -1,0 +1,70 @@
+right {
+	float: right;
+}
+@font-face {
+	font-family: "Kredit";
+	src: url("./kredit front.ttf") format("truetype");
+}
+.modal-content {
+	margin-top: 200px;
+	background-color: black;
+	border: 1px solid #777;
+	border-radius: 3px;
+	width: 600px;
+	//height: 350px;
+}
+.modal p, .modal h4 {
+	color: #fff;
+}
+.modal p {
+	font: 75% Arial, sans-serif;
+	letter-spacing: 0.5px;
+}
+.modal td p {
+	font-size: 65%;
+	margin: 0px 10px 0px 10px;
+}
+.stdBtn {
+	background-color: #abaaaa;
+	//border: 3px inset #eee;
+	font: 75% "Kredit", arial, sans-serif;
+	font-weight: bold;
+	color: white;
+	margin: 10px auto 10px auto;
+	padding: 0px 0px 0px 0px;
+}
+.stdBtn:active {
+	background-color: #7c7;
+	//border: 3px outset #eee;
+} 
+.blockBtn {
+	display: block;
+	width: 90%;
+}
+/*.row {
+	border: 1px solid yellow;
+}
+.col-md-6 {
+	border: 1px solid blue;
+}*/
+.bottomContainer {
+	width: 100%;
+	//border: 1px solid green;
+	position: absolute; 
+	bottom: 0;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+td {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.fade {
+   opacity: 0;
+   -webkit-transition: opacity 0.025s linear;
+      -moz-transition: opacity 0.025s linear;
+       -ms-transition: opacity 0.025s linear;
+        -o-transition: opacity 0.025s linear;
+           transition: opacity 0.025s linear;
+ }
