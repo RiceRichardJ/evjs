@@ -7,10 +7,11 @@ define([], function(){
 	function Sidebar(CanvasRenderingContext2D) {
 		this.ctx = CanvasRenderingContext2D;
 		this.targetText = "No Target";
+		this.targetActor = null;
 	}//879F85
 
 	// Render
-	Sidebar.prototype.render = function(actors) {
+	Sidebar.prototype.render = function(actors, cnv) {
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
 		this.radar(actors);
@@ -19,7 +20,7 @@ define([], function(){
 		this.weap();
 		this.target();
 		this.cargo();
-		
+		this.chevrons(actors, cnv);
 		
 	}
 
@@ -102,12 +103,14 @@ define([], function(){
 	}
 
 	// Target
-	Sidebar.prototype.target = function(str) {
+	Sidebar.prototype.target = function(actor) {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 265, 140, 120);
 
 		this.ctx.fillStyle = '#03900E';
-		if (str) {
+		if (actor) {
+			this.targetActor = actor;
+			var str = actor.name + " | " + actor.shields;
 			this.targetText = str;
 		}
 		this.ctx.fillText(this.targetText, 703, 320);
@@ -126,6 +129,26 @@ define([], function(){
 		this.ctx.fillText("Credits:", 725, 460);
 		this.ctx.fillStyle = '#49DD31';
 		this.ctx.fillText("10,000", 735, 473);
+	}
+	
+	Sidebar.prototype.chevrons = function(actors, cnv) {
+		if (!this.targetActor) { return; }
+		
+		
+		var player = actors[0];
+
+		this.ctx.save();
+		this.ctx.setTransform(1,0,0,1,0,0);
+		this.ctx.translate(
+			this.targetActor.x - player.x + ((cnv.width - 150)  / 2),
+			this.targetActor.y - player.y + ( cnv.height        / 2)
+		);
+		
+		this.ctx.strokeStyle = '#88f';
+		this.ctx.lineWidth = 2;
+		this.ctx.strokeRect(-50, -50, 100, 100);
+		
+		this.ctx.restore();
 	}
 
 	return Sidebar;

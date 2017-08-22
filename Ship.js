@@ -1,5 +1,5 @@
 // import Actor as Actor
-define(['./Actor', './data'], function(Actor, Data){
+define(['./Actor', './data', './Proj'], function(Actor, Data, Proj){
 
 	/**
 	 * SHIP CLASS.
@@ -18,6 +18,7 @@ define(['./Actor', './data'], function(Actor, Data){
 		this.armor   = 100;
 		this.mass    = 100;
 		this.sprite.src = type.sprite;
+		this.type = type;
 
 		console.log("SPEED: " + this.speed);
 	}
@@ -35,19 +36,27 @@ define(['./Actor', './data'], function(Actor, Data){
 	Ship.prototype.turnRight = function() {
 		this.thrust.degrees += this.turn;
 	};
-
+	
+	
 	var lastFire = new Date().getTime();
-
 	Ship.prototype.fire = function(actors) {
 		if (new Date().getTime() > lastFire + 400) {
 			lastFire = new Date().getTime();
 			//console.log(this.x +","+ this.y +","+this.thrust.degrees);
 			actors.push(new Proj(
-				laserCannon, this.x, this.y, this.thrust.degrees
+				Data.laserCannon, this.x, this.y, this.thrust.degrees
 			));
 			//console.log("[SHOOT]"+this.thrust.degrees);
 		}
 	};
+	
+	Ship.prototype.hit = function(proj) {
+		this.shields -= proj.type.damage;
+		if (this.shields <= 0) {
+			this.remove = true;
+			//this.die(actors);
+		}
+	}
 
 	// var lastFire = new Date().getTime();
 	// class Ship extends Actor {

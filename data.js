@@ -31,8 +31,8 @@ define([], function(){
 
 		this.laserCannon = {
 			speed: 1313 * this.sMod,
-			accel:   999000,
-			lifetime: 300,
+			accel:  0,// 999000,
+			lifespan: 300,
 			turn:    0,
 			damage: 10,
 			delay: 500

@@ -20,6 +20,7 @@ define(['./Vector'], function(Vector){
 			this.className = 'Spob';
 			this.name   = spob.name;
 		}
+		this.remove = false;
 	}
 
 	/**
@@ -60,16 +61,22 @@ define(['./Vector'], function(Vector){
 	 * Act. This is called each frame, for each actor.
 	 */
 	Actor.prototype.act = function(actors) {
+		if (this.remove) {
+			this.die(actors);
+		}
 		if (this.lifespan > 0 &&
 				(new Date()).getTime() > this.born.getTime() + this.lifespan) {
 			console.log("[SUICIDE]");
-			actors.splice( actors.indexOf(this), 1 );
+			this.die(actors); //actors.splice( actors.indexOf(this), 1 );
 			return;
 		}
 		this.applyTravel();
 	}
 
-
+	// TODO: Phase this out, handle all deaths in Stage object.
+	Actor.prototype.die = function(actors) {
+		actors.splice( actors.indexOf(this), 1 );
+	}
 
 	return Actor;
 });

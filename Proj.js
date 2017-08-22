@@ -1,5 +1,5 @@
 // import Actor as Actor
-define(['./Actor'], function(Actor){
+define(['./Actor', './data', './vector'], function(Actor, Data, Vector){
 
 	/**
 	 * Projectile Class.
@@ -7,17 +7,18 @@ define(['./Actor'], function(Actor){
 	 */
 	function Proj(type, xPos, yPos, dir) {
 		Actor.call(this);
-		this.speed  = type.speed * speedModifier;
-		this.turn   = type.turn  * speedModifier;
+		this.speed  = type.speed * Data.speedModifier;
+		this.turn   = type.turn  * Data.speedModifier;
 		//this.thrust.magnitude = type.accel * speedModifier;
-		this.lifetime = type.lifetime;
+		this.lifespan = type.lifespan;
 		this.born = new Date();// + this.lifetime;
 		this.x    = xPos;
 		this.y    = yPos;
-		this.thrust = new Vector(dir, type.accel * speedModifier);
+		this.thrust = new Vector(dir, type.accel * Data.speedModifier);
 		//this.thrust.degrees = dir;
-		this.travel = new Vector(dir, 0);//this.travel.degress = dir;
+		this.travel = new Vector(dir, type.speed);//this.travel.degress = dir;
 		this.className = 'Proj';
+		this.type = type;
 	}
 
 	/**

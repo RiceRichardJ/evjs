@@ -175,10 +175,7 @@ require(
 		targInd = targInd % stage.actors.length;
 		console.log("target..." + targInd + stage.actors.length);
 		console.log(targInd % stage.actors.length);
-		stage.hud.target(
-			stage.actors[targInd].name + "\n" +
-			stage.actors[targInd].shields
-		);
+		stage.hud.target(stage.actors[targInd]);
 		targInd++;
 		// for (var i = 0; i < stage.actors.length; i++) {
 			// console.log(JSON.stringify(stage.actors[i]));
