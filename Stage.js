@@ -56,7 +56,7 @@ define(['./Actor', './Sidebar', './StarField', './Vector'], function(Actor, Side
 			if (img.src) {
 				this.ctx.drawImage(img, (img.width / -2), (img.height / -2));
 			} else {
-				console.log("NO IMAGE " + actor.x +","+ actor.y);
+				//console.log("NO IMAGE " + actor.x +","+ actor.y);
 				this.ctx.fillStyle = '#0f0';
 				this.ctx.fillRect(-1, -1, 3, 3);
 				this.ctx.fillStyle = 'white';

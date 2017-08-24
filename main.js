@@ -91,7 +91,7 @@ require(
 	 */
 	function registerKeyListeners() {
 		document.addEventListener('keydown', function(e) {
-				//console.log(e.keyCode);
+				console.log(e.keyCode);
 				if (e.keyCode == 9) {
 					e.preventDefault();
 					target();
@@ -132,19 +132,19 @@ require(
 			//if (velocity < 0) { velocity = 0; }
 		}
 		if (keyPressed["32"]) { // spacebar
-			me.fire(stage.actors);
+			me.fire(stage.actors, targInd);
 		}
 		if (keyPressed["76"]) { // [L]
 			land();
 		}
-		if (keyPressed["9"] && !keyPrev["9"]) { // [Tab]
-			//keyPrev[e.keyCode] = keyPressed[e.keyCode];
-			//target();
-		} else {
-			
-		}
 		if (keyPressed["65"]) { // [A]
 			autoPilot();
+		}
+		if (keyPressed["82"]) { // [R]
+			//closestEnemy();
+		}	
+		if (keyPressed["87"]) { // [W]
+			//switchSecondary();
 		}
 	}
 	
@@ -170,21 +170,17 @@ require(
 		}
 	}
 	
+	/**
+	 * Target.
+	 */
 	var targInd = 0;
 	function target() {
+		targInd++;
 		targInd = targInd % stage.actors.length;
-		console.log("target..." + targInd + stage.actors.length);
+		
+		console.log("target..." + targInd +":"+ stage.actors.length);
 		console.log(targInd % stage.actors.length);
 		stage.hud.target(stage.actors[targInd]);
-		targInd++;
-		// for (var i = 0; i < stage.actors.length; i++) {
-			// console.log(JSON.stringify(stage.actors[i]));
-			// //stage.hud.target(JSON.stringify(stage.actors[i]));
-			// stage.hud.target(
-				// stage.actors[i].name + "\n" +
-				// stage.actors[i].shields
-			// );
-		// }
 	}
 	
 	$('#modalSpaceport').on('hidden.bs.modal', function() {
@@ -198,13 +194,7 @@ require(
 		var ship = stage.actors[0];
 		var target = stage.actors[targInd];
 		
-		var targetAngle = Vector.radToDeg( Math.atan2(ship.y - target.y, ship.x - target.x) );
-			targetAngle = ((targetAngle + 180) % 360);
-		var currentAngle = Vector.fixDeg(ship.thrust.degrees);
-		
-		// Normalize angles against ship angle.
-		targetAngle  =  (targetAngle - currentAngle);// + 360) % 360;
-		currentAngle = currentAngle - currentAngle;
+		var targetAngle = Vector.angleBetween(ship, target);
 		
 		if (Math.abs(targetAngle) > 2) {
 			if (targetAngle > 0) {
@@ -214,75 +204,5 @@ require(
 			}
 		}
 	}
-	
-	
-	
-	
-		// /**
-	 // * CLASS: Stage.
-	 // * Manages Actors(data), and renders them with Canvas.
-	 // */
-	// function Stage(canvas) {
-		// this.cnv    = canvas,
-		// this.ctx    = canvas.getContext("2d"),
-		// this.actors = [],
-		// this.hud    = new Sidebar(this.ctx);
-		// this.stars  = new StarField(this.ctx);
-
-		// /**
-		 // * Act out and render each Actor.
-		 // */
-		// this.action = function() {
-
-			// var player = this.actors[0];
-			// this.stars.render(player.x, player.y);
-
-			// // renders in backwards order... (FIRST ITEM DRAWN ON TOP.)
-			// //for (var i = this.actors.length - 1; i >= 0; i--) {
-			// for (var i = 1; i < this.actors.length; i++) {
-				// // does this mean suicide would skip the next actor?
-				// this.actors[i].act(this.actors);
-				// this.render(this.actors[i]);
-			// }
-			// // Player last = player on top.
-			// this.actors[0].act(this.actors);
-			// this.render(this.actors[0]);
-
-			// this.hud.render(this.actors);
-		// },
-
-		// /**
-		 // * Render a given Actor.
-		 // */
-		// this.render = function(actor) {
-			// var img = actor.sprite;
-			// if (!img.src) {
-				// console.log("NO IMAGE");
-				// this.ctx.fillStyle = '#0f0';
-				// this.ctx.fillRect(this.x-1, this.y-1, 3, 3);
-				// this.ctx.fillStyle = 'white';
-				// return;
-			// }
-
-			// var player = this.actors[0];
-
-			// this.ctx.save();
-			// this.ctx.setTransform(1,0,0,1,0,0);
-			// //console.log(actor);
-			// //console.log(actor.x +":"+ actor.y);
-			// this.ctx.translate(
-				// actor.x - player.x + ((stage.cnv.width - 150)  / 2),
-				// actor.y - player.y + ( stage.cnv.height        / 2)
-			// );
-
-			// var rotation = actor.thrust.degrees + 90;
-			// //console.log(rotation);
-			// var angleInRadians = rotation * Math.PI / 180;
-			// this.ctx.rotate(angleInRadians);
-
-			// this.ctx.drawImage(img, (img.width / -2), (img.height / -2));
-			// this.ctx.restore();
-		// }
-	// };
 	
 });

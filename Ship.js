@@ -1,5 +1,5 @@
 // import Actor as Actor
-define(['./Actor', './data', './Proj'], function(Actor, Data, Proj){
+define(['./Actor', './data', './Proj', './Vector'], function(Actor, Data, Proj, Vector){
 
 	/**
 	 * SHIP CLASS.
@@ -14,7 +14,7 @@ define(['./Actor', './data', './Proj'], function(Actor, Data, Proj){
 		this.thrust.magnitude = type.accel * Data.speedModifier;
 
 			//this.thrust = new Vector(-90.0, type.accel * speedModifier);
-		this.shields = 100;
+		this.shields = 200;
 		this.armor   = 100;
 		this.mass    = 100;
 		this.sprite.src = type.sprite;
@@ -39,15 +39,30 @@ define(['./Actor', './data', './Proj'], function(Actor, Data, Proj){
 	
 	
 	var lastFire = new Date().getTime();
-	Ship.prototype.fire = function(actors) {
-		if (new Date().getTime() > lastFire + 400) {
-			lastFire = new Date().getTime();
-			//console.log(this.x +","+ this.y +","+this.thrust.degrees);
+	// Make a loop of "myWeap"s for all weaps.
+	Ship.prototype.fire = function(actors, targInd) {
+		var myWeap = Data.laserCannon;
+		var spread = Math.random() * myWeap.spread - (myWeap.spread / 2);
+		console.log("spread::::"+myWeap.spread+"="+spread);
+		
+		if (new Date().getTime() < lastFire + myWeap.delay) { return; }
+		lastFire = new Date().getTime();
+		
+		var targ = actors[targInd];
+		console.log(targ);
+		if (targInd != 0) {
+			var targetAngle = Vector.angleBetween(this, targ);
 			actors.push(new Proj(
-				Data.laserCannon, this.x, this.y, this.thrust.degrees
+				myWeap, this.x, this.y, this.thrust.degrees + targetAngle + spread
 			));
-			//console.log("[SHOOT]"+this.thrust.degrees);
+		} else {
+			actors.push(new Proj(
+				myWeap, this.x, this.y, this.thrust.degrees + spread
+			));
 		}
+		
+		
+
 	};
 	
 	Ship.prototype.hit = function(proj) {

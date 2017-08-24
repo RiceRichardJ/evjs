@@ -50,6 +50,24 @@ define([], function(){
 		return (deg * Math.PI / 180.0)
 	}
 	
+	Vector.angleBetween = function(ship, target) {
+		var targetAngle = Vector.radToDeg( Math.atan2(ship.y - target.y, ship.x - target.x) );
+			targetAngle = ((targetAngle + 180) % 360);
+		var currentAngle = Vector.fixDeg(ship.thrust.degrees);
+		
+		// Normalize angles against ship angle.
+		targetAngle  =  (targetAngle - currentAngle);// + 360) % 360;
+		
+		return targetAngle;
+	}
+	
+	Vector.intercept = function(myPos, myTrav, projMag, targPos, targTrav) {
+		// My position and direction/speed of travel.
+		// The speed of my projectile
+		// Target's position and direction/speed of travel.
+		// Projectile will inherit my position and travel + it's speed.
+		// With or without inherit inertia?
+	}
 	
 	return Vector;
 });

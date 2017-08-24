@@ -30,12 +30,13 @@ define([], function(){
 		};
 
 		this.laserCannon = {
-			speed: 1313 * this.sMod,
+			speed: 500  * this.sMod,//1313 * this.sMod,
 			accel:  0,// 999000,
-			lifespan: 300,
+			lifespan: 600,
 			turn:    0,
 			damage: 10,
-			delay: 500
+			delay: 100,
+			spread: 10
 		};
 
 		this.demoPlanet = {

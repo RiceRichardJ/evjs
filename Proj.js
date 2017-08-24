@@ -1,5 +1,5 @@
 // import Actor as Actor
-define(['./Actor', './data', './vector'], function(Actor, Data, Vector){
+define(['./Actor', './data', './Vector'], function(Actor, Data, Vector){
 
 	/**
 	 * Projectile Class.
