@@ -19,6 +19,7 @@ define(['./Actor', './data', './Vector'], function(Actor, Data, Vector){
 		this.travel = new Vector(dir, type.speed);//this.travel.degress = dir;
 		this.className = 'Proj';
 		this.type = type;
+		this.color = type.color;
 	}
 
 	/**

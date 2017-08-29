@@ -134,7 +134,6 @@ define([], function(){
 	Sidebar.prototype.chevrons = function(actors, cnv) {
 		if (!this.targetActor) { return; }
 		
-		
 		var player = actors[0];
 
 		this.ctx.save();

@@ -21,6 +21,7 @@ define(['./Vector'], function(Vector){
 			this.name   = spob.name;
 		}
 		this.remove = false;
+		this.color = '#0f0';
 	}
 
 	/**
@@ -55,6 +56,9 @@ define(['./Vector'], function(Vector){
 	Actor.prototype.applyTravel = function() {
 		this.x += this.travel.getX();
 		this.y += this.travel.getY();
+		// SOMETHINGS SERIOUSLY WRONG HERE. It changes from 12.5 to 8.7 for no reason.
+		if ( this.className == 'Proj' ) { console.log("applyTravel : " + this.travel.getY()); }
+		
 	}
 
 	/**

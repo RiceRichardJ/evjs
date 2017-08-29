@@ -40,28 +40,49 @@ define(['./Actor', './data', './Proj', './Vector'], function(Actor, Data, Proj, 
 	
 	var lastFire = new Date().getTime();
 	// Make a loop of "myWeap"s for all weaps.
+	
 	Ship.prototype.fire = function(actors, targInd) {
-		var myWeap = Data.laserCannon;
-		var spread = Math.random() * myWeap.spread - (myWeap.spread / 2);
-		console.log("spread::::"+myWeap.spread+"="+spread);
+
+		//for (var i = 0; i < this.type.weapons.length; i++) {
+			//var myWeap = Data[this.type.weapons[i]];//Data.laserCannon;
+			var myWeap = Data.laserCannon;
+			
+			var spread = Math.random() * myWeap.spread - (myWeap.spread / 2);
+			
+			if (new Date().getTime() < lastFire + myWeap.delay) { return; }
+			lastFire = new Date().getTime();
+			
+			var targ = actors[targInd];
+			console.log(targ);
+			if (targInd != 0) {
+				var targetAngle1 = Vector.angleBetween(this, targ);
+				
+				var targetAngle = Vector.intercept(this, myWeap.speed, targ);
+				
+				console.log(targetAngle1 + " VS " + targetAngle);
+				
+				actors.push(new Proj(
+					myWeap, this.x, this.y, this.thrust.degrees + targetAngle + spread
+				));
+			} else {
+				// var projectile = new Proj(
+					// myWeap, this.x, this.y, this.thrust.degrees + spread
+				// );
+				// projectile.travel = Vector.sum(projectile.travel, this.travel);
+				// actors.push(projectile);
+				
+				actors.push(new Proj(
+					myWeap, this.x, this.y, this.thrust.degrees + spread
+				));
+				/*actors[actors.length-1].travel.magnitude += this.travel.magnitude;
+				console.log("me: " + this.travel.magnitude);
+				console.log("bullet: " + actors[actors.length-1].travel.magnitude);*/
+				//var proj = actors[actors.length-1];
+				//actors[actors.length-1].travel = Vector.sum(actors[actors.length-1].travel, this.travel);
+				//console.log("px: " + actors[actors.length-1].travel.getX() +", py: " + actors[actors.length-1].travel.getY());
+			}
 		
-		if (new Date().getTime() < lastFire + myWeap.delay) { return; }
-		lastFire = new Date().getTime();
-		
-		var targ = actors[targInd];
-		console.log(targ);
-		if (targInd != 0) {
-			var targetAngle = Vector.angleBetween(this, targ);
-			actors.push(new Proj(
-				myWeap, this.x, this.y, this.thrust.degrees + targetAngle + spread
-			));
-		} else {
-			actors.push(new Proj(
-				myWeap, this.x, this.y, this.thrust.degrees + spread
-			));
-		}
-		
-		
+		//}
 
 	};
 	

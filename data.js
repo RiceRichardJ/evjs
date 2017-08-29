@@ -25,7 +25,7 @@ define([], function(){
 			guns:       6,
 			turrets:    4,
 			cost:   14000000,
-			weapons: [],
+			weapons: ["laserCannon", "protonCannon", "neutronCannon"],
 			sprite: "content/RebelCruiserSprite.png"
 		};
 
@@ -36,7 +36,30 @@ define([], function(){
 			turn:    0,
 			damage: 10,
 			delay: 100,
-			spread: 10
+			spread: 10,
+			color: '#0f0'
+		};
+		
+		this.protonCannon = {
+			speed: 500  * this.sMod,//1313 * this.sMod,
+			accel:  0,// 999000,
+			lifespan: 600,
+			turn:    0,
+			damage: 10,
+			delay: 100,
+			spread: 10,
+			color: '#00f'
+		};
+		
+		this.neutronCannon = {
+			speed: 500  * this.sMod,//1313 * this.sMod,
+			accel:  0,// 999000,
+			lifespan: 600,
+			turn:    0,
+			damage: 10,
+			delay: 100,
+			spread: 10,
+			color: '#f00'
 		};
 
 		this.demoPlanet = {
