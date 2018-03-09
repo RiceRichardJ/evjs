@@ -1,0 +1,22 @@
+{
+  "name": "evjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiceRichardJ/evjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RiceRichardJ/evjs/issues"
+  },
+  "homepage": "https://github.com/RiceRichardJ/evjs#readme",
+  "dependencies": {
+    "npm": "^5.7.1"
+  }
+}
