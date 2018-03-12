@@ -1,0 +1,6 @@
+# CommonJS vs RequireJS vs AMD
+https://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs
+
+# Using BabelJS to transpile ES6 import/export statements to AMD
+https://babeljs.io/docs/plugins/transform-es2015-modules-amd/
+https://www.sitepoint.com/transpiling-es6-modules-to-amd-commonjs-using-babel-gulp/

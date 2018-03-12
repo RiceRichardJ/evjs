@@ -1,19 +1,27 @@
-// import Actor as Actor
-define(['./Actor', './data', './Proj', './Vector'], function(Actor, Data, Proj, Vector){
+"use strict";
 
-	/**
-	 * SHIP CLASS.
-	 * @argument {ShipType} type
-	 */
-	function Ship(type, num) {
-		Actor.call(this);
+import Actor  from 'Actor';
+import Data   from 'data';
+import Proj   from 'Proj';
+import Vector from 'Vector';
+
+/**
+ * SHIP CLASS.
+ * @argument {ShipType} type
+ */
+export default class Ship extends Actor {
+
+	constructor(type, num) {
+		super();
+		console.log("Ship.constructor.type: " + JSON.stringify(type));
+
 		this.className = 'Ship';
 		this.name   = type.name + ":" + num;
 		this.speed  = type.speed * Data.speedModifier;
 		this.turn   = type.turn  * Data.speedModifier;
 		this.thrust.magnitude = type.accel * Data.speedModifier;
 
-			//this.thrust = new Vector(-90.0, type.accel * speedModifier);
+		//this.thrust = new Vector(-90.0, type.accel * speedModifier);
 		this.shields = 200;
 		this.armor   = 100;
 		this.mass    = 100;
@@ -21,27 +29,22 @@ define(['./Actor', './data', './Proj', './Vector'], function(Actor, Data, Proj, 
 		this.type = type;
 
 		console.log("SPEED: " + this.speed);
+		this.lastFire = new Date().getTime();
 	}
 
-	/**
-	 * Ship Class extends Actor.
-	 */
-	Ship.prototype = Actor.prototype;
-	Ship.prototype.constructor = Ship;
-
-	Ship.prototype.turnLeft = function() {
+	turnLeft() {
 		this.thrust.degrees -= this.turn;
-	};
+	}
 
-	Ship.prototype.turnRight = function() {
+	turnRight() {
 		this.thrust.degrees += this.turn;
-	};
+	}
 	
 	
-	var lastFire = new Date().getTime();
-	// Make a loop of "myWeap"s for all weaps.
-	
-	Ship.prototype.fire = function(actors, targInd) {
+	/**
+	 * Make a loop of "myWeap"s for all weaps.
+	 */
+	fire(actors, targInd) {
 
 		//for (var i = 0; i < this.type.weapons.length; i++) {
 			//var myWeap = Data[this.type.weapons[i]];//Data.laserCannon;
@@ -49,11 +52,11 @@ define(['./Actor', './data', './Proj', './Vector'], function(Actor, Data, Proj, 
 			
 			var spread = Math.random() * myWeap.spread - (myWeap.spread / 2);
 			
-			if (new Date().getTime() < lastFire + myWeap.delay) { return; }
-			lastFire = new Date().getTime();
+			if (new Date().getTime() < this.lastFire + myWeap.delay) { return; }
+			this.lastFire = new Date().getTime();
 			
 			var targ = actors[targInd];
-			console.log(targ);
+			//console.log(targ);
 			if (targInd != 0) {
 				var targetAngle1 = Vector.angleBetween(this, targ);
 				
@@ -86,7 +89,7 @@ define(['./Actor', './data', './Proj', './Vector'], function(Actor, Data, Proj, 
 
 	};
 	
-	Ship.prototype.hit = function(proj) {
+	hit(proj) {
 		this.shields -= proj.type.damage;
 		if (this.shields <= 0) {
 			this.remove = true;
@@ -120,6 +123,5 @@ define(['./Actor', './data', './Proj', './Vector'], function(Actor, Data, Proj, 
 			// }
 		// }
 	// }
-
-	return Ship;
-});
+	
+}

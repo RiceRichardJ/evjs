@@ -1,17 +1,18 @@
-// import ? as ?
-define([], function(){
+"use strict";
 
-	/**
-	 * Sidebar.
-	 */
-	function Sidebar(CanvasRenderingContext2D) {
+/**
+ * Sidebar.
+ */
+export default class Sidebar {
+	
+	constructor(CanvasRenderingContext2D) {
 		this.ctx = CanvasRenderingContext2D;
 		this.targetText = "No Target";
 		this.targetActor = null;
 	}//879F85
 
 	// Render
-	Sidebar.prototype.render = function(actors, cnv) {
+	render(actors, cnv) {
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
 		this.radar(actors);
@@ -21,11 +22,10 @@ define([], function(){
 		this.target();
 		this.cargo();
 		this.chevrons(actors, cnv);
-		
 	}
 
 	// Minimap/Radar
-	Sidebar.prototype.radar = function(actors) {
+	radar(actors) {
 		this.ctx.fillStyle = '#000';
 		this.ctx.fillRect(655, 5, 140, 140);
 
@@ -61,7 +61,7 @@ define([], function(){
 	}
 
 	// Levels
-	Sidebar.prototype.levels = function() {
+	levels() {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 150, 140, 40);
 
@@ -85,7 +85,7 @@ define([], function(){
 	}
 
 	// Nav
-	Sidebar.prototype.nav = function() {
+	nav() {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 195, 140, 40);
 
@@ -94,7 +94,7 @@ define([], function(){
 	}
 
 	// Secondaries
-	Sidebar.prototype.weap = function() {
+	weap() {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 240, 140, 20);
 
@@ -103,7 +103,7 @@ define([], function(){
 	}
 
 	// Target
-	Sidebar.prototype.target = function(actor) {
+	target(actor) {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 265, 140, 120);
 
@@ -117,7 +117,7 @@ define([], function(){
 	}
 
 	// Cargo
-	Sidebar.prototype.cargo = function() {
+	cargo() {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 390, 140, 90);
 
@@ -131,7 +131,7 @@ define([], function(){
 		this.ctx.fillText("10,000", 735, 473);
 	}
 	
-	Sidebar.prototype.chevrons = function(actors, cnv) {
+	chevrons(actors, cnv) {
 		if (!this.targetActor) { return; }
 		
 		var player = actors[0];
@@ -150,5 +150,4 @@ define([], function(){
 		this.ctx.restore();
 	}
 
-	return Sidebar;
-});
+}

@@ -1,12 +1,17 @@
-// import Actor as Actor
-define(['./Actor', './data', './Vector'], function(Actor, Data, Vector){
+"use strict";
 
-	/**
-	 * Projectile Class.
-	 * Constructor and instance variables.
-	 */
-	function Proj(type, xPos, yPos, dir) {
-		Actor.call(this);
+import Actor  from 'Actor';
+import Data   from 'data';
+import Vector from 'Vector';
+
+/**
+ * Projectile Class.
+ * Constructor and instance variables.
+ */
+export default class Proj extends Actor {
+	constructor(type, xPos, yPos, dir) {
+		super();
+
 		this.speed  = type.speed * Data.speedModifier;
 		this.turn   = type.turn  * Data.speedModifier;
 		//this.thrust.magnitude = type.accel * speedModifier;
@@ -21,12 +26,4 @@ define(['./Actor', './data', './Vector'], function(Actor, Data, Vector){
 		this.type = type;
 		this.color = type.color;
 	}
-
-	/**
-	 * Proj extends Actor.
-	 */
-	Proj.prototype = new Actor();
-	Proj.prototype.constructor = Proj;
-
-	return Proj;
-});
+}

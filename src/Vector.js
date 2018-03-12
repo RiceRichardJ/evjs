@@ -1,56 +1,60 @@
-define(['./Actor', './data'], function(Actor, Data){
+"use strict";
+
+import Actor from 'Actor';
+import Data from 'data';
+
+
+export default class Vector {
 
 	/**
 	 * Vector Constructor. (New)
 	 */
-	function Vector(degrees, magnitude) {
+	constructor(degrees, magnitude) {
 		this.degrees = degrees;
 		this.magnitude = magnitude;
 	}
 	
-	
 	/**
 	 * Methods. (Per Instance)
 	 */
-	Vector.prototype.getX = function() {
+	getX() {
 		return this.magnitude * Math.cos(Vector.degToRad(this.degrees));
 	};
 
-	Vector.prototype.getY = function() {
+	getY() {
 		return this.magnitude * Math.sin(Vector.degToRad(this.degrees));
 	};
 
-	Vector.prototype.setXY = function(x, y) {
+	setXY(x, y) {
 		this.magnitude = Math.sqrt( x * x + y * y );
 		var rad = Math.atan2( -1 * x , y ) + (Math.PI / 2);
 		this.degrees = Vector.radToDeg(rad);
 	};
 	
-	
 	/**
 	 * Static Functions. (Namespace)
 	 */
-	Vector.distance = function(x1, y1, x2, y2) {
+	static distance(x1, y1, x2, y2) {
 		var a = x1 - x2;
 		var b = y1 - y2;
 		return Math.sqrt( a*a + b*b );
 	}
 	
-	Vector.fixDeg = function(deg) {
+	static fixDeg(deg) {
 		deg = deg % 360;
 		if (deg < 0) { deg += 360; }
 		return deg;
 	}
 	
-	Vector.radToDeg = function(rad) {
+	static radToDeg(rad) {
 		return Vector.fixDeg(rad * 180 / Math.PI);
 	}
 	
-	Vector.degToRad = function(deg) {
+	static degToRad(deg) {
 		return (deg * Math.PI / 180.0)
 	}
 	
-	Vector.angleBetween = function(ship, target) {
+	static angleBetween(ship, target) {
 		var targetAngle = Vector.radToDeg( Math.atan2(ship.y - target.y, ship.x - target.x) );
 			targetAngle = ((targetAngle + 180) % 360);
 		var currentAngle = Vector.fixDeg(ship.thrust.degrees);
@@ -61,7 +65,7 @@ define(['./Actor', './data'], function(Actor, Data){
 		return targetAngle;
 	}
 	
-	Vector.sum = function(v1, v2) {
+	static sum(v1, v2) {
 		console.log("v1x: " + v1.getX() +", v1y: " + v1.getY());
 		console.log("v2x: " + v2.getX() +", v2y: " + v2.getY());
 		var vn = new Vector(0,0);
@@ -80,7 +84,8 @@ define(['./Actor', './data'], function(Actor, Data){
 	}
 	
 //	Vector.intercept = function(myPos, myTrav, projMag, targPos, targTrav) {
-	Vector.intercept = function(me, projMag, target) {
+	static intercept(me, projMag, target) {
+		console.log("Vector.intercept()");
 		// My position and direction/speed of travel.
 		// The speed of my projectile
 		// Target's position and direction/speed of travel.
@@ -98,7 +103,7 @@ define(['./Actor', './data'], function(Actor, Data){
 			target.x,
 			target.y
 		);
-		console.log("\nPOINTS: " + points + " | VS | targ: " + target.x +","+ target.y + " | VS | ME: " + me.x +","+ me.y);
+		//console.log("\nPOINTS: " + points + " | VS | targ: " + target.x +","+ target.y + " | VS | ME: " + me.x +","+ me.y);
 
 		// What we're doing is finding the point to aim at relative to US.
 		points[0] += me.x;
@@ -116,14 +121,15 @@ define(['./Actor', './data'], function(Actor, Data){
 	}
 	
 	//http://danikgames.com/blog/how-to-intersect-a-moving-target-in-2d/
-	Vector.internet = function(ux, uy, vMag, Ax, Ay, Bx, By) {
-		console.log("ux: " + ux);
-		console.log("uy: " + uy);
-		console.log("vMag: " + vMag);
-		console.log("Ax: " + Ax);
-		console.log("Ay: " + Ay);
-		console.log("Bx: " + Bx);
-		console.log("By: " + By);
+	static internet(ux, uy, vMag, Ax, Ay, Bx, By) {
+		console.log("Vector.internet()");
+		// console.log("ux: " + ux);
+		// console.log("uy: " + uy);
+		// console.log("vMag: " + vMag);
+		// console.log("Ax: " + Ax);
+		// console.log("Ay: " + Ay);
+		// console.log("Bx: " + Bx);
+		// console.log("By: " + By);
 		// Given: ux, uy, vmag (projectile speed), Ax, Ay, Bx, By
 
 		// Find the vector AB
@@ -134,8 +140,8 @@ define(['./Actor', './data'], function(Actor, Data){
 		var ABmag = Math.sqrt(ABx * ABx + ABy * ABy);
 		ABx /= ABmag;
 		ABy /= ABmag;
-		console.log("ABmag: " + ABmag);
-		console.log("ABx: " + ABx + "ABy: " + ABy);
+		// console.log("ABmag: " + ABmag);
+		// console.log("ABx: " + ABx + "ABy: " + ABy);
 
 		// Project u onto AB
 		var uDotAB = ABx * ux + ABy * uy;
@@ -165,5 +171,4 @@ define(['./Actor', './data'], function(Actor, Data){
 		return [vx, vy];
 	}
 	
-	return Vector;
-});
+}

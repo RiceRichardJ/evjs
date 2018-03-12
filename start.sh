@@ -1,4 +1,4 @@
 #!/bin/bash
-
-http-server -c-1
+npm run build
+npm run server
 #chrome http://localhost:8080/

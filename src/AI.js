@@ -1,13 +1,26 @@
-// import Vector as Vector
-define(['./Vector'], function(Vector){
+"use strict";
+
+import Vector from 'Vector';
+
+/**
+ * AI Constructor. (New)
+ */
+export default class AI {
+	constructor() {}
 
 	/**
-	 * AI Constructor. (New)
+	 * Run AI on all ships of given list.
+	 * @param {*} ships - List of ships.
 	 */
-	function AI() {}
+	static runAll(ships) {
+		for (var ship of ships) {
+			if (ship.className == 'Ship') {
+				this.go(ship, ship.target);
+			}
+		}
+	}
 
-
-	AI.go = function(ship, target) {
+	static go(ship, target) {
 		//console.log(Math.round(ship.x) +","+ Math.round(ship.y) +" : "+ Math.round(target.x) +"," + Math.round(target.y));
 		
 		// given two points, find angle between them.
@@ -54,7 +67,7 @@ define(['./Vector'], function(Vector){
 	}
 	
 
-	AI.stop = function(ship) {
+	static stop(ship) {
 		var targetAngle  = ((Vector.fixDeg(ship.travel.degrees) + 180) % 360);
 		var currentAngle =   Vector.fixDeg(ship.thrust.degrees);
 		//console.log("STOP: " + Math.round(currentAngle) +"->"+ Math.round(targetAngle));
@@ -79,5 +92,4 @@ define(['./Vector'], function(Vector){
 		}
 	}
 
-	return AI;
-});
+}

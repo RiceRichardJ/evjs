@@ -1,19 +1,27 @@
-define([], function(){
-	function Starfield(ctx) {
+"use strict";
+
+export default class StarField {
+	constructor(ctx, centerX, centerY) {
 		this.xStar = [];
 		this.yStar = [];
 		this.nStar = 50;
 		this.ctx = ctx;
+		this.init(centerX, centerY);
 	}
 
-	Starfield.prototype.init = function(px, py) {
+	/**
+	 * Fill screen with stars.
+	 * @param {*} px X Center of screen.
+	 * @param {*} py Y Center of screen.
+	 */
+	init(px, py) {
 		for (var i = 0; i < this.nStar; i++) {
 	 		this.xStar.push( (Math.random() * 800) + px);
 	 		this.yStar.push( (Math.random() * 600) + py);
 		}
 	}
 
-	Starfield.prototype.render = function(px, py) {
+	render(px, py) {
 		for (var i = 0; i < this.nStar; i++) {
 			if ( (this.xStar[i] - px) < 0)   { this.xStar[i] += 800; }
 			if ( (this.xStar[i] - px) > 800) { this.xStar[i] -= 800; }
@@ -28,13 +36,12 @@ define([], function(){
 		}
 	}
 	
-			// WRAP (temporary)
-		/*var me = stage.actors[0];
-		if (me.x < 0) { me.x = c.width; }
-		if (me.y < 0) { me.y = c.height; }
-		if (me.x > c.width) { me.x = 0; }
-		if (me.y > c.height) { me.y = 0; }*/
-
-	return Starfield;
-});
+	// WRAP (temporary)
+	/*var me = stage.actors[0];
+	if (me.x < 0) { me.x = c.width; }
+	if (me.y < 0) { me.y = c.height; }
+	if (me.x > c.width) { me.x = 0; }
+	if (me.y > c.height) { me.y = 0; }*/
+	
+}
 

@@ -1,10 +1,12 @@
-// import Vector as Vector
-define(['./Vector'], function(Vector){
+"use strict";
 
-	/**
-	 * Any space object.
-	 */
-	function Actor(spob) {
+import Vector from 'Vector';
+
+/**
+ * Any space object.
+ */
+export default class Actor {
+	constructor(spob) {
 		this.x = 0.0;
 		this.y = 0.0;
 		this.travel = new Vector(-90.0, 0.0);
@@ -27,7 +29,7 @@ define(['./Vector'], function(Vector){
 	/**
 	 * Apply Thrust.
 	 */
-	Actor.prototype.applyThrust = function() {
+	applyThrust() {
 
 		// Travel Vect
 		var xVel = this.travel.getX();
@@ -53,18 +55,18 @@ define(['./Vector'], function(Vector){
 	/**
 	 * Apply Travel.
 	 */
-	Actor.prototype.applyTravel = function() {
+	applyTravel() {
 		this.x += this.travel.getX();
 		this.y += this.travel.getY();
 		// SOMETHINGS SERIOUSLY WRONG HERE. It changes from 12.5 to 8.7 for no reason.
-		if ( this.className == 'Proj' ) { console.log("applyTravel : " + this.travel.getY()); }
+		//if ( this.className == 'Proj' ) { console.log("applyTravel : " + this.travel.getY()); }
 		
 	}
 
 	/**
 	 * Act. This is called each frame, for each actor.
 	 */
-	Actor.prototype.act = function(actors) {
+	act(actors) {
 		if (this.remove) {
 			this.die(actors);
 		}
@@ -78,9 +80,8 @@ define(['./Vector'], function(Vector){
 	}
 
 	// TODO: Phase this out, handle all deaths in Stage object.
-	Actor.prototype.die = function(actors) {
+	die(actors) {
 		actors.splice( actors.indexOf(this), 1 );
 	}
 
-	return Actor;
-});
+}
