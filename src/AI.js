@@ -3,7 +3,7 @@
 import Vector from 'Vector';
 
 /**
- * AI Constructor. (New)
+ * AI Static Class. Contains static funtions that provide AI to Actors.
  */
 export default class AI {
 	constructor() {}
@@ -20,6 +20,11 @@ export default class AI {
 		}
 	}
 
+	/**
+	 * Fly ship towards target.
+	 * @param {*} ship The ship to govern.
+	 * @param {*} target The target to fly towards.
+	 */
 	static go(ship, target) {
 		//console.log(Math.round(ship.x) +","+ Math.round(ship.y) +" : "+ Math.round(target.x) +"," + Math.round(target.y));
 		
@@ -66,7 +71,10 @@ export default class AI {
 		ship.applyThrust();
 	}
 	
-
+	/**
+	 * Stop the ship.
+	 * @param {*} ship The ship to stop. 
+	 */
 	static stop(ship) {
 		var targetAngle  = ((Vector.fixDeg(ship.travel.degrees) + 180) % 360);
 		var currentAngle =   Vector.fixDeg(ship.thrust.degrees);

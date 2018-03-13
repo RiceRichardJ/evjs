@@ -131,7 +131,7 @@ function pollInput() {
 		//if (velocity < 0) { velocity = 0; }
 	}
 	if (keyPressed["32"]) { // spacebar
-		me.fire(stage.actors, targInd);
+		me.fire(stage.projs, stage.actors[targInd]);
 	}
 	if (keyPressed["76"]) { // [L]
 		land();

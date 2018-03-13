@@ -22,7 +22,7 @@ export default class Actor {
 			this.className = 'Spob';
 			this.name   = spob.name;
 		}
-		this.remove = false;
+		this.dead = false;
 		this.color = '#0f0';
 	}
 
@@ -30,18 +30,9 @@ export default class Actor {
 	 * Apply Thrust.
 	 */
 	applyThrust() {
-
-		// Travel Vect
-		var xVel = this.travel.getX();
-		var yVel = this.travel.getY();
-
-		// Thrust Vect
-		var xThrustVel = this.thrust.getX();
-		var yThrustVel = this.thrust.getY();
-
-		// Sum to find new travel vect.
-		var xNewVect = xVel + xThrustVel;
-		var yNewVect = yVel + yThrustVel;
+		// Sum thust and travel vects to find new travel vect.
+		var xNewVect = this.travel.getX() + this.thrust.getX();
+		var yNewVect = this.travel.getY() + this.thrust.getY();
 
 		// Apply sum to our travel vect.
 		this.travel.setXY(xNewVect, yNewVect);
@@ -58,30 +49,24 @@ export default class Actor {
 	applyTravel() {
 		this.x += this.travel.getX();
 		this.y += this.travel.getY();
-		// SOMETHINGS SERIOUSLY WRONG HERE. It changes from 12.5 to 8.7 for no reason.
-		//if ( this.className == 'Proj' ) { console.log("applyTravel : " + this.travel.getY()); }
-		
 	}
 
 	/**
 	 * Act. This is called each frame, for each actor.
 	 */
-	act(actors) {
-		if (this.remove) {
-			this.die(actors);
-		}
+	act() {
 		if (this.lifespan > 0 &&
 				(new Date()).getTime() > this.born.getTime() + this.lifespan) {
-			console.log("[SUICIDE]");
-			this.die(actors); //actors.splice( actors.indexOf(this), 1 );
-			return;
+			this.die();
+		} else {
+			this.applyTravel();
 		}
-		this.applyTravel();
 	}
 
-	// TODO: Phase this out, handle all deaths in Stage object.
-	die(actors) {
-		actors.splice( actors.indexOf(this), 1 );
+	/**
+	 * Die.
+	 */
+	die() {
+		this.dead = true;
 	}
-
 }

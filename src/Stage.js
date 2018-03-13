@@ -6,14 +6,21 @@ import StarField from 'StarField';
 import Vector from 'Vector';
 
 /**
- * CLASS: Stage.
  * Manages Actors(data), and renders them with Canvas.
  */
 export default class Stage {
+
+	/**
+	 * Create a Stage object.
+	 * @param {*} canvas Canvas to draw on.
+	 * @param {*} centerX X Center of screen (for StarField)
+	 * @param {*} centerY Y Center of screen (for StarField)
+	 */
 	constructor(canvas, centerX, centerY) {
 		this.cnv    = canvas;
 		this.ctx    = canvas.getContext("2d");
 		this.actors = [];
+		this.projs  = [];
 		this.hud    = new Sidebar(this.ctx);
 		this.stars  = new StarField(this.ctx, centerX, centerY);
 	}
@@ -36,25 +43,28 @@ export default class Stage {
 	 */
 	action() {
 		this.renderBackground();
+
+		this.projs.map( (proj) => {this.render(proj); proj.act()} );
 		for (var i = 1; i < this.actors.length; i++) {
 			// Render then Act b/c Act can suicide. Can't render if not exist.
 			this.render(this.actors[i]);
-			this.actors[i].act(this.actors);
+			this.actors[i].act();
 		}
 		// Player last = player on top.
-		this.actors[0].act(this.actors);
+		this.actors[0].act();
 		this.render(this.actors[0]);
 
 		this.hud.render(this.actors, this.cnv);
 		this.collision();
-		this.pruneDead(this.actors);
+		this.pruneDead();
 	}
 
+	// TODO: Make this take a function as a parameter (callback)
+	// where that function renders, while this function simply
+	// set's the coordinates properly.
 	/**
 	 * Render a given Actor.
-	 * TODO: Make this take a function as a parameter (callback)
-	 * where that function renders, while this function simply
-	 * set's the coordinates properly.
+	 * @param {Actor} actor Actor to render.
 	 */
 	render(actor) {
 		var player = this.actors[0];
@@ -74,7 +84,6 @@ export default class Stage {
 		if (img.src) {
 			this.ctx.drawImage(img, (img.width / -2), (img.height / -2));
 		} else {
-			//console.log("NO IMAGE " + actor.x +","+ actor.y);
 			this.ctx.fillStyle = actor.color;//'#0f0';
 			this.ctx.fillRect(-1, -1, 3, 3);
 			this.ctx.fillStyle = 'white';
@@ -83,40 +92,46 @@ export default class Stage {
 		this.ctx.restore();
 	}
 	
+	/**
+	 * Collisions between SHIPs and PROJs.
+	 */
 	collision() {
-		for (var i = 1; i < this.actors.length; i++) {
-			if ( this.actors[i].className != 'Proj' ) { continue; }
-			var proj = this.actors[i];
-			
-			for (var j = 1; j < this.actors.length; j++) {
-				var ship = this.actors[j];
-				
-				if (this.actors[j].className == 'Ship') {
-					var dist = Vector.distance(
-						proj.x,
-						proj.y,
-						ship.x,
-						ship.y);
+		for (var proj of this.projs) {
+			for (var ship of this.actors) {
+				if ( ship.className == 'Ship' && proj.sender !== ship) { // can't shoot self
+
+					var dist = Vector.distance(proj.x, proj.y, ship.x, ship.y);
 					if (dist < 20) {
 						ship.hit(proj);
-						this.boom(proj.x, proj.y, proj.type.damage);
-						proj.die(this.actors);
+						proj.die();
 					}
 				}
 			}
 		}
 	}
-		
-	pruneDead(actors) {
-		for (var i = 0; i < this.actors.length; i++) {
-			var actor = this.actors[i];
-			if (actor.remove) {
-				this.boom(actor.x, actor.y, actor.type.shields);
-				actors.splice( actors.indexOf(actor), 1 );
-			}
+	
+	/**
+	 * Remove dead actors from stage.
+	 */
+	pruneDead() {
+		for (var actor of this.actors) {
+			if (! actor.dead) { continue; }
+			if (actor.className == 'Ship') {this.boom(actor.x, actor.y, actor.type.shields);}
+			this.actors.splice( this.actors.indexOf(actor), 1 );
+		}
+		for (var proj of this.projs) {
+			if (! proj.dead) { continue; }
+			this.boom(proj.x, proj.y, proj.type.damage);
+			this.projs.splice( this.projs.indexOf(proj), 1 );
 		}
 	}
 	
+	/**
+	 * Draw an explosion.
+	 * @param {number} x X Location.
+	 * @param {number} y Y Location.
+	 * @param {number} dmg Magnitude.
+	 */
 	boom(x, y, dmg) {
 		var player = this.actors[0];
 

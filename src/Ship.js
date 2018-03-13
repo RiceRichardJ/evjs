@@ -6,11 +6,15 @@ import Proj   from 'Proj';
 import Vector from 'Vector';
 
 /**
- * SHIP CLASS.
- * @argument {ShipType} type
+ * Ship class.
  */
 export default class Ship extends Actor {
 
+	/**
+	 * Construct a Ship object given a type to base it off of.
+	 * @param {ShipType} type The ship type to build off of.
+	 * @param {number} num ID number; for debugging.
+	 */
 	constructor(type, num) {
 		super();
 		console.log("Ship.constructor.type: " + JSON.stringify(type));
@@ -32,19 +36,27 @@ export default class Ship extends Actor {
 		this.lastFire = new Date().getTime();
 	}
 
+	/**
+	 * Turn our ship to the left.
+	 */
 	turnLeft() {
 		this.thrust.degrees -= this.turn;
 	}
 
+	/**
+	 * Turn our ship to the right.
+	 */
 	turnRight() {
 		this.thrust.degrees += this.turn;
 	}
 	
-	
+	// TODO: Make a loop of "myWeap"s for all weaps.
 	/**
-	 * Make a loop of "myWeap"s for all weaps.
+	 * Fire our weapons at the given target.
+	 * @param {*} projs The PROJectiles array that we'll add our fired projectiles to.
+	 * @param {*} targ The target to fire at.
 	 */
-	fire(actors, targInd) {
+	fire(projs, targ) {
 
 		//for (var i = 0; i < this.type.weapons.length; i++) {
 			//var myWeap = Data[this.type.weapons[i]];//Data.laserCannon;
@@ -55,17 +67,13 @@ export default class Ship extends Actor {
 			if (new Date().getTime() < this.lastFire + myWeap.delay) { return; }
 			this.lastFire = new Date().getTime();
 			
-			var targ = actors[targInd];
-			//console.log(targ);
-			if (targInd != 0) {
-				var targetAngle1 = Vector.angleBetween(this, targ);
-				
+			if (targ != null) {
+				// var targetAngle1 = Vector.angleBetween(this, targ);
 				var targetAngle = Vector.intercept(this, myWeap.speed, targ);
+				// console.log(targetAngle1 + " VS " + targetAngle);
 				
-				console.log(targetAngle1 + " VS " + targetAngle);
-				
-				actors.push(new Proj(
-					myWeap, this.x, this.y, this.thrust.degrees + targetAngle + spread
+				projs.push(new Proj(
+					myWeap, this.x, this.y, this.thrust.degrees + targetAngle + spread, this
 				));
 			} else {
 				// var projectile = new Proj(
@@ -74,8 +82,8 @@ export default class Ship extends Actor {
 				// projectile.travel = Vector.sum(projectile.travel, this.travel);
 				// actors.push(projectile);
 				
-				actors.push(new Proj(
-					myWeap, this.x, this.y, this.thrust.degrees + spread
+				projs.push(new Proj(
+					myWeap, this.x, this.y, this.thrust.degrees + spread, this
 				));
 				/*actors[actors.length-1].travel.magnitude += this.travel.magnitude;
 				console.log("me: " + this.travel.magnitude);
@@ -92,8 +100,7 @@ export default class Ship extends Actor {
 	hit(proj) {
 		this.shields -= proj.type.damage;
 		if (this.shields <= 0) {
-			this.remove = true;
-			//this.die(actors);
+			this.die();
 		}
 	}
 
