@@ -9,9 +9,9 @@ var aMod = 0.0003;
 var speedModifier = 0.7;
 
  export default {
-	sMod: 0.025,
-	aMod: 0.0003,
-	speedModifier: 0.7,
+	sMod: sMod,
+	aMod: aMod,
+	speedModifier: speedModifier,
 
 	// Ship Type.
 	rebelCruiser: {
@@ -30,24 +30,28 @@ var speedModifier = 0.7;
 		guns:       6,
 		turrets:    4,
 		cost:   14000000,
-		weapons: ["laserCannon", "protonCannon", "neutronCannon"],
+		weapons: [
+			{"name":"laserCannon",   "count":1, "ammo":-1},
+			{"name":"protonCannon",  "count":1, "ammo":-1},
+			{"name":"neutronCannon", "count":1, "ammo":-1}
+		],
 		sprite: "content/RebelCruiserSprite.png"
 	},
 
 	laserCannon: {
-		speed: 500  * sMod,//1313 * this.sMod,
-		accel:  0,// 999000,
+		speed: 500  * sMod,
+		accel:  0,
 		lifespan: 600,
 		turn:    0,
-		damage: 10,
+		damage: 5,
 		delay: 100,
 		spread: 10,
 		color: '#0f0'
 	},
 	
 	protonCannon: {
-		speed: 500  * sMod,//1313 * this.sMod,
-		accel:  0,// 999000,
+		speed: 500  * sMod,
+		accel:  0,
 		lifespan: 600,
 		turn:    0,
 		damage: 10,
@@ -57,12 +61,12 @@ var speedModifier = 0.7;
 	},
 	
 	neutronCannon: {
-		speed: 500  * sMod,//1313 * this.sMod,
-		accel:  0,// 999000,
+		speed: 500  * sMod,
+		accel:  0,
 		lifespan: 600,
 		turn:    0,
-		damage: 10,
-		delay: 100,
+		damage: 20,
+		delay: 120,
 		spread: 10,
 		color: '#f00'
 	},

@@ -7,3 +7,13 @@ https://www.sitepoint.com/transpiling-es6-modules-to-amd-commonjs-using-babel-gu
 
 # Firefox's garbage collector chokes when removing PROJectiles.
 Non-incremental GC.
+
+Movement.
+Camera.
+Basic following.
+Weapon tracking.
+Collisions.
+HUD.
+Target Select.
+Ship to Ship Comms.
+Ship retaliation.

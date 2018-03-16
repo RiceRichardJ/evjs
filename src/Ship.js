@@ -4,6 +4,7 @@ import Actor  from 'Actor';
 import Data   from 'data';
 import Proj   from 'Proj';
 import Vector from 'Vector';
+import Weapon from 'Weapon';
 
 /**
  * Ship class.
@@ -17,7 +18,6 @@ export default class Ship extends Actor {
 	 */
 	constructor(type, num) {
 		super();
-		console.log("Ship.constructor.type: " + JSON.stringify(type));
 
 		this.className = 'Ship';
 		this.name   = type.name + ":" + num;
@@ -32,8 +32,17 @@ export default class Ship extends Actor {
 		this.sprite.src = type.sprite;
 		this.type = type;
 
-		console.log("SPEED: " + this.speed);
-		this.lastFire = new Date().getTime();
+		// this.lastFire = new Date().getTime();
+		this.weapons = Ship.populateWeapons(type);
+	}
+
+	static populateWeapons(shipType) {
+		var myWeaps = [];
+		for (var battery of shipType.weapons) {
+			var weapType = Data[battery.name];
+			myWeaps.push(new Weapon(weapType, battery.count, battery.ammo));
+		}
+		return myWeaps;
 	}
 
 	/**
@@ -57,44 +66,18 @@ export default class Ship extends Actor {
 	 * @param {*} targ The target to fire at.
 	 */
 	fire(projs, targ) {
-
-		//for (var i = 0; i < this.type.weapons.length; i++) {
-			//var myWeap = Data[this.type.weapons[i]];//Data.laserCannon;
-			var myWeap = Data.laserCannon;
-			
-			var spread = Math.random() * myWeap.spread - (myWeap.spread / 2);
-			
-			if (new Date().getTime() < this.lastFire + myWeap.delay) { return; }
-			this.lastFire = new Date().getTime();
-			
-			if (targ != null) {
-				// var targetAngle1 = Vector.angleBetween(this, targ);
-				var targetAngle = Vector.intercept(this, myWeap.speed, targ);
-				// console.log(targetAngle1 + " VS " + targetAngle);
-				
+		for (var myWeap of this.weapons) {
+			if (myWeap.fire()) {
+				var spread = Math.random() * (myWeap.type.spread / 2);
+				var targetAngle = 0;
+				if (targ != null) {
+					targetAngle = Vector.intercept(this, myWeap.type.speed, targ);
+				}
 				projs.push(new Proj(
-					myWeap, this.x, this.y, this.thrust.degrees + targetAngle + spread, this
+					myWeap.type, this.x, this.y, this.thrust.degrees + targetAngle + spread, this
 				));
-			} else {
-				// var projectile = new Proj(
-					// myWeap, this.x, this.y, this.thrust.degrees + spread
-				// );
-				// projectile.travel = Vector.sum(projectile.travel, this.travel);
-				// actors.push(projectile);
-				
-				projs.push(new Proj(
-					myWeap, this.x, this.y, this.thrust.degrees + spread, this
-				));
-				/*actors[actors.length-1].travel.magnitude += this.travel.magnitude;
-				console.log("me: " + this.travel.magnitude);
-				console.log("bullet: " + actors[actors.length-1].travel.magnitude);*/
-				//var proj = actors[actors.length-1];
-				//actors[actors.length-1].travel = Vector.sum(actors[actors.length-1].travel, this.travel);
-				//console.log("px: " + actors[actors.length-1].travel.getX() +", py: " + actors[actors.length-1].travel.getY());
 			}
-		
-		//}
-
+		}
 	};
 	
 	hit(proj) {
@@ -103,32 +86,4 @@ export default class Ship extends Actor {
 			this.die();
 		}
 	}
-
-	// var lastFire = new Date().getTime();
-	// class Ship extends Actor {
-		// constructor(type) {
-			// this.speed  = type.speed * speedModifier;
-			// this.turn   = type.turn  * speedModifier;
-			// this.thrust.magnitude = type.accel * speedModifier;//this.thrust = new Vector(-90.0, type.accel * speedModifier);
-			// this.shields = 100;
-			// this.armor   = 100;
-			// this.mass    = 100;
-			// this.sprite.src = type.sprite;
-		// }
-		// turnLeft() {
-			// this.thrust.degrees -= this.turn;
-		// }
-		// turnRight() {
-			// this.thrust.degrees += this.turn;
-		// }
-		// fire(actors) {
-			// if (new Date().getTime() > lastFire + 400) {
-				// lastFire = new Date().getTime();
-				// console.log(this.x +","+ this.y +","+this.thrust.degrees);
-				// actors.push(new Proj(laserCannon, this.x, this.y, this.thrust.degrees));
-				// console.log("[SHOOT]"+this.thrust.degrees);
-			// }
-		// }
-	// }
-	
 }

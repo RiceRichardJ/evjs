@@ -74,20 +74,14 @@ function setup() {
 
 /**
  * Main Loop.
- * Read input. Draw output.
  */
 function update() {
-
 	// Don't update if we're landed.
 	if ($('#modalSpaceport').hasClass('in')) { return; }
 
-	// Read user input.
+	// Read user input, draw output, run AI.
 	pollInput();
-
-	// Draw output.
 	stage.action();
-	
-	// Run AI
 	AI.runAll(stage.actors.slice(2));
 }
 
@@ -149,14 +143,8 @@ function pollInput() {
 
 var landed = false;
 function land() {
-	var dist = Vector.distance(
-		stage.actors[0].x,
-		stage.actors[0].y,
-		stage.actors[1].x,
-		stage.actors[1].y);
-	console.log("land: " + Math.round(dist * 100) / 100);
-
-	console.log("speed: " + stage.actors[0].travel.magnitude);
+	var dist = Vector.distance(stage.actors[0].x, stage.actors[0].y,
+		stage.actors[1].x, stage.actors[1].y);
 
 	if (dist < 50 && !landed) {
 		if (stage.actors[0].travel.magnitude > 0.5) {
@@ -176,16 +164,12 @@ var targInd = 0;
 function target() {
 	targInd++;
 	targInd = targInd % stage.actors.length;
-	
-	console.log("target..." + targInd +":"+ stage.actors.length);
-	console.log(targInd % stage.actors.length);
 	stage.hud.target(stage.actors[targInd]);
 }
 
 $('#modalSpaceport').on('hidden.bs.modal', function() {
 	console.log("DEPART, modalSpaceport hidden ");
-	// Reset Ship Position
-	// Reset Shields, Armor. Refuel. Etc.
+	// Reset Ship Position // Reset Shields, Armor. Refuel. Etc.
 	landed = false;
 })
 
