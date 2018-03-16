@@ -117,6 +117,7 @@ export default class Stage {
 		for (var actor of this.actors) {
 			if (! actor.dead) { continue; }
 			if (actor.className == 'Ship') {this.boom(actor.x, actor.y, actor.type.shields);}
+			this.hud.untarget(actor);
 			this.actors.splice( this.actors.indexOf(actor), 1 );
 		}
 		for (var proj of this.projs) {

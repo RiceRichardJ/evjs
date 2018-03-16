@@ -13,15 +13,15 @@ export default class Sidebar {
 
 	// Render
 	render(actors, cnv) {
+		this.chevrons(actors, cnv);
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
 		this.radar(actors);
 		this.levels();
 		this.nav();
 		this.weap();
-		this.target();
+		this.target(this.targetActor);
 		this.cargo();
-		this.chevrons(actors, cnv);
 	}
 
 	// Minimap/Radar
@@ -108,12 +108,24 @@ export default class Sidebar {
 		this.ctx.fillRect(655, 265, 140, 120);
 
 		this.ctx.fillStyle = '#03900E';
-		if (actor) {
-			this.targetActor = actor;
-			var str = actor.name + " | " + actor.shields;
-			this.targetText = str;
+		this.targetActor = actor;
+		if (actor) {			
+			this.ctx.fillText(actor.name,    703, 320);
+			this.ctx.fillText(this.shieldPercentage(actor) + "%", 760, 370);
+		} else {
+			this.targetText = "No Target";
+			this.ctx.fillText(this.targetText, 703, 320);
 		}
-		this.ctx.fillText(this.targetText, 703, 320);
+	}
+
+	shieldPercentage(actor) {
+		return Math.round((actor.shields / actor.shieldMax) * 100);
+	}
+
+	untarget(actor) {
+		if (actor === this.targetActor) {
+			this.target(null);
+		}
 	}
 
 	// Cargo
@@ -131,6 +143,7 @@ export default class Sidebar {
 		this.ctx.fillText("10,000", 735, 473);
 	}
 	
+	// Chevrons
 	chevrons(actors, cnv) {
 		if (!this.targetActor) { return; }
 		

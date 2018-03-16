@@ -158,13 +158,21 @@ function land() {
 }
 
 /**
- * Target.
+ * Cycle through targets.
  */
 var targInd = 0;
 function target() {
 	targInd++;
-	targInd = targInd % stage.actors.length;
-	stage.hud.target(stage.actors[targInd]);
+	while(targInd < stage.actors.length && 
+		(stage.actors[targInd] == me || stage.actors[targInd].className != 'Ship') ) {
+		targInd++;
+	}
+	if (targInd >= stage.actors.length) { targInd = 0; }
+	if (targInd == 0) {
+		stage.hud.target(null);
+	} else {
+		stage.hud.target(stage.actors[targInd]);
+	}
 }
 
 $('#modalSpaceport').on('hidden.bs.modal', function() {
