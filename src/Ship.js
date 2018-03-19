@@ -1,6 +1,7 @@
 "use strict";
 
 import Actor  from 'Actor';
+import AI     from 'AI';
 import Data   from 'data';
 import Proj   from 'Proj';
 import Vector from 'Vector';
@@ -34,6 +35,8 @@ export default class Ship extends Actor {
 		this.type = type;
 
 		this.weapons = Ship.populateWeapons(type);
+		this.ai = new AI();
+		this.newProj = null; // Allow Stage to handle adding to projs array.
 	}
 
 	static populateWeapons(shipType) {
@@ -58,14 +61,29 @@ export default class Ship extends Actor {
 	turnRight() {
 		this.thrust.degrees += this.turn;
 	}
+
+	/**
+	 * Turn ship towards target.
+	 * @param {*} target Target to turn ship towards. If none given, use AI's target.
+	 */
+	autoPilot(target = this.ai.target) {
+		if (target == null) { return; }
+		var targetAngle = Vector.angleBetween(this, target);
+		if (Math.abs(targetAngle) > 2) {
+			if (targetAngle > 0) {	// this doesn't work right.
+				this.turnRight();
+			} else {
+				this.turnLeft();
+			}
+		}
+	}
 	
-	// TODO: Make a loop of "myWeap"s for all weaps.
 	/**
 	 * Fire our weapons at the given target.
 	 * @param {*} projs The PROJectiles array that we'll add our fired projectiles to.
 	 * @param {*} targ The target to fire at.
 	 */
-	fire(projs, targ) {
+	fire(targ) {
 		for (var myWeap of this.weapons) {
 			if (myWeap.fire()) {
 				var spread = Math.random() * (myWeap.type.spread / 2);
@@ -73,15 +91,20 @@ export default class Ship extends Actor {
 				if (targ != null) {
 					targetAngle = Vector.intercept(this, myWeap.type.speed, targ);
 				}
-				projs.push(new Proj(
+				this.newProj = new Proj(
 					myWeap.type, this.x, this.y, this.thrust.degrees + targetAngle + spread, this
-				));
+				);
 			}
 		}
 	}
 	
+	/**
+	 * Take damage (and maybe die).
+	 * @param {*} proj The projectile we're hit with.
+	 */
 	hit(proj) {
 		this.shields -= proj.type.damage;
+		this.ai.target = proj.sender;
 		if (this.shields <= 0) {
 			this.die();
 		}

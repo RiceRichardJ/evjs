@@ -4,9 +4,26 @@ import Vector from 'Vector';
 
 /**
  * AI Static Class. Contains static funtions that provide AI to Actors.
+ * Instances are used to store AI mood and combat states.
  */
 export default class AI {
-	constructor() {}
+	constructor() {
+		this.mood = AI.moods().passive;
+		this.pers = AI.pers().brave;
+		this.target = null;
+	}
+
+	static moods() {
+		return Object.freeze({
+			"passive":1, "aggressive":2, "disabled":3, "escort":4, "patrol":5, "":6, "":7
+		});
+	}
+	
+	static pers() {
+		return Object.freeze({
+			"wimpy":1, "brave":2, "warship":3, "escort":4, "fighter":5
+		});
+	}
 
 	/**
 	 * Run AI on all ships of given list.
@@ -15,7 +32,7 @@ export default class AI {
 	static runAll(ships) {
 		for (var ship of ships) {
 			if (ship.className == 'Ship') {
-				this.go(ship, ship.target);
+				this.go(ship, ship.ai.target);
 			}
 		}
 	}
@@ -26,31 +43,21 @@ export default class AI {
 	 * @param {*} target The target to fly towards.
 	 */
 	static go(ship, target) {	
-		// given two points, find angle between them.
-		var targetAngle = Vector.radToDeg( Math.atan2(ship.y - target.y, ship.x - target.x) );
-		targetAngle = ((targetAngle + 180) % 360);
-		var currentAngle = Vector.fixDeg(ship.thrust.degrees);
-		
-		// Normalize angles against ship angle.
-		targetAngle  =  (targetAngle - currentAngle);
-		currentAngle = currentAngle - currentAngle;
-		
-		if (Math.abs(targetAngle) > 2) {
-			if (targetAngle > 0) {
-				ship.turnRight();
-			} else {
-				ship.turnLeft();
-			}
-		}
+		ship.autoPilot(target);
 		
 		var dist = Vector.distance(ship.x, ship.y, target.x, target.y);
 		if (dist < 300) {
-			AI.stop(ship);
-			if (dist < 50 && ship.travel.magnitude < 0.5) {
-				ship.travel.magnitude = 0;
+			if (target.className == 'Spob') {
+				AI.stop(ship);
+				if (dist < 50 && ship.travel.magnitude < 0.5) {
+					ship.travel.magnitude = 0;
+				}
+				return; // don't apply thrust.
+			} else {
+				ship.fire(target);
 			}
-			return;
 		}
+
 		ship.applyThrust();
 	}
 	

@@ -1,9 +1,10 @@
 "use strict";
 
-import Actor from 'Actor';
-import Sidebar from 'Sidebar';
+import Actor     from 'Actor';
+import AI        from 'AI';
+import Sidebar   from 'Sidebar';
 import StarField from 'StarField';
-import Vector from 'Vector';
+import Vector    from 'Vector';
 
 /**
  * Manages Actors(data), and renders them with Canvas.
@@ -45,18 +46,30 @@ export default class Stage {
 		this.renderBackground();
 
 		this.projs.map( (proj) => {this.render(proj); proj.act()} );
-		for (var i = 1; i < this.actors.length; i++) {
+		
+		for (var i = 0; i < this.actors.length; i++) {
 			// Render then Act b/c Act can suicide. Can't render if not exist.
 			this.render(this.actors[i]);
 			this.actors[i].act();
+			this.addProj(this.actors[i]);
 		}
-		// Player last = player on top.
+		// Player last = player on top; while spobs must be on bottom.
 		this.actors[0].act();
 		this.render(this.actors[0]);
+		this.addProj(this.actors[0]);
 
 		this.hud.render(this.actors, this.cnv);
 		this.collision();
 		this.pruneDead();
+
+		AI.runAll(this.actors.slice(2));
+	}
+
+	addProj(actor) {
+		if (actor.newProj != null) {
+			this.projs.push(actor.newProj);
+			actor.newProj = null;
+		}
 	}
 
 	// TODO: Make this take a function as a parameter (callback)
