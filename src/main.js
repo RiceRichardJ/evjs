@@ -42,14 +42,14 @@ function addTestData() {
 	dude2.travel.magnitude = 4;
 	dude3.travel.magnitude = 6;
 
-	dude1.ai.target = planet;
-	dude2.ai.target = planet;
-	dude3.ai.target = planet;
+	dude1.ai.nav = planet;
+	dude2.ai.nav = planet;
+	dude3.ai.nav = planet;
 	
 	stage.actors.push(planet);
 	stage.actors.push(dude1);
-	stage.actors.push(dude2);
-	stage.actors.push(dude3);
+	// stage.actors.push(dude2);
+	// stage.actors.push(dude3);
 }
 
 // ######################################################################### //
@@ -81,7 +81,6 @@ function update() {
 	// Read user input, draw output, run AI.
 	pollInput();
 	stage.action();
-	// AI.runAll(stage.actors.slice(2));
 }
 
 /**
