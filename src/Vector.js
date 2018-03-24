@@ -55,12 +55,14 @@ export default class Vector {
 	}
 	
 	static angleBetween(ship, target) {
-		var targetAngle = Vector.radToDeg( Math.atan2(ship.y - target.y, ship.x - target.x) );
-			targetAngle = ((targetAngle + 180) % 360);
+		var  targetAngle = Vector.radToDeg( Math.atan2(ship.y - target.y, ship.x - target.x) );
+			 targetAngle = Vector.fixDeg(targetAngle + 180);
 		var currentAngle = Vector.fixDeg(ship.thrust.degrees);
 		
 		// Normalize angles against ship angle.
-		targetAngle  =  (targetAngle - currentAngle);// + 360) % 360;
+		targetAngle  =  targetAngle - currentAngle;// + 360) % 360;
+		if (targetAngle >  180) { targetAngle -= 360; }
+		if (targetAngle < -180) { targetAngle += 360; }
 		
 		return targetAngle;
 	}
@@ -89,6 +91,12 @@ export default class Vector {
 	// Target's position and direction/speed of travel.
 	// Projectile will inherit my position and travel + it's speed.
 	// With or without inherit inertia?
+	/**
+	 * Intercept angle between me and target.
+	 * @param {Actor} me Origin / my location.
+	 * @param {number} projMag Projectile speed.
+	 * @param {Actor} target Target location, speed, and direction.
+	 */
 	static intercept(me, projMag, target) {
 		var points = this.internet(
 			target.travel.getX(),
