@@ -17,7 +17,7 @@ export default class Sidebar {
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
 		this.radar(actors);
-		this.levels();
+		this.levels(actors[0]);
 		this.nav();
 		this.weap();
 		this.target(this.targetActor);
@@ -61,19 +61,22 @@ export default class Sidebar {
 	}
 
 	// Levels
-	levels() {
+	levels(me) {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 150, 140, 40);
 
 		this.ctx.fillStyle = '#03900E';
 
+		var shPerc = me.shields / me.shieldsMax;
+		var shFull = 88;
+		var shAmt  = shPerc * shFull;
 		this.ctx.fillText("Shield: ", 660, 165);
-		this.ctx.fillStyle = '#004C00';
+		this.ctx.fillStyle = '#004C00';     // border
 		this.ctx.fillRect(700, 158, 90, 8);
-		this.ctx.fillStyle = '#022101';
+		this.ctx.fillStyle = '#022101';     // bg
 		this.ctx.fillRect(701, 159, 88, 6);
-		this.ctx.fillStyle = '#03900E';
-		this.ctx.fillRect(701, 159, 88, 6);
+		this.ctx.fillStyle = '#03900E';     // fill
+		this.ctx.fillRect(701, 159, shAmt, 6);
 
 		this.ctx.fillText("Fuel: ", 660, 180);
 		this.ctx.fillStyle = '#004C00';
@@ -119,7 +122,7 @@ export default class Sidebar {
 	}
 
 	shieldPercentage(actor) {
-		return Math.round((actor.shields / actor.shieldMax) * 100);
+		return Math.round((actor.shields / actor.shieldsMax) * 100);
 	}
 
 	untarget(actor) {

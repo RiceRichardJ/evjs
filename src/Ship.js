@@ -28,7 +28,7 @@ export default class Ship extends Actor {
 
 		//this.thrust = new Vector(-90.0, type.accel * speedModifier);
 		this.shields   = 200;//type.shields; // 200;
-		this.shieldMax = 200;//type.shields; // 200;
+		this.shieldsMax = 200;//type.shields; // 200;
 		this.armor   = 100;
 		this.mass    = 100;
 		this.sprite.src = type.sprite;

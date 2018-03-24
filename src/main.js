@@ -46,7 +46,7 @@ function addTestData() {
 	dude2.ai.target = planet;
 	dude3.ai.target = planet;
 	
-	stage.actors.push(planet);
+	stage.spobs.push(planet);
 	stage.actors.push(dude1);
 	stage.actors.push(dude2);
 	stage.actors.push(dude3);
