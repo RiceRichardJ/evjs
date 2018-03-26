@@ -12,15 +12,15 @@ export default class Sidebar {
 	}//879F85
 
 	// Render
-	render(actors, cnv) {
+	render(player, actors, cnv) {
 		this.chevrons(actors, cnv);
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
 		this.radar(actors);
-		this.levels(actors[0]);
+		this.levels(player);
 		this.nav();
 		this.weap();
-		this.target(this.targetActor);
+		this.target(player);
 		this.cargo();
 	}
 
@@ -106,13 +106,13 @@ export default class Sidebar {
 	}
 
 	// Target
-	target(actor) {
+	target(player) {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 265, 140, 120);
 
 		this.ctx.fillStyle = '#03900E';
 		this.targetActor = actor;
-		if (actor) {			
+		if (player.ai.target) {			
 			this.ctx.fillText(actor.name,    703, 320);
 			this.ctx.fillText(this.shieldPercentage(actor) + "%", 760, 370);
 		} else {

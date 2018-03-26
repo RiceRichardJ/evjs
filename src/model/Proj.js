@@ -19,7 +19,6 @@ export default class Proj extends Actor {
 		this.thrust = new Vector(dir, type.accel * Data.speedModifier);
 		this.travel = new Vector(dir, type.speed);
 		this.lifespan = type.lifespan;
-		this.born = new Date();
 
 		this.className = 'Proj';
 		this.type = type;

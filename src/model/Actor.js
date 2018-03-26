@@ -1,6 +1,6 @@
 "use strict";
 
-import Vector from 'Vector';
+import Vector from './Vector';
 
 /**
  * Any space object.
@@ -14,7 +14,7 @@ export default class Actor {
 		this.speed  = 0.0;
 		this.turn   = 0.0;
 		this.sprite = new Image();
-		this.born   = 0;
+		this.born   = new Date();
 		this.lifespan = -1;
 		this.className = 'Actor';
 		if (spob) {

@@ -1,12 +1,12 @@
 "use strict";
 
 export default class StarField {
-	constructor(ctx, centerX, centerY) {
+	constructor(ctx) {
 		this.xStar = [];
 		this.yStar = [];
 		this.nStar = 50;
 		this.ctx = ctx;
-		this.init(centerX, centerY);
+		this.init(0, 0);
 	}
 
 	/**

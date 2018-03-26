@@ -1,11 +1,11 @@
 	"use strict";
 
-	import Actor  from 'Actor';
-	import AI     from 'AI';
-	import Data   from 'data';
-	import Proj   from 'Proj';
-	import Vector from 'Vector';
-	import Weapon from 'Weapon';
+	import Actor  from './Actor';
+	import AI     from './AI';
+	import Data   from './data';
+	import Proj   from './Proj';
+	import Vector from './Vector';
+	import Weapon from './Weapon';
 
 	/**
 	 * Ship class.
@@ -63,10 +63,19 @@
 		}
 
 		/**
+		 * Turn ship to point backwards.
+		 */
+		reverse() {
+			// TODO
+		}
+
+		/**
 		 * Turn ship towards target.
 		 * @param {*} target Target to turn ship towards. If none given, use AI's target.
 		 */
-		autoPilot(target = this.ai.nav) {
+		autoPilot(target) {
+			if (target == null) { target = this.ai.target; }
+			if (target == null) { target = this.ai.nav; }
 			if (target == null) { return; }
 			var targetAngle = Vector.angleBetween(this, target);
 			if (this.name == this.type.name + ":0") {
@@ -113,7 +122,7 @@
 		 * @param {*} projs The PROJectiles array that we'll add our fired projectiles to.
 		 * @param {*} targ The target to fire at.
 		 */
-		fire(targ) {
+		fire(targ = ai.target) {
 			for (var myWeap of this.weapons) {
 				if (myWeap.fire()) {
 					var spread = Math.random() * (myWeap.type.spread / 2);

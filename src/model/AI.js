@@ -1,6 +1,6 @@
 "use strict";
 
-import Vector from 'Vector';
+import Vector from './Vector';
 
 /**
  * AI Static Class. Contains static funtions that provide AI to Actors.
@@ -69,8 +69,15 @@ export default class AI {
 
 	go() {
 		if (this.target) {
-			this.attack(this.target);
+			if (this.target.dead) {
+				console.log("TARGET DEAD");
+				this.target = null;
+			} else {
+				console.log("TARGET ALIVE");
+				this.attack(this.target);
+			}
 		} else {
+			console.log("NO TARGET");
 			this.land();
 		}
 	}
