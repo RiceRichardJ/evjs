@@ -16,8 +16,8 @@ export default class View {
 
 	/**
 	 * Draw a frame.
-	 * @param {Actor[]} spobs List of all space objects to be drawn.
-	 * @param {Actor[]} projs List of all projectiles to be drawn.
+	 * @param {Actor[]} spobs  List of all space objects to be drawn.
+	 * @param {Actor[]} projs  List of all projectiles to be drawn.
 	 * @param {Actor[]} actors List of all actors to be drawn.
 	 * @param {Actor} player The player to be drawn.
 	 */

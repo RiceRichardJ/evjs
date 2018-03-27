@@ -70,14 +70,14 @@ export default class AI {
 	go() {
 		if (this.target) {
 			if (this.target.dead) {
-				console.log("TARGET DEAD");
+				// console.log("TARGET DEAD");
 				this.target = null;
 			} else {
-				console.log("TARGET ALIVE");
+				// console.log("TARGET ALIVE");
 				this.attack(this.target);
 			}
 		} else {
-			console.log("NO TARGET");
+			// console.log("NO TARGET");
 			this.land();
 		}
 	}
@@ -148,11 +148,11 @@ export default class AI {
 		// else if (this.landing == 'final') { this.finalApproach(this.nav, dist); }
 		if (dist < 300) {
 			// this.landing = 'stopping';
-			console.log("Try to stop...");
+			// console.log("Try to stop...");
 			this.stop(this.nav, dist);
 		} else {
 			// this.landing = 'approach';
-			console.log("Fly towards planet...");
+			// console.log("Fly towards planet...");
 			this.myShip.autoPilot(this.nav);
 
 				// var targetAngle = Vector.intercept(this.myShip, this.myShip.travel.magnitude, this.nav);

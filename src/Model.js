@@ -4,6 +4,7 @@ import Actor     from './model/Actor';
 import AI        from './model/AI';
 import Data      from './model/data'
 import Player    from './model/Player'
+import Ship      from './model/Ship';
 import Sidebar   from './view/Sidebar';
 import StarField from './view/StarField';
 import Vector    from './model/Vector';
@@ -22,21 +23,21 @@ export default class Model {
 		this.spobs  = [];
 		this.actors = [];
 		this.projs  = [];
+		this.addTestData();
 	}
 
 	/**
 	 * Next step.
 	 */
 	action() {
-		this.spobs.map( (spob) => {this.renderActor(spob);   spob.act()} );
-		this.projs.map( (proj) => {this.renderActor(proj);   proj.act()} );
+		this.spobs.map( (spob) => {spob.act()} );
+		this.projs.map( (proj) => {proj.act()} );
 		this.actors.map((actor)=> {actor.act(); this.addProj(actor)} );
-		this.player.act();
-		this.addProj(this.player);
+		this.player.act(); this.addProj(this.player);
 
-		this.collision();		
+		this.collision();
 		AI.runAll(this.actors);
-		view.render(spobs, projs, actors, player);
+		this.view.render(this.spobs, this.projs, this.actors, this.player);
 		this.pruneDead();
 	}
 
@@ -119,8 +120,8 @@ export default class Model {
 		
 		this.spobs.push(planet);
 		this.actors.push(dude1);
-		// this.actors.push(dude2);
-		// this.actors.push(dude3);
+		this.actors.push(dude2);
+		this.actors.push(dude3);
 	}
 
 }

@@ -122,7 +122,7 @@
 		 * @param {*} projs The PROJectiles array that we'll add our fired projectiles to.
 		 * @param {*} targ The target to fire at.
 		 */
-		fire(targ = ai.target) {
+		fire(targ = this.ai.target) {
 			for (var myWeap of this.weapons) {
 				if (myWeap.fire()) {
 					var spread = Math.random() * (myWeap.type.spread / 2);

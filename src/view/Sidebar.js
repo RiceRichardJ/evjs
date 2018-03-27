@@ -4,7 +4,6 @@
  * Sidebar.
  */
 export default class Sidebar {
-	
 	constructor(CanvasRenderingContext2D) {
 		this.ctx = CanvasRenderingContext2D;
 		this.targetText = "No Target";
@@ -13,7 +12,7 @@ export default class Sidebar {
 
 	// Render
 	render(player, actors, cnv) {
-		this.chevrons(actors, cnv);
+		this.chevrons(player, actors, cnv);
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
 		this.radar(actors);
@@ -111,10 +110,10 @@ export default class Sidebar {
 		this.ctx.fillRect(655, 265, 140, 120);
 
 		this.ctx.fillStyle = '#03900E';
-		this.targetActor = actor;
-		if (player.ai.target) {			
-			this.ctx.fillText(actor.name,    703, 320);
-			this.ctx.fillText(this.shieldPercentage(actor) + "%", 760, 370);
+		if (player.ai.target) {
+			this.targetActor = player.ai.target;	// TODO is this necessary?
+			this.ctx.fillText(this.targetActor.name,    703, 320);
+			this.ctx.fillText(this.shieldPercentage(this.targetActor) + "%", 760, 370);
 		} else {
 			this.targetText = "No Target";
 			this.ctx.fillText(this.targetText, 703, 320);
@@ -147,10 +146,8 @@ export default class Sidebar {
 	}
 	
 	// Chevrons
-	chevrons(actors, cnv) {
+	chevrons(player, actors, cnv) {
 		if (!this.targetActor) { return; }
-		
-		var player = actors[0];
 
 		this.ctx.save();
 		this.ctx.setTransform(1,0,0,1,0,0);

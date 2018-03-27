@@ -14,7 +14,7 @@ export default class Player extends Ship {
 	cycleTargets(actors) {
 		this.targInd++;
 		if (this.targInd >= actors.length) { this.targInd = 0; }
-		this.ai.target = actors[targInd];
+		this.ai.target = actors[this.targInd];
 	}
 
 	land() {

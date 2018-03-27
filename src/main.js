@@ -1,11 +1,12 @@
 "use strict";
 
+import Data  from './model/Data';
 import Input from './Input';
 import Model from './Model';
 import View  from './View';
 
-var view  = new View($("#gc"));
-var model = new Model(view, 0, 0);
+var view  = new View(document.getElementById("gc"));
+var model = new Model(view);
 var input = new Input(model);
 
 /**
@@ -18,7 +19,7 @@ function update() {
 	// Read user input, draw output, run AI.
 	input.poll();
 	model.action();
-	view.render();
+	// view.render(); // model calls action...
 }
 
 $('#modalSpaceport').on('hidden.bs.modal', function() {
@@ -27,5 +28,4 @@ $('#modalSpaceport').on('hidden.bs.modal', function() {
 	landed = false;
 });
 
-setup();
 setInterval(update, 1000 / (60 * (Data.speedModifier)));

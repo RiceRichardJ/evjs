@@ -1,8 +1,8 @@
 "use strict";
 
-import Actor  from 'Actor';
-import Data   from 'data';
-import Vector from 'Vector';
+import Actor  from './Actor';
+import Data   from './data';
+import Vector from './Vector';
 
 /**
  * Projectile Class.
@@ -14,11 +14,12 @@ export default class Proj extends Actor {
 
 		this.speed  = type.speed * Data.speedModifier;
 		this.turn   = type.turn  * Data.speedModifier;
-		this.x    = xPos;
-		this.y    = yPos;
+		this.x      = xPos;
+		this.y      = yPos;
 		this.thrust = new Vector(dir, type.accel * Data.speedModifier);
 		this.travel = new Vector(dir, type.speed);
 		this.lifespan = type.lifespan;
+		this.born   = new Date();	// why???
 
 		this.className = 'Proj';
 		this.type = type;
