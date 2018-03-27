@@ -1,7 +1,7 @@
 "use strict";
 
-import Actor from 'Actor';
-import Data from 'data';
+import Actor from './Actor';
+import Data  from './data';
 
 
 export default class Vector {

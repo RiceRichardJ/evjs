@@ -5,8 +5,6 @@ import AI        from './model/AI';
 import Data      from './model/data'
 import Player    from './model/Player'
 import Ship      from './model/Ship';
-import Sidebar   from './view/Sidebar';
-import StarField from './view/StarField';
 import Vector    from './model/Vector';
 
 /**
@@ -57,7 +55,7 @@ export default class Model {
 	 */
 	collision() {
 		for (var proj of this.projs) {
-			for (var ship of this.actors) {
+			for (var ship of this.actors.concat(this.player)) {
 				if ( ship.className == 'Ship' && proj.sender !== ship) { // can't shoot self
 					var dist = Vector.distance(proj.x, proj.y, ship.x, ship.y);
 					if (dist < 20) {
