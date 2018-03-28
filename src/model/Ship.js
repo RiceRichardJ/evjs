@@ -52,6 +52,7 @@
 		 * Turn our ship to the left.
 		 */
 		turnLeft() {
+			if (this.dead) { return; }
 			this.thrust.degrees -= this.turn;
 		}
 
@@ -59,6 +60,7 @@
 		 * Turn our ship to the right.
 		 */
 		turnRight() {
+			if (this.dead) { return; }
 			this.thrust.degrees += this.turn;
 		}
 
@@ -123,6 +125,7 @@
 		 * @param {*} targ The target to fire at.
 		 */
 		fire(targ = this.ai.target) {
+			if (this.dead) { return; }
 			for (var myWeap of this.weapons) {
 				if (myWeap.fire()) {
 					var spread = Math.random() * (myWeap.type.spread / 2);
@@ -146,6 +149,7 @@
 			// this.ai.target = proj.sender;
 			this.ai.hit(proj.sender, proj.type.damage);
 			if (this.shields <= 0) {
+				this.shields = 0;
 				this.die();
 			}
 		}

@@ -21,8 +21,18 @@ export default class Model {
 		this.spobs  = [];
 		this.actors = [];
 		this.projs  = [];
+		// this.loadJson();
 		this.addTestData();
 	}
+
+	// loadJson() {
+	// 	console.log("load json data");
+	// 	$.getJSON("../json/ship.json", (data) => {
+	// 		this.ships = data;
+	// 		console.log(JSON.stringify(this.ships));
+	// 	});
+	// 	console.log(JSON.stringify(this.ships));
+	// }
 
 	/**
 	 * Next step.
@@ -74,7 +84,6 @@ export default class Model {
 		for (var actor of this.actors) {
 			if (! actor.dead) { continue; }
 			// if (actor.className == 'Ship') {this.view.boom(actor.x, actor.y, actor.type.shields);}
-			// this.view.hud.untarget(actor);
 			this.actors.splice( this.actors.indexOf(actor), 1 );
 		}
 		for (var proj of this.projs) {
@@ -120,6 +129,8 @@ export default class Model {
 		this.actors.push(dude1);
 		this.actors.push(dude2);
 		this.actors.push(dude3);
+
+		this.player.ai.nav = planet;
 	}
 
 }

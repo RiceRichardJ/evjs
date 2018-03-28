@@ -1,6 +1,6 @@
 "use strict";
 
-import Data  from './model/Data';
+import Data  from './model/data';
 import Input from './Input';
 import Model from './Model';
 import View  from './View';
@@ -8,6 +8,12 @@ import View  from './View';
 var view  = new View(document.getElementById("gc"));
 var model = new Model(view);
 var input = new Input(model);
+
+// function setup() {
+// 	/*console.log("JSON LOAD TEST: \n" + JSON.stringify(
+// 		Data.ship[142-127]
+// 	));*/
+// }
 
 /**
  * Main Loop.
@@ -25,7 +31,8 @@ function update() {
 $('#modalSpaceport').on('hidden.bs.modal', function() {
 	console.log("DEPART, modalSpaceport hidden ");
 	// Reset Ship Position // Reset Shields, Armor. Refuel. Etc.
-	landed = false;
+	model.player.landed = false;
 });
 
+// setup();
 setInterval(update, 1000 / (60 * (Data.speedModifier)));

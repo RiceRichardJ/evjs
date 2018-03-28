@@ -7,7 +7,6 @@ export default class Sidebar {
 	constructor(CanvasRenderingContext2D) {
 		this.ctx = CanvasRenderingContext2D;
 		this.targetText = "No Target";
-		this.targetActor = null;
 	}//879F85
 
 	// Render
@@ -110,10 +109,9 @@ export default class Sidebar {
 		this.ctx.fillRect(655, 265, 140, 120);
 
 		this.ctx.fillStyle = '#03900E';
-		if (player.ai.target) {
-			this.targetActor = player.ai.target;	// TODO is this necessary?
-			this.ctx.fillText(this.targetActor.name,    703, 320);
-			this.ctx.fillText(this.shieldPercentage(this.targetActor) + "%", 760, 370);
+		if (player && player.ai.target && !player.ai.target.dead) {
+			this.ctx.fillText(player.ai.target.name,    703, 320);
+			this.ctx.fillText(this.shieldPercentage(player.ai.target) + "%", 760, 370);
 		} else {
 			this.targetText = "No Target";
 			this.ctx.fillText(this.targetText, 703, 320);
@@ -122,12 +120,6 @@ export default class Sidebar {
 
 	shieldPercentage(actor) {
 		return Math.round((actor.shields / actor.shieldsMax) * 100);
-	}
-
-	untarget(actor) {
-		if (actor === this.targetActor) {
-			this.target(null);
-		}
 	}
 
 	// Cargo
@@ -147,13 +139,13 @@ export default class Sidebar {
 	
 	// Chevrons
 	chevrons(player, actors, cnv) {
-		if (!this.targetActor) { return; }
+		if (!player.ai.target || player.ai.target.dead) { return; }
 
 		this.ctx.save();
 		this.ctx.setTransform(1,0,0,1,0,0);
 		this.ctx.translate(
-			this.targetActor.x - player.x + ((cnv.width - 150)  / 2),
-			this.targetActor.y - player.y + ( cnv.height        / 2)
+			player.ai.target.x - player.x + ((cnv.width - 150)  / 2),
+			player.ai.target.y - player.y + ( cnv.height        / 2)
 		);
 		
 		this.ctx.strokeStyle = '#88f';

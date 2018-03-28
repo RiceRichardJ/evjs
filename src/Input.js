@@ -34,6 +34,9 @@ export default class Input {
 	 * Controls: Key Listeners.
 	 */
 	poll() {
+		if (this.keyPressed["32"]) { // spacebar
+			this.model.player.fire();
+		}
 		if (this.keyPressed["37"]) { // [Left]
 			this.model.player.turnLeft();
 		}
@@ -49,8 +52,23 @@ export default class Input {
 			//if (velocity > 0) { velocity -= thrust; }
 			//if (velocity < 0) { velocity = 0; }
 		}
-		if (this.keyPressed["32"]) { // spacebar
-			this.model.player.fire();
+		if (this.keyPressed["49"]) { // [1]
+			this.model.player.navSelect(1);
+		}
+		if (this.keyPressed["50"]) { // [2]
+			this.model.player.navSelect(2);
+		}
+		if (this.keyPressed["51"]) { // [3]
+			this.model.player.navSelect(3);
+		}
+		if (this.keyPressed["52"]) { // [4]
+			this.model.player.navSelect(4);
+		}
+		if (this.keyPressed["65"]) { // [A]
+			this.model.player.autoPilot();
+		}
+		if (this.keyPressed["72"]) { // [H]
+			this.model.player.navSelect(0);
 		}
 		if (this.keyPressed["76"]) { // [L]
 			var status = this.model.player.land();
@@ -59,8 +77,8 @@ export default class Input {
 				stage.ctx.fillText("Moving too fast to land!",10,590);
 			}
 		}
-		if (this.keyPressed["65"]) { // [A]
-			this.model.player.autoPilot();
+		if (this.keyPressed["78"]) { // [N]
+			this.model.player.navSelect(-1);
 		}
 		if (this.keyPressed["82"]) { // [R]
 			//closestEnemy();

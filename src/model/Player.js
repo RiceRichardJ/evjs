@@ -1,6 +1,6 @@
 "use strict";
 
-import Data   from './Data';
+import Data   from './data';
 import Ship   from './Ship';
 import Vector from './Vector'
 
@@ -9,12 +9,25 @@ export default class Player extends Ship {
 		super(Data.rebelCruiser, 0);
 		this.targInd = 0;
 		this.landed = false;
+		this.hyperNav = null;
 	}
 
 	cycleTargets(actors) {
 		this.targInd++;
 		if (this.targInd >= actors.length) { this.targInd = 0; }
 		this.ai.target = actors[this.targInd];
+	}
+
+	navSelect(target) {
+		// switch(target) {
+		// 	case -1:
+		// 		this.ai.nav = null; break;
+		// 	case 0:
+		// 		this.ai.nav = hyperNav; break
+		// 	case 1: case 2: case 3: case 4:
+		// 		this.ai.nav = break;
+		// 	default:
+		// }
 	}
 
 	land() {

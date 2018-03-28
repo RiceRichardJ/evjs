@@ -1,5 +1,7 @@
 "use strict";
 
+//import ship from '../../json/ship.json';
+
 /**
  * "Global" Constants.
  */
@@ -9,6 +11,8 @@ var aMod = 0.0003;
 var speedModifier = 0.7;
 
  export default {
+	// ship: ship.ship,
+
 	sMod: sMod,
 	aMod: aMod,
 	speedModifier: speedModifier,

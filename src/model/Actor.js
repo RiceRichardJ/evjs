@@ -30,6 +30,8 @@ export default class Actor {
 	 * Apply Thrust.
 	 */
 	applyThrust() {
+		if (this.dead) { return; }
+		
 		// Sum thust and travel vects to find new travel vect.
 		var xNewVect = this.travel.getX() + this.thrust.getX();
 		var yNewVect = this.travel.getY() + this.thrust.getY();
