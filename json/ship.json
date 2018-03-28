@@ -1,6 +1,18 @@
 {
 	"ship" : [
 		{
+			"id" : 0,
+			"name" : "defaults",
+			"techLevel" : 1,
+			"strength"  : 5,
+			"weapons" : [],
+			"ai" : 1,
+			"deathDelay"  : 30,
+			"initialBoom" : 131,
+			"finalBoom"   : 132,
+			"govt" : 0
+		}, {
+			"id" : 128,
 			"name" : "Shuttlecraft",
 			"longName"  : "Rendelli StarDrive 805R cargo shuttle",
 			"shortName" : "Shuttlecraft",
@@ -33,6 +45,7 @@
 			"shipyardDesc" : "The Rendelli StarDrive Model 805R cargo shuttle is perhaps the least glamorous, but also the most versatile, of all starships. Its diminutive size and low cost make it popular with the smaller shipping firms and charter services, and it makes a good courier ship as well. Its boxy appearance belies its rugged and durable construction. This sturdy little vessel is found virtually everywhere in the galaxy.",
 			"escortDesc" : "This tiny shuttlecraft seems speedy enough, and its captain is willing to work for relatively low wages - however, you wonder how much his ship’s small cargo capacity will add to your profits."
 		}, {
+			"id" : 129,
 			"name" : "Light Freighter",
 			"longName"  : "Allied Shipyards AS129 light freighter",
 			"shortName" : "Light Freighter",
@@ -62,6 +75,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 130,
 			"name" : "Bulk Freighter",
 			"longName"  : "Allied Shipyards AS1300 bulk freighter",
 			"shortName" : "Bulk Freighter",
@@ -91,6 +105,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 131,
 			"name" : "Courier",
 			"longName"  : "Metroworks V7 courier",
 			"shortName" : "Courier",
@@ -120,6 +135,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 132,
 			"name" : "Argosy",
 			"longName"  : "CDX Starworks Argosy",
 			"shortName" : "Argosy",
@@ -149,6 +165,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 133,
 			"name" : "Confederate Frigate",
 			"longName"  : "Terran Naval Yards FF-4237 frigate",
 			"shortName" : "Confed Frigate",
@@ -179,8 +196,10 @@
 			"ai" : 3,
 			"deathDelay"  : 80,
 			"shipyardDesc" : "",
-			"escortDesc" : ""
+			"escortDesc" : "",
+			"govt" : 128
 		}, {
+			"id" : 134,
 			"name" : "Confederate Cruiser",
 			"longName"  : "Terran Naval Yards CR-1095 heavy cruiser",
 			"shortName" : "Confed Cruiser",
@@ -211,8 +230,10 @@
 			"ai" : 3,
 			"deathDelay"  : 120,
 			"shipyardDesc" : "",
-			"escortDesc" : ""
+			"escortDesc" : "",
+			"govt" : 128
 		}, {
+			"id" : 135,
 			"name" : "Confed Patrol Ship",
 			"longName"  : "Terran Naval Yards P-361 patrol fighter",
 			"shortName" : "Patrol Ship",
@@ -241,8 +262,10 @@
 			"ai" : 4,
 			"deathDelay"  : 30,
 			"shipyardDesc" : "",
-			"escortDesc" : ""
+			"escortDesc" : "",
+			"govt" : 128
 		}, {
+			"id" : 136,
 			"name" : "Rapier",
 			"longName"  : "CDX Starworks F/A-927E Rapier attack fighter",
 			"shortName" : "Rapier",
@@ -275,6 +298,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 137,
 			"name" : "Lightning",
 			"longName"  : "Blazitron Industries F-563 Lightning fighter-bomber",
 			"shortName" : "Lightning",
@@ -307,6 +331,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 138,
 			"name" : "Defender",
 			"longName"  : "CDX Starworks I-287B Defender",
 			"shortName" : "Defender",
@@ -336,6 +361,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 139,
 			"name" : "Executive Transport",
 			"longName"  : "Krydanti Systems Mk. VI executive transport",
 			"shortName" : "Exec. Transport",
@@ -363,6 +389,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 140,
 			"name" : "Luxury Liner",
 			"longName"  : "Centauri Spacelines luxury liner",
 			"shortName" : "Luxury Liner",
@@ -371,7 +398,7 @@
 			"speed"  : 225,
 			"accel"  : 416,
 			"turn"   : 15,
-			"shield" : [300, 205],
+			"shield" : [300, 25],
 			"armor"  : [200, 0],
 			"fuel"   : [400, 0],
 			"cost"   : 1000000,
@@ -392,6 +419,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 141,
 			"name" : "Rebel Destroyer",
 			"longName"  : "Rebel Destroyer",
 			"shortName" : "Rebel Destroyer",
@@ -422,8 +450,10 @@
 			"ai" : 3,
 			"deathDelay"  : 80,
 			"shipyardDesc" : "",
-			"escortDesc" : ""
+			"escortDesc" : "",
+			"govt" : 129
 		}, {
+			"id" : 142,
 			"name" : "Rebel Cruiser",
 			"longName"  : "Rebel Cruiser",
 			"shortName" : "Rebel Cruiser",
@@ -454,8 +484,10 @@
 			"ai" : 3,
 			"deathDelay"  : 120,
 			"shipyardDesc" : "",
-			"escortDesc" : ""
+			"escortDesc" : "",
+			"govt" : 129
 		}, {
+			"id" : 143,
 			"name" : "Kestrel",
 			"longName"  : "Atinoda Kestrel escort frigate",
 			"shortName" : "Kestrel",
@@ -488,6 +520,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 144,
 			"name" : "Manta",
 			"longName"  : "Astrotech Space Industries Model 37B Manta light fighter",
 			"shortName" : "Manta",
@@ -496,7 +529,7 @@
 			"speed"  : 638,
 			"accel"  : 1406,
 			"turn"   : 90,
-			"shield" : [200, 300],
+			"shield" : [200, 167],
 			"armor"  : [1, 0],
 			"fuel"   : [200, 0],
 			"cost"   : 180000,
@@ -516,8 +549,10 @@
 			"ai" : 4,
 			"deathDelay"  : 30,
 			"shipyardDesc" : "",
-			"escortDesc" : ""
+			"escortDesc" : "",
+			"govt" : 129
 		}, {
+			"id" : 145,
 			"name" : "Scoutship",
 			"longName"  : "Krydanti Systems Mk. XVII scoutship",
 			"shortName" : "Scoutship",
@@ -547,6 +582,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 146,
 			"name" : "Corvette",
 			"longName"  : "Maskirovka IPV-1 Corvette",
 			"shortName" : "Corvette",
@@ -555,7 +591,7 @@
 			"speed"  : 450,
 			"accel"  : 911,
 			"turn"   : 45,
-			"shield" : [700, 300],
+			"shield" : [700, 131],
 			"armor"  : [300, 0],
 			"fuel"   : [400, 0],
 			"cost"   : 2500000,
@@ -579,6 +615,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 147,
 			"name" : "Confed Gunboat",
 			"longName"  : "Terran Naval Yards G-564 missile gunboat",
 			"shortName" : "Confed Gunboat",
@@ -608,8 +645,10 @@
 			"ai" : 4,
 			"deathDelay"  : 37,
 			"shipyardDesc" : "",
-			"escortDesc" : ""
+			"escortDesc" : "",
+			"govt" : 128
 		}, {
+			"id" : 148,
 			"name" : "Hawk",
 			"longName"  : "Mastech F-5 Hawk light fighter",
 			"shortName" : "Hawk",
@@ -640,6 +679,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 149,
 			"name" : "Alien Fighter",
 			"longName"  : "alien fighter",
 			"shortName" : "Alien Fighter",
@@ -668,8 +708,10 @@
 			"ai" : 4,
 			"deathDelay"  : 40,
 			"shipyardDesc" : "",
-			"escortDesc" : ""
+			"escortDesc" : "",
+			"govt" : 140
 		}, {
+			"id" : 150,
 			"name" : "Alien Cruiser",
 			"longName"  : "alien cruiser",
 			"shortName" : "Alien Cruiser",
@@ -699,8 +741,10 @@
 			"ai" : 3,
 			"deathDelay"  : 341,
 			"shipyardDesc" : "",
-			"escortDesc" : ""
+			"escortDesc" : "",
+			"govt" : 140
 		}, {
+			"id" : 151,
 			"name" : "Clipper",
 			"longName"  : "Aerostar C-35 Star Clipper Mk. IV",
 			"shortName" : "Clipper",
@@ -731,6 +775,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 152,
 			"name" : "Kestrel",
 			"longName"  : "Atinoda Kestrel escort frigate",
 			"shortName" : "Kestrel",
@@ -763,6 +808,7 @@
 			"shipyardDesc" : "",
 			"escortDesc" : ""
 		}, {
+			"id" : 153,
 			"name" : "Escort Carrier",
 			"longName"  : "Rebel Escort Carrier",
 			"shortName" : "Escort Carrier",
@@ -791,8 +837,10 @@
 			"ai" : 3,
 			"deathDelay"  : 80,
 			"shipyardDesc" : "",
-			"escortDesc" : ""
+			"escortDesc" : "",
+			"govt" : 129
 		}, {
+			"id" : 895,
 			"name" : "Escape Pod",
 			"longName"  : "escape pod",
 			"shortName" : "Escape Pod",
