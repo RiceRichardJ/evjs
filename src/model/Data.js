@@ -22,14 +22,15 @@ import jsonweap from '../json/weap';
 /**
  * "Global" Constants.
  */
-export const Constants = {
-	fps: 60,
-	sMod: 0.02,
-	aMod: 0.00005,
-	tMod: 0.15,
-	gMod: 1.0 // overall gameSpeedModifier
-};
+export const Constants = {}
 const C = Constants;
+C.fps  = 60;
+C.tMod = 30 / C.fps / 10;    // 0.05,
+C.sMod = 30 / C.fps / 100;   // 0.005;
+C.aMod = 30 / C.fps / 10000; // 0.00005;
+C.fMod = 1000 / C.fps;       // Frames
+C.gMod = 1.0;                // overall gameSpeedModifier
+
 
 /**
  * Responsible for loading data files, plugins, and processing the data to be
@@ -69,62 +70,63 @@ export default class Data {
 	}
 
 	loadTestData() {
-		this.rebelCruiser = {
-			name:    "Rebel Cruiser",
-			speed:    300,        //200,// * 2 * sMod,//5.0,
-			accel:    630,        //280,// * 3 * aMod,//0.2,
-			turn:      30,        //3.0 * 1.5, //4.0,
-			shield:  5000,
-			armor:    800,
-			space:    120,
-			cargo:     60,
-			fuel:     400,
-			crew:     100,
-			length:   100,
-			mass:     100,
-			guns:       6,
-			turrets:    4,
-			cost:   14000000,
-			weapons: [
-				{"name":"laserCannon",   "count":1, "ammo":-1},
-				{"name":"protonCannon",  "count":1, "ammo":-1},
-				{"name":"neutronCannon", "count":1, "ammo":-1}
-			],
-			sprite: "content/RebelCruiserSprite.png"
-		};
+		// this.rebelCruiserzz = {
+		// 	name:    "Rebel Cruiser",
+		// 	speed:    300,        //200,// * 2 * sMod,//5.0,
+		// 	accel:    630,        //280,// * 3 * aMod,//0.2,
+		// 	turn:      30,        //3.0 * 1.5, //4.0,
+		// 	shield:  5000,
+		// 	armor:    800,
+		// 	space:    120,
+		// 	cargo:     60,
+		// 	fuel:     400,
+		// 	crew:     100,
+		// 	length:   100,
+		// 	mass:     100,
+		// 	guns:       6,
+		// 	turrets:    4,
+		// 	cost:   14000000,
+		// 	weapons: [
+		// 		{"name":"laserCannon",   "count":1, "ammo":-1},
+		// 		{"name":"protonCannon",  "count":1, "ammo":-1},
+		// 		{"name":"neutronCannon", "count":1, "ammo":-1}
+		// 	],
+		// 	sprite: "content/RebelCruiserSprite.png"
+		// };
 
-		this.laserCannon = {
+		this.rebelCruiser = Object.assign(...this.ships[0], this.ships[147-129]);
+		this.rebelCruiser.sprite = "content/RebelCruiserSprite.png";
+		this.rebelCruiser.weapons = [
+			{"name":"laserCannon",   "count":1, "ammo":-1},
+			{"name":"protonCannon",  "count":1, "ammo":-1},
+			{"name":"neutronCannon", "count":1, "ammo":-1}
+		];
+
+		this.cannon = {
 			speed: 1313,//500,
 			accel:  0,
 			lifespan: 20 / C.fps * 1000,//600,
 			turn:    0,
+			spread: 10,
+		};
+
+		this.laserCannon = Object.assign({}, this.cannon, {
 			damage: 5,
-			delay: 130,//100,
-			spread: 10,
-			color: '#0f0'
-		};
+			delay: 130,
+			color: "#0f0",
+		});
 		
-		this.protonCannon = {
-			speed: 1313,//500,
-			accel:  0,
-			lifespan: 600,
-			turn:    0,
+		this.protonCannon = Object.assign({}, this.cannon, {
 			damage: 10,
-			delay: 100,
-			spread: 10,
-			color: '#00f'
-		};
-		
-		this.neutronCannon = {
-			speed: 1313,//500,
-			accel:  0,
-			lifespan: 600,
-			turn:    0,
+			delay: 150,
+			color: "#00f",
+		});
+
+		this.neutronCannon = Object.assign({}, this.cannon, {
 			damage: 20,
-			delay: 120,
-			spread: 10,
-			color: '#f00'
-		};
+			delay: 170,
+			color: "#f00",
+		});
 
 		this.demoPlanet = {
 			name: "Demo Planet",
