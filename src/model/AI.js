@@ -112,7 +112,7 @@ export default class AI {
 		// this.stopping = false;
 		// if (!this.suspects[ship]) { this.suspects[ship] = damage; }
 		// else { this.suspects[ship] += damage; }
-		// if (this.suspects[ship] > this.myShip.shieldsMax * 0.05) {
+		// if (this.suspects[ship] > this.myShip.shieldMax * 0.05) {
 		// 	this.enemies[ship] = this.suspects[ship];
 		// 	console.log( "hit ship: " + ship.x +"|"+ ship.y );
 		// 	delete this.suspects[ship];

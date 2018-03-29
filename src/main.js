@@ -1,32 +1,13 @@
 "use strict";
 
-import Data  from './model/data';
+import {Constants as C} from './model/Data';
 import Input from './Input';
 import Model from './Model';
 import View  from './View';
 
 var view  = new View(document.getElementById("gc"));
-var model = new Model(view);
+var model = new Model();
 var input = new Input(model);
-
-function setup() {
-	// console.log("JSON LOAD TEST: \n" + JSON.stringify(
-	// 	Data.ship[142-127]
-	// ));
-}
-
-/**
- * Main Loop.
- */
-function update() {
-	// Don't update if we're landed.
-	if ($('#modalSpaceport').hasClass('in')) { return; }
-
-	// Read user input, draw output, run AI.
-	input.poll();
-	model.action();
-	// view.render(); // model calls action...
-}
 
 $('#modalSpaceport').on('hidden.bs.modal', function() {
 	console.log("DEPART, modalSpaceport hidden ");
@@ -34,5 +15,16 @@ $('#modalSpaceport').on('hidden.bs.modal', function() {
 	model.player.landed = false;
 });
 
-setup();
-setInterval(update, 1000 / (60 * (Data.speedModifier)));
+/**
+ * Main Loop. Each frame.
+ */
+setInterval(function update() {
+	// Don't update if we're landed.
+	if ($('#modalSpaceport').hasClass('in')) { return; }
+
+	// Read user input, draw output, run AI.
+	input.poll();
+	model.action(view);
+
+	// 60fps
+}, 1000 / (C.fps));

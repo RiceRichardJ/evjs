@@ -1,8 +1,9 @@
 	"use strict";
 
+	import {Constants as C} from './Data';
 	import Actor  from './Actor';
 	import AI     from './AI';
-	import Data   from './data';
+	// import Data   from './Data';
 	import Proj   from './Proj';
 	import Vector from './Vector';
 	import Weapon from './Weapon';
@@ -17,36 +18,40 @@
 		 * @param {ShipType} type The ship type to build off of.
 		 * @param {number} num ID number; for debugging.
 		 */
-		constructor(type, num) {
+		constructor(type, num, data) {
 			super();
 
-			console.log(Data.sMod +"|"+ Data.aMod +"|"+ Data.tMod);
+			console.log(C.sMod +"|"+ C.aMod +"|"+ C.tMod);
 
 			this.className = 'Ship';
 			this.name             = type.name + ":" + num;
-			this.speed            = type.speed * Data.sMod;
-			this.turn             = type.turn  * Data.tMod;
-			this.thrust.magnitude = type.accel * Data.aMod;
+			this.speed            = type.speed * C.sMod;
+			this.turn             = type.turn  * C.tMod;
+			this.thrust.magnitude = type.accel * C.aMod;
 
 			console.log(this.speed +"|"+ this.thrust.magnitude +"|"+ this.turn);
 
 			//this.thrust = new Vector(-90.0, type.accel * speedModifier);
-			this.shields   = 500;//type.shields; // 200;
-			this.shieldsMax = 500;//type.shields; // 200;
+			this.shield   = 500;//type.shield; // 200;
+			this.shieldMax = 500;//type.shield; // 200;
 			this.armor   = 100;
 			this.mass    = 100;
 			this.sprite.src = type.sprite;
 			this.type = type;
 
-			this.weapons = Ship.populateWeapons(type);
+			this.weapons = Ship.populateWeapons(type, data);
 			this.ai = new AI(this);
 			this.newProj = null; // Allow Stage to handle adding to projs array.
 		}
 
-		static populateWeapons(shipType) {
+		/**
+		 * Build Weapon objects.
+		 * @param {*} shipType 
+		 */
+		static populateWeapons(shipType, data) {
 			var myWeaps = [];
 			for (var battery of shipType.weapons) {
-				var weapType = Data[battery.name];
+				var weapType = data[battery.name];
 				myWeaps.push(new Weapon(weapType, battery.count, battery.ammo));
 			}
 			return myWeaps;
@@ -149,11 +154,11 @@
 		 * @param {*} proj The projectile we're hit with.
 		 */
 		hit(proj) {
-			this.shields -= proj.type.damage;
+			this.shield -= proj.type.damage;
 			// this.ai.target = proj.sender;
 			this.ai.hit(proj.sender, proj.type.damage);
-			if (this.shields <= 0) {
-				this.shields = 0;
+			if (this.shield <= 0) {
+				this.shield = 0;
 				this.die();
 			}
 		}

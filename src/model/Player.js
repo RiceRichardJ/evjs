@@ -1,12 +1,11 @@
 "use strict";
 
-import Data   from './data';
 import Ship   from './Ship';
 import Vector from './Vector'
 
 export default class Player extends Ship {
-	constructor() {
-		super(Data.rebelCruiser, 0);
+	constructor(shipType, data) {
+		super(shipType, 0, data);
 		this.targInd = -1;
 		this.landed = false;
 		this.hyperNav = null;

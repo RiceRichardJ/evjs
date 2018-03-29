@@ -64,7 +64,7 @@ export default class Sidebar {
 
 		this.ctx.fillStyle = '#03900E';
 
-		var shPerc = me.shields / me.shieldsMax;
+		var shPerc = me.shield / me.shieldMax;
 		var shFull = 88;
 		var shAmt  = shPerc * shFull;
 		this.ctx.fillText("Shield: ", 660, 165);
@@ -118,7 +118,7 @@ export default class Sidebar {
 	}
 
 	shieldPercentage(actor) {
-		return Math.round((actor.shields / actor.shieldsMax) * 100);
+		return Math.round((actor.shield / actor.shieldMax) * 100);
 	}
 
 	// Cargo

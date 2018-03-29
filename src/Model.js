@@ -2,7 +2,7 @@
 
 import Actor     from './model/Actor';
 import AI        from './model/AI';
-import Data      from './model/data'
+import Data      from './model/Data'
 import Player    from './model/Player'
 import Ship      from './model/Ship';
 import Vector    from './model/Vector';
@@ -13,11 +13,10 @@ import Vector    from './model/Vector';
 export default class Model {
 	/**
 	 * Create a Model object.
-	 * @param {*} view Rendering object.
 	 */
-	constructor(view) {
-		this.view   = view;
-		this.player = new Player();
+	constructor() {
+		this.data   = new Data();
+		this.player = new Player(this.data.rebelCruiser, this.data);
 		this.spobs  = [];
 		this.actors = [];
 		this.projs  = [];
@@ -25,9 +24,10 @@ export default class Model {
 	}
 
 	/**
-	 * Next step.
+	 * Step through our state/model. Then render with view object.
+	 * @param {*} view The rendering object.
 	 */
-	action() {
+	action(view) {
 		this.spobs.map( (spob) => {spob.act()} );
 		this.projs.map( (proj) => {proj.act()} );
 		this.actors.map((actor)=> {actor.act(); this.addProj(actor)} );
@@ -35,7 +35,7 @@ export default class Model {
 
 		this.collision();
 		AI.runAll(this.actors);
-		this.view.render(this.spobs, this.projs, this.actors, this.player);
+		view.render(this.spobs, this.projs, this.actors, this.player);
 		this.pruneDead();
 	}
 
@@ -73,7 +73,7 @@ export default class Model {
 	pruneDead() {
 		for (var actor of this.actors) {
 			if (! actor.dead) { continue; }
-			// if (actor.className == 'Ship') {this.view.boom(actor.x, actor.y, actor.type.shields);}
+			// if (actor.className == 'Ship') {this.view.boom(actor.x, actor.y, actor.type.shield);}
 			this.actors.splice( this.actors.indexOf(actor), 1 );
 		}
 		for (var proj of this.projs) {
@@ -93,11 +93,11 @@ export default class Model {
 
 	addTestData() {
 		// Demo Populate.
-		var planet  = new Actor(Data.demoPlanet);
-		var planet2 = new Actor(Data.demoPlanet);
-		var dude1  = new Ship(Data.rebelCruiser, 1);
-		var dude2  = new Ship(Data.rebelCruiser, 2);
-		var dude3  = new Ship(Data.rebelCruiser, 3);
+		var planet  = new Actor(this.data.demoPlanet);
+		var planet2 = new Actor(this.data.demoPlanet);
+		var dude1  = new Ship(  this.data.rebelCruiser, 1, this.data);
+		var dude2  = new Ship(  this.data.rebelCruiser, 2, this.data);
+		var dude3  = new Ship(  this.data.rebelCruiser, 3, this.data);
 		
 		planet.x = 500;
 		planet.y = 500;
