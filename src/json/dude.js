@@ -1,4 +1,4 @@
-{
+export default {
 	"dude": [
 		{
 			"name" : "Loser Confed Merchants",

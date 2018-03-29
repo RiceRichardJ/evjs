@@ -21,18 +21,8 @@ export default class Model {
 		this.spobs  = [];
 		this.actors = [];
 		this.projs  = [];
-		// this.loadJson();
 		this.addTestData();
 	}
-
-	// loadJson() {
-	// 	console.log("load json data");
-	// 	$.getJSON("../json/ship.json", (data) => {
-	// 		this.ships = data;
-	// 		console.log(JSON.stringify(this.ships));
-	// 	});
-	// 	console.log(JSON.stringify(this.ships));
-	// }
 
 	/**
 	 * Next step.
@@ -103,13 +93,14 @@ export default class Model {
 
 	addTestData() {
 		// Demo Populate.
-		var planet = new Actor(Data.demoPlanet);
+		var planet  = new Actor(Data.demoPlanet);
+		var planet2 = new Actor(Data.demoPlanet);
 		var dude1  = new Ship(Data.rebelCruiser, 1);
 		var dude2  = new Ship(Data.rebelCruiser, 2);
 		var dude3  = new Ship(Data.rebelCruiser, 3);
 		
-		planet.x = 0;
-		planet.y = 0;
+		planet.x = 500;
+		planet.y = 500;
 		
 		dude1.x = 10;
 		dude1.y = 200;
@@ -126,11 +117,25 @@ export default class Model {
 		dude3.ai.nav = planet;
 		
 		this.spobs.push(planet);
+		this.spobs.push(planet2);
 		this.actors.push(dude1);
 		this.actors.push(dude2);
 		this.actors.push(dude3);
 
 		this.player.ai.nav = planet;
+
+
+
+		// for (var ship of Data.ships.slice(1)) {
+		// 	ship.sprite = "content/RebelCruiserSprite.png";
+		// 	this.actors.push(
+		// 		new Ship(
+		// 			Object.assign(...Data.ships[0], ship)
+		// 		)
+		// 	);
+		// 	this.actors.slice(-1)[0].ai.nav = planet;
+		// }
+
 	}
 
 }

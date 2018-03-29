@@ -1,4 +1,4 @@
-{
+export default {
 	"ship" : [
 		{
 			"id" : 0,

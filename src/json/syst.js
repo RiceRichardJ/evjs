@@ -1,4 +1,4 @@
-{
+export default {
 	"syst": [
 		{
 			"name" : "default",

@@ -1,4 +1,4 @@
-{
+export default {
 	"roid": [
 		{
 			"name"          : "Small Asteroids",

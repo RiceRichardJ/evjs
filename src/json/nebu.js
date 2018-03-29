@@ -1,4 +1,4 @@
-{
+export default {
 	"nebu": [
 		{
 			"name" : "Serpens Nebula",

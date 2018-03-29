@@ -1,4 +1,4 @@
-{
+export default {
 	"boom:" : [
 		{
 			"resourceName"  : "FAE Small",

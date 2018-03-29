@@ -1,4 +1,4 @@
-{
+export default {
 	"flet": [
 		{
 			"name" : "Escorted Confed BF",

@@ -14,7 +14,7 @@ export default class Sidebar {
 		this.chevrons(player, actors, cnv);
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
-		this.radar(actors);
+		this.radar(player, actors);
 		this.levels(player);
 		this.nav();
 		this.weap();
@@ -23,11 +23,10 @@ export default class Sidebar {
 	}
 
 	// Minimap/Radar
-	radar(actors) {
+	radar(player, actors) {
 		this.ctx.fillStyle = '#000';
 		this.ctx.fillRect(655, 5, 140, 140);
 
-		var player = actors[0];
 		for (var i = actors.length - 1; i >= 0; i--) {
 			this.ctx.fillStyle = 'white';
 			var mapX = (actors[i].x - player.x) / 50 + 725;

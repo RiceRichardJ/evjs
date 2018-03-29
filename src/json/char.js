@@ -1,4 +1,4 @@
-{
+export default {
 	"char": [
 		{
 			"name"            : ".Trader",

@@ -1,4 +1,4 @@
-{
+export default {
 	"oops": [
 		{
 			"name" : "A wing-racing festival",

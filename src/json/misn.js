@@ -1,4 +1,4 @@
-{
+export default {
 	"misn": [
 		{
 			"name" : "Ferry Passengers to <DST>",

@@ -20,11 +20,15 @@
 		constructor(type, num) {
 			super();
 
+			console.log(Data.sMod +"|"+ Data.aMod +"|"+ Data.tMod);
+
 			this.className = 'Ship';
-			this.name   = type.name + ":" + num;
-			this.speed  = type.speed * Data.speedModifier;
-			this.turn   = type.turn  * Data.speedModifier;
-			this.thrust.magnitude = type.accel * Data.speedModifier;
+			this.name             = type.name + ":" + num;
+			this.speed            = type.speed * Data.sMod;
+			this.turn             = type.turn  * Data.tMod;
+			this.thrust.magnitude = type.accel * Data.aMod;
+
+			console.log(this.speed +"|"+ this.thrust.magnitude +"|"+ this.turn);
 
 			//this.thrust = new Vector(-90.0, type.accel * speedModifier);
 			this.shields   = 500;//type.shields; // 200;
@@ -81,7 +85,7 @@
 			if (target == null) { return; }
 			var targetAngle = Vector.angleBetween(this, target);
 			if (this.name == this.type.name + ":0") {
-				console.log("targetAngle: " + targetAngle);
+				// console.log("targetAngle: " + targetAngle);
 			}
 			if (Math.abs(targetAngle) > 2) {
 				if (targetAngle > 0) {	// this doesn't work right.

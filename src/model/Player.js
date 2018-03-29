@@ -7,14 +7,18 @@ import Vector from './Vector'
 export default class Player extends Ship {
 	constructor() {
 		super(Data.rebelCruiser, 0);
-		this.targInd = 0;
+		this.targInd = -1;
 		this.landed = false;
 		this.hyperNav = null;
 	}
 
 	cycleTargets(actors) {
 		this.targInd++;
-		if (this.targInd >= actors.length) { this.targInd = 0; }
+		if (this.targInd >= actors.length) { 
+			this.ai.target = null;
+			this.targInd = -1;
+			return;
+		}
 		this.ai.target = actors[this.targInd];
 	}
 

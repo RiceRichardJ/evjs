@@ -9,11 +9,11 @@ var view  = new View(document.getElementById("gc"));
 var model = new Model(view);
 var input = new Input(model);
 
-// function setup() {
-// 	/*console.log("JSON LOAD TEST: \n" + JSON.stringify(
-// 		Data.ship[142-127]
-// 	));*/
-// }
+function setup() {
+	// console.log("JSON LOAD TEST: \n" + JSON.stringify(
+	// 	Data.ship[142-127]
+	// ));
+}
 
 /**
  * Main Loop.
@@ -34,5 +34,5 @@ $('#modalSpaceport').on('hidden.bs.modal', function() {
 	model.player.landed = false;
 });
 
-// setup();
+setup();
 setInterval(update, 1000 / (60 * (Data.speedModifier)));

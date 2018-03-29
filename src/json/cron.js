@@ -1,4 +1,4 @@
-{
+export default {
 	"cron": [
 		{
 			"name" : "Confed intermediate news",

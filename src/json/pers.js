@@ -1,4 +1,4 @@
-{
+export default {
 	"pers": [
 		{
 			"name" : "Redbeard The Pirate",

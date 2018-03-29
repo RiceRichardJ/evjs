@@ -143,6 +143,7 @@ export default class AI {
 	 * 3. Final approach.
 	 */
 	land() {
+		if (! this.nav) { return; }
 		var dist = Vector.distance(this.myShip.x, this.myShip.y, this.nav.x, this.nav.y);
 		// if (this.landing == 'stopping') { this.stop(this.nav, dist); }
 		// else if (this.landing == 'final') { this.finalApproach(this.nav, dist); }

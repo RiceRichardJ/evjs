@@ -1,4 +1,4 @@
-{
+export default {
 	"outf": [
 		{
 			"name" : "Laser Cannon",
