@@ -58,12 +58,16 @@ export default class View {
 		// Rotate
 		var rotation = actor.thrust.degrees + 90;
 		var angleInRadians = rotation * Math.PI / 180;
-		this.ctx.rotate(angleInRadians);
+		//this.ctx.rotate(angleInRadians);
 
 		// Draw
 		var img = actor.sprite;
 		if (img.src) {
-			this.ctx.drawImage(img, (img.width / -2), (img.height / -2));
+			// this.ctx.drawImage(img, (img.width / -2), (img.height / -2));
+			var dx = -32;//(img.width / -2);
+			var dy = -32;//(img.height / -2);
+			var [sx, sy] = this.angleToSprite(rotation);
+			this.ctx.drawImage(img, sx, sy, 64, 64, dx, dy, 64, 64)
 		} else {
 			this.ctx.fillStyle = actor.color;//'#0f0';
 			this.ctx.fillRect(-1, -1, 3, 3);
@@ -79,6 +83,15 @@ export default class View {
 				this.boom(player, actor, actor.type.damage);
 			}
 		}
+	}
+
+	angleToSprite(degrees) {
+		console.log(degrees);
+		degrees = (degrees + 360) % 360;
+		var spriteIndex = Math.floor(degrees / 10);
+		var sx = spriteIndex % 6 * 64;
+		var sy = Math.floor(spriteIndex / 6) * 64;
+		return [sx, sy];
 	}
 
 	/**
