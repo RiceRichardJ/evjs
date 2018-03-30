@@ -62,12 +62,34 @@ export default class View {
 
 		// Draw
 		var img = actor.sprite;
+		var msk = actor.mask;
 		if (img.src) {
-			// this.ctx.drawImage(img, (img.width / -2), (img.height / -2));
-			var dx = -32;//(img.width / -2);
-			var dy = -32;//(img.height / -2);
-			var [sx, sy] = this.angleToSprite(rotation);
-			this.ctx.drawImage(img, sx, sy, 64, 64, dx, dy, 64, 64)
+			// // this.ctx.drawImage(img, (img.width / -2), (img.height / -2));
+			// var dx = img.width  / actor.spin[0]; //-32;//(img.width / -2);
+			// var dy = img.height / actor.spin[1]; //-32;//(img.height / -2);
+			// var [sx, sy] = this.angleToSprite(rotation, actor);
+			// //                 img, sx, sy, sw, sh, dx, dy, dw, dh
+			// this.ctx.drawImage(img, sx, sy, 64, 64, dx, dy, 64, 64)
+			
+			////   S M O O T H   ////
+			var degree = (rotation + 360) % 360;
+			this.ctx.rotate( (degree % 10 - 0) * Math.PI / 180 );
+
+			////   A E S T H E T I C   ////
+			var xCount = actor.spin[0];
+			var xWidth = img.width / xCount;
+			var xCoord = Math.floor(degree / 10) % xCount * xWidth;
+			var yCount = actor.spin[1];
+			var yWidth = img.height / yCount;
+			var yCoord = Math.floor(Math.floor(degree / 10) / yCount) * yWidth;
+
+			this.ctx.globalCompositeOperation = 'source-over';
+			this.ctx.drawImage(msk, xCoord, yCoord, xWidth, yWidth, xWidth/-2, yWidth/-2, xWidth, yWidth);
+			this.ctx.globalCompositeOperation = 'source-in';
+			this.ctx.drawImage(img, xCoord, yCoord, xWidth, yWidth, xWidth/-2, yWidth/-2, xWidth, yWidth);
+			this.ctx.globalCompositeOperation = 'source-over';
+
+
 		} else {
 			this.ctx.fillStyle = actor.color;//'#0f0';
 			this.ctx.fillRect(-1, -1, 3, 3);
@@ -85,12 +107,12 @@ export default class View {
 		}
 	}
 
-	angleToSprite(degrees) {
+	angleToSprite(degrees, actor) {
 		console.log(degrees);
 		degrees = (degrees + 360) % 360;
 		var spriteIndex = Math.floor(degrees / 10);
-		var sx = spriteIndex % 6 * 64;
-		var sy = Math.floor(spriteIndex / 6) * 64;
+		var sx = spriteIndex % actor.spin[0] * 64;
+		var sy = Math.floor(spriteIndex / actor.spin[1]) * 64;
 		return [sx, sy];
 	}
 

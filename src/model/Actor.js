@@ -24,6 +24,9 @@ export default class Actor {
 		}
 		this.dead = false;
 		this.color = '#0f0';
+		this.spin = [1,1];
+		this.mask = new Image();
+		this.mask.src = "../images/sprites/Spob Planet Mask.png";
 	}
 
 	/**

@@ -21,7 +21,7 @@
 		constructor(type, num, data) {
 			super();
 
-			console.log(C.sMod +"|"+ C.aMod +"|"+ C.tMod);
+			// console.log(C.sMod +"|"+ C.aMod +"|"+ C.tMod);
 
 			this.className = 'Ship';
 			this.name             = type.name + ":" + num;
@@ -29,7 +29,7 @@
 			this.turn             = type.turn  * C.tMod;
 			this.thrust.magnitude = type.accel * C.aMod;
 
-			console.log(this.speed +"|"+ this.thrust.magnitude +"|"+ this.turn);
+			// console.log(this.speed +"|"+ this.thrust.magnitude +"|"+ this.turn);
 
 			//this.thrust = new Vector(-90.0, type.accel * speedModifier);
 			this.shield   = 500;//type.shield; // 200;
@@ -42,6 +42,7 @@
 			this.weapons = Ship.populateWeapons(type, data);
 			this.ai = new AI(this);
 			this.newProj = null; // Allow Stage to handle adding to projs array.
+			this.spin = [6,6];
 		}
 
 		/**
@@ -50,10 +51,10 @@
 		 */
 		static populateWeapons(shipType, data) {
 			var myWeaps = [];
-			for (var battery of shipType.weapons) {
-				var weapType = data[battery.name];
-				myWeaps.push(new Weapon(weapType, battery.count, battery.ammo));
-			}
+			// for (var battery of shipType.weapons) {
+			// 	var weapType = data[battery.name];
+			// 	myWeaps.push(new Weapon(weapType, battery.count, battery.ammo));
+			// }
 			return myWeaps;
 		}
 
@@ -63,6 +64,7 @@
 		turnLeft() {
 			if (this.dead) { return; }
 			this.thrust.degrees -= this.turn;
+			if (this.thrust.degrees < 0) { this.thrust.degrees += 360; }
 		}
 
 		/**
@@ -71,6 +73,7 @@
 		turnRight() {
 			if (this.dead) { return; }
 			this.thrust.degrees += this.turn;
+			if (this.thrust.degrees > 360) { this.thrust.degrees %= 360; }
 		}
 
 		/**
@@ -137,7 +140,7 @@
 			if (this.dead) { return; }
 			for (var myWeap of this.weapons) {
 				if (myWeap.fire()) {
-					var spread = Math.random() * (myWeap.type.spread / 2);
+					var spread = Math.random() * (myWeap.type.spread);// / 2);
 					var targetAngle = 0;
 					if (targ != null) {
 						targetAngle = Vector.intercept(this, myWeap.type.speed, targ);
