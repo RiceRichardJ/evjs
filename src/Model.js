@@ -125,21 +125,21 @@ export default class Model {
 		this.player.ai.nav = planet;
 
 
-		// for (var ship of this.data.ships.slice(1)) {
-		// 	ship.sprite = "../images/sprites/" + ship.name + " Sprite.png"; //"content/RebelCruiserSprite.png";
-		// 	if (ship.id == "133" || ship.id == "134") { 
-		// 		ship.sprite = "../images/sprites/" + ship.shortName + " Sprite.png";
-		// 	}
-		// 	if (ship.id == "153") { 
-		// 		ship.sprite = "../images/sprites/Bulk Freighter Sprite.png";
-		// 	}
-		// 	this.actors.push(
-		// 		new Ship(
-		// 			Object.assign(...this.data.ships[0], ship)
-		// 		)
-		// 	);
-		// 	this.actors.slice(-1)[0].ai.nav = planet;
-		// }
+		for (var ship of this.data.ships.slice(1)) {
+			ship.sprite = "../images/sprites/" + ship.name + ".png"; //"content/RebelCruiserSprite.png";
+			if (ship.id == "133" || ship.id == "134") { 
+				ship.sprite = "../images/sprites/" + ship.shortName + ".png";
+			}
+			if (ship.id == "153") { 
+				ship.sprite = "../images/sprites/Bulk Freighter.png";
+			}
+			this.actors.push(
+				new Ship(
+					Object.assign(...this.data.ships[0], ship)
+				)
+			);
+			this.actors.slice(-1)[0].ai.nav = planet;
+		}
 
 
 	}

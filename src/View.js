@@ -62,7 +62,7 @@ export default class View {
 
 		// Draw
 		var img = actor.sprite;
-		var msk = actor.mask;
+		// var msk = actor.mask;
 		if (img.src) {
 			// // this.ctx.drawImage(img, (img.width / -2), (img.height / -2));
 			// var dx = img.width  / actor.spin[0]; //-32;//(img.width / -2);
@@ -83,12 +83,7 @@ export default class View {
 			var yWidth = img.height / yCount;
 			var yCoord = Math.floor(Math.floor(degree / 10) / yCount) * yWidth;
 
-			this.ctx.globalCompositeOperation = 'source-over';
-			this.ctx.drawImage(msk, xCoord, yCoord, xWidth, yWidth, xWidth/-2, yWidth/-2, xWidth, yWidth);
-			this.ctx.globalCompositeOperation = 'source-in';
 			this.ctx.drawImage(img, xCoord, yCoord, xWidth, yWidth, xWidth/-2, yWidth/-2, xWidth, yWidth);
-			this.ctx.globalCompositeOperation = 'source-over';
-
 
 		} else {
 			this.ctx.fillStyle = actor.color;//'#0f0';

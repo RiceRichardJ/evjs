@@ -97,8 +97,8 @@ export default class Data {
 		this.rebelCruiser = Object.assign(...this.ships[0], this.ships[147-129]);
 		// 384 x 384 -> 64
 		// this.rebelCruiser.sprite = "images/sprites/Rebel Cruiser Masked Sprite.png"; //"content/RebelCruiserSprite.png";
-		this.rebelCruiser.sprite = "images/sprites/Rebel Cruiser Sprite.png";
-		this.rebelCruiser.mask   = "images/sprites/Rebel Cruiser Mask.png";
+		this.rebelCruiser.sprite = "images/sprites/Rebel Cruiser.png";
+		// this.rebelCruiser.mask   = "images/sprites/Rebel Cruiser Mask.png";
 		this.rebelCruiser.weapons = [
 			{"name":"laserCannon",   "count":1, "ammo":-1},
 			{"name":"protonCannon",  "count":1, "ammo":-1},
