@@ -32,8 +32,8 @@
 			// console.log(this.speed +"|"+ this.thrust.magnitude +"|"+ this.turn);
 
 			//this.thrust = new Vector(-90.0, type.accel * speedModifier);
-			this.shield   = 500;//type.shield; // 200;
-			this.shieldMax = 500;//type.shield; // 200;
+			this.shield    = type.shield[0]; // 200;
+			this.shieldMax = type.shield[0]; // 200;
 			this.armor   = 100;
 			this.mass    = 100;
 			this.sprite.src = type.sprite;

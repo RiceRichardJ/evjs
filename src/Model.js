@@ -6,6 +6,7 @@ import Data      from './model/Data'
 import Player    from './model/Player'
 import Ship      from './model/Ship';
 import Vector    from './model/Vector';
+import Weapon    from './model/Weapon';
 
 /**
  * Model stores the current state of the game.
@@ -17,6 +18,8 @@ export default class Model {
 	constructor() {
 		this.data   = new Data();
 		this.player = new Player(this.data.rebelCruiser, this.data);
+			this.player.x = -200;
+			this.player.y = -200;
 		this.spobs  = [];
 		this.actors = [];
 		this.projs  = [];
@@ -118,13 +121,13 @@ export default class Model {
 		
 		this.spobs.push(planet);
 		this.spobs.push(planet2);
-		this.actors.push(dude1);
-		this.actors.push(dude2);
-		this.actors.push(dude3);
+		// this.actors.push(dude1);
+		// this.actors.push(dude2);
+		// this.actors.push(dude3);
 
 		this.player.ai.nav = planet;
 
-
+		// Load from SHIPS JSON & target images
 		for (var ship of this.data.ships.slice(1)) {
 			ship.sprite = "../images/sprites/" + ship.name + ".png"; //"content/RebelCruiserSprite.png";
 			if (ship.id == "133" || ship.id == "134") { 
@@ -133,13 +136,32 @@ export default class Model {
 			if (ship.id == "153") { 
 				ship.sprite = "../images/sprites/Bulk Freighter.png";
 			}
-			this.actors.push(
-				new Ship(
-					Object.assign(...this.data.ships[0], ship)
-				)
+			var newShip = new Ship(
+				Object.assign(...this.data.ships[0], ship, this.data)
 			);
+			var angle = 360 * Math.random();
+			var v = new Vector(angle, 1500 + (500 * Math.random()));
+			newShip.x = v.getX();
+			newShip.y = v.getY();
+			newShip.thrust.degrees = angle + 180;
+			newShip.targetImg = new Image();
+			newShip.targetImg.src = ship.sprite.replace("sprite","target").replace("png","jpeg");
+
+			// temporary
+			newShip.weapons = [
+				new Weapon(this.data.laserCannon, 1, -1),
+				new Weapon(this.data.protonCannon, 1, -1),
+				new Weapon(this.data.neutronCannon, 1, -1)
+			];
+
+			this.actors.push(newShip);
 			this.actors.slice(-1)[0].ai.nav = planet;
 		}
+		this.player.weapons = [
+			new Weapon(this.data.laserCannon, 1, -1),
+			new Weapon(this.data.protonCannon, 1, -1),
+			new Weapon(this.data.neutronCannon, 1, -1)
+		];
 
 
 	}

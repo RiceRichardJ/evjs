@@ -27,7 +27,7 @@ export default class View {
 		projs.map(  (proj)  => this.renderActor(player, proj)  );
 		actors.map( (actor) => this.renderActor(player, actor) );
 		this.renderActor(player, player);
-		this.hud.render(player, actors, this.cnv);
+		this.hud.render(player, actors, spobs, this.cnv);
 	}
 
 	/** 
@@ -113,8 +113,8 @@ export default class View {
 
 	/**
 	 * Draw an explosion.
-	 * @param {Actor} x Player (camera relative)
-	 * @param {Actor} y Actor (location to draw boom)
+	 * @param {Actor} player (camera relative)
+	 * @param {Actor} actor (location to draw boom)
 	 * @param {number} dmg Magnitude.
 	 */
 	boom(player, actor, dmg) {

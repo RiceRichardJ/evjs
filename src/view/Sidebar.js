@@ -10,11 +10,11 @@ export default class Sidebar {
 	}//879F85
 
 	// Render
-	render(player, actors, cnv) {
+	render(player, actors, spobs, cnv) {
 		this.chevrons(player, actors, cnv);
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
-		this.radar(player, actors);
+		this.radar(player, actors, spobs);
 		this.levels(player);
 		this.nav();
 		this.weap();
@@ -22,33 +22,41 @@ export default class Sidebar {
 		this.cargo();
 	}
 
-	// Minimap/Radar
-	radar(player, actors) {
+	/**
+	 * Minimap/Radar
+	 */
+	radar(player, actors, spobs) {
 		this.ctx.fillStyle = '#000';
 		this.ctx.fillRect(655, 5, 140, 140);
 
-		for (var i = actors.length - 1; i >= 0; i--) {
+		// Draw all ship
+		// for (var i = actors.length - 1; i >= 0; i--) {
+		for (var blip of spobs.concat(actors)) {
 			this.ctx.fillStyle = 'white';
-			var mapX = (actors[i].x - player.x) / 50 + 725;
-			var mapY = (actors[i].y - player.y) / 50 + 75;
+			var mapX = (blip.x - player.x) / 50 + 725;
+			var mapY = (blip.y - player.y) / 50 + 75;
 
 			if (mapX < 655 || mapX > 655+140 ||
 				mapY < 5   || mapY >   5+140) {
 				continue;
 			}
 
-			if (actors[i].className == "Ship") {
+			if (blip.className == "Ship") {
 				this.ctx.fillRect(mapX, mapY, 1, 1);
 			}
-			if (actors[i].className == "Spob") {
+			if (blip.className == "Spob") {
 				//this.ctx.fillRect(mapX, mapY, 3, 3);
 				this.ctx.beginPath();
 				this.ctx.arc(mapX, mapY, 2, 0, 2 * Math.PI, false);
-				this.ctx.lineWidth = 0.3;
+				this.ctx.lineWidth = 0.4;
 				this.ctx.strokeStyle = 'white';
 				this.ctx.stroke();
 			}
 		}
+
+		// Draw Self
+		this.ctx.fillStyle = '#aff';
+		this.ctx.fillRect(724, 74, 1, 1);
 
 		// Prevents radar objects from drawing over-top of the border.
 		//this.ctx.strokeStyle = 'rgba(255,0,0,0.5)';
@@ -104,17 +112,27 @@ export default class Sidebar {
 
 	// Target
 	target(player) {
+		this.ctx.font='12px sans-serif';
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 265, 140, 120);
 
 		this.ctx.fillStyle = '#03900E';
 		if (player && player.ai.target && !player.ai.target.dead) {
-			this.ctx.fillText(player.ai.target.name,    703, 320);
-			this.ctx.fillText(this.shieldPercentage(player.ai.target) + "%", 760, 370);
+			this.ctx.textAlign = "center"; 
+			this.ctx.fillText( player.ai.target.type.name, 725, 280);
+			this.ctx.drawImage(player.ai.target.targetImg, 661, 290);
+			this.ctx.textAlign = "left"; 
+			this.ctx.fillText("Shield: " + this.shieldPercentage(player.ai.target) + "%", 660, 380);
+			this.ctx.fillText( player.ai.govt,             750, 380);
 		} else {
 			this.targetText = "No Target";
 			this.ctx.fillText(this.targetText, 703, 320);
 		}
+		this.ctx.font='10px sans-serif';
+	}
+
+	centered(txt, x, w, y) {
+
 	}
 
 	shieldPercentage(actor) {

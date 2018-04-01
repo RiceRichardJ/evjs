@@ -40,6 +40,11 @@ export default class Data {
 	constructor() {
 		this.loadJson();
 		this.loadTestData();
+		this.loadTargetImages();
+	}
+
+	loadTargetImages() {
+		
 	}
 
 	loadJson() {
