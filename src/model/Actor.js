@@ -22,10 +22,11 @@ export default class Actor {
 			this.className = 'Spob';
 			this.name   = spob.name;
 		}
-		this.dead = false;
+		this.dead  = false;
+		this.dying = false;
 		this.color = '#0f0';
-		this.spin = [1,1];
-		this.mask = new Image();
+		this.spin  = [1,1];
+		this.mask  = new Image();
 		this.mask.src = "../images/sprites/Spob 2000.png";
 	}
 

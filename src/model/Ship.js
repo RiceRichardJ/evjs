@@ -20,29 +20,26 @@
 		 */
 		constructor(type, num, data) {
 			super();
-
-			// console.log(C.sMod +"|"+ C.aMod +"|"+ C.tMod);
-
+			this.type = type;
 			this.className = 'Ship';
+
 			this.name             = type.name + ":" + num;
 			this.speed            = type.speed * C.sMod;
 			this.turn             = type.turn  * C.tMod;
 			this.thrust.magnitude = type.accel * C.aMod;
-
-			// console.log(this.speed +"|"+ this.thrust.magnitude +"|"+ this.turn);
-
 			//this.thrust = new Vector(-90.0, type.accel * speedModifier);
-			this.shield    = type.shield[0]; // 200;
-			this.shieldMax = type.shield[0]; // 200;
-			this.armor   = 100;
-			this.mass    = 100;
-			this.sprite.src = type.sprite;
-			this.type = type;
 
+			this.shield    = type.shield[0];
+			this.shieldMax = type.shield[0];
+			this.armor     = type.armor[0];
+			this.armorMax  = type.armor[0];
+			this.sprite.src = type.sprite;
+			
 			this.weapons = Ship.populateWeapons(type, data);
 			this.ai = new AI(this);
 			this.newProj = null; // Allow Stage to handle adding to projs array.
 			this.spin = [6,6];
+			this.disabled = false;
 		}
 
 		/**
@@ -62,7 +59,7 @@
 		 * Turn our ship to the left.
 		 */
 		turnLeft() {
-			if (this.dead) { return; }
+			if (this.dead || this.disabled) { return; }
 			this.thrust.degrees -= this.turn;
 			if (this.thrust.degrees < 0) { this.thrust.degrees += 360; }
 		}
@@ -71,7 +68,7 @@
 		 * Turn our ship to the right.
 		 */
 		turnRight() {
-			if (this.dead) { return; }
+			if (this.dead || this.disabled) { return; }
 			this.thrust.degrees += this.turn;
 			if (this.thrust.degrees > 360) { this.thrust.degrees %= 360; }
 		}
@@ -137,7 +134,7 @@
 		 * @param {*} targ The target to fire at.
 		 */
 		fire(targ = this.ai.target) {
-			if (this.dead) { return; }
+			if (this.dead || this.disabled) { return; }
 			for (var myWeap of this.weapons) {
 				if (myWeap.fire()) {
 					var spread = Math.random() * (myWeap.type.spread);// / 2);
@@ -157,12 +154,44 @@
 		 * @param {*} proj The projectile we're hit with.
 		 */
 		hit(proj) {
-			this.shield -= proj.type.damage;
+			if (proj.type.damage > this.shield) {
+				this.armor -= proj.type.damage - this.shield;
+				this.shield = 0;
+			} else {
+				this.shield -= proj.type.damage;
+			}
+			
 			// this.ai.target = proj.sender;
 			this.ai.hit(proj.sender, proj.type.damage);
-			if (this.shield <= 0) {
-				this.shield = 0;
+			if (this.armor <= 0) {
+				this.armor = 0;
 				this.die();
+			} else if (this.armor < this.armorMax / 3) {
+				this.disabled = true;
 			}
+		}
+
+		act() {
+			super.act();
+			this.rechargeShields();
+			this.rechargeFuel();
+			if (this.disabled) {
+				this.travel.magnitude -= 20 * C.aMod;
+				if (this.travel.magnitude < 0) { this.travel.magnitude = 0; }
+			}
+		}
+
+		rechargeShields() {
+			if (this.disabled || this.dead) { return; }
+			if (this.shield < this.shieldMax) {
+				this.shield += (this.type.shield[1] * C.rMod);
+				if (this.shield > this.shieldMax) {
+					this.shield = this.shieldMax;
+				}
+			}
+		}
+
+		rechargeFuel() {
+			// if ramscoop...
 		}
 	}

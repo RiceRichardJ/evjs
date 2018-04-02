@@ -118,12 +118,19 @@ export default class Sidebar {
 
 		this.ctx.fillStyle = '#03900E';
 		if (player && player.ai.target && !player.ai.target.dead) {
+			var target = player.ai.target;
 			this.ctx.textAlign = "center"; 
-			this.ctx.fillText( player.ai.target.type.name, 725, 280);
-			this.ctx.drawImage(player.ai.target.targetImg, 661, 290);
+			this.ctx.fillText( target.type.name, 725, 280);
+			this.ctx.drawImage(target.targetImg, 661, 290);
 			this.ctx.textAlign = "left"; 
-			this.ctx.fillText("Shield: " + this.shieldPercentage(player.ai.target) + "%", 660, 380);
-			this.ctx.fillText( player.ai.govt,             750, 380);
+			if (target.disabled) {
+				this.ctx.fillText("Disabled", 660, 380);
+			} else if (target.shield < 1) {
+				this.ctx.fillText("Armor: " + this.armorPercentage(target) + "%", 660, 380);
+			} else {
+				this.ctx.fillText("Shield: " + this.shieldPercentage(target) + "%", 660, 380);
+			}
+			this.ctx.fillText( target.ai.govt, 750, 380);
 		} else {
 			this.targetText = "No Target";
 			this.ctx.fillText(this.targetText, 703, 320);
@@ -131,12 +138,11 @@ export default class Sidebar {
 		this.ctx.font='10px sans-serif';
 	}
 
-	centered(txt, x, w, y) {
-
-	}
-
 	shieldPercentage(actor) {
 		return Math.round((actor.shield / actor.shieldMax) * 100);
+	}
+	armorPercentage(actor) {
+		return Math.round((actor.armor / actor.armorMax) * 100);
 	}
 
 	// Cargo

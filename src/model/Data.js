@@ -25,11 +25,12 @@ import jsonweap from '../json/weap';
 export const Constants = {}
 const C = Constants;
 C.fps  = 60;
-C.tMod = 30 / C.fps / 10;    // 0.05,
-C.sMod = 30 / C.fps / 100;   // 0.005;
-C.aMod = 30 / C.fps / 10000; // 0.00005;
-C.fMod = 1000 / C.fps;       // Frames
-C.gMod = 1.0;                // overall gameSpeedModifier
+C.gMod = 2.0;                // overall gameSpeedModifier
+C.tMod = C.gMod * 30 / C.fps / 10;    // Turn
+C.sMod = C.gMod * 30 / C.fps / 100;   // Speed
+C.aMod = C.gMod * 30 / C.fps / 10000; // Accel
+C.rMod = C.gMod * 30 / C.fps / 1000;  // Rech rate
+C.f2ms = 1 / 30 * 1000;      // fr to ms
 
 
 /**
@@ -99,7 +100,7 @@ export default class Data {
 		// 	sprite: "content/RebelCruiserSprite.png"
 		// };
 
-		this.rebelCruiser = Object.assign(...this.ships[0], this.ships[147-129]);
+		this.rebelCruiser = Object.assign(...this.ships[0], this.ships[142-127]);
 		// 384 x 384 -> 64
 		// this.rebelCruiser.sprite = "images/sprites/Rebel Cruiser Masked Sprite.png"; //"content/RebelCruiserSprite.png";
 		this.rebelCruiser.sprite = "images/sprites/Rebel Cruiser.png";
@@ -113,7 +114,7 @@ export default class Data {
 		this.cannon = {
 			speed: 1313,//500,
 			accel:  0,
-			lifespan: 20 / C.fps * 1000,//600,
+			lifespan: 20 * C.f2ms, //20 / 30 * 1000,//600,
 			turn:    0,
 			spread: 10,
 		};

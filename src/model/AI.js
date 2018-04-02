@@ -68,6 +68,7 @@ export default class AI {
 	// }
 
 	go() {
+		if (this.myShip.dead || this.myShip.disabled) { return; }
 		if (this.target) {
 			if (this.target.dead) {
 				// console.log("TARGET DEAD");
