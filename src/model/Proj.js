@@ -27,5 +27,7 @@ export default class Proj extends Actor {
 		this.sender = sender;
 		this.target = target;
 		this.spin = [6,6];
+		this.lifespan = type.duration * C.f2ms;
+		console.log("lifespan: " + this.lifespan);
 	}
 }

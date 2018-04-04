@@ -48,14 +48,12 @@ export default class Model {
 	 */
 	addProj(actor) {
 		if (actor.newProj.length > 0) {
-			console.log("new proj pushed actually");
-			console.log(actor.newProj);
-			this.projs.concat(actor.newProj);
+			this.projs = this.projs.concat(actor.newProj);
 			console.log(this.projs);
 			actor.newProj = [];
 		}
 		if (actor.newShip.length > 0) {
-			this.actors.concat(actor.newShip);
+			this.actors = this.actors.concat(actor.newShip);
 			actor.newShip = [];
 		}
 	}

@@ -13,7 +13,6 @@ export default class Weapon {
 
 	fire(targ, sender) {
 		if (this.canFire(targ)) {
-			console.log("CAN FIRE");
 			return this.buildProjectile(targ, sender);
 		} else {
 			return null;

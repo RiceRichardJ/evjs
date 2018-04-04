@@ -40,7 +40,6 @@ export default class View {
 		this.stars.render(player.x, player.y);
 	}
 	
-
 	/**
 	 * Render a given Actor.
 	 * @param {Actor} player Camera relative to player.
@@ -63,7 +62,8 @@ export default class View {
 		// Draw
 		var img = actor.sprite;
 		if (actor.className == "Proj") {
-			console.log(img);
+			// console.log('(actor.className == "Proj"');
+			// console.log(img);
 		}
 		// var msk = actor.mask;
 		if (img.src) {

@@ -143,16 +143,18 @@
 		 * @param {*} targ The target to fire at.
 		 */
 		fire(targ = this.ai.target) {
-			console.log(Data.weaps);
+			// console.log(Data.weaps);
 			if (this.dead || this.disabled) { return; }
 			for (var myWeap of this.weapons) {
 				// console.log(myWeap);
 				var projectile = myWeap.fire(targ, this);
 				if (projectile) {
 					if (projectile.className == "Proj") {
-						console.log("new proj ready to be pushed");
-						console.log(projectile);
+						// console.log("new proj ready to be pushed");
+						// console.log(projectile);
 						this.newProj.push(projectile);
+						console.log("# ADD TO NEWPROJ");
+						console.log(this.newProj);
 					} else if (projectile.className == "Ship") {
 						this.newShip.push(projectile);
 					}
