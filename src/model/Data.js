@@ -37,7 +37,7 @@ C.f2ms = 1 / 30 * 1000;      // fr to ms
  * Responsible for loading data files, plugins, and processing the data to be
  * game ready, including filling in default values and speed modifiers.
  */
-export default class Data {
+class DataClass {
 	constructor() {
 		this.loadJson();
 		this.loadTestData();
@@ -67,6 +67,8 @@ export default class Data {
 		this.spobs = jsonspob.spob;
 		this.systs = jsonsyst.syst;
 		this.weaps = jsonweap.weap;
+		console.log(this.weaps);
+		console.log(jsonweap);
 
 		this.fps  = Constants.fps;
 		this.sMod = Constants.sMod;
@@ -105,11 +107,11 @@ export default class Data {
 		// this.rebelCruiser.sprite = "images/sprites/Rebel Cruiser Masked Sprite.png"; //"content/RebelCruiserSprite.png";
 		this.rebelCruiser.sprite = "images/sprites/Rebel Cruiser.png";
 		// this.rebelCruiser.mask   = "images/sprites/Rebel Cruiser Mask.png";
-		this.rebelCruiser.weapons = [
-			{"name":"laserCannon",   "count":1, "ammo":-1},
-			{"name":"protonCannon",  "count":1, "ammo":-1},
-			{"name":"neutronCannon", "count":1, "ammo":-1}
-		];
+			// this.rebelCruiser.weapons = [
+			// 	{"name":"laserCannon",   "count":1, "ammo":-1},
+			// 	{"name":"protonCannon",  "count":1, "ammo":-1},
+			// 	{"name":"neutronCannon", "count":1, "ammo":-1}
+			// ];
 
 		this.cannon = {
 			speed: 1313,//500,
@@ -145,3 +147,6 @@ export default class Data {
 		};
 	}
 };
+
+const Data = new DataClass();
+export default Data;

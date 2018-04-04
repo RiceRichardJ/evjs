@@ -3,7 +3,7 @@
 	import {Constants as C} from './Data';
 	import Actor  from './Actor';
 	import AI     from './AI';
-	// import Data   from './Data';
+	import Data   from './Data';
 	import Proj   from './Proj';
 	import Vector from './Vector';
 	import Weapon from './Weapon';
@@ -35,9 +35,11 @@
 			this.armorMax  = type.armor[0];
 			this.sprite.src = type.sprite;
 			
-			this.weapons = Ship.populateWeapons(type, data);
+			this.weapons = [];
+			this.populateWeapons(type, data);
 			this.ai = new AI(this);
-			this.newProj = null; // Allow Stage to handle adding to projs array.
+			this.newProj = []; // Allow Stage to handle adding to projs array.
+			this.newShip = []; // ditto but for fighters
 			this.spin = [6,6];
 			this.disabled = false;
 		}
@@ -46,13 +48,20 @@
 		 * Build Weapon objects.
 		 * @param {*} shipType 
 		 */
-		static populateWeapons(shipType, data) {
-			var myWeaps = [];
+		populateWeapons(shipType, data) {
 			// for (var battery of shipType.weapons) {
 			// 	var weapType = data[battery.name];
 			// 	myWeaps.push(new Weapon(weapType, battery.count, battery.ammo));
 			// }
-			return myWeaps;
+			for (var weap of shipType.weapons) {
+				var weapType = Data.weaps[parseInt(weap.id)-127];
+				var newWeap = new Weapon(
+					Object.assign({}, Data.weaps[0], weapType), 
+					weap.count, weap.ammo
+				);
+				this.weapons.push(newWeap);
+			}
+			console.log(this.weapons);
 		}
 
 		/**
@@ -134,18 +143,30 @@
 		 * @param {*} targ The target to fire at.
 		 */
 		fire(targ = this.ai.target) {
+			console.log(Data.weaps);
 			if (this.dead || this.disabled) { return; }
 			for (var myWeap of this.weapons) {
-				if (myWeap.fire()) {
-					var spread = Math.random() * (myWeap.type.spread);// / 2);
-					var targetAngle = 0;
-					if (targ != null) {
-						targetAngle = Vector.intercept(this, myWeap.type.speed, targ);
+				// console.log(myWeap);
+				var projectile = myWeap.fire(targ, this);
+				if (projectile) {
+					if (projectile.className == "Proj") {
+						console.log("new proj ready to be pushed");
+						console.log(projectile);
+						this.newProj.push(projectile);
+					} else if (projectile.className == "Ship") {
+						this.newShip.push(projectile);
 					}
-					this.newProj = new Proj(
-						myWeap.type, this.x, this.y, this.thrust.degrees + targetAngle + spread, this
-					);
 				}
+				// if (myWeap.fire()) {
+				// 	var spread = Math.random() * (myWeap.type.spread);// / 2);
+				// 	var targetAngle = 0;
+				// 	if (targ != null) {
+				// 		targetAngle = Vector.intercept(this, myWeap.type.speed, targ);
+				// 	}
+				// 	this.newProj = new Proj(
+				// 		myWeap.type, this.x, this.y, this.thrust.degrees + targetAngle + spread, this
+				// 	);
+				// }
 			}
 		}
 		

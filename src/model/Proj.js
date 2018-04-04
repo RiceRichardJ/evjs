@@ -9,7 +9,7 @@ import Vector from './Vector';
  * Constructor and instance variables.
  */
 export default class Proj extends Actor {
-	constructor(type, xPos, yPos, dir, sender) {
+	constructor(type, xPos, yPos, dir, sender, target) {
 		super();
 
 		this.speed  = type.speed * C.sMod;
@@ -25,5 +25,7 @@ export default class Proj extends Actor {
 		this.type = type;
 		this.color = type.color;
 		this.sender = sender;
+		this.target = target;
+		this.spin = [6,6];
 	}
 }

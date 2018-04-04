@@ -16,7 +16,7 @@ export default class Model {
 	 * Create a Model object.
 	 */
 	constructor() {
-		this.data   = new Data();
+		this.data   = Data;//new Data();
 		this.player = new Player(this.data.rebelCruiser, this.data);
 			this.player.x = -200;
 			this.player.y = -200;
@@ -47,9 +47,16 @@ export default class Model {
 	 * @param {*} actor 
 	 */
 	addProj(actor) {
-		if (actor.newProj != null) {
-			this.projs.push(actor.newProj);
-			actor.newProj = null;
+		if (actor.newProj.length > 0) {
+			console.log("new proj pushed actually");
+			console.log(actor.newProj);
+			this.projs.concat(actor.newProj);
+			console.log(this.projs);
+			actor.newProj = [];
+		}
+		if (actor.newShip.length > 0) {
+			this.actors.concat(actor.newShip);
+			actor.newShip = [];
 		}
 	}
 	
@@ -98,26 +105,26 @@ export default class Model {
 		// Demo Populate.
 		var planet  = new Actor(this.data.demoPlanet);
 		var planet2 = new Actor(this.data.demoPlanet);
-		var dude1  = new Ship(  this.data.rebelCruiser, 1, this.data);
-		var dude2  = new Ship(  this.data.rebelCruiser, 2, this.data);
-		var dude3  = new Ship(  this.data.rebelCruiser, 3, this.data);
+		// var dude1  = new Ship(  this.data.rebelCruiser, 1, this.data);
+		// var dude2  = new Ship(  this.data.rebelCruiser, 2, this.data);
+		// var dude3  = new Ship(  this.data.rebelCruiser, 3, this.data);
 		
 		planet.x = 500;
 		planet.y = 500;
 		
-		dude1.x = 10;
-		dude1.y = 200;
+		// dude1.x = 10;
+		// dude1.y = 200;
 		
-		dude2.y = -200;
-		dude3.x = 200;
+		// dude2.y = -200;
+		// dude3.x = 200;
 		
-		dude1.travel.magnitude = 5;
-		dude2.travel.magnitude = 4;
-		dude3.travel.magnitude = 6;
+		// dude1.travel.magnitude = 5;
+		// dude2.travel.magnitude = 4;
+		// dude3.travel.magnitude = 6;
 
-		dude1.ai.nav = planet;
-		dude2.ai.nav = planet;
-		dude3.ai.nav = planet;
+		// dude1.ai.nav = planet;
+		// dude2.ai.nav = planet;
+		// dude3.ai.nav = planet;
 		
 		this.spobs.push(planet);
 		this.spobs.push(planet2);
@@ -127,41 +134,47 @@ export default class Model {
 
 		this.player.ai.nav = planet;
 
-		// Load from SHIPS JSON & target images
-		for (var ship of this.data.ships.slice(1)) {
-			ship.sprite = "../images/sprites/" + ship.name + ".png"; //"content/RebelCruiserSprite.png";
-			if (ship.id == "133" || ship.id == "134") { 
-				ship.sprite = "../images/sprites/" + ship.shortName + ".png";
-			}
-			if (ship.id == "153") { 
-				ship.sprite = "../images/sprites/Bulk Freighter.png";
-			}
-			var newShip = new Ship(
-				Object.assign(...this.data.ships[0], ship, this.data)
-			);
-			var angle = 360 * Math.random();
-			var v = new Vector(angle, 1500 + (500 * Math.random()));
-			newShip.x = v.getX();
-			newShip.y = v.getY();
-			newShip.thrust.degrees = angle + 180;
-			newShip.targetImg = new Image();
-			newShip.targetImg.src = ship.sprite.replace("sprite","target").replace("png","jpeg");
+				// // Load from SHIPS JSON & target images
+				for (var ship of Data.ships.slice(1)) {
+					ship.sprite = "../images/sprites/" + ship.name + ".png"; //"content/RebelCruiserSprite.png";
+					if (ship.id == "133" || ship.id == "134") { 
+						ship.sprite = "../images/sprites/" + ship.shortName + ".png";
+					}
+					if (ship.id == "153") { 
+						ship.sprite = "../images/sprites/Bulk Freighter.png";
+					}
+				}	
 
-			// temporary
-			newShip.weapons = [
-				new Weapon(this.data.laserCannon, 1, -1),
-				new Weapon(this.data.protonCannon, 1, -1),
-				new Weapon(this.data.neutronCannon, 1, -1)
-			];
+				for (var weap of Data.weaps.slice(1)) {
+					weap.sprite = "../images/sprites/" + weap.name + ".png";
+				}
+				console.log(Data.weaps);
+				// 	var newShip = new Ship(
+				// 		Object.assign(...this.data.ships[0], ship, this.data) // wtf is this
+				// 	);
+				// 	var angle = 360 * Math.random();
+				// 	var v = new Vector(angle, 1500 + (500 * Math.random()));
+				// 	newShip.x = v.getX();
+				// 	newShip.y = v.getY();
+				// 	newShip.thrust.degrees = angle + 180;
+				// 	newShip.targetImg = new Image();
+				// 	newShip.targetImg.src = ship.sprite.replace("sprite","target").replace("png","jpeg");
 
-			this.actors.push(newShip);
-			this.actors.slice(-1)[0].ai.nav = planet;
-		}
-		this.player.weapons = [
-			new Weapon(this.data.laserCannon, 1, -1),
-			new Weapon(this.data.protonCannon, 1, -1),
-			new Weapon(this.data.neutronCannon, 1, -1)
-		];
+				// 	// temporary
+				// 	// newShip.weapons = [
+				// 	// 	new Weapon(this.data.laserCannon, 1, -1),
+				// 	// 	new Weapon(this.data.protonCannon, 1, -1),
+				// 	// 	new Weapon(this.data.neutronCannon, 1, -1)
+				// 	// ];
+
+				// 	this.actors.push(newShip);
+				// 	this.actors.slice(-1)[0].ai.nav = planet;
+				// }
+				// // this.player.weapons = [
+				// // 	new Weapon(this.data.laserCannon, 1, -1),
+				// // 	new Weapon(this.data.protonCannon, 1, -1),
+				// // 	new Weapon(this.data.neutronCannon, 1, -1)
+				// // ];
 
 
 	}

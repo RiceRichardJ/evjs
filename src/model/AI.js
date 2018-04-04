@@ -1,5 +1,6 @@
 "use strict";
 
+import {Constants as C} from './Data';
 import Vector from './Vector';
 
 /**
@@ -194,12 +195,12 @@ export default class AI {
 				// this.landing = 'final';
 				if (dist > 50) {
 					// if (! this.myShip.autoPilot(target)) {
-						if (this.myShip.travel.magnitude > 2) {	// slow
+						if (this.myShip.travel.magnitude > 2 * C.gMod) {	// slow
 							this.myShip.applyThrust();
 						}
 					// }
 				} else {
-					if (this.myShip.travel.magnitude > 0.5) {	// stop
+					if (this.myShip.travel.magnitude > 0.5 * C.gMod) {	// stop
 						this.myShip.applyThrust();
 					} else {
 						this.myShip.travel.magnitude = 0;

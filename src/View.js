@@ -62,6 +62,9 @@ export default class View {
 
 		// Draw
 		var img = actor.sprite;
+		if (actor.className == "Proj") {
+			console.log(img);
+		}
 		// var msk = actor.mask;
 		if (img.src) {
 			// // this.ctx.drawImage(img, (img.width / -2), (img.height / -2));
