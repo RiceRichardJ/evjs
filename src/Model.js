@@ -49,7 +49,6 @@ export default class Model {
 	addProj(actor) {
 		if (actor.newProj.length > 0) {
 			this.projs = this.projs.concat(actor.newProj);
-			console.log(this.projs);
 			actor.newProj = [];
 		}
 		if (actor.newShip.length > 0) {
@@ -132,7 +131,11 @@ export default class Model {
 
 		this.player.ai.nav = planet;
 
-				// // Load from SHIPS JSON & target images
+				for (var weap of Data.weaps.slice(1)) {
+					weap.sprite = "../images/sprites/" + weap.name + ".png";
+				}
+
+				// Load from SHIPS JSON & target images
 				for (var ship of Data.ships.slice(1)) {
 					ship.sprite = "../images/sprites/" + ship.name + ".png"; //"content/RebelCruiserSprite.png";
 					if (ship.id == "133" || ship.id == "134") { 
@@ -141,39 +144,22 @@ export default class Model {
 					if (ship.id == "153") { 
 						ship.sprite = "../images/sprites/Bulk Freighter.png";
 					}
-				}	
 
-				for (var weap of Data.weaps.slice(1)) {
-					weap.sprite = "../images/sprites/" + weap.name + ".png";
+					var newShip = new Ship(
+						Object.assign(...this.data.ships[0], ship, this.data) // wtf is this
+					);
+					var angle = 360 * Math.random();
+					var v = new Vector(angle, 1500 + (500 * Math.random()));
+					newShip.x = v.getX();
+					newShip.y = v.getY();
+					newShip.thrust.degrees = angle + 180;
+					newShip.targetImg = new Image();
+					newShip.targetImg.src = ship.sprite.replace("sprite","target").replace("png","jpeg");
+
+					this.actors.push(newShip);
+					this.actors.slice(-1)[0].ai.nav = planet;
 				}
-				console.log(Data.weaps);
-				// 	var newShip = new Ship(
-				// 		Object.assign(...this.data.ships[0], ship, this.data) // wtf is this
-				// 	);
-				// 	var angle = 360 * Math.random();
-				// 	var v = new Vector(angle, 1500 + (500 * Math.random()));
-				// 	newShip.x = v.getX();
-				// 	newShip.y = v.getY();
-				// 	newShip.thrust.degrees = angle + 180;
-				// 	newShip.targetImg = new Image();
-				// 	newShip.targetImg.src = ship.sprite.replace("sprite","target").replace("png","jpeg");
-
-				// 	// temporary
-				// 	// newShip.weapons = [
-				// 	// 	new Weapon(this.data.laserCannon, 1, -1),
-				// 	// 	new Weapon(this.data.protonCannon, 1, -1),
-				// 	// 	new Weapon(this.data.neutronCannon, 1, -1)
-				// 	// ];
-
-				// 	this.actors.push(newShip);
-				// 	this.actors.slice(-1)[0].ai.nav = planet;
-				// }
-				// // this.player.weapons = [
-				// // 	new Weapon(this.data.laserCannon, 1, -1),
-				// // 	new Weapon(this.data.protonCannon, 1, -1),
-				// // 	new Weapon(this.data.neutronCannon, 1, -1)
-				// // ];
-
+		
 
 	}
 

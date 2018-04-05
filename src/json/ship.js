@@ -720,7 +720,7 @@ export default {
 			"speed"  : 525,
 			"accel"  : 1350,
 			"turn"   : 30,
-			"shield" : [-3000, 938],
+			"shield" : [3000, 938],//"shield" : [-3000, 938],
 			"armor"  : [1, 0],
 			"fuel"   : [2000, 0],
 			"cost"   : 0,

@@ -98,9 +98,9 @@ export default class View {
 		// Draw booms.
 		if (actor.dead) {
 			if (actor.className == 'Ship') {
-				this.boom(player, actor, actor.type.shield);
+				this.boom(player, actor, actor.type.shield[0]);
 			} else if (actor.className == 'Proj') {
-				this.boom(player, actor, actor.type.damage);
+				this.boom(player, actor, actor.type.damage[0]);
 			}
 		}
 	}

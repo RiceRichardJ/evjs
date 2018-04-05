@@ -25,7 +25,7 @@ import jsonweap from '../json/weap';
 export const Constants = {}
 const C = Constants;
 C.fps  = 60;
-C.gMod = 2.0;                // overall gameSpeedModifier
+C.gMod = 1.0;                // overall gameSpeedModifier
 C.tMod = C.gMod * 30 / C.fps / 10;    // Turn
 C.sMod = C.gMod * 30 / C.fps / 100;   // Speed
 C.aMod = C.gMod * 30 / C.fps / 10000; // Accel
@@ -40,6 +40,7 @@ C.f2ms = 1 / 30 * 1000;      // fr to ms
 class DataClass {
 	constructor() {
 		this.loadJson();
+		this.convertValues();
 		this.loadTestData();
 		this.loadTargetImages();
 	}
@@ -67,14 +68,19 @@ class DataClass {
 		this.spobs = jsonspob.spob;
 		this.systs = jsonsyst.syst;
 		this.weaps = jsonweap.weap;
-		console.log(this.weaps);
-		console.log(jsonweap);
 
 		this.fps  = Constants.fps;
 		this.sMod = Constants.sMod;
 		this.aMod = Constants.aMod;
 		this.tMod = Constants.tMod;
 		this.gMod = Constants.gMod;
+	}
+
+	convertValues() {
+		// for (var weap of this.weaps) {
+		// 	weap.reload   *= C.f2ms;
+		// 	weap.duration *= C.f2ms;
+		// }
 	}
 
 	loadTestData() {
