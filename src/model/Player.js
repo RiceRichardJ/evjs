@@ -9,6 +9,7 @@ export default class Player extends Ship {
 		this.targInd = -1;
 		this.landed = false;
 		this.hyperNav = null;
+		this.weapInd = -1;
 	}
 
 	cycleTargets(actors) {
@@ -49,5 +50,56 @@ export default class Player extends Ship {
 			return 0;
 		}
 		return 3;
+	}
+
+	/**
+	 * TODO: Maybe make SECONDARIES a seperate array from WEAPONS?
+	 */
+	switchSecondary() {
+		// var secondaries = [];
+		// for (var weap of this.weapons) {
+		// 	if (weap.type.secondary) {
+		// 		secondaries.push(weap);
+		// 	}
+		// }
+		// this.weapInd++;
+		// if (this.weapInd >= secondaries.length) { 
+		// 	this.weapInd = -1;
+		// }
+		this.weapInd++;
+		while (this.weapInd < this.weapons.length && !this.weapons[this.weapInd].type.secondary) {
+			this.weapInd++;
+		}
+		if (this.weapInd >= this.weapons.length) {
+			this.weapInd = -1;
+		}
+	}
+
+	fire(targ = this.ai.target) {
+		if (this.dead || this.disabled) { return; }
+		for (var myWeap of this.weapons) {
+			if (myWeap.type.secondary) { continue; }
+			var projectile = myWeap.fire(targ, this);
+			if (projectile) {
+				if (projectile.className == "Proj") {
+					this.newProj.push(projectile);
+				} else if (projectile.className == "Ship") {
+					this.newShip.push(projectile);
+				}
+			}
+		}
+	}
+
+	fireSecondary(targ = this.ai.target) {
+		if (!targ) { return; }
+		var myWeap = this.weapons[this.weapInd];
+		var projectile = myWeap.fire(targ, this);
+		if (projectile) {
+			if (projectile.className == "Proj") {
+				this.newProj.push(projectile);
+			} else if (projectile.className == "Ship") {
+				this.newShip.push(projectile);
+			}
+		}
 	}
 }

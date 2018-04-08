@@ -17,7 +17,7 @@ export default class Sidebar {
 		this.radar(player, actors, spobs);
 		this.levels(player);
 		this.nav();
-		this.weap();
+		this.weap(player);
 		this.target(player);
 		this.cargo();
 	}
@@ -102,12 +102,18 @@ export default class Sidebar {
 	}
 
 	// Secondaries
-	weap() {
+	weap(player) {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 240, 140, 20);
 
 		this.ctx.fillStyle = '#03900E';
-		this.ctx.fillText("No Secondary Weapon", 674, 253);
+		if (player.weapInd > -1) {
+			var weapName = player.weapons[player.weapInd].type.name;
+			var weapAmmo = player.weapons[player.weapInd].ammo;
+			this.ctx.fillText(weapName + " - " + weapAmmo, 674, 253);
+		} else {
+			this.ctx.fillText("No Secondary Weapon", 674, 253);
+		}
 	}
 
 	// Target

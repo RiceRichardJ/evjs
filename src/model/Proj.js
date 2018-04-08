@@ -2,6 +2,7 @@
 
 import {Constants as C} from './Data';
 import Actor  from './Actor';
+import Data   from './Data';
 import Vector from './Vector';
 
 /**
@@ -29,15 +30,28 @@ export default class Proj extends Actor {
 		this.lifespan = type.duration * C.f2ms;
 
 		// temporary
-		if (type.name.match(/laser/i)) {
-			this.color = "#0f0";
-		} else if (type.name.match(/proton/i)) {
-			this.color = "#44f";
-		} else if (type.name.match(/neutron/i)) {
-			this.color = "#f00";
-		} else if (type.secondary) {
-			this.color = "#ff0";
+		// if (type.name.match(/laser/i)) {
+		// 	this.color = "#0f0";
+		// 	this.sprite.src = Data.spins[type.graphic].src;
+		// } else if (type.name.match(/proton/i)) {
+		// 	this.color = "#44f";
+		// 	this.sprite.src = Data.spins[type.graphic].src;
+		// } else if (type.name.match(/neutron/i)) {
+		// 	this.color = "#f00";
+		// } else if (type.secondary) {
+		// 	this.color = "#ff0";
+		// 	if (type.name.match(/missile/i)) {
+		// 		this.sprite.src = Data.spins[type.graphic].src;
+		// 	}
+		// }
+
+		// Assign Graphic
+		if (Data.spins[type.graphic]) {
+			this.sprite.src = Data.spins[type.graphic].src;
+		} else {
+			console.log(type);
 		}
+		
 	}
 
 	/**

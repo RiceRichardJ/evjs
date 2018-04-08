@@ -15,9 +15,15 @@ export default class Input {
 	 */
 	registerKeyListeners() {
 		document.addEventListener('keydown', function(e) {
+			// alert(e.keyCode);
 			if (e.keyCode == 9) { // [TAB]
 				e.preventDefault();
 				this.model.player.cycleTargets(this.model.actors);
+			} else if (e.keyCode == 87) { // [W]
+				this.model.player.switchSecondary();
+			} else if (e.keyCode == 16) { // [SHIFT]
+				e.preventDefault();
+				this.model.player.fireSecondary();
 			}
 			this.keyPressed[e.keyCode] = true;
 		}.bind(this), false);
@@ -82,9 +88,6 @@ export default class Input {
 		}
 		if (this.keyPressed["82"]) { // [R]
 			//closestEnemy();
-		}	
-		if (this.keyPressed["87"]) { // [W]
-			//switchSecondary();
 		}
 	}
 }

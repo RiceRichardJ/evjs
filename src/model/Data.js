@@ -15,6 +15,7 @@ import jsonoutf from '../json/outf';
 import jsonpers from '../json/pers';
 import jsonroid from '../json/roid';
 import jsonship from '../json/ship';
+import jsonspin from '../json/spin';
 import jsonspob from '../json/spob';
 import jsonsyst from '../json/syst';
 import jsonweap from '../json/weap';
@@ -65,6 +66,7 @@ class DataClass {
 		this.perss = jsonpers.pers;
 		this.roids = jsonroid.roid;
 		this.ships = jsonship.ship;
+		this.spins = jsonspin.spin;
 		this.spobs = jsonspob.spob;
 		this.systs = jsonsyst.syst;
 		this.weaps = jsonweap.weap;

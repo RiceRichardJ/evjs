@@ -142,12 +142,18 @@ export default class Ship extends Actor {
 		if (this.dead || this.disabled) { return; }
 		for (var myWeap of this.weapons) {
 			// console.log(myWeap);
+			if (myWeap.type.beam) {
+				this.beam();
+				continue;
+			}
 			var projectile = myWeap.fire(targ, this);
 			if (projectile) {
 				if (projectile.className == "Proj") {
 					this.newProj.push(projectile);
 				} else if (projectile.className == "Ship") {
 					this.newShip.push(projectile);
+				} else if (projectile.className == "Beam") {
+					this.beam();
 				}
 			}
 			// if (myWeap.fire()) {
@@ -161,6 +167,10 @@ export default class Ship extends Actor {
 			// 	);
 			// }
 		}
+	}
+
+	beam() {
+		// fire new beam? draw new beam?????
 	}
 	
 	/**

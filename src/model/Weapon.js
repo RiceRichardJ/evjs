@@ -54,6 +54,9 @@ export default class Weapon {
 				sender.thrust.degrees + targetAngle + spread, sender, targ
 			);
 		}
+		// else if BEAM {
+		// 	return  new Beam()??
+		// }
 		/**
 		 * unguided
 		 * guided
