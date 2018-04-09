@@ -17,7 +17,7 @@ export default class Proj extends Actor {
 		this.turn   = type.turn  * C.tMod;
 		this.x      = xPos;
 		this.y      = yPos;
-		this.thrust = new Vector(dir, /*type.accel*/ 1000 * C.aMod);
+		this.thrust = new Vector(dir, 1000);// /*type.accel*/ 1000 * C.aMod);
 		this.travel = new Vector(dir, type.speed * C.sMod);
 		this.born   = new Date();	// why???
 
