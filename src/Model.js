@@ -17,9 +17,10 @@ export default class Model {
 	 */
 	constructor() {
 		this.data   = Data;//new Data();
-		this.player = new Player(this.data.rebelCruiser, this.data);
-			this.player.x = -200;
-			this.player.y = -200;
+		// this.player = new Player(this.data.rebelCruiser, this.data);
+		this.player = null;//new Player(this.data.ships[141-127], this.data);
+			// this.player.x = -200;
+			// this.player.y = -200;
 		this.spobs  = [];
 		this.actors = [];
 		this.projs  = [];
@@ -129,7 +130,7 @@ export default class Model {
 		// this.actors.push(dude2);
 		// this.actors.push(dude3);
 
-		this.player.ai.nav = planet;
+		
 
 				for (var weap of Data.weaps.slice(1)) {
 					weap.sprite = "../images/sprites/" + weap.name + ".png";
@@ -159,7 +160,11 @@ export default class Model {
 					this.actors.push(newShip);
 					this.actors.slice(-1)[0].ai.nav = planet;
 				}
-		
+				
+		this.player = new Player(this.data.ships[141-127], this.data);
+		this.player.x = -200;
+		this.player.y = -200;
+		this.player.ai.nav = planet;
 
 	}
 
