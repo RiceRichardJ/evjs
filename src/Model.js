@@ -62,6 +62,8 @@ export default class Model {
 	playSound(proj) {
 		var distance = Vector.distance(proj.x, proj.y, this.player.x, this.player.y);
 		var fade = -0.001 * distance + 1;
+		proj.sound.src = "sounds/" + this.data.snds[proj.type.sound];
+		// console.log(proj.sound.src);
 		proj.sound.volume = fade < 0.25 ? 0.25 : fade;
 		// console.log(distance + " | " + proj.sound.volume);
 		proj.sound.play();
@@ -82,6 +84,8 @@ export default class Model {
 				}
 			}
 		}
+		// new Audio("sounds/ShipBreaksUp.mp3").play();
+		new Audio("sounds/MedExplosion.mp3").play();
 	}
 	
 	/**

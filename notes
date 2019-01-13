@@ -29,3 +29,4 @@ ai should fly straight at enemy to use non-homing secondaries
 turret leading not working yet
 guided weapons should become unguided once target is destroyed
 -no thrust until finished turning/pointed at target
+guided weapons should only collide with target

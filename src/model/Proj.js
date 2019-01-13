@@ -12,9 +12,7 @@ import Vector from './Vector';
 export default class Proj extends Actor {
 	constructor(type, xPos, yPos, dir, sender, target) {
 		super();
-
-		this.sound  = new Audio("sounds/" + this.nameToSound(type.name) + ".mp3");
-
+		
 		this.speed  = type.speed * C.sMod;
 		this.turn   = type.turn  * C.tMod;
 		this.x      = xPos;
@@ -22,7 +20,7 @@ export default class Proj extends Actor {
 		this.thrust = new Vector(dir, 1000);// /*type.accel*/ 1000 * C.aMod);
 		this.travel = new Vector(dir, type.speed * C.sMod);
 		this.born   = new Date();	// why???
-
+		
 		this.className = 'Proj';
 		this.type = type;
 		this.color = type.color;
@@ -30,6 +28,8 @@ export default class Proj extends Actor {
 		this.target = target;
 		this.spin = [6,6];
 		this.lifespan = type.duration * C.f2ms;
+		
+		this.sound  = new Audio();//"sounds/" + Data.snds[this.type.sound]);
 
 		// temporary
 		// if (type.name.match(/laser/i)) {
@@ -54,14 +54,6 @@ export default class Proj extends Actor {
 			console.log(type);
 		}
 		
-	}
-
-	nameToSound(weapName) {
-		var str = weapName.split(/\s/)[0];
-		if (str.charAt(str.length - 1) == 's') {
-			str = str.substring(0, str.length - 1);
-		}
-		return str;
 	}
 
 	/**
