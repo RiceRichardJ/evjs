@@ -13,6 +13,8 @@ export default class Proj extends Actor {
 	constructor(type, xPos, yPos, dir, sender, target) {
 		super();
 
+		this.sound  = new Audio("sounds/" + this.nameToSound(type.name) + ".mp3");
+
 		this.speed  = type.speed * C.sMod;
 		this.turn   = type.turn  * C.tMod;
 		this.x      = xPos;
@@ -52,6 +54,14 @@ export default class Proj extends Actor {
 			console.log(type);
 		}
 		
+	}
+
+	nameToSound(weapName) {
+		var str = weapName.split(/\s/)[0];
+		if (str.charAt(str.length - 1) == 's') {
+			str = str.substring(0, str.length - 1);
+		}
+		return str;
 	}
 
 	/**

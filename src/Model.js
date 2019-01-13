@@ -49,6 +49,7 @@ export default class Model {
 	 */
 	addProj(actor) {
 		if (actor.newProj.length > 0) {
+			actor.newProj.map(proj => this.playSound(proj));
 			this.projs = this.projs.concat(actor.newProj);
 			actor.newProj = [];
 		}
@@ -56,6 +57,14 @@ export default class Model {
 			this.actors = this.actors.concat(actor.newShip);
 			actor.newShip = [];
 		}
+	}
+
+	playSound(proj) {
+		var distance = Vector.distance(proj.x, proj.y, this.player.x, this.player.y);
+		var fade = -0.001 * distance + 1;
+		proj.sound.volume = fade < 0.25 ? 0.25 : fade;
+		// console.log(distance + " | " + proj.sound.volume);
+		proj.sound.play();
 	}
 	
 	/**

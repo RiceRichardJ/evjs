@@ -2,7 +2,6 @@
 
 import Sidebar   from './view/Sidebar';
 import StarField from './view/StarField';
-// import Sound     from './view/Sound';
 
 /**
  * Handles all rendering.
@@ -13,7 +12,6 @@ export default class View {
 		this.ctx    = canvas.getContext("2d");
 		this.hud    = new Sidebar(this.ctx);
 		this.stars  = new StarField(this.ctx);
-		// this.sound  = new Sound();
 	}
 
 	/**

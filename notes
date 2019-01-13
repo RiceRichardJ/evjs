@@ -23,3 +23,9 @@ Fix autopilot.
 Engagement range.
 Missiles.
 Stand off for missiles.
+
+should be able to fire non-homing (heavy rockets) without selecting target
+ai should fly straight at enemy to use non-homing secondaries
+turret leading not working yet
+guided weapons should become unguided once target is destroyed
+-no thrust until finished turning/pointed at target

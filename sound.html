@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf‐8">
+  <title> Hello web audio </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <button id="playSound">Play</button>
+  <button id="stopSound">Stop</button>
+</body>
+<script>
+	var audioCtx = new (window.AudioContext || window.webkitAudioContext);
+	var sine = audioCtx.createOscillator();
+	sine.start();
+  sine.connect(audioCtx.destination);
+  $(document).ready(function() {
+    $("#playSound").click(() => {
+      audioCtx.resume();
+    });
+    $("#stopSound").click(() => {
+      audioCtx.suspend();
+    });
+  });
+</script>
+
+</html>
