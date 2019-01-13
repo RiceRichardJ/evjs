@@ -130,20 +130,14 @@ export default class Model {
 		// this.actors.push(dude2);
 		// this.actors.push(dude3);
 
-		
-
-				for (var weap of Data.weaps.slice(1)) {
-					weap.sprite = "../images/sprites/" + weap.name + ".png";
-				}
-
 				// Load from SHIPS JSON & target images
 				for (var ship of Data.ships.slice(1)) {
-					ship.sprite = "../images/sprites/" + ship.name + ".png"; //"content/RebelCruiserSprite.png";
+					ship.sprite = "images/sprites/" + ship.name + ".png"; //"content/RebelCruiserSprite.png";
 					if (ship.id == "133" || ship.id == "134") { 
-						ship.sprite = "../images/sprites/" + ship.shortName + ".png";
+						ship.sprite = "images/sprites/" + ship.shortName + ".png";
 					}
-					if (ship.id == "153") { 
-						ship.sprite = "../images/sprites/Bulk Freighter.png";
+					if (ship.id == "153") {
+						ship.sprite = "images/sprites/Bulk Freighter.png";
 					}
 
 					var newShip = new Ship(
@@ -155,7 +149,7 @@ export default class Model {
 					newShip.y = v.getY();
 					newShip.thrust.degrees = angle + 180;
 					newShip.targetImg = new Image();
-					newShip.targetImg.src = ship.sprite.replace("sprite","target").replace("png","jpeg");
+					newShip.targetImg.src = ship.sprite.replace("sprite", "target").replace("png", "jpeg");
 
 					this.actors.push(newShip);
 					this.actors.slice(-1)[0].ai.nav = planet;

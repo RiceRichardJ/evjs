@@ -50,10 +50,6 @@ export default class Ship extends Actor {
 	 * @param {*} shipType 
 	 */
 	populateWeapons(shipType, data) {
-		// for (var battery of shipType.weapons) {
-		// 	var weapType = data[battery.name];
-		// 	myWeaps.push(new Weapon(weapType, battery.count, battery.ammo));
-		// }
 		for (var weap of shipType.weapons) {
 			var weapType = Data.weaps[parseInt(weap.id)-127];
 			var newWeap = new Weapon(
