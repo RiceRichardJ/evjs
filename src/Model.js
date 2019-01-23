@@ -76,6 +76,9 @@ export default class Model {
 	collision() {
 		for (var proj of this.projs) {
 			for (var ship of this.actors.concat(this.player)) {
+				if (proj.type.type == "guided" && ship != proj.target) {
+					continue;
+				}
 				if ( ship.className == 'Ship' && proj.sender !== ship) { // can't shoot self
 					var dist = Vector.distance(proj.x, proj.y, ship.x, ship.y);
 					if (dist < 20) {
