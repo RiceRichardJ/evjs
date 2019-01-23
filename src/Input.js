@@ -95,6 +95,9 @@ export default class Input {
 		if (this.keyPressed["82"]) { // [R]
 			//closestEnemy();
 		}
+		if (this.keyPressed["83"]) { // [S]
+			this.model.player.weapInd = -1;
+		}
 	}
 }
 
