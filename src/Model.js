@@ -70,7 +70,8 @@ export default class Model {
 	}
 	
 	/**
-	 * Collisions between SHIPs and PROJs.
+	 * Check for collisions between SHIPs and PROJs.
+	 * TODO: Guided weapons hit only their targets.
 	 */
 	collision() {
 		for (var proj of this.projs) {
@@ -84,8 +85,6 @@ export default class Model {
 				}
 			}
 		}
-		// new Audio("sounds/ShipBreaksUp.mp3").play();
-		new Audio("sounds/MedExplosion.mp3").play();
 	}
 	
 	/**

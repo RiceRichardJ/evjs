@@ -2,6 +2,7 @@
 
 import Sidebar   from './view/Sidebar';
 import StarField from './view/StarField';
+import Data      from './model/Data';
 
 /**
  * Handles all rendering.
@@ -110,7 +111,7 @@ export default class View {
 	}
 
 	/**
-	 * Draw an explosion.
+	 * Draw an explosion & play sound.
 	 * @param {Actor} player (camera relative)
 	 * @param {Actor} actor (location to draw boom)
 	 * @param {number} dmg Magnitude.
@@ -129,5 +130,13 @@ export default class View {
 		this.ctx.fill();
 		
 		this.ctx.restore();
+
+		// Play sound.
+		if (actor.className == 'Proj') {
+			let sndFile = Data.snds[Data.booms[actor.type.explosion - 128].sound];
+			sndFile ? new Audio("sounds/" + sndFile).play() :0;
+		} else if (actor.className == 'Ship') {
+			new Audio("sounds/ShipExplodes.mp3").play();
+		}
 	}
 }

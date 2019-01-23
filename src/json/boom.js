@@ -1,5 +1,5 @@
 export default {
-	"boom:" : [
+	"boom" : [
 		{
 			"resourceName"  : "FAE Small",
 			"animationRate" : 200,

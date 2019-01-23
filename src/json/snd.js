@@ -17,6 +17,10 @@ export default {
 		214 : "Flare Drop.mp3",
 		215 : "Drone Release.mp3",
 		216 : "Fusion Beam.mp3",
-		223 : "Engine.mp3"
+		223 : "Engine.mp3",
+		300 : "HeavyExplosion.mp3",
+		301 : "MedExplosion.mp3",
+		302 : "ShipBreaksUp.mp3",
+		303 : "ShipExplodes.mp3"
 	}
 }
