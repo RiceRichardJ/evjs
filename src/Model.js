@@ -71,7 +71,6 @@ export default class Model {
 	
 	/**
 	 * Check for collisions between SHIPs and PROJs.
-	 * TODO: Guided weapons hit only their targets.
 	 */
 	collision() {
 		for (var proj of this.projs) {
@@ -117,7 +116,7 @@ export default class Model {
 	addTestData() {
 		// Demo Populate.
 		var planet  = new Actor(this.data.demoPlanet);
-		var planet2 = new Actor(this.data.demoPlanet);
+		var planet2 = new Actor(this.data.demoPlanet2);
 		// var dude1  = new Ship(  this.data.rebelCruiser, 1, this.data);
 		// var dude2  = new Ship(  this.data.rebelCruiser, 2, this.data);
 		// var dude3  = new Ship(  this.data.rebelCruiser, 3, this.data);

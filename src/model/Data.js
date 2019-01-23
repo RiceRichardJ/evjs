@@ -155,6 +155,13 @@ class DataClass {
 			y: 100,
 			sprite: "images/sprites/Spob 2000.png",
 		};
+		
+		this.demoPlanet2 = {
+			name: "Demo Planet 2",
+			x: 100,
+			y: 100,
+			sprite: "images/sprites/Spob 2000.png",
+		};
 	}
 };
 

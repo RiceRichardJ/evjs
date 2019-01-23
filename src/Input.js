@@ -15,7 +15,7 @@ export default class Input {
 	 */
 	registerKeyListeners() {
 		document.addEventListener('keydown', function(e) {
-			// alert(e.keyCode);
+			// console.log(e.keyCode);
 			if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
 				e.preventDefault();
 			}
@@ -62,19 +62,22 @@ export default class Input {
 			//if (velocity < 0) { velocity = 0; }
 		}
 		if (this.keyPressed["49"]) { // [1]
-			this.model.player.navSelect(1);
+			this.model.player.navSelect(this.model.spobs[0]);
 		}
 		if (this.keyPressed["50"]) { // [2]
-			this.model.player.navSelect(2);
+			this.model.player.navSelect(this.model.spobs[1]);
 		}
 		if (this.keyPressed["51"]) { // [3]
-			this.model.player.navSelect(3);
+			this.model.player.navSelect(this.model.spobs[2]);
 		}
 		if (this.keyPressed["52"]) { // [4]
-			this.model.player.navSelect(4);
+			this.model.player.navSelect(this.model.spobs[3]);
 		}
 		if (this.keyPressed["65"]) { // [A]
 			this.model.player.autoPilot();
+		}
+		if (this.keyPressed["66"]) { // [B]
+			this.model.player.board();
 		}
 		if (this.keyPressed["72"]) { // [H]
 			this.model.player.navSelect(0);
@@ -87,7 +90,7 @@ export default class Input {
 			}
 		}
 		if (this.keyPressed["78"]) { // [N]
-			this.model.player.navSelect(-1);
+			this.model.player.navSelect(null);
 		}
 		if (this.keyPressed["82"]) { // [R]
 			//closestEnemy();

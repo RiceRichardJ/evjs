@@ -23,15 +23,7 @@ export default class Player extends Ship {
 	}
 
 	navSelect(target) {
-		// switch(target) {
-		// 	case -1:
-		// 		this.ai.nav = null; break;
-		// 	case 0:
-		// 		this.ai.nav = hyperNav; break
-		// 	case 1: case 2: case 3: case 4:
-		// 		this.ai.nav = break;
-		// 	default:
-		// }
+		this.ai.nav = target;
 	}
 
 	land() {
@@ -101,5 +93,17 @@ export default class Player extends Ship {
 				this.newShip.push(projectile);
 			}
 		}
+	}
+
+	board(targ = this.ai.target) {
+		console.log("attempt board");
+		console.log(targ);
+		if (!targ || targ.className != 'Ship' || !targ.disabled) { console.log("A"); return; }
+		if (this.travel.magnitude > 0.5) { console.log("B"); return; }
+		if (Vector.distance(this.x, this.y, targ.x, targ.y) > 50) { console.log("C"); return; }
+				// stage.ctx.font = "9pt Arial";
+				// stage.ctx.fillText("Moving too fast to land!",10,590);
+		this.landed = true;
+		$("#landButton").click();
 	}
 }

@@ -11,12 +11,12 @@ export default class Sidebar {
 
 	// Render
 	render(player, actors, spobs, cnv) {
-		this.chevrons(player, actors, cnv);
+		this.chevrons(player, cnv);
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
 		this.radar(player, actors, spobs);
 		this.levels(player);
-		this.nav();
+		this.nav(player);
 		this.weap(player);
 		this.target(player);
 		this.cargo();
@@ -93,12 +93,20 @@ export default class Sidebar {
 	}
 
 	// Nav
-	nav() {
+	nav(player) {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 195, 140, 40);
 
 		this.ctx.fillStyle = '#03900E';
-		this.ctx.fillText("Nav System Off", 687, 217);
+		let nav = player.ai.nav;
+		if (nav) {
+			this.ctx.moveTo(655, 0);
+			this.ctx.textAlign = 'center';
+			this.ctx.fillText(nav.name, 655 + 70, 217);
+		} else {
+			this.ctx.fillText("Nav System Off", 687, 217);
+		}
+		this.ctx.textAlign = 'start';
 	}
 
 	// Secondaries
@@ -167,21 +175,27 @@ export default class Sidebar {
 	}
 	
 	// Chevrons
-	chevrons(player, actors, cnv) {
-		if (!player.ai.target || player.ai.target.dead) { return; }
+	chevrons(player, cnv) {
+		if (player.ai.target && !player.ai.target.dead) {
+			this.box(cnv, player, player.ai.target, '#88f');
+		}
+		if (player.ai.nav) {
+			this.box(cnv, player, player.ai.nav,    '#ff8');
+		}
+	}
 
+	box(cnv, player, actor, color) {
 		this.ctx.save();
 		this.ctx.setTransform(1,0,0,1,0,0);
 		this.ctx.translate(
-			player.ai.target.x - player.x + ((cnv.width - 150)  / 2),
-			player.ai.target.y - player.y + ( cnv.height        / 2)
+			actor.x - player.x + ((cnv.width - 150)  / 2),
+			actor.y - player.y + ( cnv.height        / 2)
 		);
 		
-		this.ctx.strokeStyle = '#88f';
+		this.ctx.strokeStyle = color;
 		this.ctx.lineWidth = 2;
 		this.ctx.strokeRect(-50, -50, 100, 100);
 		
 		this.ctx.restore();
 	}
-
 }
