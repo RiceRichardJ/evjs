@@ -10,13 +10,14 @@ import Vector from './Vector';
 export default class AI {
 	constructor(ship) {
 		this.myShip = ship;
-		this.mood = AI.moods().passive;
-		this.pers = AI.pers().brave;
-		this.nav = null;
+		this.mood   = AI.moods().passive;
+		this.pers   = AI.pers().brave;
+		this.nav    = null;
 		this.target = null;
 		this.suspects = {};
-		this.enemies = {};
-		this.landing = false;
+		this.enemies  = {};
+		this.landing  = false;
+		this.govt     = ship.type.govt;
 	}
 
 	static moods() {
@@ -110,6 +111,7 @@ export default class AI {
 	 * @param {number} damage How much damage they did.
 	 */
 	hit(ship, damage) {
+		if (ship.govt && ship.govt == this.govt) { return; }
 		this.target = ship;
 		// this.stopping = false;
 		// if (!this.suspects[ship]) { this.suspects[ship] = damage; }

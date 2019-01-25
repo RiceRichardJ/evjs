@@ -43,6 +43,10 @@ export default class Ship extends Actor {
 		this.newShip = []; // ditto but for fighters
 		this.spin = [6,6];
 		this.disabled = false;
+		this.sender = null;
+
+		this.targetImg = new Image();
+		this.targetImg.src = this.type.sprite.replace("sprite", "target").replace("png", "jpeg");
 	}
 
 	/**

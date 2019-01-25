@@ -135,7 +135,7 @@ export default class View {
 		if (actor.className == 'Proj') {
 			let sndFile = Data.snds[Data.booms[actor.type.explosion - 128].sound];
 			sndFile ? new Audio("sounds/" + sndFile).play() :0;
-		} else if (actor.className == 'Ship') {
+		} else if (actor.className == 'Ship' && actor != player) {
 			new Audio("sounds/ShipExplodes.mp3").play();
 		}
 	}

@@ -46,8 +46,22 @@ export default class Weapon {
 			targetAngle = Vector.intercept(sender, this.type.speed, targ);
 		}
 		if (this.type.type == "ship") {
-			//return new Ship(Object.assign(...Data.ships[0], Data.ships[this.type.ammo - 127], Data));//Data.ships[this.type.ammo - 127], 0, Data);
-			// return new Actor();//Data.ships[this.type.ammo - 127], 0, Data);
+// 			//return new Ship(Object.assign(...Data.ships[0], Data.ships[this.type.ammo - 127], Data));//Data.ships[this.type.ammo - 127], 0, Data);
+// 			// return new Actor();//Data.ships[this.type.ammo - 127], 0, Data);
+// Object.assign(...Data.ships[0], shipType) // wtf is this
+
+			let shipType = Data.ships[this.type.ammo - 127]; console.log( shipType );
+			let newShip = new Ship.default(shipType, 99, null); // the "default" part seems to be required because a javascript bug
+			newShip.type = shipType;
+			newShip.x = sender.x;
+			newShip.y = sender.y;
+			newShip.travel.degrees   = sender.travel.degrees;
+			newShip.travel.magnitude = sender.travel.magnitude;
+			newShip.thrust.degress   = sender.thrust.degrees + spread;
+			newShip.thrust.magnitude = this.type.speed;
+			newShip.ai.target = targ;
+			newShip.ai.govt = sender.ai.govt;
+			return newShip;
 		} else {
 			return new Proj(
 				this.type, sender.x, sender.y, 

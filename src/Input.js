@@ -79,8 +79,29 @@ export default class Input {
 		if (this.keyPressed["66"]) { // [B]
 			this.model.player.board();
 		}
+		if (this.keyPressed["67"]) { // [C]
+			// escort formation // return to ship
+		}
+		if (this.keyPressed["68"]) { // [D]
+			// self destruct
+		}
+		if (this.keyPressed["69"]) { // [E]
+			// escort menu // command+e = eject
+		}
+		if (this.keyPressed["70"]) { // [F]
+			// attack
+		}
+		if (this.keyPressed["71"]) { // [G]
+			// 
+		}
 		if (this.keyPressed["72"]) { // [H]
 			this.model.player.navSelect(0);
+		}
+		if (this.keyPressed["73"]) { // [I]
+			// mission info
+		}
+		if (this.keyPressed["74"] || this.keyPressed["75"]) { // [J][K]
+			// jettison cargo
 		}
 		if (this.keyPressed["76"]) { // [L]
 			var status = this.model.player.land();
@@ -89,14 +110,53 @@ export default class Input {
 				stage.ctx.fillText("Moving too fast to land!",10,590);
 			}
 		}
+		if (this.keyPressed["77"]) { // [M]
+			// map
+		}
 		if (this.keyPressed["78"]) { // [N]
 			this.model.player.navSelect(null);
+		}
+		if (this.keyPressed["79"]) { // [O]
+			// 
+		}
+		if (this.keyPressed["80"]) { // [P]
+			// player info
+		}
+		if (this.keyPressed["81"]) { // [Q]
+			// 
 		}
 		if (this.keyPressed["82"]) { // [R]
 			//closestEnemy();
 		}
 		if (this.keyPressed["83"]) { // [S]
 			this.model.player.weapInd = -1;
+		}
+		if (this.keyPressed["84"]) { // [T]
+			// 
+		}
+		if (this.keyPressed["85"]) { // [U]
+			// cloak
+		}
+		if (this.keyPressed["86"]) { // [V]
+			// hold position
+		}
+		if (this.keyPressed["87"]) { // [W]
+			// secondary weapon select
+		}
+		if (this.keyPressed["88"]) { // [X]
+			// flares
+		}
+		if (this.keyPressed["89"]) { // [Y]
+			// comms
+		}
+		if (this.keyPressed["90"]) { // [Z]
+			// afterburner
+		}
+		if (this.keyPressed["192"]) { // [`]
+			// nav off
+		}
+		if (this.keyPressed["220"]) { // [\]
+			// hyper select
 		}
 	}
 }

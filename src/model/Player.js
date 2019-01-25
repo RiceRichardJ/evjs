@@ -83,8 +83,8 @@ export default class Player extends Ship {
 	}
 
 	fireSecondary(targ = this.ai.target) {
-		if (!targ) { return; }
 		var myWeap = this.weapons[this.weapInd];
+		if (myWeap.type.type == "guided" && !targ) { return; }
 		var projectile = myWeap.fire(targ, this);
 		if (projectile) {
 			if (projectile.className == "Proj") {

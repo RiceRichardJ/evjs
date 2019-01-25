@@ -49,7 +49,7 @@ export default class Model {
 	 */
 	addProj(actor) {
 		if (actor.newProj.length > 0) {
-			actor.newProj.map(proj => this.playSound(proj));
+			actor.newProj.map(proj => this.playSound(proj));	// not ideal to have the projectile play the sound instead of the weapon.
 			this.projs = this.projs.concat(actor.newProj);
 			actor.newProj = [];
 		}
@@ -78,6 +78,7 @@ export default class Model {
 				if (proj.type.type == "guided" && ship != proj.target) {
 					continue;
 				}
+				if (proj.sender.ai.govt == ship.ai.govt) { continue; }
 				if ( ship.className == 'Ship' && proj.sender !== ship) { // can't shoot self
 					var dist = Vector.distance(proj.x, proj.y, ship.x, ship.y);
 					if (dist < 20) {
@@ -162,8 +163,8 @@ export default class Model {
 					newShip.x = v.getX();
 					newShip.y = v.getY();
 					newShip.thrust.degrees = angle + 180;
-					newShip.targetImg = new Image();
-					newShip.targetImg.src = ship.sprite.replace("sprite", "target").replace("png", "jpeg");
+					// newShip.targetImg = new Image();
+					// newShip.targetImg.src = ship.sprite.replace("sprite", "target").replace("png", "jpeg");
 
 					this.actors.push(newShip);
 					this.actors.slice(-1)[0].ai.nav = planet;
@@ -173,6 +174,7 @@ export default class Model {
 		this.player.x = -200;
 		this.player.y = -200;
 		this.player.ai.nav = planet;
+		this.player.ai.govt = null;
 
 	}
 

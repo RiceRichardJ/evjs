@@ -135,7 +135,14 @@ export default class Sidebar {
 			var target = player.ai.target;
 			this.ctx.textAlign = "center"; 
 			this.ctx.fillText( target.type.name, 725, 280);
-			this.ctx.drawImage(target.targetImg, 661, 290);
+			try {
+				this.ctx.drawImage(target.targetImg, 661, 290);
+			} catch (e) {
+				console.log(e);
+				console.log(player);
+				console.log(target);
+				console.log(target.targetImg);
+			}
 			this.ctx.textAlign = "left"; 
 			if (target.disabled) {
 				this.ctx.fillText("Disabled", 660, 380);
