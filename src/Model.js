@@ -78,7 +78,10 @@ export default class Model {
 				if (proj.type.type == "guided" && ship != proj.target) {
 					continue;
 				}
-				if (proj.sender.ai.govt == ship.ai.govt) { continue; }
+				if (proj.sender.ai.govt && ship.ai.govt
+					&& proj.sender.ai.govt == ship.ai.govt) {
+					continue;
+				}
 				if ( ship.className == 'Ship' && proj.sender !== ship) { // can't shoot self
 					var dist = Vector.distance(proj.x, proj.y, ship.x, ship.y);
 					if (dist < 20) {
