@@ -16,16 +16,14 @@ export default class Input {
 	registerKeyListeners() {
 		document.addEventListener('keydown', function(e) {
 			// console.log(e.keyCode);
-			if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+			if([9, 16, 27, 32, 37, 38, 39, 40].includes(e.keyCode)) {
 				e.preventDefault();
 			}
 			if (e.keyCode == 9) { // [TAB]
-				e.preventDefault();
 				this.model.player.cycleTargets(this.model.actors);
 			} else if (e.keyCode == 87) { // [W]
 				this.model.player.switchSecondary();
 			} else if (e.keyCode == 16) { // [SHIFT]
-				e.preventDefault();
 				this.model.player.fireSecondary();
 			}
 			this.keyPressed[e.keyCode] = true;
@@ -43,6 +41,9 @@ export default class Input {
 	 * Controls: Key Listeners.
 	 */
 	poll() {
+		if (this.keyPressed["27"]) { // [esc]
+			$('.modal').modal('hide');
+		}
 		if (this.keyPressed["32"]) { // spacebar
 			this.model.player.fire();
 		}
@@ -98,7 +99,7 @@ export default class Input {
 			this.model.player.navSelect(0);
 		}
 		if (this.keyPressed["73"]) { // [I]
-			// mission info
+			this.model.player.missionInfo();
 		}
 		if (this.keyPressed["74"] || this.keyPressed["75"]) { // [J][K]
 			// jettison cargo
@@ -111,7 +112,7 @@ export default class Input {
 			}
 		}
 		if (this.keyPressed["77"]) { // [M]
-			// map
+			this.model.player.map();
 		}
 		if (this.keyPressed["78"]) { // [N]
 			this.model.player.navSelect(null);
@@ -120,7 +121,7 @@ export default class Input {
 			// 
 		}
 		if (this.keyPressed["80"]) { // [P]
-			// player info
+			this.model.player.playerInfo();
 		}
 		if (this.keyPressed["81"]) { // [Q]
 			// 

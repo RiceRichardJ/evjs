@@ -7,7 +7,7 @@ export default class Player extends Ship {
 	constructor(shipType, data) {
 		super(shipType, 0, data);
 		this.targInd = -1;
-		this.landed = false;
+		this.paused = false;
 		this.hyperNav = null;
 		this.weapInd = -1;
 	}
@@ -31,13 +31,13 @@ export default class Player extends Ship {
 		var dist = Vector.distance(this.x, this.y,
 			this.ai.nav.x, this.ai.nav.y);
 
-		if (dist < 50 && !this.landed) {
+		if (dist < 50 && !this.paused) {
 			if (this.travel.magnitude > 0.5) {
 				// stage.ctx.font = "9pt Arial";
 				// stage.ctx.fillText("Moving too fast to land!",10,590);
 				return 2;
 			}
-			this.landed = true;
+			this.paused = true;
 			$("#landButton").click();
 			return 0;
 		}
@@ -96,14 +96,35 @@ export default class Player extends Ship {
 	}
 
 	board(targ = this.ai.target) {
-		console.log("attempt board");
-		console.log(targ);
 		if (!targ || targ.className != 'Ship' || !targ.disabled) { console.log("A"); return; }
 		if (this.travel.magnitude > 0.5) { console.log("B"); return; }
 		if (Vector.distance(this.x, this.y, targ.x, targ.y) > 50) { console.log("C"); return; }
 				// stage.ctx.font = "9pt Arial";
 				// stage.ctx.fillText("Moving too fast to land!",10,590);
-		this.landed = true;
-		$("#landButton").click();
+		if (!this.paused) {
+			this.paused = true;
+			$("#boardButton").click();
+		}
+	}
+
+	map() {
+		if (!this.paused) {
+			this.paused = true;
+			$("#mapButton").click();
+		}
+	}
+
+	playerInfo() {
+		if (!this.paused) {
+			this.paused = true;
+			$("#playerButton").click();
+		}
+	}
+
+	missionInfo() {
+		if (!this.paused) {
+			this.paused = true;
+			$("#infoButton").click();
+		}
 	}
 }

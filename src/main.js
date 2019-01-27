@@ -9,21 +9,23 @@ var view  = new View(document.getElementById("gc"));
 var model = new Model();
 var input = new Input(model);
 
-$('#modalSpaceport').on('hidden.bs.modal', function() {
+$('.modal').on('hidden.bs.modal', function() {
 	console.log("DEPART, modalSpaceport hidden ");
 	// Reset Ship Position // Reset Shields, Armor. Refuel. Etc.
-	model.player.landed = false;
+	model.player.paused = false;
 });
 
 /**
  * Main Loop. Each frame.
  */
 setInterval(function update() {
-	// Don't update if we're landed.
-	if ($('#modalSpaceport').hasClass('in')) { return; }
-
-	// Read user input, draw output, run AI.
+	// Read user input
 	input.poll();
+
+	// Don't update if we're landed.
+	if ($('.modal').hasClass('in')) { return; }
+	
+	// Draw output, run AI.
 	model.action(view);
 
 	// 60fps
