@@ -184,7 +184,13 @@ export default class Sidebar {
 	// Chevrons
 	chevrons(player, cnv) {
 		if (player.ai.target && !player.ai.target.dead) {
-			this.box(cnv, player, player.ai.target, '#88f');
+			let color = '#88f';
+			if (player.ai.target.disabled) {
+				color = '#888';
+			} else if (player.ai.target.ai.target == player) {
+				color = '#f20';
+			}
+			this.box(cnv, player, player.ai.target, color);
 		}
 		if (player.ai.nav) {
 			this.box(cnv, player, player.ai.nav,    '#ff8');
