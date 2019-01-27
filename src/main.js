@@ -5,7 +5,7 @@ import Input from './Input';
 import Model from './Model';
 import View  from './View';
 
-var view  = new View(document.getElementById("gc"));
+var view  = new View(document.getElementById("gc"), $("#mapGc")[0]);
 var model = new Model();
 var input = new Input(model);
 
@@ -21,6 +21,8 @@ $('.modal').on('hidden.bs.modal', function() {
 setInterval(function update() {
 	// Read user input
 	input.poll();
+
+	if (model.mapView) { view.mapRender() }
 
 	// Don't update if we're landed.
 	if ($('.modal').hasClass('in')) { return; }

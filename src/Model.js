@@ -25,6 +25,7 @@ export default class Model {
 		this.actors = [];
 		this.projs  = [];
 		this.addTestData();
+		this.mapView = false;
 	}
 
 	/**

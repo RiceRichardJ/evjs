@@ -8,11 +8,14 @@ import Data      from './model/Data';
  * Handles all rendering.
  */
 export default class View {
-	constructor(canvas) {
+	constructor(canvas, mapCanvas) {
 		this.cnv    = canvas;
 		this.ctx    = canvas.getContext("2d");
 		this.hud    = new Sidebar(this.ctx);
 		this.stars  = new StarField(this.ctx);
+
+		this.mapCnv = mapCanvas;
+		this.mapCtx = mapCanvas.getContext("2d");
 	}
 
 	/**
@@ -137,6 +140,34 @@ export default class View {
 			sndFile ? new Audio("sounds/" + sndFile).play() :0;
 		} else if (actor.className == 'Ship' && actor != player) {
 			new Audio("sounds/ShipExplodes.mp3").play();
+		}
+	}
+
+	mapRender() {
+		const ZOOM = 2.0;
+		const OFFSET_X = 200;
+		const OFFSET_Y = 100;
+		const SYST_SZ = ZOOM * 2;
+
+		this.mapCtx.fillStyle = '#333';
+		this.mapCtx.fillRect(0, 0, this.mapCnv.width, this.mapCnv.height);
+		for (let syst of Data.systs.slice(1)) {
+			
+			for (let link of syst.links) {
+				this.mapCtx.beginPath();
+				this.mapCtx.moveTo(ZOOM * syst.x + OFFSET_X + 1, ZOOM * syst.y + OFFSET_Y + 1);
+				let linkSyst = Data.systs[link - 127];
+				if (linkSyst) {
+					this.mapCtx.lineTo(ZOOM * linkSyst.x + OFFSET_X + (SYST_SZ/2), ZOOM * linkSyst.y + OFFSET_Y + (SYST_SZ/2));
+					this.mapCtx.strokeStyle = '#999';
+					this.mapCtx.stroke();
+				}
+			}
+			this.mapCtx.fillStyle = '#08f';
+			this.mapCtx.fillRect(ZOOM * syst.x + OFFSET_X, ZOOM * syst.y + OFFSET_Y, SYST_SZ, SYST_SZ);
+			this.mapCtx.fillStyle = '#fff';
+			this.ctx.font='10px sans-serif';
+			this.mapCtx.fillText(syst.name, ZOOM * syst.x + OFFSET_X, ZOOM * syst.y + OFFSET_Y);
 		}
 	}
 }

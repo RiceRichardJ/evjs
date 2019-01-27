@@ -193,7 +193,7 @@ export default class Sidebar {
 			this.box(cnv, player, player.ai.target, color);
 		}
 		if (player.ai.nav) {
-			this.box(cnv, player, player.ai.nav,    '#ff8');
+			this.box(cnv, player, player.ai.nav, '#ff8');
 		}
 	}
 

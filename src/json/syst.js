@@ -177,11 +177,11 @@ export default {
 		}, {
 			"name" : "Antares",
 			"x" : -36,
-			"y" : -40,
+			"y" : 40,
 			"government" : 128,
 			"avgShips"   :   4,
-			"spobs" : [ 149, 131, 146 ],
-			"links" : [ 144, 135, 150 ],
+			"spobs" : [ 154, 155 ],
+			"links" : [ 149, 131, 146 ],
 			"dudes" : [
 				[146, 60],
 				[129, 40],
@@ -276,7 +276,7 @@ export default {
 			"y"     :  55,
 			"avgShips"   : 1,
 			"avgRoids"   : 3,
-			"links" : [ 137, 133, 132, 152, 156 ],
+			"links" : [ 139, 160, 171 ],
 			"dudes" : [
 				[133, 50],
 				[134, 10],

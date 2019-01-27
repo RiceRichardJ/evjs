@@ -111,7 +111,9 @@ export default class Player extends Ship {
 		if (!this.paused) {
 			this.paused = true;
 			$("#mapButton").click();
+			return true;
 		}
+		return false;
 	}
 
 	playerInfo() {

@@ -112,7 +112,9 @@ export default class Input {
 			}
 		}
 		if (this.keyPressed["77"]) { // [M]
-			this.model.player.map();
+			if (this.model.player.map()) {
+				this.model.mapView = true;
+			}
 		}
 		if (this.keyPressed["78"]) { // [N]
 			this.model.player.navSelect(null);
