@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://ricerichardj.com/sound.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf‐8">
+<title> Hello web audio </title> </head>
+<body>
+
+<script>
+// 	var audioCtx = new (window.AudioContext || window.webkitAudioContext);
+// 	// var sine = audioCtx.createOscillator();
+// 	// sine.start();
+// 	// sine.connect(audioCtx.destination);
+
+// var onError = null;
+// var dogBarkingBuffer = null;
+
+// function loadDogSound(url) {
+// 	console.log("loadDogSound");
+// 	var request = new XMLHttpRequest();
+// 	request.open('GET', url, true);
+// 	request.responseType = 'arraybuffer';
+
+// 	// Decode asynchronously
+// 	request.onload = function() {
+// 		console.log("request.onload");
+// 		audioCtx.decodeAudioData(request.response, function(buffer) {
+// 			dogBarkingBuffer = buffer;
+// 		}, onError);
+// 		playSound(dogBarkingBuffer);
+// 	}
+// 	request.send();
+// }
+
+// function playSound(buffer) {
+// 	console.log("playSound");
+// 	var source = audioCtx.createBufferSource(); // creates a sound source
+// 	source.buffer = buffer;                     // tell the source which sound to play
+// 	source.connect(audioCtx.destination);       // connect the source to the context's destination (the speakers)
+// 	source.start(0);                            // play the source now
+// 	                                            // note: on older systems, may have to use deprecated noteOn(time);
+// }
+
+// loadDogSound("http://localhost:8080/sound/Rocket.mp3");
+// playSound(dogBarkingBuffer);
+
+
+
+
+
+
+
+/**
+ * 
+ */
+class BufferLoader {
+	constructor(context, urlList, callback) {
+		console.log("BufferLoader constructor");
+		this.context    = context;
+		this.urlList    = urlList;
+		this.callback   = callback;
+		this.bufferList = [];
+		this.loadCount  = 0;
+		this.that = this;
+	}
+
+	/**
+	 * Load buffer asynchronously.
+	 */
+	loadBuffer(url, index) {
+		console.log("BufferLoader.loadBuffer()");
+		var ajax = new XMLHttpRequest();
+		ajax.open("GET", url, true);
+		ajax.responseType = "arraybuffer";
+		ajax.onload       = () => decode(this, ajax.response, index);
+		ajax.onerror      = () => console.log('BufferLoader: XHR error');
+		ajax.send();
+	}
+
+	/**
+	 * 
+	 */
+	load() {
+		console.log("BufferLoader.load()");
+		for (var i = 0; i < this.urlList.length; ++i) {
+			this.loadBuffer(this.urlList[i], i);
+		}
+	}
+}
+// /**
+//  * 
+//  */
+//  BufferLoader.prototype.load = function() {
+//   console.log("BufferLoader.load()");
+//   for (var i = 0; i < this.urlList.length; ++i) {
+//     var req = new XMLHttpRequest();
+//     req.open("GET", this.urlList[i], true);
+//     req.responseType = "arraybuffer";
+//     req.onload       = () => decode(this, req.response, i);
+//     req.onerror      = () => console.log('BufferLoader: XHR error');
+//     req.send();
+//   }
+// }
+
+
+
+
+/**
+ * Asynchronously decode the audio file data in request.response
+ */
+function decode(loader, file, index) {
+	console.log("BufferLoader.requestOnLoad()" + loader);
+	loader.context.decodeAudioData(
+		file,
+		buffer => {
+			if (!buffer) { console.log('error decoding file data: ' + url); return; }
+			loader.bufferList[index] = buffer;
+			if (++loader.loadCount == loader.urlList.length) {
+				loader.callback(loader.bufferList);
+			}
+		},
+		error => { console.error('decodeAudioData error', error); }
+	);
+}
+
+/**
+ * 
+ */
+BufferLoader.prototype.load = function() {
+	console.log("BufferLoader.load()");
+	for (var i = 0; i < this.urlList.length; ++i) {
+		this.loadBuffer(this.urlList[i], i);
+		// BufferLoader.prototype.loadBuffer = function(url, index) {
+			// console.log("BufferLoader.loadBuffer() " + this.urlList[i]);
+			// var req = new XMLHttpRequest();
+			// req.open("GET", this.urlList[i], true);
+			// req.responseType = "arraybuffer";
+			// req.onload       = () => decode(this, req.response, i);
+			// req.onerror      = () => console.log('BufferLoader: XHR error');
+			// req.send();
+		// }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  init;
+// var audioCtx;
+// var bufferLoader;
+
+// window.onload = function() {
+//   console.log("window.onload.init()");
+//   audioCtx = new AudioContext( window.AudioContext || window.webkitAudioContext);
+
+//   var bufferLoader = new BufferLoader(
+//     audioCtx,
+//     [
+//       // '../sounds/hyper-reality/br-jam-loop.wav',
+// 			// '../sounds/hyper-reality/laughter.wav',
+// 			'Rocket.mp3',
+// 			'Proton.mp3',
+//     ],
+//     finishedLoading
+//   );
+
+//   bufferLoader.load();
+// }
+
+
+// function finishedLoading(bufferList) {
+// 	console.log("finishedLoading(" + bufferList + ")");
+// 	// Create two sources and play them both together.
+// 	var source1 = audioCtx.createBufferSource();
+// 	var source2 = audioCtx.createBufferSource();
+// 	source1.buffer = bufferList[0];
+// 	source2.buffer = bufferList[1];
+
+// 	source1.connect(audioCtx.destination);
+// 	source2.connect(audioCtx.destination);
+// 	source1.start(0);
+// 	source2.start(0);
+// }
+
+
+
+
+
+window.onload = function() {
+	var sound = new Sound([
+		'Rocket.mp3',
+		'Proton.mp3',
+	]);
+}
+
+class Sound {
+	constructor(fileList) {
+		console.log("Construct Sound");
+		this.audioCtx     = new (window.AudioContext || window.webkitAudioContext);
+		this.bufferLoader = new BufferLoader(
+			this.audioCtx,
+			fileList,
+			bufferList => this.help(this.audioCtx, bufferList)
+		);
+		this.bufferLoader.load();
+	}
+
+	help(audioCtx, bufferList) {
+		console.log("finishedLoading(" + bufferList + ")");
+		// Create two sources and play them both together.
+		var source1 = audioCtx.createBufferSource();
+		var source2 = audioCtx.createBufferSource();
+		source1.buffer = bufferList[0];
+		source2.buffer = bufferList[1];
+
+		source1.connect(audioCtx.destination);
+		source2.connect(audioCtx.destination);
+		source1.start(0);
+		source2.start(0);
+	}
+}
+
+</script>
+</body></html>

@@ -1,0 +1,53 @@
+<html>
+	<head></head>
+	<body onload="run()">
+		<canvas id='gc' width="800" height="600"></canvas>
+		<canvas id='wk' width="800" height="600"></canvas>
+		<img hidden id="img" src="images/sprites/Rebel Cruiser Sprite.png"/>
+		<img hidden id="msk" src="images/sprites/Rebel Cruiser Mask.png"/>
+		<script>
+/**
+ * https://stackoverflow.com/questions/12673527/html5-canvas-use-image-as-mask
+ * https://stackoverflow.com/questions/22097747/how-to-fix-getimagedata-error-the-canvas-has-been-tainted-by-cross-origin-data
+ * https://stackoverflow.com/questions/22194267/putimagedata-how-to-keep-old-pixels-if-new-pixels-are-transparent
+ */
+function run() {
+	console.log("READY");
+
+	var cnv = document.getElementById("gc");
+	var ctx = cnv.getContext("2d");
+	// var img = new Image();
+	// img.src = "images/sprites/Rebel Cruiser Sprite.png";
+	// var msk = new Image();
+	// msk.src = "images/sprites/Rebel Cruiser Mask.png";
+	var img = document.getElementById("img");
+	var msk = document.getElementById("msk");
+
+	// ctx.globalCompositeOperation = 'source-in';
+
+	var cv2 = document.getElementById("wk");
+	var wk = cv2.getContext("2d");
+	wk.fillStyle = 'blue';
+	wk.fillRect(0, 0, cnv.width, cnv.height);
+	
+	wk.drawImage(img, 0, 0);
+	var image = wk.getImageData(0, 0, img.width, img.height);
+	wk.drawImage(msk, 0, 0);
+	var alpha = wk.getImageData(0, 0, msk.width, msk.height);
+
+	// [R,G,B,A,...]
+	for (var i = 3; i < image.data.length; i = i + 4) {
+		image.data[i] = alpha.data[i-1]; //copies blue channel of BW mask into A channel of the image
+		// if (image.data[i] == 0) image.data[i] = 255;
+		// else if (image.data[i] == 255) image.data[i] = 0;
+
+	}
+	wk.putImageData(image, 0, 0);//, 0, 0, img.width, img.height);
+
+	ctx.fillStyle = 'green';
+	ctx.fillRect(0, 0, cnv.width, cnv.height);
+	ctx.drawImage(cv2, 0, 0);
+}
+		</script>
+	</body>
+</html>

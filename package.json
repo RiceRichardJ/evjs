@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/babel src -d js",
-    "server": "./node_modules/.bin/http-server -c-1"
+    "server": "./node_modules/.bin/http-server -c-1",
+    "start": "npm run build"
   },
   "repository": {
     "type": "git",

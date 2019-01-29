@@ -1,5 +1,9 @@
 <!-- Trigger the modal with a button -->
-<button style="display:none;" id="landButton" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalSpaceport">Open Modal</button>
+<button style="display:none;" id=  "landButton" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalSpaceport">Land</button>
+<button style="display:none;" id= "boardButton" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalBoard">Board Ship</button>
+<button style="display:none;" id=   "mapButton" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalStarmap">Star Map</button>
+<button style="display:none;" id="playerButton" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalPlayer">Player Info</button>
+<button style="display:none;" id=  "infoButton" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalInfo">Mission Info</button>
 
 <!-- Modal -->
 <div id="landModal" class="modal fade" role="dialog">
@@ -97,7 +101,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Bar</h4>
+				<h4 class="modal-title">Spaceport Bar</h4>
 			</div>
 			<div class="modal-body">
 				<p>Some text in the modal.</p>
@@ -181,6 +185,24 @@
 	</div>
 </div>
 
+<!-- Board -->
+<div id="modalBoard" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Boarding Ship</h4>
+			</div>
+			<div class="modal-body">
+				<p>Some text in the modal.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- Map -->
 <div id="modalStarmap" class="modal fade" role="dialog">
 	<div class="modal-dialog">
@@ -188,6 +210,43 @@
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4 class="modal-title">Map</h4>
+			</div>
+			<div class="modal-body">
+				<p>Some text in the modal.</p>
+				<canvas id='mapGc' width="400" height="300"></canvas>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Player -->
+<div id="modalPlayer" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Player Info</h4>
+			</div>
+			<div class="modal-body">
+				<p>Some text in the modal.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Info -->
+<div id="modalInfo" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Mission Info</h4>
 			</div>
 			<div class="modal-body">
 				<p>Some text in the modal.</p>
