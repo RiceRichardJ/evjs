@@ -331,7 +331,19 @@ function convertFile(csvFilename) {
     };
 
     // Format as JS module
-    const jsContent = `export default ${JSON.stringify(output, null, '\t')}\n`;
+    let jsContent = `export default ${JSON.stringify(output, null, '\t')}\n`;
+
+    // Special formatting for dude resource - collapse shipTypes and probability arrays to single lines
+    if (resourceType === 'dude') {
+      jsContent = jsContent.replace(
+        /"shipTypes":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"shipTypes": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      jsContent = jsContent.replace(
+        /"probability":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"probability": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+    }
 
     // Write output file
     const outPath = path.join(OUTPUT_DIR, `${resourceType}.js`);
