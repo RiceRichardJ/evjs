@@ -103,9 +103,31 @@ The converter automatically transforms CSV column names to JSON property names:
 The script includes specialized converters for:
 
 - **nebu** (Nebulae) - Simple 1:1 mapping
-- **dude** (Ship Types) - Complex array restructuring
+- **dude** (Ship Types) - Complex array restructuring with EVN export correction
+- **syst** (Systems) - Array restructuring for links, spobs, and dudes
 - **weap** (Weapons) - Flag decoding and optional fields
 - **Generic** - Best-effort conversion for other resource types
+
+### EVN Export Column Mapping Issues
+
+⚠️ **CRITICAL**: The CSV files were exported using EVN (Escape Velocity Nova) format, which has incorrect column labels for original EV data.
+
+**düde (DUDE) resource** requires special handling:
+
+| CSV Column Label | Actual Data | Conversion |
+|-----------------|-------------|------------|
+| `Govt` | Ship1 | (already decimal) |
+| `Flags` | Ship2 | **HEX → decimal** |
+| `InfoTypes` | Ship3 | **HEX → decimal** |
+| `Ship 1` | Ship4 | (already decimal) |
+| `Ship 2` | Prob1 | (already decimal) |
+| `Ship 3` | Prob2 | (already decimal) |
+| `Ship 4` | Prob3 | (already decimal) |
+| `Ship 5` | Prob4 | (already decimal) |
+| `Ship 6` | Govt | (already decimal) |
+| `Ship 7` | Booty | **decimal → 0x0000 hex format** |
+
+Example: CSV row with `0x0093` in "Flags" column is actually Ship2 ID 147 (0x93 = 147 decimal).
 
 ## Important Notes
 

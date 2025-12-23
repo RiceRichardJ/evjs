@@ -38,6 +38,24 @@ function parseNum(val) {
   return isNaN(num) ? val : num;
 }
 
+// Helper to convert hex string to decimal
+function hexToDecimal(val) {
+  if (val === '' || val === undefined || val === null) return '';
+  if (typeof val === 'string' && val.startsWith('0x')) {
+    const decimal = parseInt(val, 16);
+    return isNaN(decimal) ? '' : decimal;
+  }
+  return parseNum(val);
+}
+
+// Helper to convert decimal to hex format (0x0000)
+function decimalToHex(val) {
+  if (val === '' || val === undefined || val === null) return '';
+  const num = parseInt(val);
+  if (isNaN(num)) return '';
+  return '0x' + num.toString(16).toUpperCase().padStart(4, '0');
+}
+
 // Helper to filter sentinel values (-1) from arrays
 function filterSentinels(arr) {
   const filtered = [];
@@ -95,29 +113,57 @@ function convertNebu(row) {
 
 // Converter for düde resource
 function convertDude(row) {
-  // Collect ship types and probabilities
+  // IMPORTANT: EVN export has wrong column labels! Actual mapping:
+  // CSV 'Govt' → Ship1
+  // CSV 'Flags' → Ship2 (hex, convert to decimal)
+  // CSV 'InfoTypes' → Ship3 (hex, convert to decimal)
+  // CSV 'Ship 1' → Ship4
+  // CSV 'Ship 2' → Prob1
+  // CSV 'Ship 3' → Prob2
+  // CSV 'Ship 4' → Prob3
+  // CSV 'Ship 5' → Prob4
+  // CSV 'Ship 6' → Govt
+  // CSV 'Ship 7' → Booty (decimal, convert to hex format)
+
   const shipTypes = [];
   const probability = [];
 
-  for (let i = 1; i <= 4; i++) {
-    const shipVal = parseNum(row[`Ship ${i}`]);
-    const probVal = parseNum(row[`Ship ${i} %`]);
-    if (shipVal !== '' && shipVal !== -1) {
-      shipTypes.push(shipVal);
-      probability.push(probVal || 0);
-    }
+  // Ship1
+  const ship1 = parseNum(row['Govt']);
+  if (ship1 !== '' && ship1 !== -1) {
+    shipTypes.push(ship1);
+    probability.push(parseNum(row['Ship 2']) || 0); // Prob1
+  }
+
+  // Ship2 (hex to decimal)
+  const ship2 = hexToDecimal(row['Flags']);
+  if (ship2 !== '' && ship2 !== -1) {
+    shipTypes.push(ship2);
+    probability.push(parseNum(row['Ship 3']) || 0); // Prob2
+  }
+
+  // Ship3 (hex to decimal)
+  const ship3 = hexToDecimal(row['InfoTypes']);
+  if (ship3 !== '' && ship3 !== -1) {
+    shipTypes.push(ship3);
+    probability.push(parseNum(row['Ship 4']) || 0); // Prob3
+  }
+
+  // Ship4
+  const ship4 = parseNum(row['Ship 1']);
+  if (ship4 !== '' && ship4 !== -1) {
+    shipTypes.push(ship4);
+    probability.push(parseNum(row['Ship 5']) || 0); // Prob4
   }
 
   return {
     id: parseNum(row['ID']),
     name: row['Name'] || '',
+    aiType: parseNum(row['AI Type']),
     shipTypes,
     probability,
-    aiType: parseNum(row['AI Type']),
-    government: parseNum(row['Govt']),
-    docile: false, // Simplified - would need flag parsing
-    hailText: decodeInfoTypes(row['InfoTypes']),
-    booty: decodeBootyFlags(row['Flags'])
+    government: parseNum(row['Ship 6']), // Actual govt column
+    booty: decimalToHex(row['Ship 7']) // Convert to hex format
   };
 }
 
