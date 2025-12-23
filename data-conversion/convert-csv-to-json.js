@@ -253,6 +253,38 @@ function convertWeap(row) {
   return result;
 }
 
+// Converter for gövt resource
+function convertGovt(row) {
+  // IMPORTANT: EVN export has wrong column labels! Actual mapping:
+  // CSV 'Voice Type' → Unused (skip)
+  // CSV 'Flags 1' → Flags
+  // CSV 'Flags 2' → Ally (hex, convert to decimal)
+  // CSV 'Scan Fine' → Enemy
+  // CSV 'Crime Tolerance' → CrimeTol
+  // CSV 'Smuggle Penalty' → SmugPenalty
+  // CSV 'Disable Penalty' → DisabPenalty
+  // CSV 'Board Penalty' → BoardPenalty
+  // CSV 'Kill Penalty' → KillPenalty
+  // CSV 'Shoot Penalty' → ShootPenalty
+  // CSV 'Initial Record' → InitialRec
+  // Everything after is EVN-specific and not used for EV
+
+  return {
+    id: parseNum(row['ID']),
+    name: row['Name'] || '',
+    flags: row['Flags 1'] || '',  // Keep as hex string
+    ally: hexToDecimal(row['Flags 2']),  // Convert hex to decimal
+    enemy: parseNum(row['Scan Fine']),
+    crimeTol: parseNum(row['Crime Tolerance']),
+    smugPenalty: parseNum(row['Smuggle Penalty']),
+    disabPenalty: parseNum(row['Disable Penalty']),
+    boardPenalty: parseNum(row['Board Penalty']),
+    killPenalty: parseNum(row['Kill Penalty']),
+    shootPenalty: parseNum(row['Shoot Penalty']),
+    initialRec: parseNum(row['Initial Record'])
+  };
+}
+
 // Converter for flët resource
 function convertFlet(row) {
   // Collect ships
@@ -337,6 +369,8 @@ function convertRow(row, resourceType) {
       return convertDude(row);
     case 'flet':
       return convertFlet(row);
+    case 'govt':
+      return convertGovt(row);
     case 'syst':
       return convertSyst(row);
     case 'weap':
