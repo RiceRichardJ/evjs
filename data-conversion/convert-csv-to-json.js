@@ -253,6 +253,50 @@ function convertWeap(row) {
   return result;
 }
 
+// Converter for flët resource
+function convertFlet(row) {
+  // Collect ships
+  const ships = [];
+  for (let i = 1; i <= 4; i++) {
+    const val = parseNum(row[`Ship ${i}`]);
+    if (val !== '' && val !== -1) {
+      ships.push(val);
+    }
+  }
+
+  // Collect min values
+  const min = [];
+  for (let i = 1; i <= 4; i++) {
+    const val = parseNum(row[`Min ${i}`]);
+    if (val !== '' && val !== -1) {
+      min.push(val);
+    }
+  }
+
+  // Collect max values
+  const max = [];
+  for (let i = 1; i <= 4; i++) {
+    const val = parseNum(row[`Max ${i}`]);
+    if (val !== '' && val !== -1) {
+      max.push(val);
+    }
+  }
+
+  return {
+    id: parseNum(row['ID']),
+    name: row['Name'] || '',
+    leadShip: parseNum(row['Lead Ship']),
+    ships,
+    min,
+    max,
+    govt: parseNum(row['Govt']),
+    linkSystem: parseNum(row['Link System']),
+    appearOn: row['AppearOn'] || '',
+    hailQuote: parseNum(row['Hail Quote']),
+    flags: parseNum(row['Flags'])
+  };
+}
+
 // Generic converter - best effort based on column names
 function convertGeneric(row, resourceType) {
   const result = {
@@ -291,6 +335,8 @@ function convertRow(row, resourceType) {
       return convertNebu(row);
     case 'dude':
       return convertDude(row);
+    case 'flet':
+      return convertFlet(row);
     case 'syst':
       return convertSyst(row);
     case 'weap':
@@ -342,6 +388,22 @@ function convertFile(csvFilename) {
       jsContent = jsContent.replace(
         /"probability":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
         (match, nums) => `"probability": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+    }
+
+    // Special formatting for flet resource - collapse ships, min, max arrays to single lines
+    if (resourceType === 'flet') {
+      jsContent = jsContent.replace(
+        /"ships":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"ships": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      jsContent = jsContent.replace(
+        /"min":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"min": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      jsContent = jsContent.replace(
+        /"max":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"max": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
       );
     }
 
