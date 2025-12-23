@@ -253,6 +253,42 @@ function convertWeap(row) {
   return result;
 }
 
+// Converter for jünk resource
+function convertJunk(row) {
+  // EVN export has extra columns. Actual EV JUNK mapping:
+  // CSV 'Low Stel 1-8' → SoldAt array (stellar IDs where junk is sold)
+  // CSV 'High Stel 1-8' → BoughtAt array (stellar IDs where junk is bought)
+  // CSV 'Base Price' → BasePrice
+  // CSV 'Flags' → Flags (already in hex format)
+
+  // Collect SoldAt (Low Stel 1-8)
+  const soldAt = [];
+  for (let i = 1; i <= 8; i++) {
+    const val = parseNum(row[`Low Stel ${i}`]);
+    if (val !== '' && val !== -1) {
+      soldAt.push(val);
+    }
+  }
+
+  // Collect BoughtAt (High Stel 1-8)
+  const boughtAt = [];
+  for (let i = 1; i <= 8; i++) {
+    const val = parseNum(row[`High Stel ${i}`]);
+    if (val !== '' && val !== -1) {
+      boughtAt.push(val);
+    }
+  }
+
+  return {
+    id: parseNum(row['ID']),
+    name: row['Name'] || '',
+    soldAt,
+    boughtAt,
+    basePrice: parseNum(row['Base Price']),
+    flags: row['Flags'] || ''  // Keep as hex string
+  };
+}
+
 // Converter for gövt resource
 function convertGovt(row) {
   // IMPORTANT: EVN export has wrong column labels! Actual mapping:
@@ -371,6 +407,8 @@ function convertRow(row, resourceType) {
       return convertFlet(row);
     case 'govt':
       return convertGovt(row);
+    case 'junk':
+      return convertJunk(row);
     case 'syst':
       return convertSyst(row);
     case 'weap':
@@ -438,6 +476,18 @@ function convertFile(csvFilename) {
       jsContent = jsContent.replace(
         /"max":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
         (match, nums) => `"max": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+    }
+
+    // Special formatting for junk resource - collapse soldAt and boughtAt arrays to single lines
+    if (resourceType === 'junk') {
+      jsContent = jsContent.replace(
+        /"soldAt":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"soldAt": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      jsContent = jsContent.replace(
+        /"boughtAt":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"boughtAt": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
       );
     }
 
