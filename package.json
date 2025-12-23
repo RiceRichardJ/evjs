@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/RiceRichardJ/evjs#readme",
   "dependencies": {
+    "csv-parse": "^6.1.0",
     "npm": "^5.7.1",
     "requirejs": "^2.3.5"
   },
