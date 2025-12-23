@@ -23,6 +23,8 @@
 
 **Dev:** `npm run build` → `npm run server` (localhost:8080)
 
+**Data Conversion:** `data-conversion/` contains CSV→JSON converter for EV Nova exports. Run `node data-conversion/convert-csv-to-json.js` to regenerate JSON files in `data-conversion/out/`.
+
 ---
 
 ## Instructions for Claude
