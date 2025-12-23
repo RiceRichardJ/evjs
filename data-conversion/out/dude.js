@@ -1,6 +1,7 @@
 export default {
 	"dude": [
 		{
+			"id": 128,
 			"name": "Loser Confed Merchants",
 			"shipTypes": [
 				131,
@@ -28,6 +29,7 @@ export default {
 			]
 		},
 		{
+			"id": 129,
 			"name": "Confed Warships",
 			"shipTypes": [
 				134,
@@ -57,6 +59,7 @@ export default {
 			]
 		},
 		{
+			"id": 130,
 			"name": "Rebels",
 			"shipTypes": [
 				144,
@@ -86,6 +89,7 @@ export default {
 			]
 		},
 		{
+			"id": 131,
 			"name": "Beefy Confed Merchants",
 			"shipTypes": [
 				145,
@@ -113,6 +117,7 @@ export default {
 			]
 		},
 		{
+			"id": 132,
 			"name": "Militia Interceptors",
 			"shipTypes": [
 				146,
@@ -141,6 +146,7 @@ export default {
 			]
 		},
 		{
+			"id": 133,
 			"name": "Ind. Beefy Merchants",
 			"shipTypes": [
 				145,
@@ -171,6 +177,7 @@ export default {
 			]
 		},
 		{
+			"id": 134,
 			"name": "Pirates",
 			"shipTypes": [
 				143,
@@ -199,6 +206,7 @@ export default {
 			]
 		},
 		{
+			"id": 135,
 			"name": "Cydonian Misc.",
 			"shipTypes": [
 				137,
@@ -226,6 +234,7 @@ export default {
 			]
 		},
 		{
+			"id": 136,
 			"name": "Lethean Misc.",
 			"shipTypes": [
 				146,
@@ -253,6 +262,7 @@ export default {
 			]
 		},
 		{
+			"id": 137,
 			"name": "Confed Interceptors",
 			"shipTypes": [
 				147,
@@ -282,6 +292,7 @@ export default {
 			]
 		},
 		{
+			"id": 138,
 			"name": "Rebel Interceptors",
 			"shipTypes": [
 				144,
@@ -309,6 +320,7 @@ export default {
 			]
 		},
 		{
+			"id": 139,
 			"name": "Rich Confed Dudes",
 			"shipTypes": [
 				140,
@@ -338,6 +350,7 @@ export default {
 			]
 		},
 		{
+			"id": 140,
 			"name": "4 Liner - 1 ExecTrans",
 			"shipTypes": [
 				139,
@@ -366,6 +379,7 @@ export default {
 			]
 		},
 		{
+			"id": 141,
 			"name": "Confed ExecTrans Only",
 			"shipTypes": [
 				139,
@@ -395,6 +409,7 @@ export default {
 			]
 		},
 		{
+			"id": 142,
 			"name": "Confed Convoy Dude",
 			"shipTypes": [
 				129,
@@ -422,6 +437,7 @@ export default {
 			]
 		},
 		{
+			"id": 143,
 			"name": "Confed PS & FRG",
 			"shipTypes": [
 				133,
@@ -451,6 +467,7 @@ export default {
 			]
 		},
 		{
+			"id": 144,
 			"name": "Ind. Argosies",
 			"shipTypes": [
 				132,
@@ -478,6 +495,7 @@ export default {
 			]
 		},
 		{
+			"id": 145,
 			"name": "Confed BFs",
 			"shipTypes": [
 				130,
@@ -505,6 +523,7 @@ export default {
 			]
 		},
 		{
+			"id": 146,
 			"name": "Astex Freighters",
 			"shipTypes": [
 				130,
@@ -532,6 +551,7 @@ export default {
 			]
 		},
 		{
+			"id": 147,
 			"name": "Astex Interceptors",
 			"shipTypes": [
 				135,
@@ -561,6 +581,7 @@ export default {
 			]
 		},
 		{
+			"id": 148,
 			"name": "Rebel Fleet Assembly",
 			"shipTypes": [
 				142,
@@ -590,6 +611,7 @@ export default {
 			]
 		},
 		{
+			"id": 149,
 			"name": "Confed PS Escorts",
 			"shipTypes": [
 				135,
@@ -619,6 +641,7 @@ export default {
 			]
 		},
 		{
+			"id": 150,
 			"name": "Cydonian Invaders",
 			"shipTypes": [
 				137,
@@ -646,6 +669,7 @@ export default {
 			]
 		},
 		{
+			"id": 151,
 			"name": "Lethean Invaders",
 			"shipTypes": [
 				146,
@@ -673,6 +697,7 @@ export default {
 			]
 		},
 		{
+			"id": 152,
 			"name": "Bounty Hunters",
 			"shipTypes": [
 				137,
@@ -700,6 +725,7 @@ export default {
 			]
 		},
 		{
+			"id": 153,
 			"name": "Rebel Cruiser Only",
 			"shipTypes": [
 				142,
@@ -729,6 +755,7 @@ export default {
 			]
 		},
 		{
+			"id": 154,
 			"name": "Rebel BFs",
 			"shipTypes": [
 				130,
@@ -756,6 +783,7 @@ export default {
 			]
 		},
 		{
+			"id": 155,
 			"name": "Defender Interceptors",
 			"shipTypes": [
 				138,
@@ -784,6 +812,7 @@ export default {
 			]
 		},
 		{
+			"id": 156,
 			"name": "Rapier Interceptors",
 			"shipTypes": [
 				136,
@@ -811,6 +840,7 @@ export default {
 			]
 		},
 		{
+			"id": 157,
 			"name": "Frigate Interceptors",
 			"shipTypes": [
 				133,
@@ -839,6 +869,7 @@ export default {
 			]
 		},
 		{
+			"id": 158,
 			"name": "Destroyer Interceptors",
 			"shipTypes": [
 				141,
@@ -868,6 +899,7 @@ export default {
 			]
 		},
 		{
+			"id": 159,
 			"name": "Pirate Corvettes",
 			"shipTypes": [
 				146,
@@ -896,6 +928,7 @@ export default {
 			]
 		},
 		{
+			"id": 160,
 			"name": "Confed LFs",
 			"shipTypes": [
 				129,
@@ -923,6 +956,7 @@ export default {
 			]
 		},
 		{
+			"id": 161,
 			"name": "Pirate Kestrels",
 			"shipTypes": [
 				143,
@@ -953,6 +987,7 @@ export default {
 			]
 		},
 		{
+			"id": 162,
 			"name": "Pirate Fighters",
 			"shipTypes": [
 				137,
@@ -980,6 +1015,7 @@ export default {
 			]
 		},
 		{
+			"id": 163,
 			"name": "Confed ExecTrans",
 			"shipTypes": [
 				139,
@@ -1009,6 +1045,7 @@ export default {
 			]
 		},
 		{
+			"id": 164,
 			"name": "Pirate Argosies",
 			"shipTypes": [
 				132,
@@ -1036,6 +1073,7 @@ export default {
 			]
 		},
 		{
+			"id": 165,
 			"name": "Wimpy Pirate Fighters",
 			"shipTypes": [
 				145,
@@ -1064,6 +1102,7 @@ export default {
 			]
 		},
 		{
+			"id": 166,
 			"name": "Starbound Couriers",
 			"shipTypes": [
 				131,
@@ -1092,6 +1131,7 @@ export default {
 			]
 		},
 		{
+			"id": 167,
 			"name": "ConEx Couriers",
 			"shipTypes": [
 				131,
@@ -1120,6 +1160,7 @@ export default {
 			]
 		},
 		{
+			"id": 168,
 			"name": "ConEx Fighters",
 			"shipTypes": [
 				145,
@@ -1148,6 +1189,7 @@ export default {
 			]
 		},
 		{
+			"id": 169,
 			"name": "ConEx Defenders",
 			"shipTypes": [
 				138,
@@ -1176,6 +1218,7 @@ export default {
 			]
 		},
 		{
+			"id": 170,
 			"name": "Alien Fighters",
 			"shipTypes": [
 				149,
@@ -1205,6 +1248,7 @@ export default {
 			]
 		},
 		{
+			"id": 171,
 			"name": "Rebel Destroyer Only",
 			"shipTypes": [
 				141,
@@ -1234,6 +1278,7 @@ export default {
 			]
 		},
 		{
+			"id": 172,
 			"name": "Alien Cruiser",
 			"shipTypes": [
 				150,
@@ -1263,6 +1308,7 @@ export default {
 			]
 		},
 		{
+			"id": 173,
 			"name": "Pirate Lightnings",
 			"shipTypes": [
 				137,
@@ -1291,6 +1337,7 @@ export default {
 			]
 		},
 		{
+			"id": 174,
 			"name": "Psycho Rebel Mantas",
 			"shipTypes": [
 				144,
@@ -1318,6 +1365,7 @@ export default {
 			]
 		},
 		{
+			"id": 175,
 			"name": "Psycho Rebels",
 			"shipTypes": [
 				144,
@@ -1347,6 +1395,7 @@ export default {
 			]
 		},
 		{
+			"id": 176,
 			"name": "Psycho Confed Frigates",
 			"shipTypes": [
 				133,
@@ -1375,6 +1424,7 @@ export default {
 			]
 		},
 		{
+			"id": 177,
 			"name": "Rebel Destroyer Escort",
 			"shipTypes": [
 				141,
@@ -1404,6 +1454,7 @@ export default {
 			]
 		},
 		{
+			"id": 178,
 			"name": "Rebel Cruiser Escort",
 			"shipTypes": [
 				142,
@@ -1433,6 +1484,7 @@ export default {
 			]
 		},
 		{
+			"id": 179,
 			"name": "Confed interceptor escorts",
 			"shipTypes": [
 				147,
@@ -1462,6 +1514,7 @@ export default {
 			]
 		},
 		{
+			"id": 180,
 			"name": "Confed cruiser escorts",
 			"shipTypes": [
 				134,
@@ -1490,6 +1543,7 @@ export default {
 			]
 		},
 		{
+			"id": 181,
 			"name": "Merchant couriers",
 			"shipTypes": [
 				131,
@@ -1518,6 +1572,7 @@ export default {
 			]
 		},
 		{
+			"id": 182,
 			"name": "UGE Corvette/Kestrel",
 			"shipTypes": [
 				146,
@@ -1548,6 +1603,7 @@ export default {
 			]
 		},
 		{
+			"id": 183,
 			"name": "ConEx Corvette/Kestrel",
 			"shipTypes": [
 				146,
@@ -1578,6 +1634,7 @@ export default {
 			]
 		},
 		{
+			"id": 184,
 			"name": "Rebel Manta Escort",
 			"shipTypes": [
 				144,
@@ -1605,6 +1662,7 @@ export default {
 			]
 		},
 		{
+			"id": 185,
 			"name": "Psycho Manta/Destroyer",
 			"shipTypes": [
 				141,
@@ -1632,6 +1690,7 @@ export default {
 			]
 		},
 		{
+			"id": 186,
 			"name": "Psycho ConEx Fighters",
 			"shipTypes": [
 				145,
@@ -1660,6 +1719,7 @@ export default {
 			]
 		},
 		{
+			"id": 187,
 			"name": "Psycho Confed Frg/Crs",
 			"shipTypes": [
 				134,
@@ -1688,6 +1748,7 @@ export default {
 			]
 		},
 		{
+			"id": 188,
 			"name": "Psycho Rebel Dst/Crs",
 			"shipTypes": [
 				142,
@@ -1717,6 +1778,7 @@ export default {
 			]
 		},
 		{
+			"id": 189,
 			"name": "Psycho Astex PS's",
 			"shipTypes": [
 				135,
@@ -1746,6 +1808,7 @@ export default {
 			]
 		},
 		{
+			"id": 190,
 			"name": "Defective Confed Frg",
 			"shipTypes": [
 				133,
@@ -1774,6 +1837,7 @@ export default {
 			]
 		},
 		{
+			"id": 191,
 			"name": "Merchant LFs",
 			"shipTypes": [
 				129,
@@ -1801,6 +1865,7 @@ export default {
 			]
 		},
 		{
+			"id": 192,
 			"name": "Hunter Rapiers",
 			"shipTypes": [
 				136,
@@ -1828,6 +1893,7 @@ export default {
 			]
 		},
 		{
+			"id": 193,
 			"name": "Psycho Escort Carrier",
 			"shipTypes": [
 				153,
@@ -1857,6 +1923,7 @@ export default {
 			]
 		},
 		{
+			"id": 194,
 			"name": "Rebel LFs",
 			"shipTypes": [
 				129,

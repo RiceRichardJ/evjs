@@ -1,6 +1,7 @@
 export default {
 	"misn": [
 		{
+			"id": 128,
 			"name": "Ferry Passengers to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -55,6 +56,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 129,
 			"name": "Ferry Passengers to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -109,6 +111,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 130,
 			"name": "Ferry Passengers to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -163,6 +166,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 131,
 			"name": "Transport Criminal",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -217,6 +221,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 132,
 			"name": "Smuggle Drugs",
 			"availStellar": 10002,
 			"availLocation": 1,
@@ -271,6 +276,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 133,
 			"name": "Prospecting Expedition",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -325,6 +331,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 134,
 			"name": "Gun Running",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -379,6 +386,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 135,
 			"name": "Rush Delivery to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -433,6 +441,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 136,
 			"name": "Rush Delivery to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -487,6 +496,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 137,
 			"name": "Rush Delivery to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -541,6 +551,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 138,
 			"name": "Rush Delivery to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -595,6 +606,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 139,
 			"name": "Rush Delivery to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -649,6 +661,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 140,
 			"name": "Transport Cargo to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -703,6 +716,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 141,
 			"name": "Cargo Shipment to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -757,6 +771,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 142,
 			"name": "Cargo Delivery to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -811,6 +826,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 143,
 			"name": "Cargo Delivery to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -865,6 +881,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 144,
 			"name": "Freight Delivery to <DST>",
 			"availStellar": 20002,
 			"availLocation": 0,
@@ -919,6 +936,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 145,
 			"name": "Hunt Pirate",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -973,6 +991,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 146,
 			"name": "Assassination",
 			"availStellar": 20000,
 			"availLocation": 1,
@@ -1027,6 +1046,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 147,
 			"name": "Stellar Defense",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -1081,6 +1101,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 148,
 			"name": "Rebel Defense",
 			"availStellar": 10001,
 			"availLocation": 1,
@@ -1135,6 +1156,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 149,
 			"name": "Rescue Mission",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -1189,6 +1211,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 150,
 			"name": "Salvage Convoy",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -1243,6 +1266,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 151,
 			"name": "Escort Freighters to <RST>",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -1297,6 +1321,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 152,
 			"name": "Investigate Dumping",
 			"availStellar": 176,
 			"availLocation": 1,
@@ -1351,6 +1376,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 153,
 			"name": "Observe Antares",
 			"availStellar": 176,
 			"availLocation": 1,
@@ -1405,6 +1431,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 154,
 			"name": "Capture Ore Sample",
 			"availStellar": 176,
 			"availLocation": 1,
@@ -1459,6 +1486,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 155,
 			"name": "Destroy Freighters",
 			"availStellar": 176,
 			"availLocation": 1,
@@ -1513,6 +1541,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 156,
 			"name": "Escape Astex",
 			"availStellar": 176,
 			"availLocation": 1,
@@ -1567,6 +1596,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 157,
 			"name": "Black Market Wood",
 			"availStellar": 5004,
 			"availLocation": 1,
@@ -1621,6 +1651,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 158,
 			"name": "Environmental Trip to <DST>",
 			"availStellar": 203,
 			"availLocation": 1,
@@ -1675,6 +1706,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 159,
 			"name": "Defend New Cydonia",
 			"availStellar": 213,
 			"availLocation": 1,
@@ -1729,6 +1761,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 160,
 			"name": "Defend Lethe Prime",
 			"availStellar": 214,
 			"availLocation": 1,
@@ -1783,6 +1816,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 161,
 			"name": "Locate Rebel Fleet",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -1837,6 +1871,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 162,
 			"name": "Rebel Interdiction",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -1891,6 +1926,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 163,
 			"name": "Rebel Special Ops",
 			"availStellar": 20000,
 			"availLocation": 1,
@@ -1945,6 +1981,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 164,
 			"name": "Special Ops Insertion",
 			"availStellar": 161,
 			"availLocation": 1,
@@ -1999,6 +2036,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 165,
 			"name": "Special Ops Rendezvous",
 			"availStellar": 130,
 			"availLocation": 1,
@@ -2053,6 +2091,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 166,
 			"name": "Confed Recon Mission",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -2107,6 +2146,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 167,
 			"name": "Rebel Pursuit",
 			"availStellar": 221,
 			"availLocation": 1,
@@ -2161,6 +2201,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 168,
 			"name": "Rebel Pursuit Part 2",
 			"availStellar": 191,
 			"availLocation": 1,
@@ -2215,6 +2256,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 169,
 			"name": "Rebel Pursuit Part 3",
 			"availStellar": 183,
 			"availLocation": 1,
@@ -2269,6 +2311,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 170,
 			"name": "Rebel Pursuit Part 4",
 			"availStellar": 167,
 			"availLocation": 1,
@@ -2323,6 +2366,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 171,
 			"name": "Transport Confed Documents",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -2377,6 +2421,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 172,
 			"name": "Transport Rebel Parcels",
 			"availStellar": 10001,
 			"availLocation": 1,
@@ -2431,6 +2476,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 173,
 			"name": "Help Starbound Shipping",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -2485,6 +2531,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 174,
 			"name": "Ferry Important Documents",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -2539,6 +2586,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 175,
 			"name": "Dangerous Courier Mission",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -2593,6 +2641,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 176,
 			"name": "Escort Courier to <RST>",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -2647,6 +2696,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 177,
 			"name": "Commerce Raid",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -2701,6 +2751,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 178,
 			"name": "Transport Engineers",
 			"availStellar": 9999,
 			"availLocation": 1,
@@ -2755,6 +2806,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 179,
 			"name": "Retrieve Equipment",
 			"availStellar": 160,
 			"availLocation": 1,
@@ -2809,6 +2861,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 180,
 			"name": "Retrieve Colonists",
 			"availStellar": 160,
 			"availLocation": 1,
@@ -2863,6 +2916,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 181,
 			"name": "Get Repair Equipment",
 			"availStellar": 160,
 			"availLocation": 1,
@@ -2917,6 +2971,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 182,
 			"name": "Resupply Colony",
 			"availStellar": 160,
 			"availLocation": 1,
@@ -2971,6 +3026,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 183,
 			"name": "Defend Turin V",
 			"availStellar": 160,
 			"availLocation": 1,
@@ -3025,6 +3081,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 184,
 			"name": "Investigate Disappearances",
 			"availStellar": 10001,
 			"availLocation": 1,
@@ -3079,6 +3136,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 185,
 			"name": "Lead Rebel Patrol",
 			"availStellar": 209,
 			"availLocation": 1,
@@ -3133,6 +3191,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 186,
 			"name": "Rescue Rebel Spy",
 			"availStellar": 209,
 			"availLocation": 1,
@@ -3187,6 +3246,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 187,
 			"name": "Get War Records",
 			"availStellar": 161,
 			"availLocation": 1,
@@ -3241,6 +3301,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 188,
 			"name": "Locate Aliens",
 			"availStellar": 161,
 			"availLocation": 1,
@@ -3295,6 +3356,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 189,
 			"name": "Destroy Alien Cruiser",
 			"availStellar": 161,
 			"availLocation": 1,
@@ -3349,6 +3411,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 190,
 			"name": "Investigate Disappearances",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -3403,6 +3466,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 191,
 			"name": "Escort Confed Convoy",
 			"availStellar": 139,
 			"availLocation": 1,
@@ -3457,6 +3521,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 192,
 			"name": "Extract Confed Spy",
 			"availStellar": 174,
 			"availLocation": 1,
@@ -3511,6 +3576,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 193,
 			"name": "Locate Aliens",
 			"availStellar": 130,
 			"availLocation": 1,
@@ -3565,6 +3631,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 194,
 			"name": "Destroy Alien Cruiser",
 			"availStellar": 130,
 			"availLocation": 1,
@@ -3619,6 +3686,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 195,
 			"name": "Derelict Decoy",
 			"availStellar": -1,
 			"availLocation": 2,
@@ -3673,6 +3741,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 196,
 			"name": "Derelict Decoy",
 			"availStellar": -1,
 			"availLocation": 2,
@@ -3727,6 +3796,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 197,
 			"name": "Ferry Passengers to <DST>",
 			"availStellar": -1,
 			"availLocation": 2,
@@ -3781,6 +3851,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 198,
 			"name": "Transport Cargo to <DST>",
 			"availStellar": -1,
 			"availLocation": 2,
@@ -3835,6 +3906,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 199,
 			"name": "Escort Courier to <RST>",
 			"availStellar": -1,
 			"availLocation": 2,
@@ -3889,6 +3961,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 200,
 			"name": "Switch Sides",
 			"availStellar": 10001,
 			"availLocation": 1,
@@ -3943,6 +4016,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 201,
 			"name": "Deliver Kestrel Parts",
 			"availStellar": -1,
 			"availLocation": 2,
@@ -3997,6 +4071,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 202,
 			"name": "Cargo Delivery to <DST>",
 			"availStellar": -1,
 			"availLocation": 2,
@@ -4051,6 +4126,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 203,
 			"name": "Locate Weapons Cache",
 			"availStellar": 10001,
 			"availLocation": 1,
@@ -4105,6 +4181,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 204,
 			"name": "Distribute Rebel Munitions",
 			"availStellar": 167,
 			"availLocation": 1,
@@ -4159,6 +4236,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 205,
 			"name": "Dump Garbage",
 			"availStellar": -1,
 			"availLocation": 0,
@@ -4213,6 +4291,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 206,
 			"name": "Deliver Emergency Medical Supplies",
 			"availStellar": -1,
 			"availLocation": 0,
@@ -4267,6 +4346,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 207,
 			"name": "Evacuate Civilians from <DST>",
 			"availStellar": 10000,
 			"availLocation": 0,
@@ -4321,6 +4401,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 208,
 			"name": "Evacuate Civilians from <DST>",
 			"availStellar": 10001,
 			"availLocation": 0,
@@ -4375,6 +4456,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 209,
 			"name": "Help United Galactic Express",
 			"availStellar": 10002,
 			"availLocation": 1,
@@ -4429,6 +4511,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 210,
 			"name": "UGE Recruitment",
 			"availStellar": 147,
 			"availLocation": 1,
@@ -4483,6 +4566,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 211,
 			"name": "UGE Cargo to <DST>",
 			"availStellar": -1,
 			"availLocation": 0,
@@ -4537,6 +4621,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 212,
 			"name": "UGE Delivery to <DST>",
 			"availStellar": -1,
 			"availLocation": 0,
@@ -4591,6 +4676,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 213,
 			"name": "UGE Transport to <DST>",
 			"availStellar": -1,
 			"availLocation": 0,
@@ -4645,6 +4731,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 214,
 			"name": "UGE Freight to <DST>",
 			"availStellar": -1,
 			"availLocation": 0,
@@ -4699,6 +4786,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 215,
 			"name": "UGE Cargo to <DST>",
 			"availStellar": -1,
 			"availLocation": 0,
@@ -4753,6 +4841,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 216,
 			"name": "UGE Delivery to <DST>",
 			"availStellar": -1,
 			"availLocation": 0,
@@ -4807,6 +4896,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 217,
 			"name": "UGE Smuggling",
 			"availStellar": 20001,
 			"availLocation": 1,
@@ -4861,6 +4951,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 218,
 			"name": "UGE Smuggling",
 			"availStellar": 10001,
 			"availLocation": 1,
@@ -4915,6 +5006,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 219,
 			"name": "UGE Redemption",
 			"availStellar": 147,
 			"availLocation": 1,
@@ -4969,6 +5061,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 220,
 			"name": "Confed Covert Ops",
 			"availStellar": 134,
 			"availLocation": 1,
@@ -5023,6 +5116,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 221,
 			"name": "Confed Courier Operations",
 			"availStellar": 134,
 			"availLocation": 1,
@@ -5077,6 +5171,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 222,
 			"name": "Intercept Rebel Convoy",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -5131,6 +5226,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 223,
 			"name": "Intercept Rebel Convoy",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -5185,6 +5281,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 224,
 			"name": "Transport Industrial Toxins",
 			"availStellar": 10000,
 			"availLocation": 0,
@@ -5239,6 +5336,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 225,
 			"name": "Deliver Refined Toxins",
 			"availStellar": 177,
 			"availLocation": 0,
@@ -5293,6 +5391,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 226,
 			"name": "Distribute Biological Weapons",
 			"availStellar": 131,
 			"availLocation": 1,
@@ -5347,6 +5446,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 227,
 			"name": "Rebel Recon",
 			"availStellar": 133,
 			"availLocation": 1,
@@ -5401,6 +5501,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 228,
 			"name": "Stop Confed Defector",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -5455,6 +5556,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 229,
 			"name": "Destroy Rebel Convoy",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -5509,6 +5611,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 230,
 			"name": "Astrodyne Outpost Recruitment",
 			"availStellar": 161,
 			"availLocation": 1,
@@ -5563,6 +5666,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 231,
 			"name": "Astrodyne Outpost I",
 			"availStellar": 161,
 			"availLocation": 1,
@@ -5617,6 +5721,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 232,
 			"name": "Astrodyne Outpost II",
 			"availStellar": 196,
 			"availLocation": 1,
@@ -5671,6 +5776,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 233,
 			"name": "Astrodyne Outpost III",
 			"availStellar": 196,
 			"availLocation": 1,
@@ -5725,6 +5831,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 234,
 			"name": "Astrodyne Outpost IV",
 			"availStellar": 161,
 			"availLocation": 1,
@@ -5779,6 +5886,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 235,
 			"name": "Astrodyne Outpost V",
 			"availStellar": 161,
 			"availLocation": 1,
@@ -5833,6 +5941,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 236,
 			"name": "Ferry Passenger to <RST>",
 			"availStellar": -1,
 			"availLocation": 1,
@@ -5887,6 +5996,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 237,
 			"name": "Retrieve Data",
 			"availStellar": 144,
 			"availLocation": 1,
@@ -5941,6 +6051,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 238,
 			"name": "Rescue Agent",
 			"availStellar": 136,
 			"availLocation": 1,
@@ -5995,6 +6106,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 239,
 			"name": "Gather Hunters",
 			"availStellar": 156,
 			"availLocation": 1,
@@ -6049,6 +6161,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 240,
 			"name": "Meet with UGE Reps",
 			"availStellar": 167,
 			"availLocation": 1,
@@ -6103,6 +6216,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 241,
 			"name": "T.A.G. - You’re It",
 			"availStellar": 191,
 			"availLocation": 1,
@@ -6157,6 +6271,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 242,
 			"name": "Destroy Escort Carrier",
 			"availStellar": 10000,
 			"availLocation": 1,
@@ -6211,6 +6326,7 @@ export default {
 			"displayWeight": 0
 		},
 		{
+			"id": 243,
 			"name": "Destroy Escort Carrier",
 			"availStellar": 10000,
 			"availLocation": 1,

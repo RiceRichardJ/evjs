@@ -1,6 +1,7 @@
 export default {
 	"spob": [
 		{
+			"id": 128,
 			"name": "Earth",
 			"x": 0,
 			"y": 0,
@@ -46,6 +47,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 129,
 			"name": "Stardock Alpha",
 			"x": -75,
 			"y": -75,
@@ -91,6 +93,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 130,
 			"name": "Mars",
 			"x": -1010,
 			"y": 1000,
@@ -136,6 +139,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 131,
 			"name": "Landfall",
 			"x": 0,
 			"y": 0,
@@ -181,6 +185,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 132,
 			"name": "Luna",
 			"x": 210,
 			"y": 160,
@@ -226,6 +231,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 133,
 			"name": "Levo",
 			"x": 0,
 			"y": 0,
@@ -271,6 +277,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 134,
 			"name": "New Britain",
 			"x": 0,
 			"y": 0,
@@ -316,6 +323,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 135,
 			"name": "Capella",
 			"x": 0,
 			"y": 0,
@@ -361,6 +369,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 136,
 			"name": "Dune",
 			"x": 0,
 			"y": 0,
@@ -406,6 +415,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 137,
 			"name": "Spica",
 			"x": 0,
 			"y": 0,
@@ -451,6 +461,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 138,
 			"name": "Maxwell's Purchase",
 			"x": 0,
 			"y": 0,
@@ -496,6 +507,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 139,
 			"name": "Hodgson's World",
 			"x": 0,
 			"y": 0,
@@ -541,6 +553,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 140,
 			"name": "Northstar",
 			"x": 0,
 			"y": 0,
@@ -586,6 +599,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 141,
 			"name": "Master's Planet",
 			"x": 0,
 			"y": 0,
@@ -631,6 +645,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 142,
 			"name": "Torgo Prime",
 			"x": 0,
 			"y": 0,
@@ -676,6 +691,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 143,
 			"name": "Sirius III",
 			"x": 0,
 			"y": 0,
@@ -721,6 +737,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 144,
 			"name": "Sirius Station",
 			"x": -100,
 			"y": -110,
@@ -766,6 +783,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 145,
 			"name": "Tau Ceti IV",
 			"x": 0,
 			"y": 0,
@@ -811,6 +829,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 146,
 			"name": "Merlin",
 			"x": -70,
 			"y": 80,
@@ -856,6 +875,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 147,
 			"name": "Tabletop",
 			"x": 0,
 			"y": 0,
@@ -901,6 +921,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 148,
 			"name": "Enyo's World",
 			"x": 0,
 			"y": 0,
@@ -946,6 +967,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 149,
 			"name": "Enyo Fuel Refinery",
 			"x": 100,
 			"y": 100,
@@ -991,6 +1013,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 150,
 			"name": "New Sahara",
 			"x": 0,
 			"y": 0,
@@ -1036,6 +1059,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 151,
 			"name": "Samson's Planet",
 			"x": 0,
 			"y": 0,
@@ -1081,6 +1105,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 152,
 			"name": "Plateau",
 			"x": 0,
 			"y": 0,
@@ -1126,6 +1151,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 153,
 			"name": "Hikeeba",
 			"x": 0,
 			"y": 0,
@@ -1171,6 +1197,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 154,
 			"name": "New Providence",
 			"x": 0,
 			"y": 0,
@@ -1216,6 +1243,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 155,
 			"name": "Antares Station",
 			"x": -70,
 			"y": -90,
@@ -1261,6 +1289,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 156,
 			"name": "New Istanbul",
 			"x": 0,
 			"y": 0,
@@ -1306,6 +1335,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 157,
 			"name": "George's World",
 			"x": 0,
 			"y": 0,
@@ -1351,6 +1381,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 158,
 			"name": "P-8457",
 			"x": 0,
 			"y": 0,
@@ -1396,6 +1427,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 159,
 			"name": "Beeblebrox",
 			"x": 0,
 			"y": 0,
@@ -1441,6 +1473,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 160,
 			"name": "Turin V",
 			"x": 0,
 			"y": 0,
@@ -1486,6 +1519,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 161,
 			"name": "Palshife",
 			"x": 0,
 			"y": 0,
@@ -1531,6 +1565,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 162,
 			"name": "Alkaid",
 			"x": 0,
 			"y": 0,
@@ -1576,6 +1611,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 163,
 			"name": "Alkaidion",
 			"x": -80,
 			"y": 50,
@@ -1621,6 +1657,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 164,
 			"name": "Regulus II",
 			"x": 0,
 			"y": 0,
@@ -1666,6 +1703,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 165,
 			"name": "Zaxted Starport",
 			"x": 100,
 			"y": -70,
@@ -1711,6 +1749,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 166,
 			"name": "Zaxted",
 			"x": 0,
 			"y": 0,
@@ -1756,6 +1795,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 167,
 			"name": "Clotho Prime",
 			"x": 490,
 			"y": -710,
@@ -1801,6 +1841,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 168,
 			"name": "Clotho II",
 			"x": -740,
 			"y": 550,
@@ -1846,6 +1887,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 169,
 			"name": "Orion",
 			"x": 0,
 			"y": 0,
@@ -1891,6 +1933,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 170,
 			"name": "Hunter",
 			"x": -80,
 			"y": 70,
@@ -1936,6 +1979,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 171,
 			"name": "Atropos",
 			"x": 0,
 			"y": 0,
@@ -1981,6 +2025,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 172,
 			"name": "Propus VII",
 			"x": 0,
 			"y": 0,
@@ -2026,6 +2071,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 173,
 			"name": "New Scotland",
 			"x": 50,
 			"y": 100,
@@ -2071,6 +2117,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 174,
 			"name": "New Ireland",
 			"x": -160,
 			"y": 40,
@@ -2116,6 +2163,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 175,
 			"name": "New France",
 			"x": -70,
 			"y": -90,
@@ -2161,6 +2209,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 176,
 			"name": "Diphidia II",
 			"x": 0,
 			"y": 0,
@@ -2206,6 +2255,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 177,
 			"name": "New Columbia",
 			"x": -920,
 			"y": -800,
@@ -2251,6 +2301,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 178,
 			"name": "Quake",
 			"x": -80,
 			"y": 80,
@@ -2296,6 +2347,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 179,
 			"name": "Armstrong",
 			"x": 0,
 			"y": 0,
@@ -2341,6 +2393,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 180,
 			"name": "Persephone IX",
 			"x": 0,
 			"y": 0,
@@ -2386,6 +2439,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 181,
 			"name": "Rupert",
 			"x": -80,
 			"y": -80,
@@ -2431,6 +2485,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 182,
 			"name": "Darven",
 			"x": 0,
 			"y": 0,
@@ -2476,6 +2531,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 183,
 			"name": "Blackthorne",
 			"x": -150,
 			"y": -100,
@@ -2521,6 +2577,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 184,
 			"name": "Pollux VI",
 			"x": 0,
 			"y": 0,
@@ -2566,6 +2623,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 185,
 			"name": "New Japan",
 			"x": 60,
 			"y": -60,
@@ -2611,6 +2669,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 186,
 			"name": "Thanos IV",
 			"x": 0,
 			"y": 0,
@@ -2656,6 +2715,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 187,
 			"name": "Syntex Refinery",
 			"x": -70,
 			"y": -110,
@@ -2701,6 +2761,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 188,
 			"name": "Ursa Minor Beta",
 			"x": 0,
 			"y": 0,
@@ -2746,6 +2807,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 189,
 			"name": "Perseus II",
 			"x": 0,
 			"y": 0,
@@ -2791,6 +2853,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 190,
 			"name": "Pegasus",
 			"x": -75,
 			"y": -75,
@@ -2836,6 +2899,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 191,
 			"name": "Sauron",
 			"x": 0,
 			"y": 0,
@@ -2881,6 +2945,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 192,
 			"name": "Darkstar",
 			"x": 0,
 			"y": 0,
@@ -2926,6 +2991,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 193,
 			"name": "New Bavaria",
 			"x": 0,
 			"y": 0,
@@ -2971,6 +3037,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 194,
 			"name": "Palomino",
 			"x": 0,
 			"y": 0,
@@ -3016,6 +3083,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 195,
 			"name": "Tiber II",
 			"x": 0,
 			"y": 0,
@@ -3061,6 +3129,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 196,
 			"name": "Port Oread",
 			"x": 60,
 			"y": -90,
@@ -3106,6 +3175,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 197,
 			"name": "Akio",
 			"x": 0,
 			"y": 0,
@@ -3151,6 +3221,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 198,
 			"name": "Lauralee",
 			"x": 0,
 			"y": 0,
@@ -3196,6 +3267,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 199,
 			"name": "Murphy's World",
 			"x": 0,
 			"y": 0,
@@ -3241,6 +3313,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 200,
 			"name": "Adhara",
 			"x": 0,
 			"y": 0,
@@ -3286,6 +3359,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 201,
 			"name": "Sentinel Station",
 			"x": -280,
 			"y": -210,
@@ -3331,6 +3405,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 202,
 			"name": "Zeus",
 			"x": -670,
 			"y": -750,
@@ -3376,6 +3451,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 203,
 			"name": "Hera",
 			"x": 730,
 			"y": 450,
@@ -3421,6 +3497,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 204,
 			"name": "Osiris II",
 			"x": 0,
 			"y": 0,
@@ -3466,6 +3543,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 205,
 			"name": "Endor",
 			"x": 120,
 			"y": -70,
@@ -3511,6 +3589,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 206,
 			"name": "Topaz II",
 			"x": 0,
 			"y": 0,
@@ -3556,6 +3635,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 207,
 			"name": "Emerald",
 			"x": -110,
 			"y": -100,
@@ -3601,6 +3681,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 208,
 			"name": "Virgo",
 			"x": 0,
 			"y": 0,
@@ -3646,6 +3727,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 209,
 			"name": "Sirgil III",
 			"x": 0,
 			"y": 0,
@@ -3691,6 +3773,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 210,
 			"name": "Sirgil Starport",
 			"x": -90,
 			"y": -90,
@@ -3736,6 +3819,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 211,
 			"name": "Scorpio",
 			"x": 0,
 			"y": 0,
@@ -3781,6 +3865,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 212,
 			"name": "Deneb III",
 			"x": 0,
 			"y": 0,
@@ -3826,6 +3911,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 213,
 			"name": "New Cydonia",
 			"x": 0,
 			"y": 0,
@@ -3871,6 +3957,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 214,
 			"name": "Lethe Prime",
 			"x": 0,
 			"y": 0,
@@ -3916,6 +4003,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 215,
 			"name": "Opal",
 			"x": 80,
 			"y": -80,
@@ -3961,6 +4049,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 216,
 			"name": "Nexus Outpost",
 			"x": 0,
 			"y": 0,
@@ -4006,6 +4095,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 217,
 			"name": "P-4812",
 			"x": 0,
 			"y": 0,
@@ -4051,6 +4141,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 218,
 			"name": "Pirate's Cove",
 			"x": -100,
 			"y": -100,
@@ -4096,6 +4187,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 219,
 			"name": "Astrodyne Outpost",
 			"x": 0,
 			"y": 0,
@@ -4141,6 +4233,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 220,
 			"name": "P-6564",
 			"x": 0,
 			"y": 0,
@@ -4186,6 +4279,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 221,
 			"name": "Ruby",
 			"x": -70,
 			"y": -90,
@@ -4231,6 +4325,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 222,
 			"name": "Listening Post 94",
 			"x": 0,
 			"y": 0,
@@ -4276,6 +4371,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 223,
 			"name": "Listening Post 95",
 			"x": 0,
 			"y": 0,
@@ -4321,6 +4417,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 224,
 			"name": "P-1896",
 			"x": 0,
 			"y": 0,
@@ -4366,6 +4463,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 225,
 			"name": "Privateer's Haven",
 			"x": -80,
 			"y": -80,
@@ -4411,6 +4509,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 226,
 			"name": "P-0805",
 			"x": 0,
 			"y": 0,
@@ -4456,6 +4555,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 227,
 			"name": "P-2143",
 			"x": 0,
 			"y": 0,
@@ -4501,6 +4601,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 228,
 			"name": "P-0595",
 			"x": 0,
 			"y": 0,
@@ -4546,6 +4647,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 229,
 			"name": "Evildrome",
 			"x": -105,
 			"y": -105,
@@ -4591,6 +4693,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 230,
 			"name": "P-1249",
 			"x": 0,
 			"y": 0,
@@ -4636,6 +4739,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 231,
 			"name": "P-8724",
 			"x": 0,
 			"y": 0,
@@ -4681,6 +4785,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 232,
 			"name": "P-1027",
 			"x": 0,
 			"y": 0,
@@ -4726,6 +4831,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 233,
 			"name": "New Antigua",
 			"x": -100,
 			"y": -120,
@@ -4771,6 +4877,7 @@ export default {
 			"tech8": 0
 		},
 		{
+			"id": 234,
 			"name": "Liberty Station",
 			"x": 0,
 			"y": 0,

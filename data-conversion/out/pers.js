@@ -1,6 +1,7 @@
 export default {
 	"pers": [
 		{
+			"id": 128,
 			"name": "Redbeard The Pirate",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -36,6 +37,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 129,
 			"name": "Greenbeard The Pirate",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -71,6 +73,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 130,
 			"name": "Bluebeard The Pirate",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -106,6 +109,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 131,
 			"name": "Lars Magna",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -141,6 +145,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 132,
 			"name": "Urdo Jafenaka",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -176,6 +181,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 133,
 			"name": "Dilgar Thiamine",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -211,6 +217,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 134,
 			"name": "Richard The Scourge",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -246,6 +253,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 135,
 			"name": "Drake Headstone",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -281,6 +289,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 136,
 			"name": "U.S.S. Saratoga",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -316,6 +325,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 137,
 			"name": "U.S.S. Lexington",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -351,6 +361,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 138,
 			"name": "U.S.S. Yorktown",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -386,6 +397,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 139,
 			"name": "U.S.S. Constellation",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -421,6 +433,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 140,
 			"name": "U.S.S. Constitution",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -456,6 +469,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 141,
 			"name": "U.S.S. Excelsior",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -491,6 +505,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 142,
 			"name": "U.S.S. Intrepid",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -526,6 +541,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 143,
 			"name": "U.S.S. Exeter",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -561,6 +577,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 144,
 			"name": "U.S.S. Farragut",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -596,6 +613,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 145,
 			"name": "U.S.S. Endeavour",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -631,6 +649,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 146,
 			"name": "U.S.S. Steadfast",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -666,6 +685,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 147,
 			"name": "U.S.S. Reliant",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -701,6 +721,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 148,
 			"name": "U.S.S. Essex",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -736,6 +757,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 149,
 			"name": "U.S.S. Ticonderoga",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -771,6 +793,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 150,
 			"name": "U.S.S. Furious",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -806,6 +829,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 151,
 			"name": "U.S.S. Hercules",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -841,6 +865,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 152,
 			"name": "R.S.S. Avenger",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -876,6 +901,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 153,
 			"name": "R.S.S. Defiant",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -911,6 +937,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 154,
 			"name": "R.S.S. Victory",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -946,6 +973,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 155,
 			"name": "R.S.S. Republic",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -981,6 +1009,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 156,
 			"name": "R.S.S. Challenger",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1016,6 +1045,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 157,
 			"name": "R.S.S. Relentless",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1051,6 +1081,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 158,
 			"name": "R.S.S. Sovereign",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1086,6 +1117,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 159,
 			"name": "R.S.S. Fearless",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1121,6 +1153,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 160,
 			"name": "R.S.S. Striker",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1156,6 +1189,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 161,
 			"name": "R.S.S. Phantom",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1191,6 +1225,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 162,
 			"name": "R.S.S. Swiftsure",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1226,6 +1261,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 163,
 			"name": "R.S.S. Coventry",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1261,6 +1297,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 164,
 			"name": "R.S.S. Scimitar",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1296,6 +1333,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 165,
 			"name": "R.S.S. Hood",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1331,6 +1369,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 166,
 			"name": "R.S.S. Valiant",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1366,6 +1405,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 167,
 			"name": "R.S.S. Bounty",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1401,6 +1441,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 168,
 			"name": "R.S.S. Eagle",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1436,6 +1477,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 169,
 			"name": "R.S.S. Wasp",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1471,6 +1513,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 170,
 			"name": "R.S.S. Insurgent",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1506,6 +1549,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 171,
 			"name": "R.S.S. Courageous",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1541,6 +1585,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 172,
 			"name": "R.S.S. Vigilant",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1576,6 +1621,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 173,
 			"name": "R.S.S. Phoenix",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1611,6 +1657,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 174,
 			"name": "R.S.S. Reprisal",
 			"linkSystem": 25000,
 			"govt": 129,
@@ -1646,6 +1693,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 175,
 			"name": "Vermooten The Evil",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -1681,6 +1729,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 176,
 			"name": "Nostromo",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -1716,6 +1765,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 177,
 			"name": "Jolly Roger",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -1751,6 +1801,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 178,
 			"name": "Anaconda",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -1786,6 +1837,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 179,
 			"name": "Star Vixen",
 			"linkSystem": 20000,
 			"govt": 130,
@@ -1821,6 +1873,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 180,
 			"name": "Arvid Fusin",
 			"linkSystem": -1,
 			"govt": 136,
@@ -1856,6 +1909,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 181,
 			"name": "Brek Veronar",
 			"linkSystem": -1,
 			"govt": 136,
@@ -1891,6 +1945,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 182,
 			"name": "Gorro Panavia",
 			"linkSystem": -1,
 			"govt": 136,
@@ -1926,6 +1981,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 183,
 			"name": "\"Cajun\" David Richard",
 			"linkSystem": -1,
 			"govt": 136,
@@ -1961,6 +2017,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 184,
 			"name": "Andrew Welch",
 			"linkSystem": -1,
 			"govt": 136,
@@ -1996,6 +2053,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 185,
 			"name": "John Gauch",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2031,6 +2089,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 186,
 			"name": "Gayle Haarr",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2066,6 +2125,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 187,
 			"name": "Gregor Misovich",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2101,6 +2161,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 188,
 			"name": "Dravar Wedef",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2136,6 +2197,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 189,
 			"name": "Milack Talia",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2171,6 +2233,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 190,
 			"name": "Jason Jones",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2206,6 +2269,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 191,
 			"name": "Jeff Henken",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2241,6 +2305,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 192,
 			"name": "Raef LaFrentz",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2276,6 +2341,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 193,
 			"name": "Jacque Vaughn",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2311,6 +2377,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 194,
 			"name": "S.S. Goldstar",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2346,6 +2413,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 195,
 			"name": "S.S. Wanderer",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2381,6 +2449,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 196,
 			"name": "S.S. Colombus",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2416,6 +2485,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 197,
 			"name": "S.S. Vespucci",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2451,6 +2521,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 198,
 			"name": "S.S. De Gama",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2486,6 +2557,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 199,
 			"name": "S.S. Magellan",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2521,6 +2593,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 200,
 			"name": "S.S. Sparrow",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2556,6 +2629,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 201,
 			"name": "S.S. Cabot",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2591,6 +2665,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 202,
 			"name": "S.S. Drake",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2626,6 +2701,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 203,
 			"name": "S.S. Cook",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2661,6 +2737,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 204,
 			"name": "S.S. Coronado",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2696,6 +2773,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 205,
 			"name": "S.S. Cortez",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2731,6 +2809,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 206,
 			"name": "S.S. Pizarro",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2766,6 +2845,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 207,
 			"name": "S.S. Velasquez",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2801,6 +2881,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 208,
 			"name": "S.S. Hawking",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2836,6 +2917,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 209,
 			"name": "S.S. Grissom",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2871,6 +2953,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 210,
 			"name": "S.S. Kepler",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2906,6 +2989,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 211,
 			"name": "S.S. Burgstahler",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2941,6 +3025,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 212,
 			"name": "S.S. Oppenheimer",
 			"linkSystem": -1,
 			"govt": 136,
@@ -2976,6 +3061,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 213,
 			"name": "S.S. Tycho Brahe",
 			"linkSystem": -1,
 			"govt": 136,
@@ -3011,6 +3097,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 214,
 			"name": "S.S. Lovell",
 			"linkSystem": -1,
 			"govt": 136,
@@ -3046,6 +3133,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 215,
 			"name": "S.S. Jericho",
 			"linkSystem": -1,
 			"govt": 136,
@@ -3081,6 +3169,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 216,
 			"name": "S.S. Weber",
 			"linkSystem": -1,
 			"govt": 136,
@@ -3116,6 +3205,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 217,
 			"name": "S.S. Bozeman",
 			"linkSystem": -1,
 			"govt": 136,
@@ -3151,6 +3241,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 218,
 			"name": "S.S. Nomad",
 			"linkSystem": -1,
 			"govt": 136,
@@ -3186,6 +3277,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 219,
 			"name": "Matt Burch",
 			"linkSystem": -1,
 			"govt": 136,
@@ -3221,6 +3313,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 220,
 			"name": "Zeus Faber",
 			"linkSystem": 20000,
 			"govt": -1,
@@ -3256,6 +3349,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 221,
 			"name": "Hawkeye",
 			"linkSystem": 20000,
 			"govt": -1,
@@ -3291,6 +3385,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 222,
 			"name": "Skipjack",
 			"linkSystem": 20000,
 			"govt": -1,
@@ -3326,6 +3421,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 223,
 			"name": "Ruby Fulcrum",
 			"linkSystem": 20000,
 			"govt": -1,
@@ -3361,6 +3457,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 224,
 			"name": "Space Derelict",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -3396,6 +3493,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 225,
 			"name": "Space Derelict",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -3431,6 +3529,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 226,
 			"name": "Space Derelict",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -3466,6 +3565,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 227,
 			"name": "Space Derelict",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -3501,6 +3601,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 228,
 			"name": "Space Derelict",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -3536,6 +3637,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 229,
 			"name": "Space Derelict",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -3571,6 +3673,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 230,
 			"name": "Space Derelict",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -3606,6 +3709,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 231,
 			"name": "Space Derelict",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -3641,6 +3745,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 232,
 			"name": "Space Derelict",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -3676,6 +3781,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 233,
 			"name": "Space Derelict",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -3711,6 +3817,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 234,
 			"name": "U.S.S. Chimera",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -3746,6 +3853,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 235,
 			"name": "U.S.S. Devastator",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -3781,6 +3889,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 236,
 			"name": "U.S.S. Executor",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -3816,6 +3925,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 237,
 			"name": "U.S.S. Reaper",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -3851,6 +3961,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 238,
 			"name": "U.S.S. Agamemnon",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -3886,6 +3997,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 239,
 			"name": "U.S.S. Inquisitor",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -3921,6 +4033,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 240,
 			"name": "U.S.S. Alexander",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -3956,6 +4069,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 241,
 			"name": "U.S.S. Dominator",
 			"linkSystem": 25001,
 			"govt": 128,
@@ -3991,6 +4105,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 242,
 			"name": "Piper Maru",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -4026,6 +4141,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 243,
 			"name": "Empress Stardust",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -4061,6 +4177,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 244,
 			"name": "S.S. Tamerlane",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -4096,6 +4213,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 245,
 			"name": "S.S. McCollum",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -4131,6 +4249,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 246,
 			"name": "S.S. Clayton",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -4166,6 +4285,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 247,
 			"name": "S.S. Forrester",
 			"linkSystem": 20000,
 			"govt": 141,
@@ -4201,6 +4321,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 248,
 			"name": "S.S. Darius",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4236,6 +4357,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 249,
 			"name": "S.S. Xeres",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4271,6 +4393,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 250,
 			"name": "S.S. Molock",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4306,6 +4429,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 251,
 			"name": "S.S. Hathor",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4341,6 +4465,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 252,
 			"name": "S.S. Bradley",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4376,6 +4501,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 253,
 			"name": "S.S. Cochrane",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4411,6 +4537,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 254,
 			"name": "S.S. Lysander",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4446,6 +4573,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 255,
 			"name": "S.S. Eichman",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4481,6 +4609,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 256,
 			"name": "S.S. Claxton",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4516,6 +4645,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 257,
 			"name": "S.S. Bowie",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4551,6 +4681,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 258,
 			"name": "S.S. Laurel",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4586,6 +4717,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 259,
 			"name": "S.S. Turkana",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4621,6 +4753,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 260,
 			"name": "S.S. Socorro",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4656,6 +4789,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 261,
 			"name": "S.S. Ashanti",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4691,6 +4825,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 262,
 			"name": "S.S. Houston",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4726,6 +4861,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 263,
 			"name": "S.S. Wilder",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4761,6 +4897,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 264,
 			"name": "S.S. Beagle",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4796,6 +4933,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 265,
 			"name": "S.S. Boyd",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4831,6 +4969,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 266,
 			"name": "S.S. Gillian",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4866,6 +5005,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 267,
 			"name": "S.S. Anderson",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4901,6 +5041,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 268,
 			"name": "S.S. Duchovny",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4936,6 +5077,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 269,
 			"name": "S.S. Sharpley",
 			"linkSystem": -1,
 			"govt": 136,
@@ -4971,6 +5113,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 270,
 			"name": "S.S. Douglas",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5006,6 +5149,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 271,
 			"name": "S.S. Merritt",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5041,6 +5185,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 272,
 			"name": "S.S. Barclay",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5076,6 +5221,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 273,
 			"name": "S.S. Melbourne",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5111,6 +5257,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 274,
 			"name": "S.S. Leonov",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5146,6 +5293,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 275,
 			"name": "S.S. Shepard",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5181,6 +5329,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 276,
 			"name": "S.S. Grissom",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5216,6 +5365,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 277,
 			"name": "S.S. Hawley",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5251,6 +5401,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 278,
 			"name": "Merchant Courier",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5286,6 +5437,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 279,
 			"name": "Merchant Courier",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5321,6 +5473,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 280,
 			"name": "Merchant Courier",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5356,6 +5509,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 281,
 			"name": "Merchant Courier",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5391,6 +5545,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 282,
 			"name": "Merchant Courier",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5426,6 +5581,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 283,
 			"name": "Merchant Courier",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5461,6 +5617,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 284,
 			"name": "Merchant Courier",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5496,6 +5653,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 285,
 			"name": "Merchant Courier",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5531,6 +5689,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 286,
 			"name": "Merchant Courier",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5566,6 +5725,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 287,
 			"name": "Merchant Courier",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5601,6 +5761,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 288,
 			"name": "Derelict Freighter",
 			"linkSystem": 9999,
 			"govt": 141,
@@ -5636,6 +5797,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 289,
 			"name": "S.S. Mulligan",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5671,6 +5833,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 290,
 			"name": "S.S. Electra",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5706,6 +5869,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 291,
 			"name": "S.S. Hannibal",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5741,6 +5905,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 292,
 			"name": "S.S. Balboa",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5776,6 +5941,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 293,
 			"name": "S.S. Isabella",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5811,6 +5977,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 294,
 			"name": "S.S. Diebold",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5846,6 +6013,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 295,
 			"name": "S.S. Theseus",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5881,6 +6049,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 296,
 			"name": "S.S. Rowland",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5916,6 +6085,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 297,
 			"name": "S.S. Nelson",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5951,6 +6121,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 298,
 			"name": "S.S. Farlander",
 			"linkSystem": -1,
 			"govt": 136,
@@ -5986,6 +6157,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 299,
 			"name": "S.S. Tikopai",
 			"linkSystem": -1,
 			"govt": 136,
@@ -6021,6 +6193,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 300,
 			"name": "S.S. Casper",
 			"linkSystem": -1,
 			"govt": 136,
@@ -6056,6 +6229,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 301,
 			"name": "S.S. Addison",
 			"linkSystem": -1,
 			"govt": 136,
@@ -6091,6 +6265,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 302,
 			"name": "S.S. Carter",
 			"linkSystem": -1,
 			"govt": 136,
@@ -6126,6 +6301,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 303,
 			"name": "S.S. Aquilla",
 			"linkSystem": -1,
 			"govt": 136,
@@ -6161,6 +6337,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 304,
 			"name": "Starbound Flight 93",
 			"linkSystem": -1,
 			"govt": 138,
@@ -6196,6 +6373,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 305,
 			"name": "Starbound Flight 73",
 			"linkSystem": -1,
 			"govt": 138,
@@ -6231,6 +6409,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 306,
 			"name": "Starbound Flight 129",
 			"linkSystem": -1,
 			"govt": 138,
@@ -6266,6 +6445,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 307,
 			"name": "Starbound Flight 25",
 			"linkSystem": -1,
 			"govt": 138,
@@ -6301,6 +6481,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 308,
 			"name": "Starbound Flight 115",
 			"linkSystem": -1,
 			"govt": 138,
@@ -6336,6 +6517,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 309,
 			"name": "Starbound Flight 206",
 			"linkSystem": -1,
 			"govt": 138,
@@ -6371,6 +6553,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 310,
 			"name": "Starbound Flight 305",
 			"linkSystem": -1,
 			"govt": 138,
@@ -6406,6 +6589,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 311,
 			"name": "Starbound Flight 52",
 			"linkSystem": -1,
 			"govt": 138,
@@ -6441,6 +6625,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 312,
 			"name": "ConEx Flight 312",
 			"linkSystem": -1,
 			"govt": 139,
@@ -6476,6 +6661,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 313,
 			"name": "ConEx Flight 91",
 			"linkSystem": -1,
 			"govt": 139,
@@ -6511,6 +6697,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 314,
 			"name": "ConEx Flight 181",
 			"linkSystem": -1,
 			"govt": 139,
@@ -6546,6 +6733,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 315,
 			"name": "ConEx Flight 753",
 			"linkSystem": -1,
 			"govt": 139,
@@ -6581,6 +6769,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 316,
 			"name": "ConEx Flight 158",
 			"linkSystem": -1,
 			"govt": 139,
@@ -6616,6 +6805,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 317,
 			"name": "ConEx Flight 462",
 			"linkSystem": -1,
 			"govt": 139,
@@ -6651,6 +6841,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 318,
 			"name": "ConEx Flight 846",
 			"linkSystem": -1,
 			"govt": 139,
@@ -6686,6 +6877,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 319,
 			"name": "ConEx Flight 351",
 			"linkSystem": -1,
 			"govt": 139,
@@ -6721,6 +6913,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 320,
 			"name": "UGE Flight 750",
 			"linkSystem": -1,
 			"govt": 142,
@@ -6756,6 +6949,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 321,
 			"name": "UGE Flight 160",
 			"linkSystem": -1,
 			"govt": 142,
@@ -6791,6 +6985,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 322,
 			"name": "UGE Flight 45",
 			"linkSystem": -1,
 			"govt": 142,
@@ -6826,6 +7021,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 323,
 			"name": "UGE Flight 323",
 			"linkSystem": -1,
 			"govt": 142,
@@ -6861,6 +7057,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 324,
 			"name": "UGE Flight 155",
 			"linkSystem": -1,
 			"govt": 142,
@@ -6896,6 +7093,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 325,
 			"name": "UGE Flight 250",
 			"linkSystem": -1,
 			"govt": 142,
@@ -6931,6 +7129,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 326,
 			"name": "UGE Flight 196",
 			"linkSystem": -1,
 			"govt": 142,
@@ -6966,6 +7165,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 327,
 			"name": "UGE Flight 978",
 			"linkSystem": -1,
 			"govt": 142,
@@ -7001,6 +7201,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 328,
 			"name": "Alien Fighter",
 			"linkSystem": 20000,
 			"govt": 150,
@@ -7036,6 +7237,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 329,
 			"name": "Alien Fighter",
 			"linkSystem": 20000,
 			"govt": 150,
@@ -7071,6 +7273,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 330,
 			"name": "Alien Fighter",
 			"linkSystem": 20000,
 			"govt": 150,
@@ -7106,6 +7309,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 331,
 			"name": "Alien Fighter",
 			"linkSystem": 20000,
 			"govt": 150,
@@ -7141,6 +7345,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 332,
 			"name": "Alien Fighter",
 			"linkSystem": 20000,
 			"govt": 150,
@@ -7176,6 +7381,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 333,
 			"name": "Alien Fighter",
 			"linkSystem": 20000,
 			"govt": 150,
@@ -7211,6 +7417,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 334,
 			"name": "Alien Fighter",
 			"linkSystem": 20000,
 			"govt": 150,
@@ -7246,6 +7453,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 335,
 			"name": "Alien Fighter",
 			"linkSystem": 20000,
 			"govt": 150,
@@ -7281,6 +7489,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 336,
 			"name": "Alien Fighter",
 			"linkSystem": 20000,
 			"govt": 150,
@@ -7316,6 +7525,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 337,
 			"name": "Alien Fighter",
 			"linkSystem": 20000,
 			"govt": 150,
@@ -7351,6 +7561,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 338,
 			"name": "Escort Carrier",
 			"linkSystem": -1,
 			"govt": 153,
@@ -7386,6 +7597,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 339,
 			"name": "Escort Carrier",
 			"linkSystem": -1,
 			"govt": 153,
@@ -7421,6 +7633,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 340,
 			"name": "Escort Carrier",
 			"linkSystem": -1,
 			"govt": 153,
@@ -7456,6 +7669,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 341,
 			"name": "Escort Carrier",
 			"linkSystem": -1,
 			"govt": 153,
@@ -7491,6 +7705,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 342,
 			"name": "Escort Carrier",
 			"linkSystem": -1,
 			"govt": 153,
@@ -7526,6 +7741,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 343,
 			"name": "Escort Carrier",
 			"linkSystem": -1,
 			"govt": 153,
@@ -7561,6 +7777,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 344,
 			"name": "Escort Carrier",
 			"linkSystem": -1,
 			"govt": 153,
@@ -7596,6 +7813,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 345,
 			"name": "Escort Carrier",
 			"linkSystem": -1,
 			"govt": 153,
@@ -7631,6 +7849,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 638,
 			"name": "Bounty Hunter",
 			"linkSystem": -32000,
 			"govt": -1,
@@ -7666,6 +7885,7 @@ export default {
 			"flags2": 0
 		},
 		{
+			"id": 639,
 			"name": "Cap'n Hector",
 			"linkSystem": -1,
 			"govt": -1,

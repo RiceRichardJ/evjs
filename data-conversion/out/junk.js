@@ -1,6 +1,7 @@
 export default {
 	"junk": [
 		{
+			"id": 128,
 			"name": "Stembolts",
 			"lowStel1": 174,
 			"lowStel2": 129,
@@ -27,6 +28,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 129,
 			"name": "Keychains",
 			"lowStel1": 130,
 			"lowStel2": 187,
@@ -53,6 +55,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 130,
 			"name": "Seafood",
 			"lowStel1": 134,
 			"lowStel2": 163,
@@ -79,6 +82,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 131,
 			"name": "Root Extract",
 			"lowStel1": 138,
 			"lowStel2": 183,
@@ -105,6 +109,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 132,
 			"name": "Lobsters",
 			"lowStel1": 139,
 			"lowStel2": 188,
@@ -131,6 +136,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 133,
 			"name": "Viral Serum",
 			"lowStel1": 156,
 			"lowStel2": 142,
@@ -157,6 +163,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 134,
 			"name": "Workdroids",
 			"lowStel1": 144,
 			"lowStel2": 137,
@@ -183,6 +190,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 135,
 			"name": "Wood",
 			"lowStel1": 205,
 			"lowStel2": 147,
@@ -209,6 +217,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 136,
 			"name": "Magazines",
 			"lowStel1": 233,
 			"lowStel2": 149,
@@ -235,6 +244,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 137,
 			"name": "Camels",
 			"lowStel1": 194,
 			"lowStel2": 150,
@@ -261,6 +271,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 138,
 			"name": "Appetizers",
 			"lowStel1": 168,
 			"lowStel2": 159,
@@ -287,6 +298,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 139,
 			"name": "T-Shirts",
 			"lowStel1": 175,
 			"lowStel2": 229,
@@ -313,6 +325,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 140,
 			"name": "Seaweed",
 			"lowStel1": 176,
 			"lowStel2": 137,
@@ -339,6 +352,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 141,
 			"name": "Computers",
 			"lowStel1": 210,
 			"lowStel2": 181,
@@ -365,6 +379,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 142,
 			"name": "Bug Juice",
 			"lowStel1": 189,
 			"lowStel2": 207,
@@ -391,6 +406,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 143,
 			"name": "Parrots",
 			"lowStel1": 198,
 			"lowStel2": -1,
@@ -417,6 +433,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 144,
 			"name": "Banderfrogs",
 			"lowStel1": 208,
 			"lowStel2": 146,
@@ -443,6 +460,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 145,
 			"name": "Grain",
 			"lowStel1": 212,
 			"lowStel2": 152,
@@ -469,6 +487,7 @@ export default {
 			"sellon": ""
 		},
 		{
+			"id": 146,
 			"name": "Vegetables",
 			"lowStel1": 214,
 			"lowStel2": 150,

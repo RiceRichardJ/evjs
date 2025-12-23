@@ -1,6 +1,7 @@
 export default {
 	"ship": [
 		{
+			"id": 128,
 			"name": "Shuttlecraft",
 			"cargoCapacity": 20,
 			"shields": 180,
@@ -95,6 +96,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 129,
 			"name": "Light Freighter",
 			"cargoCapacity": 150,
 			"shields": 150,
@@ -189,6 +191,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 130,
 			"name": "Bulk Freighter",
 			"cargoCapacity": 500,
 			"shields": 100,
@@ -283,6 +286,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 131,
 			"name": "Courier",
 			"cargoCapacity": 50,
 			"shields": 150,
@@ -377,6 +381,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 132,
 			"name": "Argosy",
 			"cargoCapacity": 130,
 			"shields": 350,
@@ -471,6 +476,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 133,
 			"name": "Confederate Frigate",
 			"cargoCapacity": 50,
 			"shields": 2500,
@@ -565,6 +571,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 134,
 			"name": "Confederate Cruiser",
 			"cargoCapacity": 75,
 			"shields": 8000,
@@ -659,6 +666,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 135,
 			"name": "Confed Patrol Ship",
 			"cargoCapacity": 5,
 			"shields": 200,
@@ -753,6 +761,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 136,
 			"name": "Rapier",
 			"cargoCapacity": 15,
 			"shields": 350,
@@ -847,6 +856,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 137,
 			"name": "Lightning",
 			"cargoCapacity": 5,
 			"shields": 250,
@@ -941,6 +951,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 138,
 			"name": "Defender",
 			"cargoCapacity": 1,
 			"shields": 100,
@@ -1035,6 +1046,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 139,
 			"name": "Executive Transport",
 			"cargoCapacity": 10,
 			"shields": 100,
@@ -1129,6 +1141,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 140,
 			"name": "Luxury Liner",
 			"cargoCapacity": 20,
 			"shields": 300,
@@ -1223,6 +1236,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 141,
 			"name": "Rebel Destroyer",
 			"cargoCapacity": 30,
 			"shields": 2000,
@@ -1317,6 +1331,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 142,
 			"name": "Rebel Cruiser",
 			"cargoCapacity": 60,
 			"shields": 5000,
@@ -1411,6 +1426,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 143,
 			"name": "Kestrel",
 			"cargoCapacity": 80,
 			"shields": 1300,
@@ -1505,6 +1521,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 144,
 			"name": "Manta",
 			"cargoCapacity": 3,
 			"shields": 200,
@@ -1599,6 +1616,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 145,
 			"name": "Scoutship",
 			"cargoCapacity": 40,
 			"shields": 300,
@@ -1693,6 +1711,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 146,
 			"name": "Corvette",
 			"cargoCapacity": 60,
 			"shields": 700,
@@ -1787,6 +1806,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 147,
 			"name": "Confed Gunboat",
 			"cargoCapacity": 5,
 			"shields": 200,
@@ -1881,6 +1901,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 148,
 			"name": "Hawk",
 			"cargoCapacity": 3,
 			"shields": 230,
@@ -1975,6 +1996,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 149,
 			"name": "Alien Fighter",
 			"cargoCapacity": 10,
 			"shields": 5000,
@@ -2069,6 +2091,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 150,
 			"name": "Alien Cruiser",
 			"cargoCapacity": 50,
 			"shields": -3000,
@@ -2163,6 +2186,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 151,
 			"name": "Clipper",
 			"cargoCapacity": 35,
 			"shields": 300,
@@ -2257,6 +2281,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 152,
 			"name": "Kestrel",
 			"cargoCapacity": 80,
 			"shields": 1050,
@@ -2351,6 +2376,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 153,
 			"name": "Escort Carrier",
 			"cargoCapacity": 20,
 			"shields": 850,
@@ -2445,6 +2471,7 @@ export default {
 			"escortType": -1
 		},
 		{
+			"id": 191,
 			"name": "Escape Pod",
 			"cargoCapacity": 0,
 			"shields": 0,

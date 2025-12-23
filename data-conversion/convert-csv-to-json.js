@@ -82,6 +82,7 @@ function decodeInfoTypes(flags) {
 // Converter for nëbu resource
 function convertNebu(row) {
   return {
+    id: parseNum(row['ID']),
     name: row['Name'] || '',
     x: parseNum(row['Position X']),
     y: parseNum(row['Position Y']),
@@ -108,6 +109,7 @@ function convertDude(row) {
   }
 
   return {
+    id: parseNum(row['ID']),
     name: row['Name'] || '',
     shipTypes,
     probability,
@@ -117,6 +119,57 @@ function convertDude(row) {
     hailText: decodeInfoTypes(row['InfoTypes']),
     booty: decodeBootyFlags(row['Flags'])
   };
+}
+
+// Converter for sÿst resource
+function convertSyst(row) {
+  // Collect links (link1-link5)
+  const links = [];
+  for (let i = 1; i <= 5; i++) {
+    const val = parseNum(row[`link${i}`]);
+    if (val !== '' && val !== -1) {
+      links.push(val);
+    }
+  }
+
+  // Collect spobs (spob1-spob4)
+  const spobs = [];
+  for (let i = 1; i <= 4; i++) {
+    const val = parseNum(row[`spob${i}`]);
+    if (val !== '' && val !== -1) {
+      spobs.push(val);
+    }
+  }
+
+  // Collect dudes with probabilities (dude1-dude4, dudeProb1-dudeProb4)
+  const dudes = [];
+  for (let i = 1; i <= 4; i++) {
+    const dudeVal = parseNum(row[`dude${i}`]);
+    const probVal = parseNum(row[`dudeProb${i}`]);
+    if (dudeVal !== '' && dudeVal !== -1) {
+      dudes.push([dudeVal, probVal || 0]);
+    }
+  }
+
+  const result = {
+    id: parseNum(row['ID']),
+    name: row['Name'] || '',
+    x: parseNum(row['x']),
+    y: parseNum(row['y']),
+    links,
+    spobs,
+    dudes,
+    avgShips: parseNum(row['avgShips']),
+    government: parseNum(row['govt']),
+    message: parseNum(row['message']),
+    asteroids: parseNum(row['roids']),
+    interference: parseNum(row['interference'])
+  };
+
+  // Add optional fields if they exist
+  if (row['visbit']) result.visbit = parseNum(row['visbit']);
+
+  return result;
 }
 
 // Converter for wëap resource
@@ -156,10 +209,12 @@ function convertWeap(row) {
 
 // Generic converter - best effort based on column names
 function convertGeneric(row, resourceType) {
-  const result = {};
+  const result = {
+    id: parseNum(row['ID'])
+  };
 
   for (const [key, value] of Object.entries(row)) {
-    if (key === 'ID') continue; // Skip ID field
+    if (key === 'ID') continue; // Already handled
 
     // Convert key to camelCase
     let propName = key
@@ -190,6 +245,8 @@ function convertRow(row, resourceType) {
       return convertNebu(row);
     case 'dude':
       return convertDude(row);
+    case 'syst':
+      return convertSyst(row);
     case 'weap':
       return convertWeap(row);
     default:

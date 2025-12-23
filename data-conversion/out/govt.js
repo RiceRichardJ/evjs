@@ -1,6 +1,7 @@
 export default {
 	"govt": [
 		{
+			"id": 128,
 			"name": "Confederation",
 			"voiceType": 1,
 			"flags1": 25362,
@@ -42,6 +43,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 129,
 			"name": "Rebellion",
 			"voiceType": 0,
 			"flags1": 25088,
@@ -83,6 +85,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 130,
 			"name": "Pirates",
 			"voiceType": 0,
 			"flags1": 54033,
@@ -124,6 +127,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 131,
 			"name": "Cydonian",
 			"voiceType": 0,
 			"flags1": 16912,
@@ -165,6 +169,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 132,
 			"name": "Lethean",
 			"voiceType": 0,
 			"flags1": 16912,
@@ -206,6 +211,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 133,
 			"name": "Militia",
 			"voiceType": 0,
 			"flags1": 17170,
@@ -247,6 +253,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 134,
 			"name": "Unexplored",
 			"voiceType": 0,
 			"flags1": 2048,
@@ -288,6 +295,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 135,
 			"name": "Astex",
 			"voiceType": 1,
 			"flags1": 25360,
@@ -329,6 +337,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 136,
 			"name": "Merchants",
 			"voiceType": 0,
 			"flags1": 0,
@@ -370,6 +379,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 137,
 			"name": "Mercenaries",
 			"voiceType": 0,
 			"flags1": 784,
@@ -411,6 +421,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 138,
 			"name": "Starbound Shipping",
 			"voiceType": 0,
 			"flags1": 0,
@@ -452,6 +463,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 139,
 			"name": "Consolidated Express",
 			"voiceType": 0,
 			"flags1": 0,
@@ -493,6 +505,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 140,
 			"name": "Aliens",
 			"voiceType": 0,
 			"flags1": 1025,
@@ -534,6 +547,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 141,
 			"name": "Derelicts",
 			"voiceType": -1,
 			"flags1": 3072,
@@ -575,6 +589,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 142,
 			"name": "United Galactic Express",
 			"voiceType": 0,
 			"flags1": 0,
@@ -616,6 +631,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 143,
 			"name": "Psycho Confederation",
 			"voiceType": 1,
 			"flags1": 25364,
@@ -657,6 +673,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 144,
 			"name": "Escort Rebellion",
 			"voiceType": 0,
 			"flags1": 25152,
@@ -698,6 +715,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 145,
 			"name": "Escort Confederation",
 			"voiceType": 1,
 			"flags1": 25424,
@@ -739,6 +757,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 146,
 			"name": "Psycho Rebellion",
 			"voiceType": 0,
 			"flags1": 25092,
@@ -780,6 +799,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 147,
 			"name": "Psycho ConEx",
 			"voiceType": 0,
 			"flags1": 36,
@@ -821,6 +841,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 148,
 			"name": "Psycho Astex",
 			"voiceType": 1,
 			"flags1": 25364,
@@ -862,6 +883,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 149,
 			"name": "Traitor Confederation",
 			"voiceType": 1,
 			"flags1": 25394,
@@ -903,6 +925,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 150,
 			"name": "Psycho Aliens",
 			"voiceType": 0,
 			"flags1": 1285,
@@ -944,6 +967,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 152,
 			"name": "Hunters",
 			"voiceType": -1,
 			"flags1": 8,
@@ -985,6 +1009,7 @@ export default {
 			"newsPict": -1
 		},
 		{
+			"id": 153,
 			"name": "NoEP Rebellion",
 			"voiceType": 0,
 			"flags1": 25344,

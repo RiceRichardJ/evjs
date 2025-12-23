@@ -1,6 +1,7 @@
 export default {
 	"flet": [
 		{
+			"id": 128,
 			"name": "Escorted Confed BF",
 			"leadShip": 130,
 			"ship1": 135,
@@ -22,6 +23,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 129,
 			"name": "Small Confed Warfleet",
 			"leadShip": 133,
 			"ship1": 135,
@@ -43,6 +45,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 130,
 			"name": "Large Confed Warfleet",
 			"leadShip": 134,
 			"ship1": 133,
@@ -64,6 +67,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 131,
 			"name": "Small Rebel Warfleet",
 			"leadShip": 141,
 			"ship1": 144,
@@ -85,6 +89,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 132,
 			"name": "Large Rebel Warfleet",
 			"leadShip": 142,
 			"ship1": 141,
@@ -106,6 +111,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 133,
 			"name": "Large Pirate Fleet",
 			"leadShip": 146,
 			"ship1": 136,
@@ -127,6 +133,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 134,
 			"name": "Escorted Confed BF",
 			"leadShip": 130,
 			"ship1": 135,
@@ -148,6 +155,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 135,
 			"name": "Escorted Confed BF",
 			"leadShip": 130,
 			"ship1": 135,
@@ -169,6 +177,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 136,
 			"name": "Small Rebel Warfleet",
 			"leadShip": 141,
 			"ship1": 144,
@@ -190,6 +199,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 137,
 			"name": "Small Rebel Warfleet",
 			"leadShip": 141,
 			"ship1": 144,
@@ -211,6 +221,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 138,
 			"name": "Small Confed Warfleet",
 			"leadShip": 133,
 			"ship1": 135,
@@ -232,6 +243,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 139,
 			"name": "Small Confed Warfleet",
 			"leadShip": 133,
 			"ship1": 135,
@@ -253,6 +265,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 140,
 			"name": "Small Pirate Fleet",
 			"leadShip": 136,
 			"ship1": 137,
@@ -274,6 +287,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 141,
 			"name": "Small Trader Convoy",
 			"leadShip": 132,
 			"ship1": 132,
@@ -295,6 +309,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 142,
 			"name": "Large Trader Convoy",
 			"leadShip": 132,
 			"ship1": 132,
@@ -316,6 +331,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 143,
 			"name": "Escorted Confed ExT",
 			"leadShip": 139,
 			"ship1": 135,
@@ -337,6 +353,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 144,
 			"name": "Small Pirate Fleet",
 			"leadShip": 132,
 			"ship1": 138,
@@ -358,6 +375,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 254,
 			"name": "Small anti-escort fleet",
 			"leadShip": 138,
 			"ship1": 138,
@@ -379,6 +397,7 @@ export default {
 			"flags": 0
 		},
 		{
+			"id": 255,
 			"name": "Big anti-escort fleet",
 			"leadShip": 136,
 			"ship1": 138,

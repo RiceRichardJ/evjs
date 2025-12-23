@@ -1,6 +1,7 @@
 export default {
 	"outf": [
 		{
+			"id": 128,
 			"name": "Laser Cannon",
 			"displayWeight": -1,
 			"mass": 5,
@@ -30,6 +31,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 129,
 			"name": "Neutron Blaster",
 			"displayWeight": -1,
 			"mass": 35,
@@ -59,6 +61,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 130,
 			"name": "Proton Bolt Cannon",
 			"displayWeight": -1,
 			"mass": 8,
@@ -88,6 +91,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 131,
 			"name": "Torpedo Launcher",
 			"displayWeight": -1,
 			"mass": 25,
@@ -117,6 +121,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 132,
 			"name": "Torpedo",
 			"displayWeight": -1,
 			"mass": 1,
@@ -146,6 +151,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 133,
 			"name": "Missile Rack",
 			"displayWeight": -1,
 			"mass": 10,
@@ -175,6 +181,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 134,
 			"name": "Missile",
 			"displayWeight": -1,
 			"mass": 1,
@@ -204,6 +211,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 135,
 			"name": "Cargo Pod",
 			"displayWeight": -1,
 			"mass": 20,
@@ -233,6 +241,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 136,
 			"name": "Laser Turret",
 			"displayWeight": -1,
 			"mass": 20,
@@ -262,6 +271,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 137,
 			"name": "Proton Turret",
 			"displayWeight": -1,
 			"mass": 30,
@@ -291,6 +301,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 138,
 			"name": "Fighter Bay",
 			"displayWeight": -1,
 			"mass": 50,
@@ -320,6 +331,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 139,
 			"name": "Hawk Light Fighter",
 			"displayWeight": -1,
 			"mass": 0,
@@ -349,6 +361,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 140,
 			"name": "Mass Expansion",
 			"displayWeight": -1,
 			"mass": -10,
@@ -378,6 +391,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 141,
 			"name": "Confed Patrol Ship",
 			"displayWeight": 66,
 			"mass": 0,
@@ -407,6 +421,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 142,
 			"name": "Manta Light Fighter",
 			"displayWeight": 61,
 			"mass": 0,
@@ -436,6 +451,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 143,
 			"name": "Lightning Fighter-Bomber",
 			"displayWeight": -1,
 			"mass": 0,
@@ -465,6 +481,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 144,
 			"name": "Mass Driver",
 			"displayWeight": 61,
 			"mass": 40,
@@ -494,6 +511,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 145,
 			"name": "Shield Capacitor",
 			"displayWeight": -1,
 			"mass": 3,
@@ -523,6 +541,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 146,
 			"name": "Shield Booster",
 			"displayWeight": -1,
 			"mass": 2,
@@ -552,6 +571,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 147,
 			"name": "Armaplast Plating",
 			"displayWeight": -1,
 			"mass": 5,
@@ -581,6 +601,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 148,
 			"name": "Durasteel Armor",
 			"displayWeight": -1,
 			"mass": 20,
@@ -610,6 +631,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 149,
 			"name": "Tritanium Armor",
 			"displayWeight": -1,
 			"mass": 40,
@@ -639,6 +661,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 150,
 			"name": "Thrust Enhancement",
 			"displayWeight": -1,
 			"mass": 0,
@@ -668,6 +691,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 151,
 			"name": "Engine Upgrade",
 			"displayWeight": -1,
 			"mass": 0,
@@ -697,6 +721,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 152,
 			"name": "RCS Upgrade",
 			"displayWeight": -1,
 			"mass": 0,
@@ -726,6 +751,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 153,
 			"name": "External Fuel Tank",
 			"displayWeight": -1,
 			"mass": 5,
@@ -755,6 +781,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 154,
 			"name": "Escape Pod",
 			"displayWeight": -1,
 			"mass": 1,
@@ -784,6 +811,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 155,
 			"name": "Density Scanner",
 			"displayWeight": -1,
 			"mass": 0,
@@ -813,6 +841,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 156,
 			"name": "IFF Decoder",
 			"displayWeight": -1,
 			"mass": 0,
@@ -842,6 +871,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 157,
 			"name": "Afterburner",
 			"displayWeight": -1,
 			"mass": 5,
@@ -871,6 +901,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 158,
 			"name": "Missile Jammer",
 			"displayWeight": -1,
 			"mass": 0,
@@ -900,6 +931,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 159,
 			"name": "Rocket Launcher",
 			"displayWeight": -1,
 			"mass": 30,
@@ -929,6 +961,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 160,
 			"name": "Heavy Rocket",
 			"displayWeight": -1,
 			"mass": 2,
@@ -958,6 +991,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 161,
 			"name": "Bomb Rack",
 			"displayWeight": -1,
 			"mass": 30,
@@ -987,6 +1021,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 162,
 			"name": "Space Bomb",
 			"displayWeight": -1,
 			"mass": 2,
@@ -1016,6 +1051,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 163,
 			"name": "Javelin Pod",
 			"displayWeight": -1,
 			"mass": 5,
@@ -1045,6 +1081,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 164,
 			"name": "Javelin Rocket",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1074,6 +1111,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 165,
 			"name": "Regional Map",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1103,6 +1141,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 166,
 			"name": "Particle Beam",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1132,6 +1171,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 167,
 			"name": "Cloaking Device",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1161,6 +1201,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 168,
 			"name": "Meizner Ramscoop",
 			"displayWeight": -1,
 			"mass": 5,
@@ -1190,6 +1231,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 169,
 			"name": "Auto-Refueller",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1219,6 +1261,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 170,
 			"name": "Fighter Bay",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1248,6 +1291,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 171,
 			"name": "Rear Laser Turret",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1277,6 +1321,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 172,
 			"name": "Swivel Laser Cannon",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1306,6 +1351,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 173,
 			"name": "Tractor Beam",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1335,6 +1381,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 174,
 			"name": "Flare Launcher",
 			"displayWeight": -1,
 			"mass": 1,
@@ -1364,6 +1411,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 175,
 			"name": "Decoy Flare",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1393,6 +1441,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 176,
 			"name": "Forklift",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1422,6 +1471,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 177,
 			"name": "Fighter Bay",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1451,6 +1501,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 178,
 			"name": "Fighter Bay",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1480,6 +1531,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 179,
 			"name": "Fighter Bay",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1509,6 +1561,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 180,
 			"name": "Fake ID Papers",
 			"displayWeight": -1,
 			"mass": 0,
@@ -1538,6 +1591,7 @@ export default {
 			"requireGovt": -1
 		},
 		{
+			"id": 181,
 			"name": "Auto-Ejection System",
 			"displayWeight": -1,
 			"mass": 0,
