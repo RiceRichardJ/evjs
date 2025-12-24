@@ -8,24 +8,28 @@ export default class Economy {
 	/**
 	 * Base prices for commodities (in credits per ton)
 	 */
-	static BASE_PRICES = {
-		food: 100,
-		industrial: 200,
-		medical: 500,
-		luxury: 400,
-		metal: 150,
-		equipment: 300
-	};
+	static get BASE_PRICES() {
+		return {
+			food: 100,
+			industrial: 200,
+			medical: 500,
+			luxury: 400,
+			metal: 150,
+			equipment: 300
+		};
+	}
 
 	/**
 	 * Price multipliers for each price level
 	 */
-	static PRICE_MODIFIERS = {
-		none: 0,      // Not traded
-		low: 0.75,    // Cheap (planet produces this)
-		med: 1.0,     // Normal price
-		high: 1.5     // Expensive (planet needs this)
-	};
+	static get PRICE_MODIFIERS() {
+		return {
+			none: 0,      // Not traded
+			low: 0.75,    // Cheap (planet produces this)
+			med: 1.0,     // Normal price
+			high: 1.5     // Expensive (planet needs this)
+		};
+	}
 
 	/**
 	 * Calculate the buy price for a commodity at a specific planet.
