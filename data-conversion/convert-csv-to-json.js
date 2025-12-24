@@ -262,6 +262,61 @@ function parseOutfTextFile(id) {
   }
 }
 
+// Helper to parse resource fork text file for pers
+function parsePersTextFile(id) {
+  try {
+    // Find the file matching this ID
+    const files = fs.readdirSync(RESOURCE_FORK_DIR);
+    const filename = files.find(f => f.startsWith(`EV Data_përs_${id}_`));
+
+    if (!filename) {
+      console.warn(`  Warning: No text file found for pers ID ${id}`);
+      return {};
+    }
+
+    const filePath = path.join(RESOURCE_FORK_DIR, filename);
+    const content = fs.readFileSync(filePath, 'utf-8');
+
+    const data = {};
+    const lines = content.split('\n');
+
+    for (const line of lines) {
+      // Handle special array format: x1=val, y1=val, x2=val, y2=val
+      const arrayMatch = line.match(/^\s*(\w+):\s*x1=(-?\d+),\s*y1=(-?\d+),\s*x2=(-?\d+),\s*y2=(-?\d+)/);
+      if (arrayMatch) {
+        const key = arrayMatch[1];
+        data[key] = [
+          parseInt(arrayMatch[2]),
+          parseInt(arrayMatch[3]),
+          parseInt(arrayMatch[4]),
+          parseInt(arrayMatch[5])
+        ];
+        continue;
+      }
+
+      // Handle regular fields
+      const match = line.match(/^\s*(\w+):\s*(.+)$/);
+      if (match) {
+        const key = match[1];
+        let value = match[2].trim();
+
+        // Parse numeric or hex values
+        if (value.startsWith('0x')) {
+          data[key] = value; // Keep hex as string
+        } else {
+          const num = Number(value);
+          data[key] = isNaN(num) ? value : num;
+        }
+      }
+    }
+
+    return data;
+  } catch (error) {
+    console.warn(`  Warning: Error reading text file for pers ID ${id}:`, error.message);
+    return {};
+  }
+}
+
 // Helper to filter sentinel values (-1) from arrays
 function filterSentinels(arr) {
   const filtered = [];
@@ -571,6 +626,49 @@ function convertOutf(row) {
   };
 }
 
+// Converter for përs resource
+function convertPers(row) {
+  // Use text file data as authoritative source
+  const id = parseNum(row['ID']);
+  const textData = parsePersTextFile(id);
+
+  return {
+    id,
+    name: row['Name'] || '',
+    linkSyst: textData.LinkSyst ?? parseNum(row['Link System']),
+    govt: textData.Govt ?? parseNum(row['Govt']),
+    aiType: textData.AIType ?? parseNum(row['AI Type']),
+    aggress: textData.Aggress ?? parseNum(row['Aggression']),
+    coward: textData.Coward ?? parseNum(row['Coward']),
+    shipType: textData.ShipType ?? parseNum(row['Ship Type']),
+    weapType: textData.WeapType ?? [
+      parseNum(row['Weapon 1']),
+      parseNum(row['Weapon 2']),
+      parseNum(row['Weapon 3']),
+      parseNum(row['Weapon 4'])
+    ],
+    weapCount: textData.WeapCount ?? [
+      parseNum(row['Weap 1 Count']),
+      parseNum(row['Weap 2 Count']),
+      parseNum(row['Weap 3 Count']),
+      parseNum(row['Weap 4 Count'])
+    ],
+    ammoLoad: textData.AmmoLoad ?? [
+      parseNum(row['Weap 1 Ammo']),
+      parseNum(row['Weap 2 Ammo']),
+      parseNum(row['Weap 3 Ammo']),
+      parseNum(row['Weap 4 Ammo'])
+    ],
+    credits: textData.Credits ?? parseNum(row['Credits']),
+    shieldMod: textData.ShieldMod ?? parseNum(row['Shield Mod']),
+    missionBit: textData.MissionBit ?? -1,
+    commQuote: textData.CommQuote ?? parseNum(row['Comm Quote']),
+    hailQuote: textData.HailQuote ?? parseNum(row['Hail Quote']),
+    linkMission: textData.LinkMission ?? parseNum(row['Link Mission']),
+    flags: textData.Flags ?? row['Flags 1'] ?? ''
+  };
+}
+
 // Converter for gövt resource
 function convertGovt(row) {
   // IMPORTANT: EVN export has wrong column labels! Actual mapping:
@@ -697,6 +795,8 @@ function convertRow(row, resourceType) {
       return convertOops(row);
     case 'outf':
       return convertOutf(row);
+    case 'pers':
+      return convertPers(row);
     case 'syst':
       return convertSyst(row);
     case 'weap':
@@ -764,6 +864,22 @@ function convertFile(csvFilename) {
       jsContent = jsContent.replace(
         /"max":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
         (match, nums) => `"max": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+    }
+
+    // Special formatting for pers resource - collapse weapon arrays to single lines
+    if (resourceType === 'pers') {
+      jsContent = jsContent.replace(
+        /"weapType":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"weapType": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      jsContent = jsContent.replace(
+        /"weapCount":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"weapCount": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      jsContent = jsContent.replace(
+        /"ammoLoad":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"ammoLoad": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
       );
     }
 
