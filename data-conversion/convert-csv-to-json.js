@@ -650,14 +650,40 @@ function decodeSpobFlags(flags) {
   const commodities = ['food', 'industrial', 'medical', 'luxury', 'metal', 'equipment'];
   for (let i = 0; i < commodities.length; i++) {
     const baseShift = 7 + (i * 4);
-    const comm = {};
-    if (hexVal & (1 << baseShift)) comm.cheapToBuy = true;
-    if (hexVal & (1 << (baseShift + 1))) comm.expensiveToBuy = true;
-    if (hexVal & (1 << (baseShift + 2))) comm.cheapToSell = true;
-    if (hexVal & (1 << (baseShift + 3))) comm.expensiveToSell = true;
+    const cheapToBuy = !!(hexVal & (1 << baseShift));
+    const expensiveToBuy = !!(hexVal & (1 << (baseShift + 1)));
+    const cheapToSell = !!(hexVal & (1 << (baseShift + 2)));
+    const expensiveToSell = !!(hexVal & (1 << (baseShift + 3)));
 
-    if (Object.keys(comm).length > 0) {
-      decoded.commodities[commodities[i]] = comm;
+    // Determine price level: "none" | "low" | "med" | "high"
+    let priceLevel = 'none';
+
+    // Count how many flags are set
+    const flagCount = [cheapToBuy, expensiveToBuy, cheapToSell, expensiveToSell].filter(Boolean).length;
+
+    if (flagCount === 0) {
+      priceLevel = 'none';
+    } else if (flagCount === 1) {
+      // Single flag set - clear price signal
+      if (expensiveToSell) priceLevel = 'high';  // Good place to sell
+      else if (cheapToBuy) priceLevel = 'low';   // Good place to buy
+      else priceLevel = 'med';  // expensiveToBuy or cheapToSell alone
+    } else {
+      // Multiple flags - check for common patterns
+      if (expensiveToSell && cheapToBuy) {
+        // Both good for player - medium volatility
+        priceLevel = 'med';
+      } else if (expensiveToSell) {
+        priceLevel = 'high';  // Prioritize sell price
+      } else if (cheapToBuy) {
+        priceLevel = 'low';   // Prioritize buy price
+      } else {
+        priceLevel = 'med';
+      }
+    }
+
+    if (priceLevel !== 'none') {
+      decoded.commodities[commodities[i]] = priceLevel;
     }
   }
 
