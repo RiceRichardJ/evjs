@@ -4,6 +4,9 @@ junk/
 tmp/
 js/
 node_modules/
+dist/
+build/
+*.backup
 
 .DS_Store
 .DS_Store?
