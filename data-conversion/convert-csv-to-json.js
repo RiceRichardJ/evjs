@@ -98,6 +98,47 @@ function parseMisnTextFile(id) {
   }
 }
 
+// Helper to parse resource fork text file for dude
+function parseDudeTextFile(id) {
+  try {
+    // Find the file matching this ID
+    const files = fs.readdirSync(RESOURCE_FORK_DIR);
+    const filename = files.find(f => f.startsWith(`EV Data_düde_${id}_`));
+
+    if (!filename) {
+      console.warn(`  Warning: No text file found for dude ID ${id}`);
+      return {};
+    }
+
+    const filePath = path.join(RESOURCE_FORK_DIR, filename);
+    const content = fs.readFileSync(filePath, 'utf-8');
+
+    const data = {};
+    const lines = content.split('\n');
+
+    for (const line of lines) {
+      const match = line.match(/^\s*(\w+):\s*(.+)$/);
+      if (match) {
+        const key = match[1];
+        let value = match[2].trim();
+
+        // Parse numeric or hex values
+        if (value.startsWith('0x')) {
+          data[key] = value; // Keep hex as string
+        } else {
+          const num = Number(value);
+          data[key] = isNaN(num) ? value : num;
+        }
+      }
+    }
+
+    return data;
+  } catch (error) {
+    console.warn(`  Warning: Error reading text file for dude ID ${id}:`, error.message);
+    return {};
+  }
+}
+
 // Helper to filter sentinel values (-1) from arrays
 function filterSentinels(arr) {
   const filtered = [];
@@ -167,6 +208,9 @@ function convertDude(row) {
   // CSV 'Ship 6' → Govt
   // CSV 'Ship 7' → Booty (decimal, convert to hex format)
 
+  const id = parseNum(row['ID']);
+  const textData = parseDudeTextFile(id);
+
   const shipTypes = [];
   const probability = [];
 
@@ -199,13 +243,14 @@ function convertDude(row) {
   }
 
   return {
-    id: parseNum(row['ID']),
+    id,
     name: row['Name'] || '',
     aiType: parseNum(row['AI Type']),
     shipTypes,
     probability,
     government: parseNum(row['Ship 6']), // Actual govt column
-    booty: decimalToHex(row['Ship 7']) // Convert to hex format
+    booty: decimalToHex(row['Ship 7']), // Convert to hex format
+    infoTypes: textData.InfoTypes ?? -1  // From text file
   };
 }
 

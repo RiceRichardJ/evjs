@@ -7,7 +7,8 @@ export default {
 			"shipTypes": [ 128, 129, 130, 131 ],
 			"probability": [ 30, 40, 15, 15 ],
 			"government": 128,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 1000
 		},
 		{
 			"id": 129,
@@ -16,7 +17,8 @@ export default {
 			"shipTypes": [ 135, 147, 133, 134 ],
 			"probability": [ 35, 25, 30, 10 ],
 			"government": 128,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 130,
@@ -25,7 +27,8 @@ export default {
 			"shipTypes": [ 141, 142, 144, 144 ],
 			"probability": [ 35, 15, 25, 25 ],
 			"government": 129,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 131,
@@ -34,7 +37,8 @@ export default {
 			"shipTypes": [ 132, 129, 129, 145 ],
 			"probability": [ 37, 19, 19, 25 ],
 			"government": 128,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 2000
 		},
 		{
 			"id": 132,
@@ -43,7 +47,8 @@ export default {
 			"shipTypes": [ 138, 138, 138, 146 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 133,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 133,
@@ -52,7 +57,8 @@ export default {
 			"shipTypes": [ 131, 151, 132, 145 ],
 			"probability": [ 15, 20, 55, 10 ],
 			"government": -1,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 7000
 		},
 		{
 			"id": 134,
@@ -61,7 +67,8 @@ export default {
 			"shipTypes": [ 132, 146, 151, 143 ],
 			"probability": [ 40, 15, 40, 5 ],
 			"government": 130,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 135,
@@ -70,7 +77,8 @@ export default {
 			"shipTypes": [ 146, 132, 138, 137 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 131,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 136,
@@ -79,7 +87,8 @@ export default {
 			"shipTypes": [ 136, 132, 138, 146 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 132,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 137,
@@ -88,7 +97,8 @@ export default {
 			"shipTypes": [ 135, 135, 147, 147 ],
 			"probability": [ 30, 30, 20, 20 ],
 			"government": 128,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 138,
@@ -97,7 +107,8 @@ export default {
 			"shipTypes": [ 144, 144, 144, 144 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 129,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 139,
@@ -106,7 +117,8 @@ export default {
 			"shipTypes": [ 139, 139, 140, 140 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 128,
-			"booty": "0x0048"
+			"booty": "0x0048",
+			"infoTypes": 0
 		},
 		{
 			"id": 140,
@@ -115,7 +127,8 @@ export default {
 			"shipTypes": [ 140, 140, 140, 139 ],
 			"probability": [ 25, 25, 35, 15 ],
 			"government": 128,
-			"booty": "0x0048"
+			"booty": "0x0048",
+			"infoTypes": 0
 		},
 		{
 			"id": 141,
@@ -124,7 +137,8 @@ export default {
 			"shipTypes": [ 139, 139, 139, 139 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 128,
-			"booty": "0x0048"
+			"booty": "0x0048",
+			"infoTypes": 0
 		},
 		{
 			"id": 142,
@@ -133,7 +147,8 @@ export default {
 			"shipTypes": [ 129, 129, 129, 129 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 128,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 143,
@@ -142,7 +157,8 @@ export default {
 			"shipTypes": [ 135, 135, 135, 133 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 128,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 144,
@@ -151,7 +167,8 @@ export default {
 			"shipTypes": [ 132, 132, 132, 132 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": -1,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 7000
 		},
 		{
 			"id": 145,
@@ -160,7 +177,8 @@ export default {
 			"shipTypes": [ 130, 130, 130, 130 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 128,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 146,
@@ -169,7 +187,8 @@ export default {
 			"shipTypes": [ 130, 130, 130, 130 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 135,
-			"booty": "0x0012"
+			"booty": "0x0012",
+			"infoTypes": 0
 		},
 		{
 			"id": 147,
@@ -178,7 +197,8 @@ export default {
 			"shipTypes": [ 135, 135, 135, 135 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 135,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 148,
@@ -187,7 +207,8 @@ export default {
 			"shipTypes": [ 141, 141, 142, 142 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 129,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 149,
@@ -196,7 +217,8 @@ export default {
 			"shipTypes": [ 135, 135, 135, 135 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 128,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 150,
@@ -205,7 +227,8 @@ export default {
 			"shipTypes": [ 146, 132, 138, 137 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 131,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 151,
@@ -214,7 +237,8 @@ export default {
 			"shipTypes": [ 136, 132, 138, 146 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 132,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 152,
@@ -223,7 +247,8 @@ export default {
 			"shipTypes": [ 136, 136, 137, 137 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 137,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 153,
@@ -232,7 +257,8 @@ export default {
 			"shipTypes": [ 142, 142, 142, 142 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 129,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 154,
@@ -241,7 +267,8 @@ export default {
 			"shipTypes": [ 130, 130, 130, 130 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 129,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 155,
@@ -250,7 +277,8 @@ export default {
 			"shipTypes": [ 138, 138, 138, 138 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": -1,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 156,
@@ -259,7 +287,8 @@ export default {
 			"shipTypes": [ 136, 136, 136, 136 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": -1,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 157,
@@ -268,7 +297,8 @@ export default {
 			"shipTypes": [ 133, 133, 133, 133 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 128,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 158,
@@ -277,7 +307,8 @@ export default {
 			"shipTypes": [ 141, 141, 141, 141 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 129,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 159,
@@ -286,7 +317,8 @@ export default {
 			"shipTypes": [ 146, 146, 146, 146 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 130,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 160,
@@ -295,7 +327,8 @@ export default {
 			"shipTypes": [ 129, 129, 129, 129 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 128,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 161,
@@ -304,7 +337,8 @@ export default {
 			"shipTypes": [ 143, 143, 143, 143 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 130,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 162,
@@ -313,7 +347,8 @@ export default {
 			"shipTypes": [ 136, 136, 137, 137 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 130,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 163,
@@ -322,7 +357,8 @@ export default {
 			"shipTypes": [ 139, 139, 139, 139 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 128,
-			"booty": "0x0048"
+			"booty": "0x0048",
+			"infoTypes": 0
 		},
 		{
 			"id": 164,
@@ -331,7 +367,8 @@ export default {
 			"shipTypes": [ 132, 132, 132, 132 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 130,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 165,
@@ -340,7 +377,8 @@ export default {
 			"shipTypes": [ 137, 137, 138, 145 ],
 			"probability": [ 15, 15, 35, 35 ],
 			"government": 130,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 166,
@@ -349,7 +387,8 @@ export default {
 			"shipTypes": [ 131, 131, 131, 131 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 138,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": -1
 		},
 		{
 			"id": 167,
@@ -358,7 +397,8 @@ export default {
 			"shipTypes": [ 131, 131, 131, 131 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 139,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": -1
 		},
 		{
 			"id": 168,
@@ -367,7 +407,8 @@ export default {
 			"shipTypes": [ 131, 138, 138, 145 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 139,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": -1
 		},
 		{
 			"id": 169,
@@ -376,7 +417,8 @@ export default {
 			"shipTypes": [ 138, 138, 138, 138 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 139,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": -1
 		},
 		{
 			"id": 170,
@@ -385,7 +427,8 @@ export default {
 			"shipTypes": [ 149, 149, 149, 149 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 140,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": -1
 		},
 		{
 			"id": 171,
@@ -394,7 +437,8 @@ export default {
 			"shipTypes": [ 141, 141, 141, 141 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 129,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 172,
@@ -403,7 +447,8 @@ export default {
 			"shipTypes": [ 150, 150, 150, 150 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 140,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": -1
 		},
 		{
 			"id": 173,
@@ -412,7 +457,8 @@ export default {
 			"shipTypes": [ 137, 137, 137, 137 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 130,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 174,
@@ -421,7 +467,8 @@ export default {
 			"shipTypes": [ 144, 144, 144, 144 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 146,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 175,
@@ -430,7 +477,8 @@ export default {
 			"shipTypes": [ 141, 142, 144, 144 ],
 			"probability": [ 35, 15, 25, 25 ],
 			"government": 146,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 176,
@@ -439,7 +487,8 @@ export default {
 			"shipTypes": [ 133, 133, 133, 133 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 143,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 177,
@@ -448,7 +497,8 @@ export default {
 			"shipTypes": [ 141, 141, 141, 141 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 144,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 178,
@@ -457,7 +507,8 @@ export default {
 			"shipTypes": [ 142, 142, 142, 142 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 144,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 179,
@@ -466,7 +517,8 @@ export default {
 			"shipTypes": [ 135, 135, 147, 147 ],
 			"probability": [ 30, 30, 20, 20 ],
 			"government": 145,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 180,
@@ -475,7 +527,8 @@ export default {
 			"shipTypes": [ 134, 134, 134, 134 ],
 			"probability": [ 30, 30, 20, 20 ],
 			"government": 145,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 181,
@@ -484,7 +537,8 @@ export default {
 			"shipTypes": [ 131, 131, 131, 131 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 136,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 182,
@@ -493,7 +547,8 @@ export default {
 			"shipTypes": [ 143, 143, 146, 146 ],
 			"probability": [ 15, 15, 35, 35 ],
 			"government": 142,
-			"booty": "0x0085"
+			"booty": "0x0085",
+			"infoTypes": 1000
 		},
 		{
 			"id": 183,
@@ -502,7 +557,8 @@ export default {
 			"shipTypes": [ 143, 143, 146, 146 ],
 			"probability": [ 15, 15, 35, 35 ],
 			"government": 139,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": -1
 		},
 		{
 			"id": 184,
@@ -511,7 +567,8 @@ export default {
 			"shipTypes": [ 144, 144, 144, 144 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 144,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 185,
@@ -520,7 +577,8 @@ export default {
 			"shipTypes": [ 144, 144, 144, 141 ],
 			"probability": [ 21, 21, 21, 37 ],
 			"government": 146,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 186,
@@ -529,7 +587,8 @@ export default {
 			"shipTypes": [ 131, 138, 138, 145 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 139,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": -1
 		},
 		{
 			"id": 187,
@@ -538,7 +597,8 @@ export default {
 			"shipTypes": [ 133, 133, 134, 134 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 143,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 188,
@@ -547,7 +607,8 @@ export default {
 			"shipTypes": [ 141, 141, 142, 142 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 146,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 189,
@@ -556,7 +617,8 @@ export default {
 			"shipTypes": [ 135, 135, 135, 135 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 148,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 190,
@@ -565,7 +627,8 @@ export default {
 			"shipTypes": [ 133, 133, 133, 133 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 149,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 191,
@@ -574,7 +637,8 @@ export default {
 			"shipTypes": [ 129, 129, 129, 129 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 136,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		},
 		{
 			"id": 192,
@@ -583,7 +647,8 @@ export default {
 			"shipTypes": [ 136, 136, 136, 136 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 152,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 193,
@@ -592,7 +657,8 @@ export default {
 			"shipTypes": [ 153, 153, 153, 153 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 146,
-			"booty": "0x0000"
+			"booty": "0x0000",
+			"infoTypes": 0
 		},
 		{
 			"id": 194,
@@ -601,7 +667,8 @@ export default {
 			"shipTypes": [ 129, 129, 129, 129 ],
 			"probability": [ 25, 25, 25, 25 ],
 			"government": 129,
-			"booty": "0x007F"
+			"booty": "0x007F",
+			"infoTypes": 0
 		}
 	]
 }
