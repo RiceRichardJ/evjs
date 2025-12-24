@@ -372,6 +372,47 @@ function parseShipTextFile(id) {
   }
 }
 
+// Helper to parse resource fork text file for spob
+function parseSpobTextFile(id) {
+  try {
+    // Find the file matching this ID
+    const files = fs.readdirSync(RESOURCE_FORK_DIR);
+    const filename = files.find(f => f.startsWith(`EV Data_spöb_${id}_`));
+
+    if (!filename) {
+      console.warn(`  Warning: No text file found for spob ID ${id}`);
+      return {};
+    }
+
+    const filePath = path.join(RESOURCE_FORK_DIR, filename);
+    const content = fs.readFileSync(filePath, 'utf-8');
+
+    const data = {};
+    const lines = content.split('\n');
+
+    for (const line of lines) {
+      const match = line.match(/^\s*(\w+):\s*(.+)$/);
+      if (match) {
+        const key = match[1];
+        let value = match[2].trim();
+
+        // Parse numeric or hex values
+        if (value.startsWith('0x')) {
+          data[key] = value; // Keep hex as string
+        } else {
+          const num = Number(value);
+          data[key] = isNaN(num) ? value : num;
+        }
+      }
+    }
+
+    return data;
+  } catch (error) {
+    console.warn(`  Warning: Error reading text file for spob ID ${id}:`, error.message);
+    return {};
+  }
+}
+
 // Helper to filter sentinel values (-1) from arrays
 function filterSentinels(arr) {
   const filtered = [];
@@ -775,6 +816,33 @@ function convertShip(row) {
   };
 }
 
+// Converter for spöb resource
+function convertSpob(row) {
+  // Use text file data as authoritative source
+  const id = parseNum(row['ID']);
+  const textData = parseSpobTextFile(id);
+
+  return {
+    id,
+    name: row['Name'] || '',
+    xPos: textData.xPos ?? parseNum(row['Position X']),
+    yPos: textData.yPos ?? parseNum(row['Position Y']),
+    type: textData.Type ?? parseNum(row['Graphic Type']),
+    flags: textData.Flags ?? row['Flags'] ?? '',
+    system: textData.System ?? parseNum(row['Tribute']), // CSV incorrectly labels this as "Tribute"
+    techLevel: textData.TechLevel ?? parseNum(row['Tech Level']),
+    specialTech1: textData.SpecialTech1 ?? parseNum(row['Tech 1']),
+    specialTech2: textData.SpecialTech2 ?? parseNum(row['Tech 2']),
+    specialTech3: textData.SpecialTech3 ?? parseNum(row['Tech 3']),
+    govt: textData.Govt ?? parseNum(row['Govt']),
+    minCoolness: textData.MinCoolness ?? parseNum(row['Min Status']),
+    custPicID: textData.CustPicID ?? parseNum(row['Custom Pict']),
+    custSndID: textData.CustSndID ?? parseNum(row['Custom Sound']),
+    defDude: textData.DefDude ?? parseNum(row['Defense Dude']),
+    defCount: textData.DefCount ?? parseNum(row['Defense Count'])
+  };
+}
+
 // Converter for gövt resource
 function convertGovt(row) {
   // IMPORTANT: EVN export has wrong column labels! Actual mapping:
@@ -905,6 +973,8 @@ function convertRow(row, resourceType) {
       return convertPers(row);
     case 'ship':
       return convertShip(row);
+    case 'spob':
+      return convertSpob(row);
     case 'syst':
       return convertSyst(row);
     case 'weap':
