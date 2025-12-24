@@ -1,3 +1,107 @@
+/**
+ * mïsn Resource - Mission Definitions
+ *
+ * The mïsn resource defines the complete structure and behavior of missions.
+ * Missions can involve cargo delivery, ship destruction, escort duty, and more.
+ * This is the most complex resource type in EV.
+ *
+ * Resource ID: Each mission
+ *
+ * Fields:
+ *
+ * name (STR#255): Mission name (displayed in mission computer)
+ *
+ * availStel (WORD): Stellar ID where mission is available (20000-20255 = any in
+ *   system 128-383, specific spöb IDs otherwise)
+ *
+ * availBitSet (WORD): Mission bit that must be SET for this mission to appear (-1 = any)
+ *
+ * availBitClr (WORD): Mission bit that must be CLEAR for this mission to appear (-1 = any)
+ *
+ * availLoc (WORD): Location requirement (0=bar, 1=mission computer, 2=offer on landing)
+ *
+ * availRecord (WORD): Minimum legal record required (-32768 to 32767)
+ *
+ * availRating (WORD): Minimum combat rating required (-1 = any)
+ *
+ * availRandom (WORD): Percentage chance mission appears when all conditions met (0-100)
+ *
+ * travelStel (WORD): Destination stellar ID (20000+ for "any in system")
+ *
+ * returnStel (WORD): Return-to stellar ID (-1 if no return required)
+ *
+ * cargoType (WORD): Type of cargo (0-5 = Food/Industrial/Medical/Luxury/Metal/Equipment,
+ *   6 = passengers, 10-139 = jünk ID)
+ *
+ * cargoQty (WORD): Tons of cargo to deliver (0 if passengers or non-cargo mission)
+ *
+ * pickupMode (WORD): Cargo pickup behavior (0=have already, 1=pick up at start planet)
+ *
+ * dropoffMode (WORD): Cargo delivery behavior (1=deliver to dest, 2=jettison anywhere)
+ *
+ * scanGovt (WORD): Government that scans for illegal cargo (-1 = none)
+ *
+ * failIfScan (WORD): Mission fails if scanned by scanGovt? (0=no, 1=yes)
+ *
+ * payVal (DWORD): Credits paid on completion
+ *
+ * shipCount (WORD): Number of ships to destroy/protect (-1 if not ship mission)
+ *
+ * shipSyst (WORD): System ID where ships appear (-1 for current system)
+ *
+ * shipDude (WORD): Düde ID of ships to destroy/escort (-1 if specific ship)
+ *
+ * shipGoal (WORD): What to do with ships (0=destroy, 1=disable, 2=board, 3=escort,
+ *   4=observe, 5=rescue)
+ *
+ * shipBehav (WORD): Ship AI behavior (0-4 = merchant, freighter, warship, interceptor, escort)
+ *
+ * shipNameID (WORD): STR# ID for ship names (-1 for random)
+ *
+ * compBitSet (WORD): Mission bit to SET on completion (-1 = none)
+ *
+ * compBitSet2 (WORD): Second mission bit to SET on completion (-1 = none)
+ *
+ * compGovt (WORD): Government whose legal record is cleared on completion (-1 = none)
+ *
+ * compReward (WORD): Oütf ID given as reward on completion (-1 = none)
+ *
+ * failBitSet (WORD): Mission bit to SET on failure (-1 = none)
+ *
+ * briefText (WORD): Dësc ID for mission briefing
+ *
+ * quickBrief (WORD): STR# ID for quick mission briefing
+ *
+ * loadCargText (WORD): STR# ID for cargo pickup message
+ *
+ * dropCargText (WORD): STR# ID for cargo delivery message
+ *
+ * compText (WORD): STR# ID for completion message
+ *
+ * failText (WORD): STR# ID for failure message
+ *
+ * timeLimit (WORD): Mission time limit in days (-1 = none)
+ *
+ * canAbort (WORD): Can player abort this mission? (0=no, 1=yes)
+ *
+ * auxShipCount (WORD): Number of auxiliary ships (-1 if none)
+ *
+ * auxShipDude (WORD): Düde ID for auxiliary ships
+ *
+ * auxShipSyst (WORD): System where aux ships appear
+ *
+ * flags (HEXWORD): Mission behavior flags
+ *
+ * Flag bits (in flagsDecoded):
+ * - Various mission behavior modifiers (see Resource Bible pages 12-18 for complete list)
+ *
+ * Usage:
+ * - Missions drive the storyline and provide gameplay goals
+ * - Can branch based on mission bits to create storylines
+ * - Reward can be credits, outfits, government reputation, or access to new missions
+ *
+ * Source: Escape Velocity Resource Bible, Pages 12-18
+ */
 export default {
 	"misn": [
 		{

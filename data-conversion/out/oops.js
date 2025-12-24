@@ -1,3 +1,39 @@
+/**
+ * öops Resource - News Definitions
+ *
+ * The öops resource defines news items that appear in spaceport bars. News
+ * can be triggered by mission bits, affect commodity prices, and provide
+ * world-building flavor.
+ *
+ * Resource ID: Each news item
+ *
+ * Fields:
+ *
+ * name (STR#63): Internal name for this news item (for reference only)
+ *
+ * stellar (WORD): Stellar ID where this news appears (-2 = all government worlds,
+ *   -1 = all independent worlds, specific spöb ID for single location)
+ *
+ * commodity (WORD): Commodity affected by this news (-1 = none, 0-5 = standard goods,
+ *   128+ = jünk ID)
+ *
+ * priceDelta (WORD): Price change for affected commodity (positive = increase,
+ *   negative = decrease)
+ *
+ * duration (WORD): How many days this news lasts
+ *
+ * freq (WORD): Frequency/probability this news appears when conditions met
+ *
+ * missionBit (WORD): Mission bit that triggers this news (-1 = random appearance)
+ *
+ * Usage:
+ * - News appears in spaceport bar's Holovid section
+ * - Can create dynamic economy by affecting commodity prices
+ * - Triggered by mission completion to reflect player actions
+ * - Provides narrative feedback and world atmosphere
+ *
+ * Source: Escape Velocity Resource Bible, Page 20
+ */
 export default {
 	"oops": [
 		{

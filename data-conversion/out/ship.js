@@ -1,3 +1,73 @@
+/**
+ * shïp Resource - Ship Type Definitions
+ *
+ * The shïp resource defines the base characteristics of all ship types in EV.
+ * Ships can be purchased, encountered as enemies, or used as starting vessels.
+ *
+ * Resource ID: Each ship type (Shuttlecraft=128, Light Freighter=129, etc.)
+ *
+ * Fields:
+ *
+ * name (STR#63): Ship name/class
+ *
+ * holds (WORD): Cargo capacity in tons
+ *
+ * shield (WORD): Shield strength (damage absorbed before hull takes damage)
+ *
+ * accel (WORD): Acceleration rate (arbitrary units)
+ *
+ * speed (WORD): Maximum speed (arbitrary units)
+ *
+ * maneuver (WORD): Turn rate (arbitrary units, higher = faster turning)
+ *
+ * fuel (WORD): Fuel capacity (100 units per jump)
+ *
+ * freeMass (WORD): Free mass available for outfit installation in tons
+ *
+ * armor (WORD): Hull armor strength (ship destroyed when reaches 0)
+ *
+ * shieldRe (WORD): Shield recharge rate per frame
+ *
+ * weapType (4 WORDs): Default weapon loadout (wëap IDs, 0 = none)
+ *
+ * weapCount (4 WORDs): Count/ammo for each weapon
+ *
+ * ammoLoad (4 WORDs): Starting ammo for each weapon (0 if energy weapon)
+ *
+ * maxGun (WORD): Maximum fixed guns this ship can mount
+ *
+ * maxTur (WORD): Maximum turrets this ship can mount
+ *
+ * techLevel (WORD): Tech level required for planets to sell this ship
+ *
+ * cost (DWORD): Purchase price in credits
+ *
+ * deathDelay (WORD): Frames before ship explodes after destruction
+ *
+ * turretYDisp (4 WORDs): Y-offset for each turret sprite (visual positioning)
+ *
+ * mass (WORD): Ship's base mass in tons
+ *
+ * length (WORD): Ship length in meters (affects collision detection)
+ *
+ * inherentAI (WORD): Default AI type if used as NPC (1-4)
+ *
+ * crew (WORD): Crew complement (affects boarding difficulty)
+ *
+ * missionBit (WORD): Mission bit required to make this ship available for
+ *   purchase (-1 = always available)
+ *
+ * inherentGovt (WORD): Default government if spawned without specific govt
+ *   (-1 = none)
+ *
+ * Usage:
+ * - Base template for all ships in game
+ * - Can be purchased at shipyards (if techLevel matches)
+ * - Referenced by düde, përs, and mïsn resources
+ * - Player can install outfits up to freeMass limit
+ *
+ * Source: Escape Velocity Resource Bible, Pages 27-29
+ */
 export default {
 	"ship": [
 		{

@@ -1,3 +1,77 @@
+/**
+ * wëap Resource - Weapon Definitions
+ *
+ * The wëap resource defines the characteristics of all weapons in EV, including
+ * guns, missiles, turrets, beams, and fighter bays. Each weapon specifies damage,
+ * speed, reload time, and special behaviors.
+ *
+ * Resource ID: Each weapon type (Laser Cannon=128, Neutron Blaster=129, etc.)
+ *
+ * Fields:
+ *
+ * name (STR#63): Weapon name
+ *
+ * massDmg (WORD): Mass damage (damage to armor/hull)
+ *
+ * energyDmg (WORD): Energy damage (damage to shields)
+ *
+ * reload (WORD): Reload time in frames between shots (30 frames = 0.5 seconds)
+ *
+ * speed (WORD): Projectile speed (arbitrary units)
+ *
+ * duration (WORD): Projectile lifetime in frames (determines maximum range)
+ *
+ * spread (WORD): Firing inaccuracy in degrees (0 = perfect accuracy)
+ *
+ * explosion (WORD): Explosion graphic ID when projectile impacts (-1 = none,
+ *   0-2 = small/med/large explosions)
+ *
+ * graphic (WORD): Sprite ID for projectile (references spïn resource, -1 to -10
+ *   for special beam graphics)
+ *
+ * sound (WORD): Sound ID for firing sound
+ *
+ * ammoType (WORD): Ammo/outfit ID required to fire this weapon (-1 for energy weapons,
+ *   -1004 = ship's fuel as ammo)
+ *
+ * type (WORD): Weapon behavior type:
+ *   -1 = unguided projectile
+ *   0 = beam weapon
+ *   1 = torpedo (slow seeking)
+ *   2 = missile (fast seeking)
+ *   3 = tractor beam
+ *   4 = front turret
+ *   5 = free-fall bomb
+ *   6 = rocket pod
+ *   7 = side turret (left/right)
+ *   8 = rear turret
+ *   99 = fighter/ship bay
+ *
+ * impact (WORD): Impact mass (for pushing ships, also used for beam intensity)
+ *
+ * proxRadius (WORD): Proximity fuse radius (projectile explodes when this close
+ *   to target)
+ *
+ * blastRadius (WORD): Blast damage radius (all ships within this radius take damage)
+ *
+ * flags (HEXWORD): Weapon behavior flags
+ *
+ * Flag bits (in flagsDecoded):
+ * - spinGraphic: Rotate projectile sprite to face direction of travel
+ * - secondaryTrigger: Fired with secondary weapon key (not primary)
+ * - fireSimultaneously: All shots of this weapon fire at once
+ * - loopSound: Sound loops while weapon is firing (for beams)
+ * - decoyForMissiles: Attracts missiles away from ship (flares)
+ * (See Resource Bible pages 35-37 for complete flag list)
+ *
+ * Usage:
+ * - Weapons installed on ships via oütf resources (modType=1)
+ * - Energy weapons use ship power, ammo weapons require ammo outfits
+ * - Turrets can track and fire at targets automatically
+ * - Bays launch fighter ships that act as escorts
+ *
+ * Source: Escape Velocity Resource Bible, Pages 35-37
+ */
 export default {
 	"weap": [
 		{

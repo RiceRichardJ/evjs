@@ -1,3 +1,48 @@
+/**
+ * sÿst Resource - Star System Definitions
+ *
+ * The sÿst resource defines star systems on the galactic map, including their
+ * positions, hyperspace links, stellar objects, and ship populations.
+ *
+ * Resource ID: Each star system (Levo=128, Sol=129, Centauri=130, etc.)
+ *
+ * Fields:
+ *
+ * name (STR#63): System name
+ *
+ * x (WORD): X coordinate on galactic map (-30000 to 30000)
+ *
+ * y (WORD): Y coordinate on galactic map (-30000 to 30000)
+ *
+ * links (array of WORDs): IDs of directly connected systems (hyperspace links)
+ *   Use -1 for unused link slots.
+ *
+ * spobs (array of WORDs): IDs of spöb resources in this system. Use -1 for empty slots.
+ *
+ * dudes (array of [ID, probability] pairs): Defines which düdes can appear and their
+ *   relative probabilities. Format: [[dudeID, prob], [dudeID, prob], ...]
+ *
+ * avgShips (WORD): Average number of ships present in this system
+ *
+ * government (WORD): Controlling government ID (-1 = independent/uninhabited)
+ *
+ * message (WORD): STR# ID for message displayed on entry (-1 = none)
+ *
+ * asteroids (WORD): Asteroid type/density (0=none, 1=small, 2=large, 3=both)
+ *
+ * interference (WORD): Sensor interference level (0=none, higher values reduce radar range)
+ *
+ * visbit (WORD): Visibility bit - system only visible if this mission bit is set
+ *   (-1 = always visible)
+ *
+ * Usage:
+ * - Star systems form the navigation structure of the galaxy
+ * - Player can hyperspace jump between linked systems (costs 100 fuel per jump)
+ * - Ships spawn based on düde probabilities and avgShips count
+ * - Systems can be hidden until explored or mission bits unlock them
+ *
+ * Source: Escape Velocity Resource Bible, Pages 33-34
+ */
 export default {
 	"syst": [
 		{

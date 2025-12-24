@@ -1,3 +1,31 @@
+/**
+ * jünk Resource - Special/Unique Commodity Definitions
+ *
+ * The jünk resource defines special or unique commodities that can be traded
+ * at specific planets. Unlike standard commodities, jünk items are often
+ * mission-specific or regional specialties.
+ *
+ * Resource ID: Each unique commodity type
+ *
+ * Fields:
+ *
+ * name (STR#63): Name of this commodity
+ *
+ * soldAt (WORD): ID of spöb where this commodity is sold (-1 if not sold anywhere)
+ *
+ * boughtAt (WORD): ID of spöb where this commodity is bought (-1 if not bought anywhere)
+ *
+ * basePrice (WORD): Base price in credits per ton
+ *
+ * flags (HEXWORD): Special flags for this commodity
+ *
+ * Usage:
+ * - Jünk items provide additional trading variety beyond standard goods
+ * - Often used for mission-specific cargo deliveries
+ * - Can create unique trading routes between specific planets
+ *
+ * Source: Escape Velocity Resource Bible, Page 11
+ */
 export default {
 	"junk": [
 		{

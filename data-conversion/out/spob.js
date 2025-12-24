@@ -1,3 +1,59 @@
+/**
+ * spöb Resource - Stellar Object (Planet/Station) Definitions
+ *
+ * The spöb resource defines planets, stations, and other landable objects in EV.
+ * Each spöb specifies available services, commodities, tech level, and government.
+ *
+ * Resource ID: Each planet/station (Earth=128, Stardock Alpha=129, etc.)
+ *
+ * Fields:
+ *
+ * name (STR#63): Planet/station name
+ *
+ * xPos (WORD): X position within system (-500 to 500)
+ *
+ * yPos (WORD): Y position within system (-500 to 500)
+ *
+ * type (WORD): Graphic type (0-25 = planets, 26+ = stations, corresponds to
+ *   spin ID offsets for planet/station sprites)
+ *
+ * system (WORD): Parent sÿst ID where this spöb exists
+ *
+ * techLevel (WORD): Tech level (1-5+, determines available outfits/ships)
+ *
+ * specialTech1-3 (WORDs): Special outfit IDs available regardless of tech level
+ *   (-1 = none)
+ *
+ * govt (WORD): Government ID controlling this spöb
+ *
+ * minCoolness (WORD): Minimum combat rating required to land (-3 = anyone can land)
+ *
+ * custPicID (WORD): Custom PICT resource ID for landing graphic (-1 = use default)
+ *
+ * custSndID (WORD): Custom sound ID for landing (-1 = use default)
+ *
+ * defDude (WORD): Düde ID for defense fleet (-1 = none)
+ *
+ * defCount (WORD): Number of defense ships (bit-packed: high byte = min, low byte = max)
+ *
+ * flags (HEXWORD): Complex flags controlling:
+ *   - Facilities: Landing, bar, commodity exchange, outfitter, shipyard, mission computer
+ *   - Commodities: Which goods are traded and at what price levels (low/med/high)
+ *
+ * Flag bits (in flagsDecoded):
+ * - facilities: Object with boolean flags for each facility (canLand, hasCommodityExchange,
+ *   canOutfit, canBuyShips, hasBar, hasMissionComputer)
+ * - commodities: Object with price levels for each commodity (food, industrial, medical,
+ *   luxury, metal, equipment) as "none", "low", "med", or "high"
+ *
+ * Usage:
+ * - Player can land on spöbs to trade, refuel, get outfits, buy ships, get missions
+ * - Tech level gates access to advanced equipment
+ * - Commodity price levels determine trading profitability
+ * - Defense fleet attacks player if legal record is too bad
+ *
+ * Source: Escape Velocity Resource Bible, Pages 30-32
+ */
 export default {
 	"spob": [
 		{

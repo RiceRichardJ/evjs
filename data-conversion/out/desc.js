@@ -1,3 +1,32 @@
+/**
+ * dësc Resource - Description Text
+ *
+ * The dësc resource contains text descriptions used throughout EV, including
+ * planet landing descriptions, mission briefings, and various interface messages.
+ *
+ * Resource ID: Assigned per usage (planets start at 128, missions vary)
+ *
+ * Fields:
+ *
+ * description (STR#255): The text string, which may contain limited text styling
+ *   commands. Maximum 255 characters.
+ *
+ * name (STR#63): Optional name/title field. Maximum 63 characters.
+ *
+ * graphic (WORD): ID of PICT resource to display with this description (-1 for none).
+ *
+ * movieFilename (STR#63): Optional filename of QuickTime movie to play with this
+ *   description (empty string for none).
+ *
+ * flags (WORD): Behavior flags for special cases.
+ *
+ * Usage:
+ * - Planet landing descriptions use IDs matching their spöb resource IDs
+ * - Mission briefings are specified in the mïsn resource
+ * - Some desc resources contain multiple paragraphs of text
+ *
+ * Source: Escape Velocity Resource Bible, Page 5
+ */
 export default {
 	"desc": [
 		{

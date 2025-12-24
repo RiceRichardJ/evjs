@@ -1,3 +1,37 @@
+/**
+ * spïn Resource - Sprite and Mask Definitions
+ *
+ * The spïn resource defines the characteristics of a sprite or series of sprites,
+ * and tells EV where to find the actual sprite or mask images.
+ *
+ * Resource ID: One for each ship, weapon, asteroid, explosion, etc.
+ *
+ * Fields:
+ *
+ * SpritesID (WORD): ID number of the sprites PICT resource which holds the
+ *   sprite images for this object.
+ *
+ * MasksID (WORD): ID number of the sprites PICT resource which holds the mask
+ *   images for this object.
+ *
+ * xSize (WORD): X (horizontal) size of each sprite (must match the actual sprite
+ *   image size in the appropriate PICT resource).
+ *
+ * ySize (WORD): Y (vertical) size of each sprite (must match the actual sprite
+ *   image size in the appropriate PICT resource).
+ *
+ * xTiles (WORD): Number of horizontal frames in each animation (ships generally
+ *   have 6 or 36, depending on whether the classic 6-angle display or the newer
+ *   36-angle display is used).
+ *
+ * yTiles (WORD): Number of vertical frames in each animation (most objects have
+ *   6, except for beams which generally have only 1).
+ *
+ * Note: The sprite and mask PICT resources must be the same size and contain the
+ * same number of frames.
+ *
+ * Source: Escape Velocity Resource Bible, Page 4
+ */
 export default {
 	"spin": [
 		{

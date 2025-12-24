@@ -1,3 +1,42 @@
+/**
+ * flët Resource - Fleet Definitions
+ *
+ * The flët resource defines pre-composed fleets of ships that travel together,
+ * including a lead ship and up to 4 types of escort ships. Fleets maintain
+ * formation and coordinate their actions.
+ *
+ * Resource ID: Referenced by sÿst resources and missions
+ *
+ * Fields:
+ *
+ * name (STR#63): Name of this fleet (for reference only)
+ *
+ * leadShip (WORD): ID of shïp resource for the lead/flagship
+ *
+ * ships (4 WORDs): IDs of shïp resources for escort types. -1 for unused slots.
+ *
+ * min (4 WORDs): Minimum number of each escort ship type
+ *
+ * max (4 WORDs): Maximum number of each escort ship type
+ *
+ * govt (WORD): ID of gövt resource this fleet belongs to
+ *
+ * linkSystem (WORD): ID of sÿst where this fleet travels to (-1 for random,
+ *   10000 for no travel)
+ *
+ * appearOn (STR#63): Stellar object to appear near (planet/station name)
+ *
+ * hailQuote (WORD): ID of STR# resource for hail response (0 for default)
+ *
+ * flags (WORD): Fleet behavior flags
+ *
+ * Usage:
+ * - Escorts stay in formation around lead ship
+ * - Fleet as a whole shares government and behavior
+ * - Lead ship determines overall fleet AI
+ *
+ * Source: Escape Velocity Resource Bible, Page 8
+ */
 export default {
 	"flet": [
 		{

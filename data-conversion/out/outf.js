@@ -1,3 +1,59 @@
+/**
+ * oütf Resource - Outfit/Equipment Definitions
+ *
+ * The oütf resource defines purchasable outfits (weapons, shields, engines, etc.)
+ * that can be added to ships. Each outfit modifies ship characteristics or adds
+ * weapons/functionality.
+ *
+ * Resource ID: Each outfit type
+ *
+ * Fields:
+ *
+ * name (STR#63): Name of this outfit
+ *
+ * missionBit (WORD): Mission bit required to make this outfit available (-1 = always)
+ *
+ * mass (WORD): Mass in tons (reduces available cargo space)
+ *
+ * techLevel (WORD): Minimum tech level planet must have to sell this outfit
+ *
+ * modType (WORD): Type of modification this outfit provides:
+ *   0 = special (no stat change, just grants access)
+ *   1 = weapon (adds wëap via modVal)
+ *   2 = ammo (increases ammo for weapon modVal)
+ *   3 = shields (adds modVal to shield strength)
+ *   4 = shield recharge (adds modVal to recharge rate)
+ *   5 = armor (adds modVal to armor)
+ *   6 = speed (adds modVal to max speed)
+ *   7 = acceleration (adds modVal to acceleration)
+ *   8 = turning (adds modVal to turn rate)
+ *   9 = fuel (adds modVal to fuel capacity)
+ *   10 = ramscoop (enables fuel scooping)
+ *   11 = cargo space (adds modVal tons of cargo)
+ *
+ * modVal (WORD): Value for the modification (meaning depends on modType)
+ *
+ * max (WORD): Maximum number of this outfit that can be installed on one ship
+ *   (use 255 for effectively unlimited)
+ *
+ * cost (DWORD): Purchase price in credits
+ *
+ * flags (HEXWORD): Outfit behavior flags
+ *
+ * Flag bits (in flagsDecoded):
+ * - fixedGun: This is a fixed forward-firing gun
+ * - turret: This is a turreted weapon
+ * - cantSell: Player cannot sell this outfit once purchased
+ * - reqsMissionComplete: Requires specific mission completion
+ *
+ * Usage:
+ * - Outfits purchased at planets' Outfitter facility
+ * - Apply their effects immediately to ship stats
+ * - Some outfits prerequisite for others (e.g., turret requires turret base)
+ * - Can be sold back for 75% of purchase price (unless cantSell flag set)
+ *
+ * Source: Escape Velocity Resource Bible, Pages 21-22
+ */
 export default {
 	"outf": [
 		{

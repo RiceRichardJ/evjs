@@ -1,3 +1,38 @@
+/**
+ * düde Resource - Ship Type Definitions for Random Generation
+ *
+ * The düde resource defines the characteristics of ships that appear randomly
+ * in star systems. Each düde specifies a mix of ship types, their probabilities,
+ * AI behavior, and associated government.
+ *
+ * Resource ID: Referenced by sÿst resources to populate star systems
+ *
+ * Fields:
+ *
+ * name (STR#63): Name of this dude type (for reference only)
+ *
+ * aiType (WORD): AI behavior type (1=merchant, 2=freighter, 3=warship, 4=interceptor)
+ *
+ * shipTypes (4 WORDs): IDs of shïp resources that can appear. First ship type
+ *   is most common, last is rarest. Use -1 for unused slots.
+ *
+ * probability (4 WORDs): Relative probability for each ship type. Higher numbers
+ *   mean more frequent appearance.
+ *
+ * government (WORD): ID of gövt resource this dude belongs to
+ *
+ * booty (HEXWORD): What goods this dude may be carrying (hex flags)
+ *
+ * infoTypes (WORD): What kinds of information this dude can provide at spaceport
+ *   bar (links to STR# resources)
+ *
+ * Usage:
+ * - Systems spawn ships based on their düde list and avgShips count
+ * - Ship type is randomly selected weighted by probability values
+ * - AI type determines combat behavior and trading patterns
+ *
+ * Source: Escape Velocity Resource Bible, Pages 6-7
+ */
 export default {
 	"dude": [
 		{

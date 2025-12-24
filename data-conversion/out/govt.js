@@ -1,3 +1,52 @@
+/**
+ * gövt Resource - Government/Faction Definitions
+ *
+ * The gövt resource defines the characteristics, relationships, and behavior
+ * of factions/governments in EV. Governs diplomacy, combat behavior, legal
+ * systems, and player reputation.
+ *
+ * Resource ID: Each major faction (Confederation, Rebellion, Pirates, etc.)
+ *
+ * Fields:
+ *
+ * name (STR#63): Name of this government
+ *
+ * flags (HEXWORD): Behavior flags controlling AI, bribery, law enforcement, etc.
+ *
+ * ally (WORD): ID of allied government (65535 for none)
+ *
+ * enemy (WORD): ID of enemy government (65535 for none)
+ *
+ * crimeTol (WORD): How quickly this govt forgives crimes (lower = longer memory)
+ *
+ * smugPenalty (WORD): Legal record penalty for smuggling illegal goods
+ *
+ * disabPenalty (WORD): Legal record penalty for disabling their ships
+ *
+ * boardPenalty (WORD): Legal record penalty for boarding their ships
+ *
+ * killPenalty (WORD): Legal record penalty for destroying their ships
+ *
+ * shootPenalty (WORD): Legal record penalty for firing on their ships
+ *
+ * initialRec (WORD): Initial player reputation with this government (negative
+ *   values = hostile, positive = friendly)
+ *
+ * Flag bits (in flagsDecoded):
+ * - attackPlayerInNonAlliedSystems: Ships attack player in neutral space
+ * - retreatAt25Shields: Ships retreat when shields drop below 25%
+ * - persShipsNoEscapePod: Përs ships don't get escape pods
+ * - warshipsTakeBribes: Warships can be bribed
+ * - freightersTakeBribes: Freighters can be bribed
+ * - planetsTakeBribes: Planets accept bribes to clear legal record
+ *
+ * Usage:
+ * - Player actions affect legal record with each government independently
+ * - Ships check government relationships for auto-hostility
+ * - Affects mission availability and planet services
+ *
+ * Source: Escape Velocity Resource Bible, Pages 9-10
+ */
 export default {
 	"govt": [
 		{

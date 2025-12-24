@@ -1,3 +1,67 @@
+/**
+ * përs Resource - Persistent/Unique Ship Definitions
+ *
+ * The përs resource defines unique, named ships that appear in specific
+ * locations. These are often storyline characters, bounty targets, or
+ * special encounters with custom loadouts and behavior.
+ *
+ * Resource ID: Each unique character/ship
+ *
+ * Fields:
+ *
+ * name (STR#63): Name of this character/ship
+ *
+ * linkSyst (WORD): System ID where this ship appears (20000-20255 for any
+ *   system in range, specific sÿst ID for single system)
+ *
+ * govt (WORD): Government ID this përs belongs to
+ *
+ * aiType (WORD): AI behavior (1=merchant, 2=freighter, 3=warship, 4=interceptor)
+ *
+ * aggress (WORD): Aggressiveness level (0=pacifist, 4=very aggressive)
+ *
+ * coward (WORD): Retreat threshold (percentage of shields remaining when ship flees)
+ *
+ * shipType (WORD): Base shïp type ID
+ *
+ * weapType (4 WORDs): Custom weapon loadout (wëap IDs, -1 for default,
+ *   negative values remove that many of ship's default weapons)
+ *
+ * weapCount (4 WORDs): Count for each custom weapon (-2 = maximum possible)
+ *
+ * ammoLoad (4 WORDs): Ammo count for each weapon (0 if energy weapon)
+ *
+ * credits (DWORD): Credits carried (loot if boarded/destroyed)
+ *
+ * shieldMod (WORD): Shield modifier percentage (100 = normal, 200 = double shields)
+ *
+ * missionBit (WORD): Mission bit required for this përs to appear (-1 = always)
+ *
+ * commQuote (WORD): STR# ID for communication/hail quote
+ *
+ * hailQuote (WORD): STR# ID for alternate hail quote
+ *
+ * linkMission (WORD): Mission ID this përs is linked to (-1 = none)
+ *
+ * flags (HEXWORD): Personality/behavior flags
+ *
+ * Flag bits (in flagsDecoded):
+ * - holdGrudgeIfAttacked: Ship remembers and retaliates if attacked
+ * - usesEscapePod: Ship has escape pod (survives destruction)
+ * - staysInSystem: Doesn't leave system
+ * - displaysAsFreighter: Shows up as freighter on sensors
+ * - sendsDistressSignal: Calls for help when attacked
+ * - escortsPlayer: Will follow and protect player
+ * (See Resource Bible pages 24-26 for complete flag list)
+ *
+ * Usage:
+ * - Përs ships provide unique encounters and storyline characters
+ * - Often have custom loadouts stronger than standard ships
+ * - Can be mission targets or special allies
+ * - Bounty hunters may target përs ships
+ *
+ * Source: Escape Velocity Resource Bible, Pages 24-26
+ */
 export default {
 	"pers": [
 		{
