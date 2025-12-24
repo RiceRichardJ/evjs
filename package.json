@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/RiceRichardJ/evjs#readme",
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "csv-parse": "^6.1.0",
+    "jquery": "^3.7.1",
     "npm": "^5.7.1"
   },
   "devDependencies": {
