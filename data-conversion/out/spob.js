@@ -26,12 +26,12 @@ export default {
 					"canBuyShips": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "high",
-					"medical": "high",
-					"luxury": "med",
+					"equipment": "high",
 					"metal": "high",
-					"equipment": "high"
+					"luxury": "high",
+					"medical": "low",
+					"industrial": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -61,12 +61,12 @@ export default {
 					"isStation": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "high",
-					"medical": "high",
-					"luxury": "med",
+					"equipment": "high",
 					"metal": "high",
-					"equipment": "high"
+					"luxury": "high",
+					"medical": "low",
+					"industrial": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -96,12 +96,12 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "high",
-					"medical": "high",
-					"luxury": "med",
+					"equipment": "high",
 					"metal": "high",
-					"equipment": "high"
+					"luxury": "high",
+					"medical": "low",
+					"industrial": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -131,9 +131,9 @@ export default {
 					"canBuyShips": true
 				},
 				"commodities": {
-					"medical": "med",
-					"metal": "med",
-					"equipment": "high"
+					"luxury": "med",
+					"industrial": "med",
+					"food": "high"
 				}
 			}
 		},
@@ -164,12 +164,12 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "high",
-					"medical": "high",
-					"luxury": "med",
+					"equipment": "high",
 					"metal": "high",
-					"equipment": "high"
+					"luxury": "high",
+					"medical": "low",
+					"industrial": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -198,11 +198,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"luxury": "med",
-					"metal": "med",
-					"equipment": "med"
+					"equipment": "med",
+					"metal": "low",
+					"medical": "med",
+					"industrial": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -233,11 +233,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"medical": "high",
-					"luxury": "med",
-					"metal": "med",
-					"equipment": "med"
+					"equipment": "med",
+					"luxury": "high",
+					"medical": "low",
+					"industrial": "med",
+					"food": "low"
 				}
 			}
 		},
@@ -267,12 +267,12 @@ export default {
 					"canBuyShips": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"medical": "high",
-					"luxury": "med",
+					"equipment": "low",
 					"metal": "med",
-					"equipment": "med"
+					"luxury": "high",
+					"medical": "med",
+					"industrial": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -301,11 +301,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"luxury": "med",
+					"equipment": "med",
 					"metal": "med",
-					"equipment": "med"
+					"medical": "med",
+					"industrial": "med",
+					"food": "med"
 				}
 			}
 		},
@@ -335,10 +335,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"luxury": "high",
-					"equipment": "med"
+					"equipment": "med",
+					"metal": "low",
+					"medical": "high",
+					"food": "med"
 				}
 			}
 		},
@@ -367,9 +367,9 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"medical": "med",
-					"metal": "med",
-					"equipment": "med"
+					"luxury": "med",
+					"industrial": "med",
+					"food": "low"
 				}
 			}
 		},
@@ -398,10 +398,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"industrial": "high",
-					"medical": "high",
-					"metal": "med",
-					"equipment": "med"
+					"metal": "high",
+					"luxury": "high",
+					"industrial": "med",
+					"food": "med"
 				}
 			}
 		},
@@ -431,11 +431,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"industrial": "high",
-					"medical": "high",
-					"luxury": "med",
-					"metal": "med",
-					"equipment": "med"
+					"metal": "high",
+					"luxury": "high",
+					"medical": "med",
+					"industrial": "med",
+					"food": "med"
 				}
 			}
 		},
@@ -487,7 +487,7 @@ export default {
 					"hasCommodityExchange": true
 				},
 				"commodities": {
-					"luxury": "high"
+					"medical": "high"
 				}
 			}
 		},
@@ -511,9 +511,9 @@ export default {
 			"flags": "0x04401000",
 			"flagsDecoded": {
 				"commodities": {
-					"industrial": "med",
-					"luxury": "high",
-					"metal": "high"
+					"metal": "low",
+					"medical": "high",
+					"industrial": "high"
 				}
 			}
 		},
@@ -544,11 +544,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"luxury": "med",
-					"metal": "high",
-					"equipment": "high"
+					"equipment": "low",
+					"metal": "med",
+					"medical": "med",
+					"industrial": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -576,9 +576,9 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"food": "high",
-					"luxury": "high",
-					"equipment": "high"
+					"equipment": "high",
+					"medical": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -606,8 +606,8 @@ export default {
 					"hasCommodityExchange": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"metal": "med"
+					"metal": "med",
+					"industrial": "low"
 				}
 			}
 		},
@@ -636,9 +636,9 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"medical": "high",
-					"metal": "med"
+					"equipment": "low",
+					"luxury": "high",
+					"industrial": "low"
 				}
 			}
 		},
@@ -662,10 +662,10 @@ export default {
 			"flags": "0x00424200",
 			"flagsDecoded": {
 				"commodities": {
-					"food": "med",
-					"industrial": "high",
-					"medical": "med",
-					"luxury": "high"
+					"equipment": "med",
+					"metal": "high",
+					"luxury": "med",
+					"medical": "high"
 				}
 			}
 		},
@@ -695,11 +695,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"medical": "high",
-					"metal": "med",
-					"equipment": "high"
+					"equipment": "med",
+					"metal": "low",
+					"luxury": "high",
+					"industrial": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -753,11 +753,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "med",
-					"luxury": "med",
-					"metal": "high",
-					"equipment": "high"
+					"equipment": "high",
+					"metal": "low",
+					"medical": "med",
+					"industrial": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -786,9 +786,9 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"medical": "med",
-					"equipment": "med"
+					"metal": "med",
+					"luxury": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -816,12 +816,12 @@ export default {
 					"hasCommodityExchange": true
 				},
 				"commodities": {
-					"food": "med",
+					"equipment": "med",
+					"metal": "low",
+					"luxury": "low",
+					"medical": "low",
 					"industrial": "med",
-					"medical": "med",
-					"luxury": "med",
-					"metal": "med",
-					"equipment": "med"
+					"food": "med"
 				}
 			}
 		},
@@ -851,11 +851,11 @@ export default {
 					"canBuyShips": true
 				},
 				"commodities": {
-					"food": "med",
+					"equipment": "med",
+					"metal": "low",
+					"medical": "low",
 					"industrial": "med",
-					"luxury": "med",
-					"metal": "med",
-					"equipment": "med"
+					"food": "low"
 				}
 			}
 		},
@@ -883,10 +883,10 @@ export default {
 					"isStation": true
 				},
 				"commodities": {
-					"food": "high",
-					"medical": "high",
-					"luxury": "med",
-					"equipment": "high"
+					"equipment": "high",
+					"luxury": "high",
+					"medical": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -916,10 +916,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "high",
-					"luxury": "med",
-					"metal": "high",
-					"equipment": "med"
+					"equipment": "high",
+					"medical": "low",
+					"industrial": "high",
+					"food": "med"
 				}
 			}
 		},
@@ -947,9 +947,9 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"medical": "high",
-					"luxury": "med"
+					"metal": "med",
+					"luxury": "high",
+					"medical": "med"
 				}
 			}
 		},
@@ -977,8 +977,8 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"medical": "high"
+					"metal": "low",
+					"luxury": "high"
 				}
 			}
 		},
@@ -1007,9 +1007,9 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"medical": "high",
-					"metal": "med",
-					"equipment": "med"
+					"luxury": "high",
+					"industrial": "med",
+					"food": "med"
 				}
 			}
 		},
@@ -1040,10 +1040,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "med",
+					"equipment": "high",
 					"metal": "med",
-					"equipment": "high"
+					"industrial": "med",
+					"food": "high"
 				}
 			}
 		},
@@ -1074,10 +1074,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"luxury": "med",
-					"metal": "med",
-					"equipment": "high"
+					"equipment": "med",
+					"medical": "med",
+					"industrial": "med",
+					"food": "high"
 				}
 			}
 		},
@@ -1101,8 +1101,8 @@ export default {
 			"flags": "0x24000000",
 			"flagsDecoded": {
 				"commodities": {
-					"metal": "high",
-					"equipment": "med"
+					"industrial": "high",
+					"food": "med"
 				}
 			}
 		},
@@ -1133,11 +1133,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "high",
-					"medical": "med",
+					"equipment": "low",
 					"metal": "high",
-					"equipment": "high"
+					"luxury": "med",
+					"industrial": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -1164,8 +1164,8 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"medical": "high"
+					"equipment": "low",
+					"luxury": "high"
 				}
 			}
 		},
@@ -1197,12 +1197,12 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"medical": "high",
-					"luxury": "med",
-					"metal": "high",
-					"equipment": "med"
+					"equipment": "low",
+					"metal": "low",
+					"luxury": "high",
+					"medical": "med",
+					"industrial": "high",
+					"food": "med"
 				}
 			}
 		},
@@ -1226,8 +1226,8 @@ export default {
 			"flags": "0x02400000",
 			"flagsDecoded": {
 				"commodities": {
-					"luxury": "high",
-					"metal": "med"
+					"medical": "high",
+					"industrial": "med"
 				}
 			}
 		},
@@ -1256,10 +1256,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"medical": "med",
-					"metal": "med",
-					"equipment": "med"
+					"equipment": "med",
+					"luxury": "med",
+					"industrial": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -1287,10 +1287,10 @@ export default {
 					"hasCommodityExchange": true
 				},
 				"commodities": {
-					"food": "high",
-					"luxury": "high",
-					"metal": "med",
-					"equipment": "med"
+					"equipment": "high",
+					"medical": "high",
+					"industrial": "med",
+					"food": "low"
 				}
 			}
 		},
@@ -1314,10 +1314,10 @@ export default {
 			"flags": "0x21404000",
 			"flagsDecoded": {
 				"commodities": {
-					"industrial": "high",
-					"luxury": "high",
-					"metal": "med",
-					"equipment": "med"
+					"metal": "high",
+					"medical": "high",
+					"industrial": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -1345,9 +1345,9 @@ export default {
 					"hasCommodityExchange": true
 				},
 				"commodities": {
-					"food": "high",
-					"medical": "med",
-					"equipment": "med"
+					"equipment": "high",
+					"luxury": "med",
+					"food": "med"
 				}
 			}
 		},
@@ -1377,11 +1377,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "high",
-					"medical": "high",
-					"metal": "med",
-					"equipment": "med"
+					"equipment": "high",
+					"metal": "high",
+					"luxury": "high",
+					"industrial": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -1405,9 +1405,9 @@ export default {
 			"flags": "0x20240000",
 			"flagsDecoded": {
 				"commodities": {
-					"medical": "high",
-					"luxury": "med",
-					"equipment": "med"
+					"luxury": "high",
+					"medical": "med",
+					"food": "med"
 				}
 			}
 		},
@@ -1437,12 +1437,12 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "high",
-					"medical": "high",
-					"luxury": "med",
-					"metal": "med",
-					"equipment": "high"
+					"equipment": "med",
+					"metal": "high",
+					"luxury": "high",
+					"medical": "med",
+					"industrial": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -1472,12 +1472,12 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "high",
-					"medical": "high",
-					"luxury": "med",
-					"metal": "med",
-					"equipment": "high"
+					"equipment": "med",
+					"metal": "high",
+					"luxury": "high",
+					"medical": "med",
+					"industrial": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -1507,9 +1507,9 @@ export default {
 					"canBuyShips": true
 				},
 				"commodities": {
-					"medical": "high",
-					"luxury": "med",
-					"equipment": "high"
+					"luxury": "high",
+					"medical": "med",
+					"food": "high"
 				}
 			}
 		},
@@ -1540,11 +1540,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"luxury": "med",
+					"equipment": "med",
 					"metal": "med",
-					"equipment": "med"
+					"medical": "med",
+					"industrial": "low",
+					"food": "low"
 				}
 			}
 		},
@@ -1573,8 +1573,8 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"metal": "med"
+					"metal": "med",
+					"industrial": "low"
 				}
 			}
 		},
@@ -1602,9 +1602,9 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"industrial": "high",
-					"medical": "med",
-					"equipment": "high"
+					"metal": "high",
+					"luxury": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -1634,8 +1634,8 @@ export default {
 					"canBuyShips": true
 				},
 				"commodities": {
-					"industrial": "high",
-					"medical": "high"
+					"metal": "high",
+					"luxury": "high"
 				}
 			}
 		},
@@ -1659,9 +1659,9 @@ export default {
 			"flags": "0x00422000",
 			"flagsDecoded": {
 				"commodities": {
-					"industrial": "med",
-					"medical": "med",
-					"luxury": "high"
+					"metal": "med",
+					"luxury": "med",
+					"medical": "high"
 				}
 			}
 		},
@@ -1690,11 +1690,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"medical": "med",
+					"equipment": "med",
 					"luxury": "med",
-					"metal": "med",
-					"equipment": "med"
+					"medical": "low",
+					"industrial": "med",
+					"food": "low"
 				}
 			}
 		},
@@ -1718,9 +1718,9 @@ export default {
 			"flags": "0x40012000",
 			"flagsDecoded": {
 				"commodities": {
-					"industrial": "med",
-					"medical": "med",
-					"equipment": "high"
+					"metal": "med",
+					"luxury": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -1752,10 +1752,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "high",
-					"luxury": "med",
-					"equipment": "med"
+					"equipment": "med",
+					"metal": "high",
+					"medical": "low",
+					"food": "low"
 				}
 			}
 		},
@@ -1779,8 +1779,8 @@ export default {
 			"flags": "0x40001000",
 			"flagsDecoded": {
 				"commodities": {
-					"industrial": "med",
-					"equipment": "high"
+					"metal": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -1810,11 +1810,11 @@ export default {
 					"canBuyShips": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"medical": "high",
-					"luxury": "med",
 					"metal": "med",
-					"equipment": "med"
+					"luxury": "high",
+					"medical": "low",
+					"industrial": "med",
+					"food": "low"
 				}
 			}
 		},
@@ -1838,9 +1838,9 @@ export default {
 			"flags": "0x41400000",
 			"flagsDecoded": {
 				"commodities": {
-					"luxury": "high",
-					"metal": "med",
-					"equipment": "high"
+					"medical": "high",
+					"industrial": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -1870,12 +1870,12 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"medical": "high",
-					"luxury": "med",
+					"equipment": "med",
 					"metal": "med",
-					"equipment": "high"
+					"luxury": "high",
+					"medical": "med",
+					"industrial": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -1904,9 +1904,9 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"medical": "high",
-					"equipment": "high"
+					"metal": "med",
+					"luxury": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -1956,11 +1956,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "med",
-					"luxury": "med",
-					"metal": "high",
-					"equipment": "high"
+					"equipment": "high",
+					"metal": "low",
+					"medical": "med",
+					"industrial": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -1990,10 +1990,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "med",
+					"equipment": "high",
 					"metal": "med",
-					"equipment": "med"
+					"industrial": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -2024,12 +2024,12 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "high",
-					"medical": "med",
-					"luxury": "med",
+					"equipment": "low",
 					"metal": "high",
-					"equipment": "med"
+					"luxury": "low",
+					"medical": "med",
+					"industrial": "high",
+					"food": "med"
 				}
 			}
 		},
@@ -2060,10 +2060,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"medical": "med",
 					"luxury": "med",
-					"metal": "med",
-					"equipment": "med"
+					"medical": "low",
+					"industrial": "med",
+					"food": "med"
 				}
 			}
 		},
@@ -2091,10 +2091,10 @@ export default {
 					"hasCommodityExchange": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "med",
+					"equipment": "high",
 					"metal": "med",
-					"equipment": "med"
+					"industrial": "med",
+					"food": "med"
 				}
 			}
 		},
@@ -2118,10 +2118,10 @@ export default {
 			"flags": "0x01224000",
 			"flagsDecoded": {
 				"commodities": {
-					"industrial": "high",
-					"medical": "med",
+					"metal": "high",
 					"luxury": "med",
-					"metal": "med"
+					"medical": "med",
+					"industrial": "low"
 				}
 			}
 		},
@@ -2153,11 +2153,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "med",
-					"luxury": "med",
+					"equipment": "high",
 					"metal": "med",
-					"equipment": "high"
+					"medical": "med",
+					"industrial": "med",
+					"food": "high"
 				}
 			}
 		},
@@ -2187,9 +2187,9 @@ export default {
 					"canBuyShips": true
 				},
 				"commodities": {
-					"food": "med",
-					"medical": "med",
-					"metal": "med"
+					"equipment": "med",
+					"luxury": "low",
+					"industrial": "med"
 				}
 			}
 		},
@@ -2217,9 +2217,9 @@ export default {
 					"hasCommodityExchange": true
 				},
 				"commodities": {
-					"food": "med",
-					"luxury": "med",
-					"equipment": "med"
+					"equipment": "med",
+					"medical": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -2249,9 +2249,9 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"luxury": "high",
-					"metal": "med",
-					"equipment": "med"
+					"medical": "high",
+					"industrial": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -2279,12 +2279,12 @@ export default {
 					"hasCommodityExchange": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "high",
-					"medical": "med",
-					"luxury": "med",
+					"equipment": "high",
 					"metal": "high",
-					"equipment": "med"
+					"luxury": "low",
+					"medical": "low",
+					"industrial": "high",
+					"food": "low"
 				}
 			}
 		},
@@ -2313,10 +2313,10 @@ export default {
 					"isStation": true
 				},
 				"commodities": {
-					"food": "med",
-					"medical": "high",
-					"metal": "med",
-					"equipment": "high"
+					"equipment": "med",
+					"luxury": "high",
+					"industrial": "med",
+					"food": "high"
 				}
 			}
 		},
@@ -2369,10 +2369,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"medical": "med",
 					"metal": "med",
-					"equipment": "med"
+					"luxury": "med",
+					"industrial": "med",
+					"food": "low"
 				}
 			}
 		},
@@ -2396,9 +2396,9 @@ export default {
 			"flags": "0x04201000",
 			"flagsDecoded": {
 				"commodities": {
-					"industrial": "med",
-					"luxury": "med",
-					"metal": "high"
+					"metal": "low",
+					"medical": "med",
+					"industrial": "high"
 				}
 			}
 		},
@@ -2446,8 +2446,8 @@ export default {
 			"flags": "0x04040000",
 			"flagsDecoded": {
 				"commodities": {
-					"medical": "high",
-					"metal": "high"
+					"luxury": "high",
+					"industrial": "high"
 				}
 			}
 		},
@@ -2477,9 +2477,9 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "high",
-					"equipment": "high"
+					"equipment": "low",
+					"metal": "high",
+					"food": "high"
 				}
 			}
 		},
@@ -2508,9 +2508,9 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
+					"luxury": "low",
 					"medical": "med",
-					"luxury": "med",
-					"equipment": "high"
+					"food": "high"
 				}
 			}
 		},
@@ -2567,11 +2567,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "high",
-					"medical": "high",
-					"metal": "med",
-					"equipment": "med"
+					"equipment": "low",
+					"metal": "high",
+					"luxury": "high",
+					"industrial": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -2599,9 +2599,9 @@ export default {
 					"hasCommodityExchange": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "med",
-					"metal": "med"
+					"equipment": "high",
+					"metal": "low",
+					"industrial": "med"
 				}
 			}
 		},
@@ -2632,9 +2632,9 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"food": "med",
-					"medical": "med",
-					"equipment": "med"
+					"equipment": "med",
+					"luxury": "med",
+					"food": "low"
 				}
 			}
 		},
@@ -2664,10 +2664,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
+					"metal": "low",
+					"medical": "high",
 					"industrial": "med",
-					"luxury": "high",
-					"metal": "med",
-					"equipment": "high"
+					"food": "high"
 				}
 			}
 		},
@@ -2698,11 +2698,11 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"medical": "high",
-					"luxury": "high",
 					"metal": "med",
-					"equipment": "med"
+					"luxury": "high",
+					"medical": "high",
+					"industrial": "med",
+					"food": "low"
 				}
 			}
 		},
@@ -2731,10 +2731,10 @@ export default {
 					"canOutfit": true
 				},
 				"commodities": {
-					"food": "med",
-					"medical": "med",
-					"metal": "med",
-					"equipment": "med"
+					"equipment": "low",
+					"luxury": "med",
+					"industrial": "med",
+					"food": "low"
 				}
 			}
 		},
@@ -2762,9 +2762,9 @@ export default {
 					"isStation": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "med",
-					"equipment": "med"
+					"equipment": "high",
+					"metal": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -2792,9 +2792,9 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"equipment": "med"
+					"equipment": "med",
+					"metal": "low",
+					"food": "med"
 				}
 			}
 		},
@@ -2851,10 +2851,10 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
+					"metal": "low",
+					"medical": "med",
 					"industrial": "med",
-					"luxury": "med",
-					"metal": "med",
-					"equipment": "med"
+					"food": "low"
 				}
 			}
 		},
@@ -2882,8 +2882,8 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"metal": "med",
-					"equipment": "high"
+					"industrial": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -2912,10 +2912,10 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"luxury": "med",
 					"metal": "med",
-					"equipment": "high"
+					"medical": "med",
+					"industrial": "med",
+					"food": "high"
 				}
 			}
 		},
@@ -2944,8 +2944,8 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"luxury": "med",
-					"metal": "med"
+					"medical": "low",
+					"industrial": "med"
 				}
 			}
 		},
@@ -2974,9 +2974,9 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"metal": "med"
+					"equipment": "low",
+					"metal": "med",
+					"industrial": "med"
 				}
 			}
 		},
@@ -3004,9 +3004,9 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"industrial": "med",
-					"luxury": "high",
-					"metal": "high"
+					"metal": "low",
+					"medical": "high",
+					"industrial": "high"
 				}
 			}
 		},
@@ -3037,8 +3037,8 @@ export default {
 					"hasBar": true
 				},
 				"commodities": {
-					"medical": "high",
-					"luxury": "high"
+					"luxury": "high",
+					"medical": "high"
 				}
 			}
 		},
@@ -3066,10 +3066,10 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"food": "high",
-					"industrial": "med",
-					"medical": "med",
-					"equipment": "med"
+					"equipment": "high",
+					"metal": "med",
+					"luxury": "low",
+					"food": "low"
 				}
 			}
 		},
@@ -3097,8 +3097,8 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"food": "high",
-					"luxury": "med"
+					"equipment": "high",
+					"medical": "low"
 				}
 			}
 		},
@@ -3122,10 +3122,10 @@ export default {
 			"flags": "0x10011200",
 			"flagsDecoded": {
 				"commodities": {
-					"food": "med",
-					"industrial": "med",
-					"medical": "med",
-					"equipment": "med"
+					"equipment": "med",
+					"metal": "low",
+					"luxury": "low",
+					"food": "low"
 				}
 			}
 		},
@@ -3180,9 +3180,9 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"industrial": "high",
-					"medical": "high",
-					"metal": "med"
+					"metal": "high",
+					"luxury": "high",
+					"industrial": "low"
 				}
 			}
 		},
@@ -3235,8 +3235,8 @@ export default {
 					"uninhabited": true
 				},
 				"commodities": {
-					"luxury": "med",
-					"equipment": "high"
+					"medical": "low",
+					"food": "high"
 				}
 			}
 		},
@@ -3291,10 +3291,10 @@ export default {
 					"isStation": true
 				},
 				"commodities": {
-					"food": "high",
-					"medical": "high",
-					"luxury": "med",
-					"equipment": "high"
+					"equipment": "high",
+					"luxury": "high",
+					"medical": "low",
+					"food": "high"
 				}
 			}
 		}

@@ -636,7 +636,7 @@ function decodeSpobFlags(flags) {
     commodities: {}
   };
 
-  // Facility flags
+  // Facility flags (bits 0-6)
   if (hexVal & 0x00000001) decoded.facilities.canLand = true;
   if (hexVal & 0x00000002) decoded.facilities.hasCommodityExchange = true;
   if (hexVal & 0x00000004) decoded.facilities.canOutfit = true;
@@ -645,46 +645,26 @@ function decodeSpobFlags(flags) {
   if (hexVal & 0x00000020) decoded.facilities.uninhabited = true;
   if (hexVal & 0x00000040) decoded.facilities.hasBar = true;
 
-  // Commodity pricing flags (bits 7-30)
-  // Each commodity has 4 bits: cheap to buy, expensive to buy, cheap to sell, expensive to sell
-  const commodities = ['food', 'industrial', 'medical', 'luxury', 'metal', 'equipment'];
-  for (let i = 0; i < commodities.length; i++) {
-    const baseShift = 7 + (i * 4);
-    const cheapToBuy = !!(hexVal & (1 << baseShift));
-    const expensiveToBuy = !!(hexVal & (1 << (baseShift + 1)));
-    const cheapToSell = !!(hexVal & (1 << (baseShift + 2)));
-    const expensiveToSell = !!(hexVal & (1 << (baseShift + 3)));
+  // Commodity pricing flags
+  // Each commodity has 3 bits: low/med/high (only one should be set)
+  const commodityDefs = [
+    { name: 'equipment', low: 0x00000100, med: 0x00000200, high: 0x00000400 },
+    { name: 'metal',     low: 0x00001000, med: 0x00002000, high: 0x00004000 },
+    { name: 'luxury',    low: 0x00010000, med: 0x00020000, high: 0x00040000 },
+    { name: 'medical',   low: 0x00100000, med: 0x00200000, high: 0x00400000 },
+    { name: 'industrial',low: 0x01000000, med: 0x02000000, high: 0x04000000 },
+    { name: 'food',      low: 0x10000000, med: 0x20000000, high: 0x40000000 }
+  ];
 
-    // Determine price level: "none" | "low" | "med" | "high"
-    let priceLevel = 'none';
-
-    // Count how many flags are set
-    const flagCount = [cheapToBuy, expensiveToBuy, cheapToSell, expensiveToSell].filter(Boolean).length;
-
-    if (flagCount === 0) {
-      priceLevel = 'none';
-    } else if (flagCount === 1) {
-      // Single flag set - clear price signal
-      if (expensiveToSell) priceLevel = 'high';  // Good place to sell
-      else if (cheapToBuy) priceLevel = 'low';   // Good place to buy
-      else priceLevel = 'med';  // expensiveToBuy or cheapToSell alone
-    } else {
-      // Multiple flags - check for common patterns
-      if (expensiveToSell && cheapToBuy) {
-        // Both good for player - medium volatility
-        priceLevel = 'med';
-      } else if (expensiveToSell) {
-        priceLevel = 'high';  // Prioritize sell price
-      } else if (cheapToBuy) {
-        priceLevel = 'low';   // Prioritize buy price
-      } else {
-        priceLevel = 'med';
-      }
+  for (const commodity of commodityDefs) {
+    if (hexVal & commodity.high) {
+      decoded.commodities[commodity.name] = 'high';
+    } else if (hexVal & commodity.med) {
+      decoded.commodities[commodity.name] = 'med';
+    } else if (hexVal & commodity.low) {
+      decoded.commodities[commodity.name] = 'low';
     }
-
-    if (priceLevel !== 'none') {
-      decoded.commodities[commodities[i]] = priceLevel;
-    }
+    // If none are set, the planet doesn't trade in this commodity (omit from output)
   }
 
   // Clean up empty objects
