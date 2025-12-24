@@ -23,7 +23,7 @@
 
 **Dev:** `npm run build` → `npm run server` (localhost:8080)
 
-**Data Conversion:** `data-conversion/` contains CSV→JSON converter for EV Nova exports. Run `node data-conversion/convert-csv-to-json.js` to regenerate JSON files in `data-conversion/out/`.
+**Data Conversion:** `data-conversion/` contains CSV→JSON converter for EV resource data. Converts 14 resource types from CSV exports plus STR# resources from text files. Uses resource fork text files as authoritative source. Run `node data-conversion/convert-csv-to-json.js` to regenerate JSON files in `data-conversion/out/`. Output includes: desc, dude, flet, govt, junk, misn, nebu, oops, outf, pers, ship, spob, syst, weap, and STR#.js (string resources).
 
 ---
 

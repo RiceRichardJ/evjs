@@ -413,6 +413,47 @@ function parseSpobTextFile(id) {
   }
 }
 
+// Helper to parse resource fork text file for weap
+function parseWeapTextFile(id) {
+  try {
+    // Find the file matching this ID
+    const files = fs.readdirSync(RESOURCE_FORK_DIR);
+    const filename = files.find(f => f.startsWith(`EV Data_wëap_${id}_`));
+
+    if (!filename) {
+      console.warn(`  Warning: No text file found for weap ID ${id}`);
+      return {};
+    }
+
+    const filePath = path.join(RESOURCE_FORK_DIR, filename);
+    const content = fs.readFileSync(filePath, 'utf-8');
+
+    const data = {};
+    const lines = content.split('\n');
+
+    for (const line of lines) {
+      const match = line.match(/^\s*(\w+):\s*(.+)$/);
+      if (match) {
+        const key = match[1];
+        let value = match[2].trim();
+
+        // Parse numeric or hex values
+        if (value.startsWith('0x')) {
+          data[key] = value; // Keep hex as string
+        } else {
+          const num = Number(value);
+          data[key] = isNaN(num) ? value : num;
+        }
+      }
+    }
+
+    return data;
+  } catch (error) {
+    console.warn(`  Warning: Error reading text file for weap ID ${id}:`, error.message);
+    return {};
+  }
+}
+
 // Helper to filter sentinel values (-1) from arrays
 function filterSentinels(arr) {
   const filtered = [];
@@ -581,34 +622,42 @@ function convertSyst(row) {
 
 // Converter for wëap resource
 function convertWeap(row) {
+  // Use text file data as authoritative source
+  const id = parseNum(row['ID']);
+  const textData = parseWeapTextFile(id);
+
   const result = {
-    id: parseNum(row['ID']),
+    id,
     name: row['Name'] || '',
-    damage: [parseNum(row['Mass Damage']), parseNum(row['Energy Damage'])],
-    reload: parseNum(row['Reload']),
-    speed: parseNum(row['Speed']),
-    duration: parseNum(row['Duration']),
-    spread: parseNum(row['Inaccuracy']),
-    explosion: parseNum(row['Explosion Type']),
-    graphic: parseNum(row['Graphic']),
-    sound: parseNum(row['Sound Type'])
+    massDmg: textData.MassDmg ?? parseNum(row['Mass Damage']),
+    energyDmg: textData.EnergyDmg ?? parseNum(row['Energy Damage']),
+    reload: textData.Reload ?? parseNum(row['Reload']),
+    speed: textData.Speed ?? parseNum(row['Speed']),
+    duration: textData.Count ?? parseNum(row['Duration']),
+    spread: textData.Inaccuracy ?? parseNum(row['Inaccuracy']),
+    explosion: textData.ExplodType !== undefined ? textData.ExplodType : (row['Explosion Type'] || ''),
+    graphic: textData.Graphic ?? parseNum(row['Graphic']),
+    sound: textData.Sound ?? parseNum(row['Sound Type'])
   };
 
   // Add optional fields
-  if (row['Ammo Type'] && parseNum(row['Ammo Type']) !== -1) {
-    result.ammoType = parseNum(row['Ammo Type']);
+  if (textData.AmmoType !== undefined && textData.AmmoType !== -1) {
+    result.ammoType = textData.AmmoType;
   }
-  if (row['Guidance']) {
-    result.type = parseNum(row['Guidance']);
+  if (textData.Guidance !== undefined) {
+    result.type = textData.Guidance;
   }
-  if (row['Impact']) {
-    result.impact = parseNum(row['Impact']);
+  if (textData.Impact !== undefined) {
+    result.impact = textData.Impact;
   }
-  if (row['Prox Radius']) {
-    result['prox-radius'] = parseNum(row['Prox Radius']);
+  if (textData.ProxRadius !== undefined) {
+    result.proxRadius = textData.ProxRadius;
   }
-  if (row['Blast Radius']) {
-    result['blast-radius'] = parseNum(row['Blast Radius']);
+  if (textData.BlastRadius !== undefined) {
+    result.blastRadius = textData.BlastRadius;
+  }
+  if (textData.MiscFlags !== undefined) {
+    result.flags = textData.MiscFlags;
   }
 
   return result;
@@ -1117,6 +1166,65 @@ function convertFile(csvFilename) {
   }
 }
 
+// Convert STR# resources from text files
+function convertStrResources() {
+  console.log('Converting STR# resources → str.js...');
+
+  try {
+    // Find all STR# files
+    const files = fs.readdirSync(RESOURCE_FORK_DIR);
+    const strFiles = files.filter(f => f.includes('_STR#_'));
+
+    // Group by resource ID
+    const strGroups = {};
+
+    for (const filename of strFiles) {
+      // Parse filename: EV Data_STR#_<id>_<name>_<index>.txt
+      const match = filename.match(/STR#_(\d+)_(.+?)_(\d+)\.txt$/);
+      if (!match) continue;
+
+      const id = parseInt(match[1]);
+      const name = match[2];
+      const index = parseInt(match[3]);
+
+      // Read the string content
+      const filePath = path.join(RESOURCE_FORK_DIR, filename);
+      const content = fs.readFileSync(filePath, 'utf-8').trim();
+
+      // Initialize group if needed
+      if (!strGroups[id]) {
+        strGroups[id] = {
+          id,
+          name,
+          strings: []
+        };
+      }
+
+      // Add string at the correct index
+      strGroups[id].strings[index] = content;
+    }
+
+    // Convert to array and sort by ID
+    const strArray = Object.values(strGroups).sort((a, b) => a.id - b.id);
+
+    // Create output object
+    const output = {
+      str: strArray
+    };
+
+    // Format as JS module
+    const jsContent = `export default ${JSON.stringify(output, null, '\t')}\n`;
+
+    // Write output file
+    const outPath = path.join(OUTPUT_DIR, 'str.js');
+    fs.writeFileSync(outPath, jsContent, 'utf-8');
+
+    console.log(`  ✓ Wrote ${strArray.length} STR# resources to str.js`);
+  } catch (error) {
+    console.error('  ✗ Error converting STR# resources:', error.message);
+  }
+}
+
 // Main execution
 function main() {
   console.log('CSV to JSON Converter for Escape Velocity Data\n');
@@ -1130,6 +1238,9 @@ function main() {
   for (const csvFile of csvFiles) {
     convertFile(csvFile);
   }
+
+  // Convert STR# resources
+  convertStrResources();
 
   console.log('\nConversion complete!');
   console.log(`\nNext steps:`);
