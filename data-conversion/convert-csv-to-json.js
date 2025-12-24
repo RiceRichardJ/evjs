@@ -1081,6 +1081,32 @@ function convertFile(csvFilename) {
       );
     }
 
+    // Special formatting for syst resource - collapse arrays to single lines
+    if (resourceType === 'syst') {
+      // Collapse links array
+      jsContent = jsContent.replace(
+        /"links":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"links": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      // Collapse spobs array
+      jsContent = jsContent.replace(
+        /"spobs":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"spobs": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      // Collapse nested dudes array [[id, prob], [id, prob]]
+      jsContent = jsContent.replace(
+        /"dudes":\s*\[\s*((?:\[\s*[0-9-]+\s*,\s*[0-9-]+\s*\]\s*,?\s*)*)\s*\]/gs,
+        (match, content) => {
+          const pairs = content.match(/\[\s*([0-9-]+)\s*,\s*([0-9-]+)\s*\]/g);
+          if (pairs) {
+            const formatted = pairs.map(p => p.replace(/\s+/g, ' ').replace(/\[\s*/, '[ ').replace(/\s*\]/, ' ]')).join(', ');
+            return `"dudes": [ ${formatted} ]`;
+          }
+          return match;
+        }
+      );
+    }
+
     // Write output file
     const outPath = path.join(OUTPUT_DIR, `${resourceType}.js`);
     fs.writeFileSync(outPath, jsContent, 'utf-8');
