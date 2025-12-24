@@ -33,7 +33,7 @@ $('#modalSpaceport').on('shown.bs.modal', function() {
 
 // Initialize commodity exchange when modal opens
 $('#modalCommodity').on('shown.bs.modal', function() {
-	console.log("OPENED commodity exchange");
+	console.log("OPENED commodity exchange", currentSpob);
 	if (currentSpob && currentSpob.spobData) {
 		SpaceportUI.initCommodityExchange(model.player, currentSpob.spobData);
 	}
