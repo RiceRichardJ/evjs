@@ -2,6 +2,7 @@ export default {
 	"misn": [
 		{
 			"id": 128,
+			"name": "Ferry Passengers to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -45,6 +46,7 @@ export default {
 		},
 		{
 			"id": 129,
+			"name": "Ferry Passengers to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -88,6 +90,7 @@ export default {
 		},
 		{
 			"id": 130,
+			"name": "Ferry Passengers to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -131,6 +134,7 @@ export default {
 		},
 		{
 			"id": 131,
+			"name": "Transport Criminal",
 			"availStel": 9999,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -174,6 +178,7 @@ export default {
 		},
 		{
 			"id": 132,
+			"name": "Smuggle Drugs",
 			"availStel": 10002,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -217,6 +222,7 @@ export default {
 		},
 		{
 			"id": 133,
+			"name": "Prospecting Expedition",
 			"availStel": 10000,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -260,6 +266,7 @@ export default {
 		},
 		{
 			"id": 134,
+			"name": "Gun Running",
 			"availStel": 10000,
 			"availBitSet": 44,
 			"availLoc": 1,
@@ -303,6 +310,7 @@ export default {
 		},
 		{
 			"id": 135,
+			"name": "Rush Delivery to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -346,6 +354,7 @@ export default {
 		},
 		{
 			"id": 136,
+			"name": "Rush Delivery to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -389,6 +398,7 @@ export default {
 		},
 		{
 			"id": 137,
+			"name": "Rush Delivery to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -432,6 +442,7 @@ export default {
 		},
 		{
 			"id": 138,
+			"name": "Rush Delivery to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -475,6 +486,7 @@ export default {
 		},
 		{
 			"id": 139,
+			"name": "Rush Delivery to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -518,6 +530,7 @@ export default {
 		},
 		{
 			"id": 140,
+			"name": "Transport Cargo to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -561,6 +574,7 @@ export default {
 		},
 		{
 			"id": 141,
+			"name": "Cargo Shipment to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -604,6 +618,7 @@ export default {
 		},
 		{
 			"id": 142,
+			"name": "Cargo Delivery to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -647,6 +662,7 @@ export default {
 		},
 		{
 			"id": 143,
+			"name": "Cargo Delivery to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -690,6 +706,7 @@ export default {
 		},
 		{
 			"id": 144,
+			"name": "Freight Delivery to <DST>",
 			"availStel": 20002,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -733,6 +750,7 @@ export default {
 		},
 		{
 			"id": 145,
+			"name": "Hunt Pirate",
 			"availStel": 9999,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -776,6 +794,7 @@ export default {
 		},
 		{
 			"id": 146,
+			"name": "Assassination",
 			"availStel": 20000,
 			"availBitSet": 44,
 			"availLoc": 1,
@@ -819,6 +838,7 @@ export default {
 		},
 		{
 			"id": 147,
+			"name": "Stellar Defense",
 			"availStel": 9999,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -862,6 +882,7 @@ export default {
 		},
 		{
 			"id": 148,
+			"name": "Rebel Defense",
 			"availStel": 10001,
 			"availBitSet": 44,
 			"availLoc": 1,
@@ -905,6 +926,7 @@ export default {
 		},
 		{
 			"id": 149,
+			"name": "Rescue Mission",
 			"availStel": 10000,
 			"availBitSet": 43,
 			"availLoc": 1,
@@ -948,6 +970,7 @@ export default {
 		},
 		{
 			"id": 150,
+			"name": "Salvage Convoy",
 			"availStel": 9999,
 			"availBitSet": 43,
 			"availLoc": 1,
@@ -991,6 +1014,7 @@ export default {
 		},
 		{
 			"id": 151,
+			"name": "Escort Freighters to <RST>",
 			"availStel": 9999,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -1034,6 +1058,7 @@ export default {
 		},
 		{
 			"id": 152,
+			"name": "Investigate Dumping",
 			"availStel": 176,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -1077,6 +1102,7 @@ export default {
 		},
 		{
 			"id": 153,
+			"name": "Observe Antares",
 			"availStel": 176,
 			"availBitSet": 24,
 			"availLoc": 1,
@@ -1120,6 +1146,7 @@ export default {
 		},
 		{
 			"id": 154,
+			"name": "Capture Ore Sample",
 			"availStel": 176,
 			"availBitSet": 25,
 			"availLoc": 1,
@@ -1163,6 +1190,7 @@ export default {
 		},
 		{
 			"id": 155,
+			"name": "Destroy Freighters",
 			"availStel": 176,
 			"availBitSet": 26,
 			"availLoc": 1,
@@ -1206,6 +1234,7 @@ export default {
 		},
 		{
 			"id": 156,
+			"name": "Escape Astex",
 			"availStel": 176,
 			"availBitSet": 27,
 			"availLoc": 1,
@@ -1249,6 +1278,7 @@ export default {
 		},
 		{
 			"id": 157,
+			"name": "Black Market Wood",
 			"availStel": 5004,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -1292,6 +1322,7 @@ export default {
 		},
 		{
 			"id": 158,
+			"name": "Environmental Trip to <DST>",
 			"availStel": 203,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -1335,6 +1366,7 @@ export default {
 		},
 		{
 			"id": 159,
+			"name": "Defend New Cydonia",
 			"availStel": 213,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -1378,6 +1410,7 @@ export default {
 		},
 		{
 			"id": 160,
+			"name": "Defend Lethe Prime",
 			"availStel": 214,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -1421,6 +1454,7 @@ export default {
 		},
 		{
 			"id": 161,
+			"name": "Locate Rebel Fleet",
 			"availStel": 10000,
 			"availBitSet": 43,
 			"availLoc": 1,
@@ -1464,6 +1498,7 @@ export default {
 		},
 		{
 			"id": 162,
+			"name": "Rebel Interdiction",
 			"availStel": 9999,
 			"availBitSet": 44,
 			"availLoc": 1,
@@ -1507,6 +1542,7 @@ export default {
 		},
 		{
 			"id": 163,
+			"name": "Rebel Special Ops",
 			"availStel": 20000,
 			"availBitSet": 44,
 			"availLoc": 1,
@@ -1550,6 +1586,7 @@ export default {
 		},
 		{
 			"id": 164,
+			"name": "Special Ops Insertion",
 			"availStel": 161,
 			"availBitSet": 35,
 			"availLoc": 1,
@@ -1593,6 +1630,7 @@ export default {
 		},
 		{
 			"id": 165,
+			"name": "Special Ops Rendezvous",
 			"availStel": 130,
 			"availBitSet": 36,
 			"availLoc": 1,
@@ -1636,6 +1674,7 @@ export default {
 		},
 		{
 			"id": 166,
+			"name": "Confed Recon Mission",
 			"availStel": 10000,
 			"availBitSet": 43,
 			"availLoc": 1,
@@ -1679,6 +1718,7 @@ export default {
 		},
 		{
 			"id": 167,
+			"name": "Rebel Pursuit",
 			"availStel": 221,
 			"availBitSet": 38,
 			"availLoc": 1,
@@ -1722,6 +1762,7 @@ export default {
 		},
 		{
 			"id": 168,
+			"name": "Rebel Pursuit Part 2",
 			"availStel": 191,
 			"availBitSet": 39,
 			"availLoc": 1,
@@ -1765,6 +1806,7 @@ export default {
 		},
 		{
 			"id": 169,
+			"name": "Rebel Pursuit Part 3",
 			"availStel": 183,
 			"availBitSet": 40,
 			"availLoc": 1,
@@ -1808,6 +1850,7 @@ export default {
 		},
 		{
 			"id": 170,
+			"name": "Rebel Pursuit Part 4",
 			"availStel": 167,
 			"availBitSet": 41,
 			"availLoc": 1,
@@ -1851,6 +1894,7 @@ export default {
 		},
 		{
 			"id": 171,
+			"name": "Transport Confed Documents",
 			"availStel": 10000,
 			"availBitSet": 1044,
 			"availLoc": 1,
@@ -1894,6 +1938,7 @@ export default {
 		},
 		{
 			"id": 172,
+			"name": "Transport Rebel Parcels",
 			"availStel": 10001,
 			"availBitSet": 1043,
 			"availLoc": 1,
@@ -1937,6 +1982,7 @@ export default {
 		},
 		{
 			"id": 173,
+			"name": "Help Starbound Shipping",
 			"availStel": 9999,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -1980,6 +2026,7 @@ export default {
 		},
 		{
 			"id": 174,
+			"name": "Ferry Important Documents",
 			"availStel": 9999,
 			"availBitSet": 45,
 			"availLoc": 1,
@@ -2023,6 +2070,7 @@ export default {
 		},
 		{
 			"id": 175,
+			"name": "Dangerous Courier Mission",
 			"availStel": 9999,
 			"availBitSet": 46,
 			"availLoc": 1,
@@ -2066,6 +2114,7 @@ export default {
 		},
 		{
 			"id": 176,
+			"name": "Escort Courier to <RST>",
 			"availStel": 9999,
 			"availBitSet": 47,
 			"availLoc": 1,
@@ -2109,6 +2158,7 @@ export default {
 		},
 		{
 			"id": 177,
+			"name": "Commerce Raid",
 			"availStel": 9999,
 			"availBitSet": 47,
 			"availLoc": 1,
@@ -2152,6 +2202,7 @@ export default {
 		},
 		{
 			"id": 178,
+			"name": "Transport Engineers",
 			"availStel": 9999,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -2195,6 +2246,7 @@ export default {
 		},
 		{
 			"id": 179,
+			"name": "Retrieve Equipment",
 			"availStel": 160,
 			"availBitSet": 50,
 			"availLoc": 1,
@@ -2238,6 +2290,7 @@ export default {
 		},
 		{
 			"id": 180,
+			"name": "Retrieve Colonists",
 			"availStel": 160,
 			"availBitSet": 51,
 			"availLoc": 1,
@@ -2281,6 +2334,7 @@ export default {
 		},
 		{
 			"id": 181,
+			"name": "Get Repair Equipment",
 			"availStel": 160,
 			"availBitSet": 52,
 			"availLoc": 1,
@@ -2324,6 +2378,7 @@ export default {
 		},
 		{
 			"id": 182,
+			"name": "Resupply Colony",
 			"availStel": 160,
 			"availBitSet": 52,
 			"availLoc": 1,
@@ -2367,6 +2422,7 @@ export default {
 		},
 		{
 			"id": 183,
+			"name": "Defend Turin V",
 			"availStel": 160,
 			"availBitSet": 52,
 			"availLoc": 1,
@@ -2410,6 +2466,7 @@ export default {
 		},
 		{
 			"id": 184,
+			"name": "Investigate Disappearances",
 			"availStel": 10001,
 			"availBitSet": 37,
 			"availLoc": 1,
@@ -2453,6 +2510,7 @@ export default {
 		},
 		{
 			"id": 185,
+			"name": "Lead Rebel Patrol",
 			"availStel": 209,
 			"availBitSet": 56,
 			"availLoc": 1,
@@ -2496,6 +2554,7 @@ export default {
 		},
 		{
 			"id": 186,
+			"name": "Rescue Rebel Spy",
 			"availStel": 209,
 			"availBitSet": 57,
 			"availLoc": 1,
@@ -2539,6 +2598,7 @@ export default {
 		},
 		{
 			"id": 187,
+			"name": "Get War Records",
 			"availStel": 161,
 			"availBitSet": 58,
 			"availLoc": 1,
@@ -2582,6 +2642,7 @@ export default {
 		},
 		{
 			"id": 188,
+			"name": "Locate Aliens",
 			"availStel": 161,
 			"availBitSet": 59,
 			"availLoc": 1,
@@ -2625,6 +2686,7 @@ export default {
 		},
 		{
 			"id": 189,
+			"name": "Destroy Alien Cruiser",
 			"availStel": 161,
 			"availBitSet": 60,
 			"availLoc": 1,
@@ -2668,6 +2730,7 @@ export default {
 		},
 		{
 			"id": 190,
+			"name": "Investigate Disappearances",
 			"availStel": 10000,
 			"availBitSet": 42,
 			"availLoc": 1,
@@ -2711,6 +2774,7 @@ export default {
 		},
 		{
 			"id": 191,
+			"name": "Escort Confed Convoy",
 			"availStel": 139,
 			"availBitSet": 62,
 			"availLoc": 1,
@@ -2754,6 +2818,7 @@ export default {
 		},
 		{
 			"id": 192,
+			"name": "Extract Confed Spy",
 			"availStel": 174,
 			"availBitSet": 63,
 			"availLoc": 1,
@@ -2797,6 +2862,7 @@ export default {
 		},
 		{
 			"id": 193,
+			"name": "Locate Aliens",
 			"availStel": 130,
 			"availBitSet": 64,
 			"availLoc": 1,
@@ -2840,6 +2906,7 @@ export default {
 		},
 		{
 			"id": 194,
+			"name": "Destroy Alien Cruiser",
 			"availStel": 130,
 			"availBitSet": 65,
 			"availLoc": 1,
@@ -2883,6 +2950,7 @@ export default {
 		},
 		{
 			"id": 195,
+			"name": "Derelict Decoy",
 			"availStel": -1,
 			"availBitSet": -1,
 			"availLoc": 2,
@@ -2926,6 +2994,7 @@ export default {
 		},
 		{
 			"id": 196,
+			"name": "Derelict Decoy",
 			"availStel": -1,
 			"availBitSet": -1,
 			"availLoc": 2,
@@ -2969,6 +3038,7 @@ export default {
 		},
 		{
 			"id": 197,
+			"name": "Ferry Passengers to <DST>",
 			"availStel": -1,
 			"availBitSet": -1,
 			"availLoc": 2,
@@ -3012,6 +3082,7 @@ export default {
 		},
 		{
 			"id": 198,
+			"name": "Transport Cargo to <DST>",
 			"availStel": -1,
 			"availBitSet": -1,
 			"availLoc": 2,
@@ -3055,6 +3126,7 @@ export default {
 		},
 		{
 			"id": 199,
+			"name": "Escort Courier to <RST>",
 			"availStel": -1,
 			"availBitSet": -1,
 			"availLoc": 2,
@@ -3098,6 +3170,7 @@ export default {
 		},
 		{
 			"id": 200,
+			"name": "Switch Sides",
 			"availStel": 10001,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -3141,6 +3214,7 @@ export default {
 		},
 		{
 			"id": 201,
+			"name": "Deliver Kestrel Parts",
 			"availStel": -1,
 			"availBitSet": -1,
 			"availLoc": 2,
@@ -3184,6 +3258,7 @@ export default {
 		},
 		{
 			"id": 202,
+			"name": "Cargo Delivery to <DST>",
 			"availStel": -1,
 			"availBitSet": -1,
 			"availLoc": 2,
@@ -3227,6 +3302,7 @@ export default {
 		},
 		{
 			"id": 203,
+			"name": "Locate Weapons Cache",
 			"availStel": 10001,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -3270,6 +3346,7 @@ export default {
 		},
 		{
 			"id": 204,
+			"name": "Distribute Rebel Munitions",
 			"availStel": 167,
 			"availBitSet": 75,
 			"availLoc": 1,
@@ -3313,6 +3390,7 @@ export default {
 		},
 		{
 			"id": 205,
+			"name": "Dump Garbage",
 			"availStel": -1,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -3356,6 +3434,7 @@ export default {
 		},
 		{
 			"id": 206,
+			"name": "Deliver Emergency Medical Supplies",
 			"availStel": -1,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -3399,6 +3478,7 @@ export default {
 		},
 		{
 			"id": 207,
+			"name": "Evacuate Civilians from <DST>",
 			"availStel": 10000,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -3442,6 +3522,7 @@ export default {
 		},
 		{
 			"id": 208,
+			"name": "Evacuate Civilians from <DST>",
 			"availStel": 10001,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -3485,6 +3566,7 @@ export default {
 		},
 		{
 			"id": 209,
+			"name": "Help United Galactic Express",
 			"availStel": 10002,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -3528,6 +3610,7 @@ export default {
 		},
 		{
 			"id": 210,
+			"name": "UGE Recruitment",
 			"availStel": 147,
 			"availBitSet": 76,
 			"availLoc": 1,
@@ -3571,6 +3654,7 @@ export default {
 		},
 		{
 			"id": 211,
+			"name": "UGE Cargo to <DST>",
 			"availStel": -1,
 			"availBitSet": 77,
 			"availLoc": 0,
@@ -3614,6 +3698,7 @@ export default {
 		},
 		{
 			"id": 212,
+			"name": "UGE Delivery to <DST>",
 			"availStel": -1,
 			"availBitSet": 77,
 			"availLoc": 0,
@@ -3657,6 +3742,7 @@ export default {
 		},
 		{
 			"id": 213,
+			"name": "UGE Transport to <DST>",
 			"availStel": -1,
 			"availBitSet": 77,
 			"availLoc": 0,
@@ -3700,6 +3786,7 @@ export default {
 		},
 		{
 			"id": 214,
+			"name": "UGE Freight to <DST>",
 			"availStel": -1,
 			"availBitSet": 77,
 			"availLoc": 0,
@@ -3743,6 +3830,7 @@ export default {
 		},
 		{
 			"id": 215,
+			"name": "UGE Cargo to <DST>",
 			"availStel": -1,
 			"availBitSet": 77,
 			"availLoc": 0,
@@ -3786,6 +3874,7 @@ export default {
 		},
 		{
 			"id": 216,
+			"name": "UGE Delivery to <DST>",
 			"availStel": -1,
 			"availBitSet": 77,
 			"availLoc": 0,
@@ -3829,6 +3918,7 @@ export default {
 		},
 		{
 			"id": 217,
+			"name": "UGE Smuggling",
 			"availStel": 20001,
 			"availBitSet": 77,
 			"availLoc": 1,
@@ -3872,6 +3962,7 @@ export default {
 		},
 		{
 			"id": 218,
+			"name": "UGE Smuggling",
 			"availStel": 10001,
 			"availBitSet": 77,
 			"availLoc": 1,
@@ -3915,6 +4006,7 @@ export default {
 		},
 		{
 			"id": 219,
+			"name": "UGE Redemption",
 			"availStel": 147,
 			"availBitSet": 78,
 			"availLoc": 1,
@@ -3958,6 +4050,7 @@ export default {
 		},
 		{
 			"id": 220,
+			"name": "Confed Covert Ops",
 			"availStel": 134,
 			"availBitSet": 43,
 			"availLoc": 1,
@@ -4001,6 +4094,7 @@ export default {
 		},
 		{
 			"id": 221,
+			"name": "Confed Courier Operations",
 			"availStel": 134,
 			"availBitSet": 95,
 			"availLoc": 1,
@@ -4044,6 +4138,7 @@ export default {
 		},
 		{
 			"id": 222,
+			"name": "Intercept Rebel Convoy",
 			"availStel": 10000,
 			"availBitSet": 96,
 			"availLoc": 1,
@@ -4087,6 +4182,7 @@ export default {
 		},
 		{
 			"id": 223,
+			"name": "Intercept Rebel Convoy",
 			"availStel": 10000,
 			"availBitSet": 97,
 			"availLoc": 1,
@@ -4130,6 +4226,7 @@ export default {
 		},
 		{
 			"id": 224,
+			"name": "Transport Industrial Toxins",
 			"availStel": 10000,
 			"availBitSet": -1,
 			"availLoc": 0,
@@ -4173,6 +4270,7 @@ export default {
 		},
 		{
 			"id": 225,
+			"name": "Deliver Refined Toxins",
 			"availStel": 177,
 			"availBitSet": 98,
 			"availLoc": 0,
@@ -4216,6 +4314,7 @@ export default {
 		},
 		{
 			"id": 226,
+			"name": "Distribute Biological Weapons",
 			"availStel": 131,
 			"availBitSet": 99,
 			"availLoc": 1,
@@ -4259,6 +4358,7 @@ export default {
 		},
 		{
 			"id": 227,
+			"name": "Rebel Recon",
 			"availStel": 133,
 			"availBitSet": 44,
 			"availLoc": 1,
@@ -4302,6 +4402,7 @@ export default {
 		},
 		{
 			"id": 228,
+			"name": "Stop Confed Defector",
 			"availStel": 10000,
 			"availBitSet": 43,
 			"availLoc": 1,
@@ -4345,6 +4446,7 @@ export default {
 		},
 		{
 			"id": 229,
+			"name": "Destroy Rebel Convoy",
 			"availStel": 10000,
 			"availBitSet": 114,
 			"availLoc": 1,
@@ -4388,6 +4490,7 @@ export default {
 		},
 		{
 			"id": 230,
+			"name": "Astrodyne Outpost Recruitment",
 			"availStel": 161,
 			"availBitSet": 44,
 			"availLoc": 1,
@@ -4431,6 +4534,7 @@ export default {
 		},
 		{
 			"id": 231,
+			"name": "Astrodyne Outpost I",
 			"availStel": 161,
 			"availBitSet": 102,
 			"availLoc": 1,
@@ -4474,6 +4578,7 @@ export default {
 		},
 		{
 			"id": 232,
+			"name": "Astrodyne Outpost II",
 			"availStel": 196,
 			"availBitSet": 103,
 			"availLoc": 1,
@@ -4517,6 +4622,7 @@ export default {
 		},
 		{
 			"id": 233,
+			"name": "Astrodyne Outpost III",
 			"availStel": 196,
 			"availBitSet": 104,
 			"availLoc": 1,
@@ -4560,6 +4666,7 @@ export default {
 		},
 		{
 			"id": 234,
+			"name": "Astrodyne Outpost IV",
 			"availStel": 161,
 			"availBitSet": 105,
 			"availLoc": 1,
@@ -4603,6 +4710,7 @@ export default {
 		},
 		{
 			"id": 235,
+			"name": "Astrodyne Outpost V",
 			"availStel": 161,
 			"availBitSet": 106,
 			"availLoc": 1,
@@ -4646,6 +4754,7 @@ export default {
 		},
 		{
 			"id": 236,
+			"name": "Ferry Passenger to <RST>",
 			"availStel": -1,
 			"availBitSet": -1,
 			"availLoc": 1,
@@ -4689,6 +4798,7 @@ export default {
 		},
 		{
 			"id": 237,
+			"name": "Retrieve Data",
 			"availStel": 144,
 			"availBitSet": 108,
 			"availLoc": 1,
@@ -4732,6 +4842,7 @@ export default {
 		},
 		{
 			"id": 238,
+			"name": "Rescue Agent",
 			"availStel": 136,
 			"availBitSet": 109,
 			"availLoc": 1,
@@ -4775,6 +4886,7 @@ export default {
 		},
 		{
 			"id": 239,
+			"name": "Gather Hunters",
 			"availStel": 156,
 			"availBitSet": 110,
 			"availLoc": 1,
@@ -4818,6 +4930,7 @@ export default {
 		},
 		{
 			"id": 240,
+			"name": "Meet with UGE Reps",
 			"availStel": 167,
 			"availBitSet": 111,
 			"availLoc": 1,
@@ -4861,6 +4974,7 @@ export default {
 		},
 		{
 			"id": 241,
+			"name": "T.A.G. - You’re It",
 			"availStel": 191,
 			"availBitSet": 112,
 			"availLoc": 1,
@@ -4904,6 +5018,7 @@ export default {
 		},
 		{
 			"id": 242,
+			"name": "Destroy Escort Carrier",
 			"availStel": 10000,
 			"availBitSet": 43,
 			"availLoc": 1,
@@ -4947,6 +5062,7 @@ export default {
 		},
 		{
 			"id": 243,
+			"name": "Destroy Escort Carrier",
 			"availStel": 10000,
 			"availBitSet": 114,
 			"availLoc": 1,

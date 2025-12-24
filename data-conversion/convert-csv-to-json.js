@@ -305,6 +305,7 @@ function convertMisn(row) {
   // Use text file data as primary source
   return {
     id,
+    name: row['Name'] || '',
     availStel: textData.AvailStel ?? parseNum(row['Avail Stellar']),
     availBitSet: textData.AvailBitSet ?? -1,  // Missing from CSV
     availLoc: textData.AvailLoc ?? parseNum(row['Avail Location']),
