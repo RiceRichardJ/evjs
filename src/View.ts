@@ -71,7 +71,7 @@ export default class View {
 
 		// Draw
 		var img = actor.sprite;
-		if (img.src) {
+		if (img.src && img.complete && img.naturalHeight !== 0) {
 			// // this.ctx.drawImage(img, (img.width / -2), (img.height / -2));
 			// var dx = img.width  / actor.spin[0]; //-32;//(img.width / -2);
 			// var dy = img.height / actor.spin[1]; //-32;//(img.height / -2);
