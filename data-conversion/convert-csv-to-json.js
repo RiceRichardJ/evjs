@@ -180,6 +180,47 @@ function parseJunkTextFile(id) {
   }
 }
 
+// Helper to parse resource fork text file for oops
+function parseOopsTextFile(id) {
+  try {
+    // Find the file matching this ID
+    const files = fs.readdirSync(RESOURCE_FORK_DIR);
+    const filename = files.find(f => f.startsWith(`EV Data_öops_${id}_`));
+
+    if (!filename) {
+      console.warn(`  Warning: No text file found for oops ID ${id}`);
+      return {};
+    }
+
+    const filePath = path.join(RESOURCE_FORK_DIR, filename);
+    const content = fs.readFileSync(filePath, 'utf-8');
+
+    const data = {};
+    const lines = content.split('\n');
+
+    for (const line of lines) {
+      const match = line.match(/^\s*(\w+):\s*(.+)$/);
+      if (match) {
+        const key = match[1];
+        let value = match[2].trim();
+
+        // Parse numeric or hex values
+        if (value.startsWith('0x')) {
+          data[key] = value; // Keep hex as string
+        } else {
+          const num = Number(value);
+          data[key] = isNaN(num) ? value : num;
+        }
+      }
+    }
+
+    return data;
+  } catch (error) {
+    console.warn(`  Warning: Error reading text file for oops ID ${id}:`, error.message);
+    return {};
+  }
+}
+
 // Helper to filter sentinel values (-1) from arrays
 function filterSentinels(arr) {
   const filtered = [];
@@ -451,6 +492,24 @@ function convertJunk(row) {
   };
 }
 
+// Converter for öops resource
+function convertOops(row) {
+  // Use text file data as authoritative source
+  const id = parseNum(row['ID']);
+  const textData = parseOopsTextFile(id);
+
+  return {
+    id,
+    name: row['Name'] || '',
+    stellar: textData.Stellar ?? parseNum(row['Stellar']),
+    commodity: textData.Commodity ?? parseNum(row['Commodity']),
+    priceDelta: textData.PriceDelta ?? parseNum(row['Price Change']),
+    duration: textData.Duration ?? parseNum(row['Duration']),
+    freq: textData.Freq ?? parseNum(row['Frequency']),
+    missionBit: textData.MissionBit ?? -1  // Missing from CSV
+  };
+}
+
 // Converter for gövt resource
 function convertGovt(row) {
   // IMPORTANT: EVN export has wrong column labels! Actual mapping:
@@ -573,6 +632,8 @@ function convertRow(row, resourceType) {
       return convertJunk(row);
     case 'misn':
       return convertMisn(row);
+    case 'oops':
+      return convertOops(row);
     case 'syst':
       return convertSyst(row);
     case 'weap':
