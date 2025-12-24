@@ -3,153 +3,153 @@ export default {
 		{
 			"id": 128,
 			"name": "Stembolts",
-			"soldAt": [ 174, 129, 50, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 174,
+			"boughtAt": 129,
+			"basePrice": 50,
 			"flags": "0x0000"
 		},
 		{
 			"id": 129,
 			"name": "Keychains",
-			"soldAt": [ 130, 187, 8, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 130,
+			"boughtAt": 187,
+			"basePrice": 8,
 			"flags": "0x0000"
 		},
 		{
 			"id": 130,
 			"name": "Seafood",
-			"soldAt": [ 134, 163, 40, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 134,
+			"boughtAt": 163,
+			"basePrice": 40,
 			"flags": "0x0000"
 		},
 		{
 			"id": 131,
 			"name": "Root Extract",
-			"soldAt": [ 138, 183, 50, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 138,
+			"boughtAt": 183,
+			"basePrice": 50,
 			"flags": "0x0000"
 		},
 		{
 			"id": 132,
 			"name": "Lobsters",
-			"soldAt": [ 139, 188, 80, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 139,
+			"boughtAt": 188,
+			"basePrice": 80,
 			"flags": "0x0000"
 		},
 		{
 			"id": 133,
 			"name": "Viral Serum",
-			"soldAt": [ 156, 142, 680, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 156,
+			"boughtAt": 142,
+			"basePrice": 680,
 			"flags": "0x0000"
 		},
 		{
 			"id": 134,
 			"name": "Workdroids",
-			"soldAt": [ 144, 137, 340, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 144,
+			"boughtAt": 137,
+			"basePrice": 340,
 			"flags": "0x0000"
 		},
 		{
 			"id": 135,
 			"name": "Wood",
-			"soldAt": [ 205, 147, 270, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 205,
+			"boughtAt": 147,
+			"basePrice": 270,
 			"flags": "0x0000"
 		},
 		{
 			"id": 136,
 			"name": "Magazines",
-			"soldAt": [ 233, 149, 10, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 233,
+			"boughtAt": 149,
+			"basePrice": 10,
 			"flags": "0x0000"
 		},
 		{
 			"id": 137,
 			"name": "Camels",
-			"soldAt": [ 194, 150, 25, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 194,
+			"boughtAt": 150,
+			"basePrice": 25,
 			"flags": "0x0000"
 		},
 		{
 			"id": 138,
 			"name": "Appetizers",
-			"soldAt": [ 168, 159, 150, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 168,
+			"boughtAt": 159,
+			"basePrice": 150,
 			"flags": "0x0000"
 		},
 		{
 			"id": 139,
 			"name": "T-Shirts",
-			"soldAt": [ 175, 229, 15, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 175,
+			"boughtAt": 229,
+			"basePrice": 15,
 			"flags": "0x0000"
 		},
 		{
 			"id": 140,
 			"name": "Seaweed",
-			"soldAt": [ 176, 137, 38, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 176,
+			"boughtAt": 137,
+			"basePrice": 38,
 			"flags": "0x0000"
 		},
 		{
 			"id": 141,
 			"name": "Computers",
-			"soldAt": [ 210, 181, 45, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 210,
+			"boughtAt": 181,
+			"basePrice": 45,
 			"flags": "0x0000"
 		},
 		{
 			"id": 142,
 			"name": "Bug Juice",
-			"soldAt": [ 189, 207, 20, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 189,
+			"boughtAt": 207,
+			"basePrice": 20,
 			"flags": "0x0000"
 		},
 		{
 			"id": 143,
 			"name": "Parrots",
-			"soldAt": [ 198, 10, 1 ],
-			"boughtAt": [],
-			"basePrice": 0,
-			"flags": "0x0000"
+			"soldAt": 198,
+			"boughtAt": -1,
+			"basePrice": 10,
+			"flags": "0x0001"
 		},
 		{
 			"id": 144,
 			"name": "Banderfrogs",
-			"soldAt": [ 208, 146, 42, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 208,
+			"boughtAt": 146,
+			"basePrice": 42,
 			"flags": "0x0000"
 		},
 		{
 			"id": 145,
 			"name": "Grain",
-			"soldAt": [ 212, 152, 26, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 212,
+			"boughtAt": 152,
+			"basePrice": 26,
 			"flags": "0x0000"
 		},
 		{
 			"id": 146,
 			"name": "Vegetables",
-			"soldAt": [ 214, 150, 17, 0 ],
-			"boughtAt": [],
-			"basePrice": 0,
+			"soldAt": 214,
+			"boughtAt": 150,
+			"basePrice": 17,
 			"flags": "0x0000"
 		}
 	]

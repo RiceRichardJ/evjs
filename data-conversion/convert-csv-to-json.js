@@ -139,6 +139,47 @@ function parseDudeTextFile(id) {
   }
 }
 
+// Helper to parse resource fork text file for junk
+function parseJunkTextFile(id) {
+  try {
+    // Find the file matching this ID
+    const files = fs.readdirSync(RESOURCE_FORK_DIR);
+    const filename = files.find(f => f.startsWith(`EV Data_jünk_${id}_`));
+
+    if (!filename) {
+      console.warn(`  Warning: No text file found for junk ID ${id}`);
+      return {};
+    }
+
+    const filePath = path.join(RESOURCE_FORK_DIR, filename);
+    const content = fs.readFileSync(filePath, 'utf-8');
+
+    const data = {};
+    const lines = content.split('\n');
+
+    for (const line of lines) {
+      const match = line.match(/^\s*(\w+):\s*(.+)$/);
+      if (match) {
+        const key = match[1];
+        let value = match[2].trim();
+
+        // Parse numeric or hex values
+        if (value.startsWith('0x')) {
+          data[key] = value; // Keep hex as string
+        } else {
+          const num = Number(value);
+          data[key] = isNaN(num) ? value : num;
+        }
+      }
+    }
+
+    return data;
+  } catch (error) {
+    console.warn(`  Warning: Error reading text file for junk ID ${id}:`, error.message);
+    return {};
+  }
+}
+
 // Helper to filter sentinel values (-1) from arrays
 function filterSentinels(arr) {
   const filtered = [];
@@ -396,37 +437,17 @@ function convertMisn(row) {
 
 // Converter for jünk resource
 function convertJunk(row) {
-  // EVN export has extra columns. Actual EV JUNK mapping:
-  // CSV 'Low Stel 1-8' → SoldAt array (stellar IDs where junk is sold)
-  // CSV 'High Stel 1-8' → BoughtAt array (stellar IDs where junk is bought)
-  // CSV 'Base Price' → BasePrice
-  // CSV 'Flags' → Flags (already in hex format)
-
-  // Collect SoldAt (Low Stel 1-8)
-  const soldAt = [];
-  for (let i = 1; i <= 8; i++) {
-    const val = parseNum(row[`Low Stel ${i}`]);
-    if (val !== '' && val !== -1) {
-      soldAt.push(val);
-    }
-  }
-
-  // Collect BoughtAt (High Stel 1-8)
-  const boughtAt = [];
-  for (let i = 1; i <= 8; i++) {
-    const val = parseNum(row[`High Stel ${i}`]);
-    if (val !== '' && val !== -1) {
-      boughtAt.push(val);
-    }
-  }
+  // Use text file data as authoritative source
+  const id = parseNum(row['ID']);
+  const textData = parseJunkTextFile(id);
 
   return {
-    id: parseNum(row['ID']),
+    id,
     name: row['Name'] || '',
-    soldAt,
-    boughtAt,
-    basePrice: parseNum(row['Base Price']),
-    flags: row['Flags'] || ''  // Keep as hex string
+    soldAt: textData.SoldAt ?? -1,
+    boughtAt: textData.BoughtAt ?? -1,
+    basePrice: textData.BasePrice ?? 0,
+    flags: textData.Flags ?? '0x0000'
   };
 }
 
@@ -619,18 +640,6 @@ function convertFile(csvFilename) {
       jsContent = jsContent.replace(
         /"max":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
         (match, nums) => `"max": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
-      );
-    }
-
-    // Special formatting for junk resource - collapse soldAt and boughtAt arrays to single lines
-    if (resourceType === 'junk') {
-      jsContent = jsContent.replace(
-        /"soldAt":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
-        (match, nums) => `"soldAt": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
-      );
-      jsContent = jsContent.replace(
-        /"boughtAt":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
-        (match, nums) => `"boughtAt": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
       );
     }
 
