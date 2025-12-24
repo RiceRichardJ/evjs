@@ -24,15 +24,18 @@ import jsonweap from '../json/weap';
 /**
  * "Global" Constants.
  */
-export const Constants = {}
+const fps = 60;
+const gMod = 1.0;
+export const Constants = {
+	fps: fps,
+	gMod: gMod,
+	tMod: gMod * 30 / fps / 10,    // Turn
+	sMod: gMod * 30 / fps / 100,   // Speed
+	aMod: gMod * 30 / fps / 10000, // Accel
+	rMod: gMod * 30 / fps / 1000,  // Rech rate
+	f2ms: 1 / 30 * 1000            // fr to ms
+};
 const C = Constants;
-C.fps  = 60;
-C.gMod = 1.0;                // overall gameSpeedModifier
-C.tMod = C.gMod * 30 / C.fps / 10;    // Turn
-C.sMod = C.gMod * 30 / C.fps / 100;   // Speed
-C.aMod = C.gMod * 30 / C.fps / 10000; // Accel
-C.rMod = C.gMod * 30 / C.fps / 1000;  // Rech rate
-C.f2ms = 1 / 30 * 1000;      // fr to ms
 
 
 /**
@@ -40,6 +43,39 @@ C.f2ms = 1 / 30 * 1000;      // fr to ms
  * game ready, including filling in default values and speed modifiers.
  */
 class DataClass {
+	booms: any[] = [];
+	chars: any[] = [];
+	crons: any[] = [];
+	descs: any[] = [];
+	dudes: any[] = [];
+	flets: any[] = [];
+	govts: any[] = [];
+	junks: any[] = [];
+	misns: any[] = [];
+	nebus: any[] = [];
+	oopss: any[] = [];
+	outfs: any[] = [];
+	perss: any[] = [];
+	roids: any[] = [];
+	ships: any[] = [];
+	snds: Record<number, any> = {};
+	spins: Record<number, any> = {};
+	spobs: any[] = [];
+	systs: any[] = [];
+	weaps: any[] = [];
+	fps: number = 0;
+	sMod: number = 0;
+	aMod: number = 0;
+	tMod: number = 0;
+	gMod: number = 0;
+	rebelCruiser: any;
+	cannon: any;
+	laserCannon: any;
+	protonCannon: any;
+	neutronCannon: any;
+	demoPlanet: any;
+	demoPlanet2: any;
+
 	constructor() {
 		this.loadJson();
 		this.convertValues();
@@ -112,7 +148,7 @@ class DataClass {
 		// 	sprite: "content/RebelCruiserSprite.png"
 		// };
 
-		this.rebelCruiser = Object.assign(...this.ships[0], this.ships[142-127]);
+		this.rebelCruiser = Object.assign({}, this.ships[0], this.ships[142-127]);
 		// 384 x 384 -> 64
 		// this.rebelCruiser.sprite = "images/sprites/Rebel Cruiser Masked Sprite.png"; //"content/RebelCruiserSprite.png";
 		this.rebelCruiser.sprite = "images/sprites/Rebel Cruiser.png";

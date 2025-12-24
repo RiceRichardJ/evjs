@@ -6,26 +6,29 @@ import Vector from './Vector';
  * Any space object.
  */
 export default class Actor {
-	constructor(spob) {
-		this.x = 0.0;
-		this.y = 0.0;
-		this.travel = new Vector(-90.0, 0.0);
-		this.thrust = new Vector(-90.0, 0.0);
-		this.speed  = 0.0;
-		this.turn   = 0.0;
-		this.sprite = new Image();
-		this.born   = new Date();
-		this.lifespan = -1;
-		this.className = 'Actor';
+	constructor(
+		spob: any = null,
+		public x: number = 0.0,
+		public y: number = 0.0,
+		public travel = new Vector(-90.0, 0.0),
+		public thrust = new Vector(-90.0, 0.0),
+		public speed: number = 0.0,
+		public turn: number = 0.0,
+		public sprite = new Image(),
+		public born = new Date(),
+		public lifespan: number = -1,
+		public className: string = 'Actor',
+		public dead: boolean = false,
+		public dying: boolean = false,
+		public color: string = '#0f0',
+		public spin: number[] = [1, 1],
+		public name: string = '',
+	) {
 		if (spob) {
 			this.sprite.src = spob.sprite;
 			this.className = 'Spob';
-			this.name   = spob.name;
+			this.name = spob.name;
 		}
-		this.dead  = false;
-		this.dying = false;
-		this.color = '#0f0';
-		this.spin  = [1,1];
 	}
 
 	/**

@@ -1,11 +1,13 @@
 "use strict";
 
 export default class Vector {
+	degrees: number;
+	magnitude: number;
 
 	/**
 	 * Vector Constructor. (New)
 	 */
-	constructor(degrees, magnitude) {
+	constructor(degrees: number, magnitude: number) {
 		this.degrees = degrees;
 		this.magnitude = magnitude;
 	}

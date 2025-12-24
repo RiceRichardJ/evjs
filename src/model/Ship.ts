@@ -12,13 +12,25 @@ import Weapon from './Weapon';
  * Ship class.
  */
 export default class Ship extends Actor {
+	type: any;
+	shield: number = 0;
+	shieldMax: number = 0;
+	armor: number = 0;
+	armorMax: number = 0;
+	weapons: any[] = [];
+	ai: any;
+	newProj: any[] = [];
+	newShip: any[] = [];
+	disabled: boolean = false;
+	sender: any = null;
+	targetImg: HTMLImageElement = new Image();
 
 	/**
 	 * Construct a Ship object given a type to base it off of.
 	 * @param {ShipType} type The ship type to build off of.
 	 * @param {number} num ID number; for debugging.
 	 */
-	constructor(type, num, data) {
+	constructor(type: any, num: number, data: any) {
 		console.log("SHIP CONSTRUCTOR...");
 		super();
 		this.type = type;

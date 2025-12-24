@@ -8,14 +8,20 @@ import Data      from './model/Data';
  * Handles all rendering.
  */
 export default class View {
-	constructor(canvas, mapCanvas) {
-		this.cnv    = canvas;
-		this.ctx    = canvas.getContext("2d");
-		this.hud    = new Sidebar(this.ctx);
-		this.stars  = new StarField(this.ctx);
+	private cnv: HTMLCanvasElement;
+	private ctx: CanvasRenderingContext2D;
+	private hud: Sidebar;
+	private stars: StarField;
+	private mapCnv: HTMLCanvasElement;
+	private mapCtx: CanvasRenderingContext2D;
 
+	constructor(canvas: HTMLCanvasElement, mapCanvas: HTMLCanvasElement) {
+		this.cnv = canvas;
+		this.ctx = canvas.getContext("2d")!;
+		this.hud = new Sidebar(this.ctx);
+		this.stars = new StarField(this.ctx);
 		this.mapCnv = mapCanvas;
-		this.mapCtx = mapCanvas.getContext("2d");
+		this.mapCtx = mapCanvas.getContext("2d")!;
 	}
 
 	/**

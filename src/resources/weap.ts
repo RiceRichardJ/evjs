@@ -85,7 +85,7 @@ export type weap = {
 	explosion: number;
 	graphic: number;
 	sound: number;
-	ammoType: number;
+	ammoType?: number;
 	type: number;
 	impact: number;
 	proxRadius: number;

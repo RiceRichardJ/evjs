@@ -6,6 +6,8 @@ import Model from './Model';
 import View from './View';
 import SpaceportUI from './view/SpaceportUI';
 
+import $ from "jquery";
+
 // Load modals HTML before initializing game (top-level await - ES2025)
 await loadModals();
 

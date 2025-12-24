@@ -7,7 +7,12 @@ import Ship   from './Ship';
 import Vector from './Vector';
 
 export default class Weapon {
-	constructor(type, count, ammo) {
+	type: any;
+	count: number;
+	ammo: number;
+	lastFire: number = 0;
+
+	constructor(type: any, count: number, ammo: number) {
 		this.type = type;
 		this.count = count;
 		this.ammo = ammo;
@@ -51,13 +56,13 @@ export default class Weapon {
 // Object.assign(...Data.ships[0], shipType) // wtf is this
 
 			let shipType = Data.ships[this.type.ammo - 127]; console.log( shipType );
-			let newShip = new Ship.default(shipType, 99, null); // the "default" part seems to be required because a javascript bug
+			let newShip = new Ship(shipType, 99, null);
 			newShip.type = shipType;
 			newShip.x = sender.x;
 			newShip.y = sender.y;
 			newShip.travel.degrees   = sender.travel.degrees;
 			newShip.travel.magnitude = sender.travel.magnitude;
-			newShip.thrust.degress   = sender.thrust.degrees + spread;
+			newShip.thrust.degrees   = sender.thrust.degrees + spread;
 			newShip.thrust.magnitude = this.type.speed;
 			newShip.ai.target = targ;
 			newShip.ai.govt = sender.ai.govt;

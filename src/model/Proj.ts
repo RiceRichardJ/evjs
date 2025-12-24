@@ -10,7 +10,12 @@ import Vector from './Vector';
  * Constructor and instance variables.
  */
 export default class Proj extends Actor {
-	constructor(type, xPos, yPos, dir, sender, target) {
+	type: any;
+	sender: any;
+	target: any;
+	sound: HTMLAudioElement;
+
+	constructor(type: any, xPos: number, yPos: number, dir: number, sender: any, target: any) {
 		super();
 		
 		this.speed  = type.speed * C.sMod;

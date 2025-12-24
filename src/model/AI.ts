@@ -8,7 +8,17 @@ import Vector from './Vector';
  * Instances are used to store AI mood and combat states.
  */
 export default class AI {
-	constructor(ship) {
+	myShip: any;
+	mood: number = 1;
+	pers: number = 2;
+	nav: any = null;
+	target: any = null;
+	suspects: Record<string, any> = {};
+	enemies: Record<string, any> = {};
+	landing: boolean = false;
+	govt: any;
+
+	constructor(ship: any) {
 		this.myShip = ship;
 		this.mood   = AI.moods().passive;
 		this.pers   = AI.pers().brave;

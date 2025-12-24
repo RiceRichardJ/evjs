@@ -4,7 +4,19 @@ import Ship   from './Ship';
 import Vector from './Vector'
 
 export default class Player extends Ship {
-	constructor(shipType, data) {
+	targInd: number = -1;
+	paused: boolean = false;
+	hyperNav: any = null;
+	weapInd: number = -1;
+	credits: number = 100000;
+	cargo: Record<string, number> = {};
+	cargoSpace: number = 0;
+	cargoUsed: number = 0;
+	fuel: number = 0;
+	fuelMax: number = 0;
+	outfits: any[] = [];
+
+	constructor(shipType: any, data: any) {
 		super(shipType, 0, data);
 		this.targInd = -1;
 		this.paused = false;

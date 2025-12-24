@@ -1,12 +1,17 @@
 "use strict";
 
+import $ from "jquery";
+import "bootstrap"; // runtime side-effect import
+
 import Model from './Model';
 
 export default class Input {
-	constructor(model = new Model()) {
-		this.keyPressed = {};
-		this.keyPrev = {};
-		this.model = model;
+	constructor(
+		private model: Model = new Model(),
+		private keyPressed: {[key: string]: boolean} = {},
+		private keyPrev = {},
+
+	) {
 		this.registerKeyListeners();
 	}
 
@@ -14,9 +19,9 @@ export default class Input {
 	 * Register Key Listeners.
 	 */
 	registerKeyListeners() {
-		document.addEventListener('keydown', function(e) {
+		document.addEventListener('keydown', (e: KeyboardEvent) => {
 			// console.log(e.keyCode);
-			if([9, 16, 27, 32, 37, 38, 39, 40].includes(e.keyCode)) {
+			if ([9, 16, 27, 32, 37, 38, 39, 40].includes(e.keyCode)) {
 				e.preventDefault();
 			}
 			if (e.keyCode == 9) { // [TAB]
@@ -27,14 +32,14 @@ export default class Input {
 				this.model.player.fireSecondary();
 			}
 			this.keyPressed[e.keyCode] = true;
-		}.bind(this), false);
+		}, false);
 
-		document.addEventListener('keyup', function(e) {
+		document.addEventListener('keyup', (e) => {
 			if (e.keyCode == 9) {
 				e.preventDefault();
 			}
 			this.keyPressed[e.keyCode] = false;
-		}.bind(this), false);
+		}, false);
 	}
 
 	/**
@@ -42,7 +47,7 @@ export default class Input {
 	 */
 	poll() {
 		if (this.keyPressed["27"]) { // [esc]
-			$('.modal').modal('hide');
+			($('.modal') as any).modal('hide');
 		}
 		if (this.keyPressed["32"]) { // spacebar
 			this.model.player.fire();
@@ -107,8 +112,8 @@ export default class Input {
 		if (this.keyPressed["76"]) { // [L]
 			var status = this.model.player.land();
 			if (status == 2) {
-				stage.ctx.font = "9pt Arial";	// TODO uhhhh
-				stage.ctx.fillText("Moving too fast to land!",10,590);
+				// stage.ctx.font = "9pt Arial";	// TODO uhhhh
+				// stage.ctx.fillText("Moving too fast to land!",10,590);
 			}
 		}
 		if (this.keyPressed["77"]) { // [M]

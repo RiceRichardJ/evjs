@@ -4,8 +4,11 @@
  * Sidebar.
  */
 export default class Sidebar {
-	constructor(CanvasRenderingContext2D) {
-		this.ctx = CanvasRenderingContext2D;
+	ctx: CanvasRenderingContext2D;
+	targetText: string = "No Target";
+
+	constructor(ctx: CanvasRenderingContext2D) {
+		this.ctx = ctx;
 		this.targetText = "No Target";
 	}//879F85
 

@@ -7,6 +7,7 @@ import Player    from './model/Player'
 import Ship      from './model/Ship';
 import Vector    from './model/Vector';
 import Weapon    from './model/Weapon';
+import View from './View';
 
 /**
  * Model stores the current state of the game.
@@ -15,24 +16,22 @@ export default class Model {
 	/**
 	 * Create a Model object.
 	 */
-	constructor() {
-		this.data   = Data;//new Data();
-		// this.player = new Player(this.data.rebelCruiser, this.data);
-		this.player = null;//new Player(this.data.ships[141-127], this.data);
-			// this.player.x = -200;
-			// this.player.y = -200;
-		this.spobs  = [];
-		this.actors = [];
-		this.projs  = [];
+	constructor(
+		public data = Data,
+		public player: any = null,
+		public spobs: any[] = [],
+		public actors: any[] = [],
+		public projs: any[] = [],
+		public mapView: boolean = false,
+	) {
 		this.addTestData();
-		this.mapView = false;
 	}
 
 	/**
 	 * Step through our state/model. Then render with view object.
 	 * @param {*} view The rendering object.
 	 */
-	action(view) {
+	action(view: View) {
 		this.spobs.map( (spob) => {spob.act()} );
 		this.projs.map( (proj) => {proj.act()} );
 		this.actors.map((actor)=> {actor.act(); this.addProj(actor)} );
@@ -160,7 +159,9 @@ export default class Model {
 					}
 
 					var newShip = new Ship(
-						Object.assign(...this.data.ships[0], ship, this.data) // wtf is this
+						Object.assign({}, this.data.ships[0], ship), // merged ship type
+					0, // num
+					this.data // data
 					);
 					var angle = 360 * Math.random();
 					var v = new Vector(angle, 1500 + (500 * Math.random()));

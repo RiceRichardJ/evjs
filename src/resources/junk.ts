@@ -34,6 +34,7 @@ export type junk = {
 	boughtAt: number;
 	basePrice: number;
 	flags: string;
+	flagsDecoded?: Record<string, boolean>;
 };
 
 const junk: junk[] = [

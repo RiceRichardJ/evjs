@@ -1,11 +1,16 @@
 "use strict";
 
 export default class StarField {
-	constructor(ctx) {
+	xStar: number[] = [];
+	yStar: number[] = [];
+	nStar: number = 50;
+	ctx: CanvasRenderingContext2D;
+
+	constructor(ctx: CanvasRenderingContext2D) {
+		this.ctx = ctx;
 		this.xStar = [];
 		this.yStar = [];
 		this.nStar = 50;
-		this.ctx = ctx;
 		this.init(0, 0);
 	}
 
