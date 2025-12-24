@@ -23,13 +23,13 @@
 
 **Dev:** `npm run build` → `npm run server` (localhost:8080)
 
-**Data Conversion:** `data-conversion/` contains CSV→JSON converter for EV resource data. Converts 14 resource types from CSV exports plus STR# resources from text files. Uses resource fork text files as authoritative source. Run `node data-conversion/convert-csv-to-json.js` to regenerate JSON files in `data-conversion/out/`. Output includes: desc, dude, flet, govt, junk, misn, nebu, oops, outf, pers, ship, spob, syst, weap, and STR#.js (string resources).
+**Data Conversion:** `data-conversion/` contains CSV→JSON converter for EV resource data. Converts 14 resource types from CSV plus STR# and spïn from text files. Uses resource fork text files as authoritative source. Run `node data-conversion/convert-csv-to-json.js` to regenerate. Output: desc, dude, flet, govt, junk, misn, nebu, oops, outf, pers, ship, spob, syst, weap, STR#.js (strings), spin.js (sprite metadata).
 
 ---
 
 ## Instructions for Claude
 
 1. **Always read this file at the start of every session.**
-2. **Upon completion of a prompt, update this file as needed.**
+2. **Upon completion of a prompt, update this file as needed. Always keep this file as concise as possible.**
 3. **Create a git commit after the end of every prompt.**
 4. **Re-read this file as needed during a session to refresh memory.**

@@ -8,6 +8,7 @@ const { parse } = require('csv-parse/sync');
 const INPUT_DIR = path.join(__dirname, 'in');
 const OUTPUT_DIR = path.join(__dirname, 'out');
 const RESOURCE_FORK_DIR = '/Users/ricerichardj/home/Escape Velocity/2025/Escape Velocity Files/Escape Velocity 1.0.5 ƒ/EV Data.out';
+const GRAPHICS_DIR = '/Users/ricerichardj/home/Escape Velocity/2025/Escape Velocity Files/Escape Velocity 1.0.5 ƒ/EV Graphics.out';
 
 // Ensure output directory exists
 if (!fs.existsSync(OUTPUT_DIR)) {
@@ -1168,7 +1169,7 @@ function convertFile(csvFilename) {
 
 // Convert STR# resources from text files
 function convertStrResources() {
-  console.log('Converting STR# resources → str.js...');
+  console.log('Converting STR# resources → STR#.js...');
 
   try {
     // Find all STR# files
@@ -1216,12 +1217,72 @@ function convertStrResources() {
     const jsContent = `export default ${JSON.stringify(output, null, '\t')}\n`;
 
     // Write output file
-    const outPath = path.join(OUTPUT_DIR, 'str.js');
+    const outPath = path.join(OUTPUT_DIR, 'STR#.js');
     fs.writeFileSync(outPath, jsContent, 'utf-8');
 
-    console.log(`  ✓ Wrote ${strArray.length} STR# resources to str.js`);
+    console.log(`  ✓ Wrote ${strArray.length} STR# resources to STR#.js`);
   } catch (error) {
     console.error('  ✗ Error converting STR# resources:', error.message);
+  }
+}
+
+// Convert spïn resources from text files
+function convertSpinResources() {
+  console.log('Converting spïn resources → spin.js...');
+
+  try {
+    // Find all spïn files
+    const files = fs.readdirSync(GRAPHICS_DIR);
+    const spinFiles = files.filter(f => f.includes('_spïn_'));
+
+    const spinArray = [];
+
+    for (const filename of spinFiles) {
+      // Parse filename: EV Graphics_spïn_<id>_<name>.txt
+      const match = filename.match(/spïn_(\d+)_(.+?)\.txt$/);
+      if (!match) continue;
+
+      const id = parseInt(match[1]);
+      const name = match[2];
+
+      // Read and parse the text file
+      const filePath = path.join(GRAPHICS_DIR, filename);
+      const content = fs.readFileSync(filePath, 'utf-8');
+      const lines = content.split('\n');
+
+      const data = { id, name };
+
+      for (const line of lines) {
+        const fieldMatch = line.match(/^\s*(\w+):\s*(.+)$/);
+        if (fieldMatch) {
+          const key = fieldMatch[1];
+          const value = fieldMatch[2].trim();
+          const num = Number(value);
+          data[key] = isNaN(num) ? value : num;
+        }
+      }
+
+      spinArray.push(data);
+    }
+
+    // Sort by ID
+    spinArray.sort((a, b) => a.id - b.id);
+
+    // Create output object
+    const output = {
+      spin: spinArray
+    };
+
+    // Format as JS module
+    const jsContent = `export default ${JSON.stringify(output, null, '\t')}\n`;
+
+    // Write output file
+    const outPath = path.join(OUTPUT_DIR, 'spin.js');
+    fs.writeFileSync(outPath, jsContent, 'utf-8');
+
+    console.log(`  ✓ Wrote ${spinArray.length} spïn resources to spin.js`);
+  } catch (error) {
+    console.error('  ✗ Error converting spïn resources:', error.message);
   }
 }
 
@@ -1241,6 +1302,9 @@ function main() {
 
   // Convert STR# resources
   convertStrResources();
+
+  // Convert spïn resources
+  convertSpinResources();
 
   console.log('\nConversion complete!');
   console.log(`\nNext steps:`);
