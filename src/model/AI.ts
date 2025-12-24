@@ -22,7 +22,7 @@ export default class AI {
 
 	static moods() {
 		return Object.freeze({
-			"passive":1, "aggressive":2, "disabled":3, "escort":4, "patrol":5, "":6, "":7
+			"passive":1, "aggressive":2, "disabled":3, "escort":4, "patrol":5, "unknown6":6, "unknown7":7
 		});
 	}
 	

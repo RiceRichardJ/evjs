@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "type-check": "tsc --noEmit",
-    "start": "npm run dev"
+    "build": "./node_modules/.bin/babel src -d js",
+    "server": "./node_modules/.bin/http-server -c-1",
+    "start": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,12 +21,13 @@
   "homepage": "https://github.com/RiceRichardJ/evjs#readme",
   "dependencies": {
     "csv-parse": "^6.1.0",
-    "npm": "^5.7.1"
+    "npm": "^5.7.1",
+    "requirejs": "^2.3.5"
   },
   "devDependencies": {
-    "@types/bootstrap": "^5.2.10",
-    "@types/jquery": "^3.5.33",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.0"
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-amd": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "http-server": "^0.11.1"
   }
 }

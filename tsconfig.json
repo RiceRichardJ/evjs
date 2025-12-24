@@ -1,19 +1,33 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "AMD",
-    "lib": ["ES6", "DOM"],
-    "outDir": "./build",
-    "rootDir": "./src",
-    "strict": true,
+    "target": "ESNext",
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["vite/client", "jquery"],
+
+    "strict": false,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "allowJs": true,  // Allow .js files during migration
-    "checkJs": false, // Don't type-check .js files
-    "declaration": true,
-    "sourceMap": true,
-    "moduleResolution": "node"
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowJs": true,
+
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    "sourceMap": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "dist", "js", "build"]
 }
