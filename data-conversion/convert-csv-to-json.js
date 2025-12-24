@@ -317,6 +317,61 @@ function parsePersTextFile(id) {
   }
 }
 
+// Helper to parse resource fork text file for ship
+function parseShipTextFile(id) {
+  try {
+    // Find the file matching this ID
+    const files = fs.readdirSync(RESOURCE_FORK_DIR);
+    const filename = files.find(f => f.startsWith(`EV Data_shïp_${id}_`));
+
+    if (!filename) {
+      console.warn(`  Warning: No text file found for ship ID ${id}`);
+      return {};
+    }
+
+    const filePath = path.join(RESOURCE_FORK_DIR, filename);
+    const content = fs.readFileSync(filePath, 'utf-8');
+
+    const data = {};
+    const lines = content.split('\n');
+
+    for (const line of lines) {
+      // Handle special array format: x1=val, y1=val, x2=val, y2=val
+      const arrayMatch = line.match(/^\s*(\w+):\s*x1=(-?\d+),\s*y1=(-?\d+),\s*x2=(-?\d+),\s*y2=(-?\d+)/);
+      if (arrayMatch) {
+        const key = arrayMatch[1];
+        data[key] = [
+          parseInt(arrayMatch[2]),
+          parseInt(arrayMatch[3]),
+          parseInt(arrayMatch[4]),
+          parseInt(arrayMatch[5])
+        ];
+        continue;
+      }
+
+      // Handle regular fields
+      const match = line.match(/^\s*(\w+):\s*(.+)$/);
+      if (match) {
+        const key = match[1];
+        let value = match[2].trim();
+
+        // Parse numeric or hex values
+        if (value.startsWith('0x')) {
+          data[key] = value; // Keep hex as string
+        } else {
+          const num = Number(value);
+          data[key] = isNaN(num) ? value : num;
+        }
+      }
+    }
+
+    return data;
+  } catch (error) {
+    console.warn(`  Warning: Error reading text file for ship ID ${id}:`, error.message);
+    return {};
+  }
+}
+
 // Helper to filter sentinel values (-1) from arrays
 function filterSentinels(arr) {
   const filtered = [];
@@ -669,6 +724,57 @@ function convertPers(row) {
   };
 }
 
+// Converter for shïp resource
+function convertShip(row) {
+  // Use text file data as authoritative source
+  const id = parseNum(row['ID']);
+  const textData = parseShipTextFile(id);
+
+  return {
+    id,
+    name: row['Name'] || '',
+    holds: textData.Holds ?? parseNum(row['Cargo Capacity']),
+    shield: textData.Shield ?? parseNum(row['Shields']),
+    accel: textData.Accel ?? parseNum(row['Acceleration']),
+    speed: textData.Speed ?? parseNum(row['Speed']),
+    maneuver: textData.Maneuver ?? parseNum(row['Turn Rate']),
+    fuel: textData.Fuel ?? parseNum(row['Fuel']),
+    freeMass: textData.FreeMass ?? parseNum(row['Free Space']),
+    armor: textData.Armor ?? parseNum(row['Armor']),
+    shieldRe: textData.ShieldRe ?? parseNum(row['Shield Recharge']),
+    weapType: textData.WeapType ?? [
+      parseNum(row['Weapon 1']),
+      parseNum(row['Weapon 2']),
+      parseNum(row['Weapon 3']),
+      parseNum(row['Weapon 4'])
+    ],
+    weapCount: textData.WeapCount ?? [
+      parseNum(row['Weap 1 Count']),
+      parseNum(row['Weap 2 Count']),
+      parseNum(row['Weap 3 Count']),
+      parseNum(row['Weap 4 Count'])
+    ],
+    ammoLoad: textData.AmmoLoad ?? [
+      parseNum(row['Weap 1 Ammo']),
+      parseNum(row['Weap 2 Ammo']),
+      parseNum(row['Weap 3 Ammo']),
+      parseNum(row['Weap 4 Ammo'])
+    ],
+    maxGun: textData.MaxGun ?? parseNum(row['Max Guns']),
+    maxTur: textData.MaxTur ?? parseNum(row['Max Turrets']),
+    techLevel: textData.TechLevel ?? parseNum(row['Tech Level']),
+    cost: textData.Cost ?? parseNum(row['Cost']),
+    deathDelay: textData.DeathDelay ?? parseNum(row['Death Delay']),
+    turretYDisp: textData.TurretYDisp ?? [0, 0, 0, 0],
+    mass: textData.Mass ?? parseNum(row['Mass']),
+    length: textData.Length ?? parseNum(row['Length']),
+    inherentAI: textData.InherentAI ?? parseNum(row['AI Type']),
+    crew: textData.Crew ?? parseNum(row['Crew']),
+    missionBit: textData.MissionBit ?? -1,
+    inherentGovt: textData.InherentGovt ?? parseNum(row['Govt'])
+  };
+}
+
 // Converter for gövt resource
 function convertGovt(row) {
   // IMPORTANT: EVN export has wrong column labels! Actual mapping:
@@ -797,6 +903,8 @@ function convertRow(row, resourceType) {
       return convertOutf(row);
     case 'pers':
       return convertPers(row);
+    case 'ship':
+      return convertShip(row);
     case 'syst':
       return convertSyst(row);
     case 'weap':
@@ -880,6 +988,26 @@ function convertFile(csvFilename) {
       jsContent = jsContent.replace(
         /"ammoLoad":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
         (match, nums) => `"ammoLoad": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+    }
+
+    // Special formatting for ship resource - collapse weapon arrays to single lines
+    if (resourceType === 'ship') {
+      jsContent = jsContent.replace(
+        /"weapType":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"weapType": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      jsContent = jsContent.replace(
+        /"weapCount":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"weapCount": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      jsContent = jsContent.replace(
+        /"ammoLoad":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"ammoLoad": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
+      );
+      jsContent = jsContent.replace(
+        /"turretYDisp":\s*\[\s*([0-9,\s-]+?)\s*\]/g,
+        (match, nums) => `"turretYDisp": [ ${nums.replace(/\s+/g, ' ').trim()} ]`
       );
     }
 
