@@ -7,6 +7,7 @@ const { parse } = require('csv-parse/sync');
 // Input and output directories
 const INPUT_DIR = path.join(__dirname, 'in');
 const OUTPUT_DIR = path.join(__dirname, 'out');
+const RESOURCE_FORK_DIR = '/Users/ricerichardj/home/Escape Velocity/2025/Escape Velocity Files/Escape Velocity 1.0.5 ƒ/EV Data.out';
 
 // Ensure output directory exists
 if (!fs.existsSync(OUTPUT_DIR)) {
@@ -54,6 +55,47 @@ function decimalToHex(val) {
   const num = parseInt(val);
   if (isNaN(num)) return '';
   return '0x' + num.toString(16).toUpperCase().padStart(4, '0');
+}
+
+// Helper to parse resource fork text file for misn
+function parseMisnTextFile(id) {
+  try {
+    // Find the file matching this ID
+    const files = fs.readdirSync(RESOURCE_FORK_DIR);
+    const filename = files.find(f => f.startsWith(`EV Data_mïsn_${id}_`));
+
+    if (!filename) {
+      console.warn(`  Warning: No text file found for misn ID ${id}`);
+      return {};
+    }
+
+    const filePath = path.join(RESOURCE_FORK_DIR, filename);
+    const content = fs.readFileSync(filePath, 'utf-8');
+
+    const data = {};
+    const lines = content.split('\n');
+
+    for (const line of lines) {
+      const match = line.match(/^\s*(\w+):\s*(.+)$/);
+      if (match) {
+        const key = match[1];
+        let value = match[2].trim();
+
+        // Parse numeric or hex values
+        if (value.startsWith('0x')) {
+          data[key] = value; // Keep hex as string
+        } else {
+          const num = Number(value);
+          data[key] = isNaN(num) ? value : num;
+        }
+      }
+    }
+
+    return data;
+  } catch (error) {
+    console.warn(`  Warning: Error reading text file for misn ID ${id}:`, error.message);
+    return {};
+  }
 }
 
 // Helper to filter sentinel values (-1) from arrays
@@ -253,6 +295,59 @@ function convertWeap(row) {
   return result;
 }
 
+// Converter for mïsn resource
+function convertMisn(row) {
+  // For misn, we need to merge CSV data with text file data
+  // The text files have all the correct fields, CSV is missing some
+  const id = parseNum(row['ID']);
+  const textData = parseMisnTextFile(id);
+
+  // Use text file data as primary source
+  return {
+    id,
+    availStel: textData.AvailStel ?? parseNum(row['Avail Stellar']),
+    availBitSet: textData.AvailBitSet ?? -1,  // Missing from CSV
+    availLoc: textData.AvailLoc ?? parseNum(row['Avail Location']),
+    availRecord: textData.AvailRecord ?? parseNum(row['Avail Record']),
+    availRating: textData.AvailRating ?? parseNum(row['Avail Rating']),
+    availRandom: textData.AvailRandom ?? parseNum(row['Avail Random']),
+    travelStel: textData.TravelStel ?? parseNum(row['Travel Stellar']),
+    returnStel: textData.ReturnStel ?? parseNum(row['Return Stellar']),
+    cargoType: textData.CargoType ?? parseNum(row['Cargo Type']),
+    cargoQty: textData.CargoQty ?? parseNum(row['Cargo Quantity']),
+    pickupMode: textData.PickupMode ?? parseNum(row['Pickup Mode']),
+    dropoffMode: textData.DropoffMode ?? parseNum(row['Dropoff Mode']),
+    scanGovt: textData.ScanGovt ?? parseNum(row['Scan Mask']),
+    failIfScan: textData.FailIfScan ?? 0,  // Missing from CSV
+    payVal: textData.PayVal ?? parseNum(row['Pay Value']),
+    shipCount: textData.ShipCount ?? parseNum(row['Ship Count']),
+    shipSyst: textData.ShipSyst ?? parseNum(row['Ship System']),
+    shipDude: textData.ShipDude ?? parseNum(row['Ship Dude']),
+    shipGoal: textData.ShipGoal ?? parseNum(row['Ship Goal']),
+    shipBehav: textData.ShipBehav ?? parseNum(row['Ship Behaviour']),
+    shipNameID: textData.ShipNameID ?? parseNum(row['Ship Name']),
+    compBitSet: textData.CompBitSet ?? parseNum(row['Ship Start']),
+    compGovt: textData.CompGovt ?? parseNum(row['Comp Govt']),
+    compReward: textData.CompReward ?? parseNum(row['Comp Reward']),
+    failBitSet: textData.FailBitSet ?? -1,
+    briefText: textData.BriefText ?? parseNum(row['Brief Text']),
+    quickBrief: textData.QuickBrief ?? parseNum(row['Quick Brief Text']),
+    loadCargText: textData.LoadCargText ?? parseNum(row['Load Text']),
+    dropCargText: textData.DropCargText ?? parseNum(row['Drop Text']),
+    compText: textData.CompText ?? parseNum(row['Comp Text']),
+    failText: textData.FailText ?? parseNum(row['Fail Text']),
+    timeLimit: textData.TimeLimit ?? parseNum(row['Time Limit']),
+    canAbort: textData.CanAbort ?? parseNum(row['Can Abort']),
+    unused: textData.Unused ?? -1,
+    availBitClr: textData.AvailBitClr ?? -1,  // Missing from CSV
+    auxShipCount: textData.AuxShipCount ?? parseNum(row['Aux Count']),
+    auxShipDude: textData.AuxShipDude ?? parseNum(row['Aux Dude']),
+    auxShipSyst: textData.AuxShipSyst ?? parseNum(row['Aux System']),
+    compBitSet2: textData.CompBitSet2 ?? -1,  // Missing from CSV
+    flags: textData.Flags ?? row['Flags 1'] ?? ''
+  };
+}
+
 // Converter for jünk resource
 function convertJunk(row) {
   // EVN export has extra columns. Actual EV JUNK mapping:
@@ -409,6 +504,8 @@ function convertRow(row, resourceType) {
       return convertGovt(row);
     case 'junk':
       return convertJunk(row);
+    case 'misn':
+      return convertMisn(row);
     case 'syst':
       return convertSyst(row);
     case 'weap':
