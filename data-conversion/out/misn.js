@@ -42,7 +42,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0180"
+			"flags": "0x0180",
+			"flagsDecoded": {
+				"globalPenaltyForJettisoningCargo": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 129,
@@ -86,7 +90,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0180"
+			"flags": "0x0180",
+			"flagsDecoded": {
+				"globalPenaltyForJettisoningCargo": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 130,
@@ -130,7 +138,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0180"
+			"flags": "0x0180",
+			"flagsDecoded": {
+				"globalPenaltyForJettisoningCargo": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 131,
@@ -174,7 +186,11 @@ export default {
 			"auxShipDude": 137,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0110"
+			"flags": "0x0110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 132,
@@ -218,7 +234,11 @@ export default {
 			"auxShipDude": 137,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0110"
+			"flags": "0x0110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 133,
@@ -262,7 +282,10 @@ export default {
 			"auxShipDude": 134,
 			"auxShipSyst": -2,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 134,
@@ -350,7 +373,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 136,
@@ -394,7 +420,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 137,
@@ -438,7 +467,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 138,
@@ -482,7 +514,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 139,
@@ -526,7 +561,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 140,
@@ -570,7 +608,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 141,
@@ -614,7 +655,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 142,
@@ -658,7 +702,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 143,
@@ -702,7 +749,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 144,
@@ -746,7 +796,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 145,
@@ -834,7 +887,10 @@ export default {
 			"auxShipDude": 137,
 			"auxShipSyst": -3,
 			"compBitSet2": -1,
-			"flags": "0x0010"
+			"flags": "0x0010",
+			"flagsDecoded": {
+				"infiniteAuxShips": true
+			}
 		},
 		{
 			"id": 147,
@@ -966,7 +1022,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0080"
+			"flags": "0x0080",
+			"flagsDecoded": {
+				"globalPenaltyForJettisoningCargo": true
+			}
 		},
 		{
 			"id": 150,
@@ -1010,7 +1069,10 @@ export default {
 			"auxShipDude": 164,
 			"auxShipSyst": -3,
 			"compBitSet2": -1,
-			"flags": "0x0010"
+			"flags": "0x0010",
+			"flagsDecoded": {
+				"infiniteAuxShips": true
+			}
 		},
 		{
 			"id": 151,
@@ -1054,7 +1116,11 @@ export default {
 			"auxShipDude": 165,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0110"
+			"flags": "0x0110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 152,
@@ -1098,7 +1164,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x1000"
+			"flags": "0x1000",
+			"flagsDecoded": {
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 153,
@@ -1142,7 +1211,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x1000"
+			"flags": "0x1000",
+			"flagsDecoded": {
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 154,
@@ -1186,7 +1258,11 @@ export default {
 			"auxShipDude": 147,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1010"
+			"flags": "0x1010",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 155,
@@ -1230,7 +1306,10 @@ export default {
 			"auxShipDude": 147,
 			"auxShipSyst": -3,
 			"compBitSet2": -1,
-			"flags": "0x1000"
+			"flags": "0x1000",
+			"flagsDecoded": {
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 156,
@@ -1274,7 +1353,12 @@ export default {
 			"auxShipDude": 189,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1110"
+			"flags": "0x1110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 157,
@@ -1318,7 +1402,10 @@ export default {
 			"auxShipDude": 164,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 158,
@@ -1362,7 +1449,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 159,
@@ -1582,7 +1672,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 164,
@@ -1626,7 +1719,14 @@ export default {
 			"auxShipDude": 137,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1170"
+			"flags": "0x1170",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"removePrepaidOutfitOnFailure": true,
+				"applyNegative5xCompRewardOnAbort": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 165,
@@ -1670,7 +1770,13 @@ export default {
 			"auxShipDude": 187,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1150"
+			"flags": "0x1150",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"applyNegative5xCompRewardOnAbort": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 166,
@@ -1714,7 +1820,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 167,
@@ -1758,7 +1867,13 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x1144"
+			"flags": "0x1144",
+			"flagsDecoded": {
+				"cantRefuse": true,
+				"applyNegative5xCompRewardOnAbort": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 168,
@@ -1802,7 +1917,13 @@ export default {
 			"auxShipDude": 174,
 			"auxShipSyst": 167,
 			"compBitSet2": -1,
-			"flags": "0x1144"
+			"flags": "0x1144",
+			"flagsDecoded": {
+				"cantRefuse": true,
+				"applyNegative5xCompRewardOnAbort": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 169,
@@ -1846,7 +1967,14 @@ export default {
 			"auxShipDude": 175,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1154"
+			"flags": "0x1154",
+			"flagsDecoded": {
+				"cantRefuse": true,
+				"infiniteAuxShips": true,
+				"applyNegative5xCompRewardOnAbort": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 170,
@@ -1890,7 +2018,13 @@ export default {
 			"auxShipDude": 188,
 			"auxShipSyst": -6,
 			"compBitSet2": -1,
-			"flags": "0x1114"
+			"flags": "0x1114",
+			"flagsDecoded": {
+				"cantRefuse": true,
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 171,
@@ -1934,7 +2068,10 @@ export default {
 			"auxShipDude": 165,
 			"auxShipSyst": 9999,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 172,
@@ -1978,7 +2115,10 @@ export default {
 			"auxShipDude": 165,
 			"auxShipSyst": 9999,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 173,
@@ -2022,7 +2162,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 174,
@@ -2066,7 +2209,11 @@ export default {
 			"auxShipDude": 165,
 			"auxShipSyst": 9999,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 175,
@@ -2110,7 +2257,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 176,
@@ -2154,7 +2305,12 @@ export default {
 			"auxShipDude": 168,
 			"auxShipSyst": 9999,
 			"compBitSet2": -1,
-			"flags": "0x1110"
+			"flags": "0x1110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 177,
@@ -2198,7 +2354,12 @@ export default {
 			"auxShipDude": 169,
 			"auxShipSyst": -3,
 			"compBitSet2": -1,
-			"flags": "0x1110"
+			"flags": "0x1110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 178,
@@ -2242,7 +2403,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0180"
+			"flags": "0x0180",
+			"flagsDecoded": {
+				"globalPenaltyForJettisoningCargo": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 179,
@@ -2286,7 +2451,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 180,
@@ -2330,7 +2499,12 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1180"
+			"flags": "0x1180",
+			"flagsDecoded": {
+				"globalPenaltyForJettisoningCargo": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 181,
@@ -2374,7 +2548,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 182,
@@ -2418,7 +2596,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 183,
@@ -2462,7 +2644,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1000"
+			"flags": "0x1000",
+			"flagsDecoded": {
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 184,
@@ -2506,7 +2691,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 185,
@@ -2550,7 +2739,11 @@ export default {
 			"auxShipDude": 138,
 			"auxShipSyst": -6,
 			"compBitSet2": -1,
-			"flags": "0x1004"
+			"flags": "0x1004",
+			"flagsDecoded": {
+				"cantRefuse": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 186,
@@ -2594,7 +2787,11 @@ export default {
 			"auxShipDude": 176,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1040"
+			"flags": "0x1040",
+			"flagsDecoded": {
+				"applyNegative5xCompRewardOnAbort": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 187,
@@ -2638,7 +2835,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 188,
@@ -2682,7 +2883,12 @@ export default {
 			"auxShipDude": 184,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1044"
+			"flags": "0x1044",
+			"flagsDecoded": {
+				"cantRefuse": true,
+				"applyNegative5xCompRewardOnAbort": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 189,
@@ -2726,7 +2932,11 @@ export default {
 			"auxShipDude": 178,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1040"
+			"flags": "0x1040",
+			"flagsDecoded": {
+				"applyNegative5xCompRewardOnAbort": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 190,
@@ -2770,7 +2980,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 191,
@@ -2814,7 +3028,12 @@ export default {
 			"auxShipDude": 165,
 			"auxShipSyst": 154,
 			"compBitSet2": -1,
-			"flags": "0x1104"
+			"flags": "0x1104",
+			"flagsDecoded": {
+				"cantRefuse": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 192,
@@ -2858,7 +3077,12 @@ export default {
 			"auxShipDude": 179,
 			"auxShipSyst": -3,
 			"compBitSet2": -1,
-			"flags": "0x1044"
+			"flags": "0x1044",
+			"flagsDecoded": {
+				"cantRefuse": true,
+				"applyNegative5xCompRewardOnAbort": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 193,
@@ -2902,7 +3126,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1040"
+			"flags": "0x1040",
+			"flagsDecoded": {
+				"applyNegative5xCompRewardOnAbort": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 194,
@@ -2946,7 +3174,11 @@ export default {
 			"auxShipDude": 180,
 			"auxShipSyst": -1,
 			"compBitSet2": 61,
-			"flags": "0x1040"
+			"flags": "0x1040",
+			"flagsDecoded": {
+				"applyNegative5xCompRewardOnAbort": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 195,
@@ -2990,7 +3222,12 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0007"
+			"flags": "0x0007",
+			"flagsDecoded": {
+				"autoAborting": true,
+				"noDestinationArrows": true,
+				"cantRefuse": true
+			}
 		},
 		{
 			"id": 196,
@@ -3034,7 +3271,12 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0007"
+			"flags": "0x0007",
+			"flagsDecoded": {
+				"autoAborting": true,
+				"noDestinationArrows": true,
+				"cantRefuse": true
+			}
 		},
 		{
 			"id": 197,
@@ -3078,7 +3320,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0180"
+			"flags": "0x0180",
+			"flagsDecoded": {
+				"globalPenaltyForJettisoningCargo": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 198,
@@ -3122,7 +3368,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": 0,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 199,
@@ -3166,7 +3415,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 200,
@@ -3210,7 +3462,12 @@ export default {
 			"auxShipDude": 137,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1044"
+			"flags": "0x1044",
+			"flagsDecoded": {
+				"cantRefuse": true,
+				"applyNegative5xCompRewardOnAbort": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 201,
@@ -3254,7 +3511,12 @@ export default {
 			"auxShipDude": 129,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0150"
+			"flags": "0x0150",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"applyNegative5xCompRewardOnAbort": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 202,
@@ -3298,7 +3560,11 @@ export default {
 			"auxShipDude": 162,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0110"
+			"flags": "0x0110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 203,
@@ -3386,7 +3652,10 @@ export default {
 			"auxShipDude": 138,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 205,
@@ -3430,7 +3699,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0180"
+			"flags": "0x0180",
+			"flagsDecoded": {
+				"globalPenaltyForJettisoningCargo": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 206,
@@ -3474,7 +3747,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 207,
@@ -3518,7 +3794,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0180"
+			"flags": "0x0180",
+			"flagsDecoded": {
+				"globalPenaltyForJettisoningCargo": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 208,
@@ -3562,7 +3842,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0180"
+			"flags": "0x0180",
+			"flagsDecoded": {
+				"globalPenaltyForJettisoningCargo": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 209,
@@ -3606,7 +3890,11 @@ export default {
 			"auxShipDude": 182,
 			"auxShipSyst": -2,
 			"compBitSet2": -1,
-			"flags": "0x0110"
+			"flags": "0x0110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 210,
@@ -3650,7 +3938,11 @@ export default {
 			"auxShipDude": 182,
 			"auxShipSyst": -2,
 			"compBitSet2": -1,
-			"flags": "0x0110"
+			"flags": "0x0110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 211,
@@ -3694,7 +3986,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 212,
@@ -3738,7 +4033,10 @@ export default {
 			"auxShipDude": 182,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 213,
@@ -3782,7 +4080,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 214,
@@ -3826,7 +4127,11 @@ export default {
 			"auxShipDude": 182,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0110"
+			"flags": "0x0110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 215,
@@ -3870,7 +4175,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 216,
@@ -3914,7 +4222,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 217,
@@ -3958,7 +4269,10 @@ export default {
 			"auxShipDude": 159,
 			"auxShipSyst": -2,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 218,
@@ -4002,7 +4316,10 @@ export default {
 			"auxShipDude": 159,
 			"auxShipSyst": -2,
 			"compBitSet2": 79,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 219,
@@ -4046,7 +4363,10 @@ export default {
 			"auxShipDude": 183,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 220,
@@ -4090,7 +4410,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 221,
@@ -4134,7 +4457,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 222,
@@ -4178,7 +4505,10 @@ export default {
 			"auxShipDude": 138,
 			"auxShipSyst": 184,
 			"compBitSet2": -1,
-			"flags": "0x1000"
+			"flags": "0x1000",
+			"flagsDecoded": {
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 223,
@@ -4222,7 +4552,10 @@ export default {
 			"auxShipDude": 138,
 			"auxShipSyst": 156,
 			"compBitSet2": -1,
-			"flags": "0x1000"
+			"flags": "0x1000",
+			"flagsDecoded": {
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 224,
@@ -4266,7 +4599,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 225,
@@ -4310,7 +4646,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 226,
@@ -4354,7 +4693,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 227,
@@ -4530,7 +4872,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": 0,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 231,
@@ -4574,7 +4919,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 232,
@@ -4618,7 +4966,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 233,
@@ -4662,7 +5013,10 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 234,
@@ -4706,7 +5060,10 @@ export default {
 			"auxShipDude": 153,
 			"auxShipSyst": -2,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 235,
@@ -4750,7 +5107,10 @@ export default {
 			"auxShipDude": 149,
 			"auxShipSyst": 141,
 			"compBitSet2": -1,
-			"flags": "0x0100"
+			"flags": "0x0100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true
+			}
 		},
 		{
 			"id": 236,
@@ -4794,7 +5154,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 237,
@@ -4838,7 +5202,11 @@ export default {
 			"auxShipDude": -1,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 238,
@@ -4882,7 +5250,11 @@ export default {
 			"auxShipDude": 134,
 			"auxShipSyst": -2,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 239,
@@ -4926,7 +5298,12 @@ export default {
 			"auxShipDude": 173,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1110"
+			"flags": "0x1110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 240,
@@ -4970,7 +5347,12 @@ export default {
 			"auxShipDude": 159,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x1110"
+			"flags": "0x1110",
+			"flagsDecoded": {
+				"infiniteAuxShips": true,
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 241,
@@ -5014,7 +5396,11 @@ export default {
 			"auxShipDude": 182,
 			"auxShipSyst": -2,
 			"compBitSet2": -1,
-			"flags": "0x1100"
+			"flags": "0x1100",
+			"flagsDecoded": {
+				"showGreenArrowInBriefing": true,
+				"criticalMission": true
+			}
 		},
 		{
 			"id": 242,
@@ -5058,7 +5444,10 @@ export default {
 			"auxShipDude": 174,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0010"
+			"flags": "0x0010",
+			"flagsDecoded": {
+				"infiniteAuxShips": true
+			}
 		},
 		{
 			"id": 243,
@@ -5102,7 +5491,10 @@ export default {
 			"auxShipDude": 174,
 			"auxShipSyst": -1,
 			"compBitSet2": -1,
-			"flags": "0x0010"
+			"flags": "0x0010",
+			"flagsDecoded": {
+				"infiniteAuxShips": true
+			}
 		}
 	]
 }

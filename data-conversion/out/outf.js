@@ -9,8 +9,11 @@ export default {
 			"modType": 1,
 			"modVal": 128,
 			"max": 4,
+			"cost": 5000,
 			"flags": "0x0001",
-			"cost": 5000
+			"flagsDecoded": {
+				"fixedGun": true
+			}
 		},
 		{
 			"id": 129,
@@ -21,8 +24,11 @@ export default {
 			"modType": 1,
 			"modVal": 129,
 			"max": 4,
+			"cost": 30000,
 			"flags": "0x0001",
-			"cost": 30000
+			"flagsDecoded": {
+				"fixedGun": true
+			}
 		},
 		{
 			"id": 130,
@@ -33,8 +39,11 @@ export default {
 			"modType": 1,
 			"modVal": 130,
 			"max": 5,
+			"cost": 8500,
 			"flags": "0x0001",
-			"cost": 8500
+			"flagsDecoded": {
+				"fixedGun": true
+			}
 		},
 		{
 			"id": 131,
@@ -45,8 +54,8 @@ export default {
 			"modType": 1,
 			"modVal": 131,
 			"max": 2,
-			"flags": "0x0000",
-			"cost": 20000
+			"cost": 20000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 132,
@@ -57,8 +66,8 @@ export default {
 			"modType": 3,
 			"modVal": 131,
 			"max": 999,
-			"flags": "0x0000",
-			"cost": 2000
+			"cost": 2000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 133,
@@ -69,8 +78,8 @@ export default {
 			"modType": 1,
 			"modVal": 132,
 			"max": 2,
-			"flags": "0x0000",
-			"cost": 15000
+			"cost": 15000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 134,
@@ -81,8 +90,8 @@ export default {
 			"modType": 3,
 			"modVal": 132,
 			"max": 999,
-			"flags": "0x0000",
-			"cost": 3500
+			"cost": 3500,
+			"flags": "0x0000"
 		},
 		{
 			"id": 135,
@@ -93,8 +102,8 @@ export default {
 			"modType": 2,
 			"modVal": 10,
 			"max": 2,
-			"flags": "0x0000",
-			"cost": 7500
+			"cost": 7500,
+			"flags": "0x0000"
 		},
 		{
 			"id": 136,
@@ -105,8 +114,11 @@ export default {
 			"modType": 1,
 			"modVal": 133,
 			"max": 4,
+			"cost": 20000,
 			"flags": "0x0002",
-			"cost": 20000
+			"flagsDecoded": {
+				"turret": true
+			}
 		},
 		{
 			"id": 137,
@@ -117,8 +129,11 @@ export default {
 			"modType": 1,
 			"modVal": 134,
 			"max": 4,
+			"cost": 30000,
 			"flags": "0x0002",
-			"cost": 30000
+			"flagsDecoded": {
+				"turret": true
+			}
 		},
 		{
 			"id": 138,
@@ -129,8 +144,8 @@ export default {
 			"modType": 1,
 			"modVal": 146,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 1000000
+			"cost": 1000000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 139,
@@ -141,8 +156,8 @@ export default {
 			"modType": 3,
 			"modVal": 146,
 			"max": 2,
-			"flags": "0x0000",
-			"cost": 250000
+			"cost": 250000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 140,
@@ -153,8 +168,8 @@ export default {
 			"modType": 2,
 			"modVal": -15,
 			"max": 9999,
-			"flags": "0x0000",
-			"cost": 50000
+			"cost": 50000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 141,
@@ -165,8 +180,8 @@ export default {
 			"modType": 3,
 			"modVal": 136,
 			"max": 4,
-			"flags": "0x0000",
-			"cost": 700000
+			"cost": 700000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 142,
@@ -177,8 +192,8 @@ export default {
 			"modType": 3,
 			"modVal": 137,
 			"max": 4,
-			"flags": "0x0000",
-			"cost": 180000
+			"cost": 180000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 143,
@@ -189,8 +204,8 @@ export default {
 			"modType": 3,
 			"modVal": 138,
 			"max": 2,
-			"flags": "0x0000",
-			"cost": 1000000
+			"cost": 1000000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 144,
@@ -201,8 +216,11 @@ export default {
 			"modType": 1,
 			"modVal": 135,
 			"max": 4,
+			"cost": 80000,
 			"flags": "0x0001",
-			"cost": 80000
+			"flagsDecoded": {
+				"fixedGun": true
+			}
 		},
 		{
 			"id": 145,
@@ -213,8 +231,8 @@ export default {
 			"modType": 4,
 			"modVal": 15,
 			"max": 4,
-			"flags": "0x0000",
-			"cost": 90000
+			"cost": 90000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 146,
@@ -225,8 +243,8 @@ export default {
 			"modType": 5,
 			"modVal": -2,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 125000
+			"cost": 125000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 147,
@@ -237,8 +255,8 @@ export default {
 			"modType": 6,
 			"modVal": 100,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 30000
+			"cost": 30000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 148,
@@ -249,8 +267,8 @@ export default {
 			"modType": 6,
 			"modVal": 250,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 90000
+			"cost": 90000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 149,
@@ -261,8 +279,8 @@ export default {
 			"modType": 6,
 			"modVal": 500,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 1000000
+			"cost": 1000000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 150,
@@ -273,8 +291,8 @@ export default {
 			"modType": 7,
 			"modVal": 150,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 100000
+			"cost": 100000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 151,
@@ -285,8 +303,8 @@ export default {
 			"modType": 8,
 			"modVal": 150,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 150000
+			"cost": 150000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 152,
@@ -297,8 +315,8 @@ export default {
 			"modType": 9,
 			"modVal": 1,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 180000
+			"cost": 180000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 153,
@@ -309,8 +327,8 @@ export default {
 			"modType": 12,
 			"modVal": 100,
 			"max": 2,
-			"flags": "0x0000",
-			"cost": 1500
+			"cost": 1500,
+			"flags": "0x0000"
 		},
 		{
 			"id": 154,
@@ -321,8 +339,8 @@ export default {
 			"modType": 11,
 			"modVal": 1,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 5000
+			"cost": 5000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 155,
@@ -333,8 +351,8 @@ export default {
 			"modType": 13,
 			"modVal": 0,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 8000
+			"cost": 8000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 156,
@@ -345,8 +363,8 @@ export default {
 			"modType": 14,
 			"modVal": 0,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 11000
+			"cost": 11000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 157,
@@ -357,8 +375,8 @@ export default {
 			"modType": 15,
 			"modVal": 0,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 10000
+			"cost": 10000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 158,
@@ -369,8 +387,8 @@ export default {
 			"modType": 10,
 			"modVal": 0,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 30000
+			"cost": 30000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 159,
@@ -381,8 +399,8 @@ export default {
 			"modType": 1,
 			"modVal": 139,
 			"max": 2,
-			"flags": "0x0000",
-			"cost": 20000
+			"cost": 20000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 160,
@@ -393,8 +411,8 @@ export default {
 			"modType": 3,
 			"modVal": 139,
 			"max": 999,
-			"flags": "0x0000",
-			"cost": 1000
+			"cost": 1000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 161,
@@ -405,8 +423,8 @@ export default {
 			"modType": 1,
 			"modVal": 140,
 			"max": 2,
-			"flags": "0x0000",
-			"cost": 20000
+			"cost": 20000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 162,
@@ -417,8 +435,8 @@ export default {
 			"modType": 3,
 			"modVal": 140,
 			"max": 999,
-			"flags": "0x0000",
-			"cost": 15000
+			"cost": 15000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 163,
@@ -429,8 +447,8 @@ export default {
 			"modType": 1,
 			"modVal": 141,
 			"max": 2,
-			"flags": "0x0000",
-			"cost": 20000
+			"cost": 20000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 164,
@@ -441,8 +459,8 @@ export default {
 			"modType": 3,
 			"modVal": 141,
 			"max": 999,
-			"flags": "0x0000",
-			"cost": 175
+			"cost": 175,
+			"flags": "0x0000"
 		},
 		{
 			"id": 165,
@@ -453,8 +471,8 @@ export default {
 			"modType": 16,
 			"modVal": 2,
 			"max": 999,
-			"flags": "0x0000",
-			"cost": 2500
+			"cost": 2500,
+			"flags": "0x0000"
 		},
 		{
 			"id": 166,
@@ -465,8 +483,11 @@ export default {
 			"modType": 1,
 			"modVal": 142,
 			"max": 1,
+			"cost": 1000000,
 			"flags": "0x0004",
-			"cost": 1000000
+			"flagsDecoded": {
+				"staysWhenTradeShips": true
+			}
 		},
 		{
 			"id": 167,
@@ -477,8 +498,11 @@ export default {
 			"modType": 17,
 			"modVal": 1,
 			"max": 1,
+			"cost": 1000000,
 			"flags": "0x0004",
-			"cost": 1000000
+			"flagsDecoded": {
+				"staysWhenTradeShips": true
+			}
 		},
 		{
 			"id": 168,
@@ -489,8 +513,8 @@ export default {
 			"modType": 18,
 			"modVal": 80,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 25000
+			"cost": 25000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 169,
@@ -501,8 +525,8 @@ export default {
 			"modType": 19,
 			"modVal": 0,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 5000
+			"cost": 5000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 170,
@@ -513,8 +537,8 @@ export default {
 			"modType": 1,
 			"modVal": 138,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 0
+			"cost": 0,
+			"flags": "0x0000"
 		},
 		{
 			"id": 171,
@@ -525,8 +549,8 @@ export default {
 			"modType": 1,
 			"modVal": 143,
 			"max": 0,
-			"flags": "0x0000",
-			"cost": 0
+			"cost": 0,
+			"flags": "0x0000"
 		},
 		{
 			"id": 172,
@@ -537,8 +561,8 @@ export default {
 			"modType": 1,
 			"modVal": 144,
 			"max": 0,
-			"flags": "0x0000",
-			"cost": 0
+			"cost": 0,
+			"flags": "0x0000"
 		},
 		{
 			"id": 173,
@@ -549,8 +573,11 @@ export default {
 			"modType": 1,
 			"modVal": 149,
 			"max": 1,
+			"cost": 1000000,
 			"flags": "0x0004",
-			"cost": 1000000
+			"flagsDecoded": {
+				"staysWhenTradeShips": true
+			}
 		},
 		{
 			"id": 174,
@@ -561,8 +588,8 @@ export default {
 			"modType": 1,
 			"modVal": 150,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 35000
+			"cost": 35000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 175,
@@ -573,8 +600,8 @@ export default {
 			"modType": 3,
 			"modVal": 150,
 			"max": 50,
-			"flags": "0x0000",
-			"cost": 250
+			"cost": 250,
+			"flags": "0x0000"
 		},
 		{
 			"id": 176,
@@ -585,8 +612,11 @@ export default {
 			"modType": 1,
 			"modVal": 191,
 			"max": 1,
+			"cost": 9999999,
 			"flags": "0x0004",
-			"cost": 9999999
+			"flagsDecoded": {
+				"staysWhenTradeShips": true
+			}
 		},
 		{
 			"id": 177,
@@ -597,8 +627,8 @@ export default {
 			"modType": 1,
 			"modVal": 136,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 0
+			"cost": 0,
+			"flags": "0x0000"
 		},
 		{
 			"id": 178,
@@ -609,8 +639,8 @@ export default {
 			"modType": 1,
 			"modVal": 137,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 0
+			"cost": 0,
+			"flags": "0x0000"
 		},
 		{
 			"id": 179,
@@ -621,8 +651,8 @@ export default {
 			"modType": 1,
 			"modVal": 145,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 0
+			"cost": 0,
+			"flags": "0x0000"
 		},
 		{
 			"id": 180,
@@ -633,8 +663,8 @@ export default {
 			"modType": 21,
 			"modVal": 128,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 2500000
+			"cost": 2500000,
+			"flags": "0x0000"
 		},
 		{
 			"id": 181,
@@ -645,8 +675,8 @@ export default {
 			"modType": 20,
 			"modVal": -1,
 			"max": 1,
-			"flags": "0x0000",
-			"cost": 3000
+			"cost": 3000,
+			"flags": "0x0000"
 		}
 	]
 }

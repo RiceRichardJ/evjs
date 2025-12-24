@@ -12,7 +12,15 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 25,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"attackPlayerInNonAlliedSystems": true,
+				"retreatAt25Shields": true,
+				"persShipsNoEscapePod": true,
+				"warshipsTakeBribes": true,
+				"freightersTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 129,
@@ -26,7 +34,12 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 25,
 			"shootPenalty": 0,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"warshipsTakeBribes": true,
+				"freightersTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 130,
@@ -40,7 +53,16 @@ export default {
 			"boardPenalty": 5,
 			"killPenalty": 10,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"xenophobic": true,
+				"retreatAt25Shields": true,
+				"persShipsNoEscapePod": true,
+				"warshipsTakeBribes": true,
+				"plunderBeforeDestroying": true,
+				"planetsTakeBribes": true,
+				"higherBribeDemands": true
+			}
 		},
 		{
 			"id": 131,
@@ -54,7 +76,12 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 20,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"retreatAt25Shields": true,
+				"warshipsTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 132,
@@ -68,7 +95,12 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 20,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"retreatAt25Shields": true,
+				"warshipsTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 133,
@@ -82,7 +114,14 @@ export default {
 			"boardPenalty": 15,
 			"killPenalty": 20,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"attackPlayerInNonAlliedSystems": true,
+				"retreatAt25Shields": true,
+				"persShipsNoEscapePod": true,
+				"warshipsTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 134,
@@ -96,7 +135,10 @@ export default {
 			"boardPenalty": 0,
 			"killPenalty": 0,
 			"shootPenalty": 0,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"shipsStartDisabled": true
+			}
 		},
 		{
 			"id": 135,
@@ -110,7 +152,14 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 25,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"retreatAt25Shields": true,
+				"persShipsNoEscapePod": true,
+				"warshipsTakeBribes": true,
+				"freightersTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 136,
@@ -138,7 +187,12 @@ export default {
 			"boardPenalty": 15,
 			"killPenalty": 20,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"retreatAt25Shields": true,
+				"persShipsNoEscapePod": true,
+				"warshipsTakeBribes": true
+			}
 		},
 		{
 			"id": 138,
@@ -180,7 +234,11 @@ export default {
 			"boardPenalty": 9999,
 			"killPenalty": 9999,
 			"shootPenalty": 9999,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"xenophobic": true,
+				"cantHail": true
+			}
 		},
 		{
 			"id": 141,
@@ -194,7 +252,11 @@ export default {
 			"boardPenalty": 0,
 			"killPenalty": 0,
 			"shootPenalty": 0,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"cantHail": true,
+				"shipsStartDisabled": true
+			}
 		},
 		{
 			"id": 142,
@@ -222,7 +284,15 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 25,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"alwaysAttacksPlayer": true,
+				"retreatAt25Shields": true,
+				"persShipsNoEscapePod": true,
+				"warshipsTakeBribes": true,
+				"freightersTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 144,
@@ -236,7 +306,12 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 25,
 			"shootPenalty": 0,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"warshipsTakeBribes": true,
+				"freightersTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 145,
@@ -250,7 +325,14 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 25,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"retreatAt25Shields": true,
+				"persShipsNoEscapePod": true,
+				"warshipsTakeBribes": true,
+				"freightersTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 146,
@@ -264,7 +346,13 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 25,
 			"shootPenalty": 0,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"alwaysAttacksPlayer": true,
+				"warshipsTakeBribes": true,
+				"freightersTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 147,
@@ -278,7 +366,11 @@ export default {
 			"boardPenalty": 15,
 			"killPenalty": 20,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"alwaysAttacksPlayer": true,
+				"ignoreInDoGoodSamaritan": true
+			}
 		},
 		{
 			"id": 148,
@@ -292,7 +384,15 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 25,
 			"shootPenalty": 3,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"alwaysAttacksPlayer": true,
+				"retreatAt25Shields": true,
+				"persShipsNoEscapePod": true,
+				"warshipsTakeBribes": true,
+				"freightersTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 149,
@@ -306,7 +406,16 @@ export default {
 			"boardPenalty": 0,
 			"killPenalty": 0,
 			"shootPenalty": 0,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"attackPlayerInNonAlliedSystems": true,
+				"retreatAt25Shields": true,
+				"ignoreInDoGoodSamaritan": true,
+				"persShipsNoEscapePod": true,
+				"warshipsTakeBribes": true,
+				"freightersTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		},
 		{
 			"id": 150,
@@ -320,7 +429,13 @@ export default {
 			"boardPenalty": 9999,
 			"killPenalty": 9999,
 			"shootPenalty": 9999,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"xenophobic": true,
+				"alwaysAttacksPlayer": true,
+				"persShipsNoEscapePod": true,
+				"cantHail": true
+			}
 		},
 		{
 			"id": 152,
@@ -334,7 +449,10 @@ export default {
 			"boardPenalty": 0,
 			"killPenalty": 0,
 			"shootPenalty": 0,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"neverAttacksPlayer": true
+			}
 		},
 		{
 			"id": 153,
@@ -348,7 +466,13 @@ export default {
 			"boardPenalty": 10,
 			"killPenalty": 25,
 			"shootPenalty": 0,
-			"initialRec": 0
+			"initialRec": 0,
+			"flagsDecoded": {
+				"persShipsNoEscapePod": true,
+				"warshipsTakeBribes": true,
+				"freightersTakeBribes": true,
+				"planetsTakeBribes": true
+			}
 		}
 	]
 }

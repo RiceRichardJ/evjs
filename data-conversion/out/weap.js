@@ -34,7 +34,10 @@ export default {
 			"impact": 0,
 			"proxRadius": 0,
 			"blastRadius": 0,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 130,
@@ -71,7 +74,10 @@ export default {
 			"impact": 100,
 			"proxRadius": 3,
 			"blastRadius": 8,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 132,
@@ -90,7 +96,10 @@ export default {
 			"impact": 30,
 			"proxRadius": 3,
 			"blastRadius": 5,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 133,
@@ -144,7 +153,10 @@ export default {
 			"impact": 0,
 			"proxRadius": 0,
 			"blastRadius": 0,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 136,
@@ -163,7 +175,10 @@ export default {
 			"impact": 0,
 			"proxRadius": 0,
 			"blastRadius": 0,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 137,
@@ -182,7 +197,11 @@ export default {
 			"impact": 0,
 			"proxRadius": 0,
 			"blastRadius": 0,
-			"flags": "0x0042"
+			"flags": "0x0042",
+			"flagsDecoded": {
+				"secondaryTrigger": true,
+				"fireSimultaneously": true
+			}
 		},
 		{
 			"id": 138,
@@ -201,7 +220,10 @@ export default {
 			"impact": 0,
 			"proxRadius": 0,
 			"blastRadius": 0,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 139,
@@ -220,7 +242,10 @@ export default {
 			"impact": 250,
 			"proxRadius": 20,
 			"blastRadius": 25,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 140,
@@ -239,7 +264,10 @@ export default {
 			"impact": 750,
 			"proxRadius": 40,
 			"blastRadius": 55,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 141,
@@ -258,7 +286,10 @@ export default {
 			"impact": 20,
 			"proxRadius": 12,
 			"blastRadius": 12,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 142,
@@ -277,7 +308,10 @@ export default {
 			"impact": 256,
 			"proxRadius": 3,
 			"blastRadius": 1,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 143,
@@ -332,7 +366,10 @@ export default {
 			"impact": 0,
 			"proxRadius": 0,
 			"blastRadius": 0,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 146,
@@ -351,7 +388,10 @@ export default {
 			"impact": 0,
 			"proxRadius": 0,
 			"blastRadius": 0,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		},
 		{
 			"id": 147,
@@ -388,7 +428,12 @@ export default {
 			"impact": 25,
 			"proxRadius": 3,
 			"blastRadius": 8,
-			"flags": "0x0043"
+			"flags": "0x0043",
+			"flagsDecoded": {
+				"spinGraphic": true,
+				"secondaryTrigger": true,
+				"fireSimultaneously": true
+			}
 		},
 		{
 			"id": 149,
@@ -406,7 +451,11 @@ export default {
 			"impact": -1,
 			"proxRadius": 3,
 			"blastRadius": 1,
-			"flags": "0x0012"
+			"flags": "0x0012",
+			"flagsDecoded": {
+				"secondaryTrigger": true,
+				"loopSound": true
+			}
 		},
 		{
 			"id": 150,
@@ -425,7 +474,12 @@ export default {
 			"impact": 0,
 			"proxRadius": 0,
 			"blastRadius": 0,
-			"flags": "0x0023"
+			"flags": "0x0023",
+			"flagsDecoded": {
+				"spinGraphic": true,
+				"secondaryTrigger": true,
+				"decoyForMissiles": true
+			}
 		},
 		{
 			"id": 151,
@@ -444,7 +498,11 @@ export default {
 			"impact": 0,
 			"proxRadius": 0,
 			"blastRadius": 0,
-			"flags": "0x0042"
+			"flags": "0x0042",
+			"flagsDecoded": {
+				"secondaryTrigger": true,
+				"fireSimultaneously": true
+			}
 		},
 		{
 			"id": 152,
@@ -480,7 +538,10 @@ export default {
 			"impact": 400,
 			"proxRadius": 0,
 			"blastRadius": 100,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"secondaryTrigger": true
+			}
 		}
 	]
 }

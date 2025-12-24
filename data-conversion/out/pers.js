@@ -18,7 +18,11 @@ export default {
 			"commQuote": 1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 129,
@@ -38,7 +42,11 @@ export default {
 			"commQuote": 1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 130,
@@ -58,7 +66,11 @@ export default {
 			"commQuote": 1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 131,
@@ -78,7 +90,11 @@ export default {
 			"commQuote": 2,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 132,
@@ -98,7 +114,11 @@ export default {
 			"commQuote": 2,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 133,
@@ -118,7 +138,11 @@ export default {
 			"commQuote": 3,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 134,
@@ -138,7 +162,11 @@ export default {
 			"commQuote": 3,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 135,
@@ -158,7 +186,11 @@ export default {
 			"commQuote": 3,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 136,
@@ -178,7 +210,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 4,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 137,
@@ -198,7 +235,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 4,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 138,
@@ -218,7 +260,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 3,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 139,
@@ -238,7 +285,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 4,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 140,
@@ -258,7 +310,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 3,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 141,
@@ -278,7 +335,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 4,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 142,
@@ -298,7 +360,12 @@ export default {
 			"commQuote": 6,
 			"hailQuote": 3,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 143,
@@ -318,7 +385,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 4,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 144,
@@ -338,7 +410,12 @@ export default {
 			"commQuote": 6,
 			"hailQuote": 3,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 145,
@@ -358,7 +435,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 4,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 146,
@@ -378,7 +460,12 @@ export default {
 			"commQuote": 6,
 			"hailQuote": 3,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 147,
@@ -398,7 +485,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 3,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 148,
@@ -418,7 +510,12 @@ export default {
 			"commQuote": 6,
 			"hailQuote": 4,
 			"linkMission": -1,
-			"flags": "0x000B"
+			"flags": "0x000B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 149,
@@ -438,7 +535,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 3,
 			"linkMission": -1,
-			"flags": "0x0008"
+			"flags": "0x0008",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 150,
@@ -458,7 +558,10 @@ export default {
 			"commQuote": 6,
 			"hailQuote": 4,
 			"linkMission": -1,
-			"flags": "0x0008"
+			"flags": "0x0008",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 151,
@@ -478,7 +581,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 3,
 			"linkMission": -1,
-			"flags": "0x0008"
+			"flags": "0x0008",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 152,
@@ -498,7 +604,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 153,
@@ -518,7 +628,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 154,
@@ -538,7 +652,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 155,
@@ -558,7 +676,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 156,
@@ -578,7 +700,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 157,
@@ -598,7 +724,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 158,
@@ -618,7 +748,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 159,
@@ -638,7 +772,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 160,
@@ -658,7 +796,11 @@ export default {
 			"commQuote": 5,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 161,
@@ -678,7 +820,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 162,
@@ -698,7 +844,11 @@ export default {
 			"commQuote": 5,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 163,
@@ -718,7 +868,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 164,
@@ -738,7 +892,11 @@ export default {
 			"commQuote": 5,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 165,
@@ -758,7 +916,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 166,
@@ -778,7 +940,11 @@ export default {
 			"commQuote": 5,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 167,
@@ -798,7 +964,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 168,
@@ -818,7 +988,11 @@ export default {
 			"commQuote": 5,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 169,
@@ -838,7 +1012,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 170,
@@ -858,7 +1036,11 @@ export default {
 			"commQuote": 5,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 171,
@@ -878,7 +1060,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 172,
@@ -898,7 +1084,11 @@ export default {
 			"commQuote": 5,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 173,
@@ -918,7 +1108,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 6,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 174,
@@ -938,7 +1132,11 @@ export default {
 			"commQuote": 5,
 			"hailQuote": 5,
 			"linkMission": -1,
-			"flags": "0x000C"
+			"flags": "0x000C",
+			"flagsDecoded": {
+				"hailQuoteOnlyWhenGrudge": true,
+				"hailQuoteOnlyWhenLikesPlayer": true
+			}
 		},
 		{
 			"id": 175,
@@ -958,7 +1156,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 176,
@@ -978,7 +1180,12 @@ export default {
 			"commQuote": 1,
 			"hailQuote": 7,
 			"linkMission": -1,
-			"flags": "0x0013"
+			"flags": "0x0013",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 177,
@@ -998,7 +1205,12 @@ export default {
 			"commQuote": 2,
 			"hailQuote": 8,
 			"linkMission": -1,
-			"flags": "0x0013"
+			"flags": "0x0013",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 178,
@@ -1018,7 +1230,12 @@ export default {
 			"commQuote": 3,
 			"hailQuote": 9,
 			"linkMission": -1,
-			"flags": "0x0013"
+			"flags": "0x0013",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 179,
@@ -1038,7 +1255,12 @@ export default {
 			"commQuote": 1,
 			"hailQuote": 7,
 			"linkMission": -1,
-			"flags": "0x0013"
+			"flags": "0x0013",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 180,
@@ -1058,7 +1280,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 181,
@@ -1078,7 +1304,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 182,
@@ -1098,7 +1328,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 183,
@@ -1118,7 +1352,11 @@ export default {
 			"commQuote": 9,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 184,
@@ -1138,7 +1376,11 @@ export default {
 			"commQuote": 7,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 185,
@@ -1158,7 +1400,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 186,
@@ -1178,7 +1424,11 @@ export default {
 			"commQuote": 10,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 187,
@@ -1198,7 +1448,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 188,
@@ -1218,7 +1472,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 189,
@@ -1238,7 +1496,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 190,
@@ -1258,7 +1520,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 191,
@@ -1278,7 +1544,11 @@ export default {
 			"commQuote": 13,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 192,
@@ -1298,7 +1568,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 193,
@@ -1318,7 +1592,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 194,
@@ -1338,7 +1616,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 195,
@@ -1358,7 +1643,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 196,
@@ -1378,7 +1670,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 197,
@@ -1398,7 +1697,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 198,
@@ -1418,7 +1724,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 199,
@@ -1438,7 +1751,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 200,
@@ -1458,7 +1778,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 201,
@@ -1478,7 +1805,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 202,
@@ -1498,7 +1832,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 203,
@@ -1518,7 +1859,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 204,
@@ -1538,7 +1886,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 205,
@@ -1558,7 +1913,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 206,
@@ -1578,7 +1940,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 207,
@@ -1598,7 +1967,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 208,
@@ -1618,7 +1994,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 209,
@@ -1638,7 +2021,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 210,
@@ -1658,7 +2048,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 211,
@@ -1678,7 +2075,14 @@ export default {
 			"commQuote": 12,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 212,
@@ -1698,7 +2102,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 213,
@@ -1718,7 +2129,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 214,
@@ -1738,7 +2156,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 215,
@@ -1758,7 +2183,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 216,
@@ -1778,7 +2210,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 217,
@@ -1798,7 +2237,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 1,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 218,
@@ -1818,7 +2264,14 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 2,
 			"linkMission": -1,
-			"flags": "-0x7F75"
+			"flags": "-0x7F75",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"showDisasterInfoWhenHailing": true
+			}
 		},
 		{
 			"id": 219,
@@ -1838,7 +2291,12 @@ export default {
 			"commQuote": 11,
 			"hailQuote": 23,
 			"linkMission": -1,
-			"flags": "0x0013"
+			"flags": "0x0013",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 220,
@@ -1858,7 +2316,11 @@ export default {
 			"commQuote": 4,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 221,
@@ -1878,7 +2340,11 @@ export default {
 			"commQuote": 4,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 222,
@@ -1898,7 +2364,11 @@ export default {
 			"commQuote": 4,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 223,
@@ -1918,7 +2388,11 @@ export default {
 			"commQuote": 4,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 224,
@@ -2138,7 +2612,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 10,
 			"linkMission": -1,
-			"flags": "0x0011"
+			"flags": "0x0011",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 235,
@@ -2158,7 +2636,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 11,
 			"linkMission": -1,
-			"flags": "0x0011"
+			"flags": "0x0011",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 236,
@@ -2178,7 +2660,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 10,
 			"linkMission": -1,
-			"flags": "0x0011"
+			"flags": "0x0011",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 237,
@@ -2198,7 +2684,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 11,
 			"linkMission": -1,
-			"flags": "0x0011"
+			"flags": "0x0011",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 238,
@@ -2218,7 +2708,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 10,
 			"linkMission": -1,
-			"flags": "0x0011"
+			"flags": "0x0011",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 239,
@@ -2238,7 +2732,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 11,
 			"linkMission": -1,
-			"flags": "0x0011"
+			"flags": "0x0011",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 240,
@@ -2258,7 +2756,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 10,
 			"linkMission": -1,
-			"flags": "0x0011"
+			"flags": "0x0011",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 241,
@@ -2278,7 +2780,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 11,
 			"linkMission": -1,
-			"flags": "0x0011"
+			"flags": "0x0011",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"hailQuoteWhenBeginsAttack": true
+			}
 		},
 		{
 			"id": 242,
@@ -2298,7 +2804,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 12,
 			"linkMission": 195,
-			"flags": "0x0320"
+			"flags": "0x0320",
+			"flagsDecoded": {
+				"hailQuoteWhenDisabled": true,
+				"deactivateAfterAcceptingLinkMission": true,
+				"offerLinkMissionWhenBoarding": true
+			}
 		},
 		{
 			"id": 243,
@@ -2318,7 +2829,12 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 13,
 			"linkMission": 196,
-			"flags": "0x0320"
+			"flags": "0x0320",
+			"flagsDecoded": {
+				"hailQuoteWhenDisabled": true,
+				"deactivateAfterAcceptingLinkMission": true,
+				"offerLinkMissionWhenBoarding": true
+			}
 		},
 		{
 			"id": 244,
@@ -2338,7 +2854,13 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 14,
 			"linkMission": 195,
-			"flags": "0x03A0"
+			"flags": "0x03A0",
+			"flagsDecoded": {
+				"hailQuoteWhenDisabled": true,
+				"onlyShowQuoteOnce": true,
+				"deactivateAfterAcceptingLinkMission": true,
+				"offerLinkMissionWhenBoarding": true
+			}
 		},
 		{
 			"id": 245,
@@ -2358,7 +2880,13 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 15,
 			"linkMission": 196,
-			"flags": "0x03A0"
+			"flags": "0x03A0",
+			"flagsDecoded": {
+				"hailQuoteWhenDisabled": true,
+				"onlyShowQuoteOnce": true,
+				"deactivateAfterAcceptingLinkMission": true,
+				"offerLinkMissionWhenBoarding": true
+			}
 		},
 		{
 			"id": 246,
@@ -2378,7 +2906,13 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 16,
 			"linkMission": 195,
-			"flags": "0x03A0"
+			"flags": "0x03A0",
+			"flagsDecoded": {
+				"hailQuoteWhenDisabled": true,
+				"onlyShowQuoteOnce": true,
+				"deactivateAfterAcceptingLinkMission": true,
+				"offerLinkMissionWhenBoarding": true
+			}
 		},
 		{
 			"id": 247,
@@ -2398,7 +2932,13 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 17,
 			"linkMission": 196,
-			"flags": "0x03A0"
+			"flags": "0x03A0",
+			"flagsDecoded": {
+				"hailQuoteWhenDisabled": true,
+				"onlyShowQuoteOnce": true,
+				"deactivateAfterAcceptingLinkMission": true,
+				"offerLinkMissionWhenBoarding": true
+			}
 		},
 		{
 			"id": 248,
@@ -2418,7 +2958,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 18,
 			"linkMission": 197,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 249,
@@ -2438,7 +2987,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 18,
 			"linkMission": 197,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 250,
@@ -2458,7 +3016,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 18,
 			"linkMission": 197,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 251,
@@ -2478,7 +3045,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 18,
 			"linkMission": 197,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 252,
@@ -2498,7 +3074,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 18,
 			"linkMission": 197,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 253,
@@ -2518,7 +3103,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 18,
 			"linkMission": 197,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 254,
@@ -2538,7 +3132,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 18,
 			"linkMission": 197,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 255,
@@ -2558,7 +3161,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 18,
 			"linkMission": 197,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 256,
@@ -2578,7 +3190,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 18,
 			"linkMission": 197,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 257,
@@ -2598,7 +3219,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 18,
 			"linkMission": 197,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 258,
@@ -2618,7 +3248,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 259,
@@ -2638,7 +3277,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 260,
@@ -2658,7 +3306,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 261,
@@ -2678,7 +3335,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 262,
@@ -2698,7 +3364,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 263,
@@ -2718,7 +3393,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 264,
@@ -2738,7 +3422,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 265,
@@ -2758,7 +3451,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 266,
@@ -2778,7 +3480,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 267,
@@ -2798,7 +3509,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 268,
@@ -2818,7 +3538,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 269,
@@ -2838,7 +3567,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 270,
@@ -2858,7 +3596,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 271,
@@ -2878,7 +3625,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 272,
@@ -2898,7 +3654,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 273,
@@ -2918,7 +3683,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 274,
@@ -2938,7 +3712,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 275,
@@ -2958,7 +3741,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 276,
@@ -2978,7 +3770,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 277,
@@ -2998,7 +3799,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 19,
 			"linkMission": 198,
-			"flags": "0x4C8B"
+			"flags": "0x4C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType3": true
+			}
 		},
 		{
 			"id": 278,
@@ -3018,7 +3828,15 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 20,
 			"linkMission": 199,
-			"flags": "0x14CA"
+			"flags": "0x14CA",
+			"flagsDecoded": {
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"replaceWithThisShipWhenLinkMissionAccepted": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 279,
@@ -3038,7 +3856,15 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 20,
 			"linkMission": 199,
-			"flags": "0x14CA"
+			"flags": "0x14CA",
+			"flagsDecoded": {
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"replaceWithThisShipWhenLinkMissionAccepted": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 280,
@@ -3058,7 +3884,15 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 20,
 			"linkMission": 199,
-			"flags": "0x14CA"
+			"flags": "0x14CA",
+			"flagsDecoded": {
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"replaceWithThisShipWhenLinkMissionAccepted": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 281,
@@ -3078,7 +3912,15 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 20,
 			"linkMission": 199,
-			"flags": "0x14CA"
+			"flags": "0x14CA",
+			"flagsDecoded": {
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"replaceWithThisShipWhenLinkMissionAccepted": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 282,
@@ -3098,7 +3940,15 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 20,
 			"linkMission": 199,
-			"flags": "0x14CA"
+			"flags": "0x14CA",
+			"flagsDecoded": {
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"replaceWithThisShipWhenLinkMissionAccepted": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 283,
@@ -3118,7 +3968,15 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 20,
 			"linkMission": 199,
-			"flags": "0x14CA"
+			"flags": "0x14CA",
+			"flagsDecoded": {
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"replaceWithThisShipWhenLinkMissionAccepted": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 284,
@@ -3138,7 +3996,15 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 20,
 			"linkMission": 199,
-			"flags": "0x14CA"
+			"flags": "0x14CA",
+			"flagsDecoded": {
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"replaceWithThisShipWhenLinkMissionAccepted": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 285,
@@ -3158,7 +4024,15 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 20,
 			"linkMission": 199,
-			"flags": "0x14CA"
+			"flags": "0x14CA",
+			"flagsDecoded": {
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"replaceWithThisShipWhenLinkMissionAccepted": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 286,
@@ -3178,7 +4052,15 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 20,
 			"linkMission": 199,
-			"flags": "0x14CA"
+			"flags": "0x14CA",
+			"flagsDecoded": {
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"replaceWithThisShipWhenLinkMissionAccepted": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 287,
@@ -3198,7 +4080,15 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 20,
 			"linkMission": 199,
-			"flags": "0x14CA"
+			"flags": "0x14CA",
+			"flagsDecoded": {
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"replaceWithThisShipWhenLinkMissionAccepted": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 288,
@@ -3218,7 +4108,13 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": 201,
-			"flags": "0x1700"
+			"flags": "0x1700",
+			"flagsDecoded": {
+				"deactivateAfterAcceptingLinkMission": true,
+				"offerLinkMissionWhenBoarding": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 289,
@@ -3238,7 +4134,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 290,
@@ -3258,7 +4163,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 291,
@@ -3278,7 +4192,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 292,
@@ -3298,7 +4221,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 293,
@@ -3318,7 +4250,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 294,
@@ -3338,7 +4279,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 295,
@@ -3358,7 +4308,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 296,
@@ -3378,7 +4337,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 297,
@@ -3398,7 +4366,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 298,
@@ -3418,7 +4395,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 299,
@@ -3438,7 +4424,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 300,
@@ -3458,7 +4453,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 301,
@@ -3478,7 +4482,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 302,
@@ -3498,7 +4511,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 303,
@@ -3518,7 +4540,16 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 21,
 			"linkMission": 202,
-			"flags": "0x1C8B"
+			"flags": "0x1C8B",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true,
+				"hailQuoteOnlyWhenLikesPlayer": true,
+				"onlyShowQuoteOnce": true,
+				"dontShowQuoteWhenLinkMissionUnavailable": true,
+				"leaveAfterAcceptingLinkMission": true,
+				"dontOfferBasedOnPlayerShipType1": true
+			}
 		},
 		{
 			"id": 304,
@@ -4018,7 +5049,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 329,
@@ -4038,7 +5073,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 330,
@@ -4058,7 +5097,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 331,
@@ -4078,7 +5121,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 332,
@@ -4098,7 +5145,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 333,
@@ -4118,7 +5169,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 334,
@@ -4138,7 +5193,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 335,
@@ -4158,7 +5217,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 336,
@@ -4178,7 +5241,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 337,
@@ -4198,7 +5265,11 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0003"
+			"flags": "0x0003",
+			"flagsDecoded": {
+				"holdGrudgeIfAttacked": true,
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 338,
@@ -4218,7 +5289,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 339,
@@ -4238,7 +5312,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 340,
@@ -4258,7 +5335,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 341,
@@ -4278,7 +5358,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 342,
@@ -4298,7 +5381,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 343,
@@ -4318,7 +5404,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 344,
@@ -4338,7 +5427,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 345,
@@ -4358,7 +5450,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"usesEscapePod": true
+			}
 		},
 		{
 			"id": 638,
@@ -4378,7 +5473,10 @@ export default {
 			"commQuote": -1,
 			"hailQuote": 22,
 			"linkMission": -1,
-			"flags": "0x0080"
+			"flags": "0x0080",
+			"flagsDecoded": {
+				"onlyShowQuoteOnce": true
+			}
 		},
 		{
 			"id": 639,
@@ -4398,7 +5496,10 @@ export default {
 			"commQuote": 8,
 			"hailQuote": -1,
 			"linkMission": -1,
-			"flags": "0x0002"
+			"flags": "0x0002",
+			"flagsDecoded": {
+				"usesEscapePod": true
+			}
 		}
 	]
 }

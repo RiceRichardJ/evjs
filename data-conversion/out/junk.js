@@ -126,7 +126,10 @@ export default {
 			"soldAt": 198,
 			"boughtAt": -1,
 			"basePrice": 10,
-			"flags": "0x0001"
+			"flags": "0x0001",
+			"flagsDecoded": {
+				"tribbles": true
+			}
 		},
 		{
 			"id": 144,

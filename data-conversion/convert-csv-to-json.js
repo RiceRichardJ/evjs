@@ -496,6 +496,178 @@ function decodeInfoTypes(flags) {
   return types;
 }
 
+// Helper to decode weapon flags (wëap.MiscFlags)
+function decodeWeapFlags(flags) {
+  if (!flags || flags === '0x0000') return null;
+
+  const hexVal = typeof flags === 'string' && flags.startsWith('0x')
+    ? parseInt(flags, 16)
+    : parseInt(flags);
+
+  const decoded = {};
+  if (hexVal & 0x0001) decoded.spinGraphic = true;
+  if (hexVal & 0x0002) decoded.secondaryTrigger = true;
+  if (hexVal & 0x0010) decoded.loopSound = true;
+  if (hexVal & 0x0020) decoded.decoyForMissiles = true;
+  if (hexVal & 0x0040) decoded.fireSimultaneously = true;
+  if (hexVal & 0x0100) decoded.blastDoesntHurtPlayer = true;
+
+  return Object.keys(decoded).length > 0 ? decoded : null;
+}
+
+// Helper to decode government flags (gövt.Flags)
+function decodeGovtFlags(flags) {
+  if (!flags || flags === '0x0000') return null;
+
+  const hexVal = typeof flags === 'string' && flags.startsWith('0x')
+    ? parseInt(flags, 16)
+    : parseInt(flags);
+
+  const decoded = {};
+  if (hexVal & 0x0001) decoded.xenophobic = true;
+  if (hexVal & 0x0002) decoded.attackPlayerInNonAlliedSystems = true;
+  if (hexVal & 0x0004) decoded.alwaysAttacksPlayer = true;
+  if (hexVal & 0x0008) decoded.neverAttacksPlayer = true;
+  if (hexVal & 0x0010) decoded.retreatAt25Shields = true;
+  if (hexVal & 0x0020) decoded.ignoreInDoGoodSamaritan = true;
+  if (hexVal & 0x0100) decoded.persShipsNoEscapePod = true;
+  if (hexVal & 0x0200) decoded.warshipsTakeBribes = true;
+  if (hexVal & 0x0400) decoded.cantHail = true;
+  if (hexVal & 0x0800) decoded.shipsStartDisabled = true;
+  if (hexVal & 0x1000) decoded.plunderBeforeDestroying = true;
+  if (hexVal & 0x2000) decoded.freightersTakeBribes = true;
+  if (hexVal & 0x4000) decoded.planetsTakeBribes = true;
+  if (hexVal & 0x8000) decoded.higherBribeDemands = true;
+
+  return Object.keys(decoded).length > 0 ? decoded : null;
+}
+
+// Helper to decode outfit flags (oütf.Flags)
+function decodeOutfFlags(flags) {
+  if (!flags || flags === '0x0000') return null;
+
+  const hexVal = typeof flags === 'string' && flags.startsWith('0x')
+    ? parseInt(flags, 16)
+    : parseInt(flags);
+
+  const decoded = {};
+  if (hexVal & 0x0001) decoded.fixedGun = true;
+  if (hexVal & 0x0002) decoded.turret = true;
+  if (hexVal & 0x0004) decoded.staysWhenTradeShips = true;
+
+  return Object.keys(decoded).length > 0 ? decoded : null;
+}
+
+// Helper to decode junk flags (jünk.Flags)
+function decodeJunkFlags(flags) {
+  if (!flags || flags === '0x0000') return null;
+
+  const hexVal = typeof flags === 'string' && flags.startsWith('0x')
+    ? parseInt(flags, 16)
+    : parseInt(flags);
+
+  const decoded = {};
+  if (hexVal & 0x0001) decoded.tribbles = true;
+
+  return Object.keys(decoded).length > 0 ? decoded : null;
+}
+
+// Helper to decode mission flags (mïsn.Flags)
+function decodeMisnFlags(flags) {
+  if (!flags || flags === '0x0000') return null;
+
+  const hexVal = typeof flags === 'string' && flags.startsWith('0x')
+    ? parseInt(flags, 16)
+    : parseInt(flags);
+
+  const decoded = {};
+  if (hexVal & 0x0001) decoded.autoAborting = true;
+  if (hexVal & 0x0002) decoded.noDestinationArrows = true;
+  if (hexVal & 0x0004) decoded.cantRefuse = true;
+  if (hexVal & 0x0010) decoded.infiniteAuxShips = true;
+  if (hexVal & 0x0020) decoded.removePrepaidOutfitOnFailure = true;
+  if (hexVal & 0x0040) decoded.applyNegative5xCompRewardOnAbort = true;
+  if (hexVal & 0x0080) decoded.globalPenaltyForJettisoningCargo = true;
+  if (hexVal & 0x0100) decoded.showGreenArrowInBriefing = true;
+  if (hexVal & 0x1000) decoded.criticalMission = true;
+
+  return Object.keys(decoded).length > 0 ? decoded : null;
+}
+
+// Helper to decode person flags (përs.Flags)
+function decodePersFlags(flags) {
+  if (!flags || flags === '0x0000') return null;
+
+  const hexVal = typeof flags === 'string' && flags.startsWith('0x')
+    ? parseInt(flags, 16)
+    : parseInt(flags);
+
+  const decoded = {};
+  if (hexVal & 0x0001) decoded.holdGrudgeIfAttacked = true;
+  if (hexVal & 0x0002) decoded.usesEscapePod = true;
+  if (hexVal & 0x0004) decoded.hailQuoteOnlyWhenGrudge = true;
+  if (hexVal & 0x0008) decoded.hailQuoteOnlyWhenLikesPlayer = true;
+  if (hexVal & 0x0010) decoded.hailQuoteWhenBeginsAttack = true;
+  if (hexVal & 0x0020) decoded.hailQuoteWhenDisabled = true;
+  if (hexVal & 0x0040) decoded.replaceWithThisShipWhenLinkMissionAccepted = true;
+  if (hexVal & 0x0080) decoded.onlyShowQuoteOnce = true;
+  if (hexVal & 0x0100) decoded.deactivateAfterAcceptingLinkMission = true;
+  if (hexVal & 0x0200) decoded.offerLinkMissionWhenBoarding = true;
+  if (hexVal & 0x0400) decoded.dontShowQuoteWhenLinkMissionUnavailable = true;
+  if (hexVal & 0x0800) decoded.leaveAfterAcceptingLinkMission = true;
+  if (hexVal & 0x1000) decoded.dontOfferBasedOnPlayerShipType1 = true;
+  if (hexVal & 0x2000) decoded.dontOfferBasedOnPlayerShipType2 = true;
+  if (hexVal & 0x4000) decoded.dontOfferBasedOnPlayerShipType3 = true;
+  if (hexVal & 0x8000) decoded.showDisasterInfoWhenHailing = true;
+
+  return Object.keys(decoded).length > 0 ? decoded : null;
+}
+
+// Helper to decode spob flags (spöb.Flags)
+function decodeSpobFlags(flags) {
+  if (!flags || flags === '0x00000000') return null;
+
+  const hexVal = typeof flags === 'string' && flags.startsWith('0x')
+    ? parseInt(flags, 16)
+    : parseInt(flags);
+
+  const decoded = {
+    facilities: {},
+    commodities: {}
+  };
+
+  // Facility flags
+  if (hexVal & 0x00000001) decoded.facilities.canLand = true;
+  if (hexVal & 0x00000002) decoded.facilities.hasCommodityExchange = true;
+  if (hexVal & 0x00000004) decoded.facilities.canOutfit = true;
+  if (hexVal & 0x00000008) decoded.facilities.canBuyShips = true;
+  if (hexVal & 0x00000010) decoded.facilities.isStation = true;
+  if (hexVal & 0x00000020) decoded.facilities.uninhabited = true;
+  if (hexVal & 0x00000040) decoded.facilities.hasBar = true;
+
+  // Commodity pricing flags (bits 7-30)
+  // Each commodity has 4 bits: cheap to buy, expensive to buy, cheap to sell, expensive to sell
+  const commodities = ['food', 'industrial', 'medical', 'luxury', 'metal', 'equipment'];
+  for (let i = 0; i < commodities.length; i++) {
+    const baseShift = 7 + (i * 4);
+    const comm = {};
+    if (hexVal & (1 << baseShift)) comm.cheapToBuy = true;
+    if (hexVal & (1 << (baseShift + 1))) comm.expensiveToBuy = true;
+    if (hexVal & (1 << (baseShift + 2))) comm.cheapToSell = true;
+    if (hexVal & (1 << (baseShift + 3))) comm.expensiveToSell = true;
+
+    if (Object.keys(comm).length > 0) {
+      decoded.commodities[commodities[i]] = comm;
+    }
+  }
+
+  // Clean up empty objects
+  if (Object.keys(decoded.facilities).length === 0) delete decoded.facilities;
+  if (Object.keys(decoded.commodities).length === 0) delete decoded.commodities;
+
+  return Object.keys(decoded).length > 0 ? decoded : null;
+}
+
 // Converter for nëbu resource
 function convertNebu(row) {
   return {
@@ -659,6 +831,10 @@ function convertWeap(row) {
   }
   if (textData.MiscFlags !== undefined) {
     result.flags = textData.MiscFlags;
+    const decodedFlags = decodeWeapFlags(textData.MiscFlags);
+    if (decodedFlags) {
+      result.flagsDecoded = decodedFlags;
+    }
   }
 
   return result;
@@ -672,7 +848,7 @@ function convertMisn(row) {
   const textData = parseMisnTextFile(id);
 
   // Use text file data as primary source
-  return {
+  const result = {
     id,
     name: row['Name'] || '',
     availStel: textData.AvailStel ?? parseNum(row['Avail Stellar']),
@@ -713,9 +889,20 @@ function convertMisn(row) {
     auxShipCount: textData.AuxShipCount ?? parseNum(row['Aux Count']),
     auxShipDude: textData.AuxShipDude ?? parseNum(row['Aux Dude']),
     auxShipSyst: textData.AuxShipSyst ?? parseNum(row['Aux System']),
-    compBitSet2: textData.CompBitSet2 ?? -1,  // Missing from CSV
-    flags: textData.Flags ?? row['Flags 1'] ?? ''
+    compBitSet2: textData.CompBitSet2 ?? -1  // Missing from CSV
   };
+
+  // Decode flags
+  const flagsRaw = textData.Flags ?? row['Flags 1'] ?? '';
+  if (flagsRaw) {
+    result.flags = flagsRaw;
+    const decodedFlags = decodeMisnFlags(flagsRaw);
+    if (decodedFlags) {
+      result.flagsDecoded = decodedFlags;
+    }
+  }
+
+  return result;
 }
 
 // Converter for jünk resource
@@ -724,14 +911,25 @@ function convertJunk(row) {
   const id = parseNum(row['ID']);
   const textData = parseJunkTextFile(id);
 
-  return {
+  const result = {
     id,
     name: row['Name'] || '',
     soldAt: textData.SoldAt ?? -1,
     boughtAt: textData.BoughtAt ?? -1,
-    basePrice: textData.BasePrice ?? 0,
-    flags: textData.Flags ?? '0x0000'
+    basePrice: textData.BasePrice ?? 0
   };
+
+  // Decode flags
+  const flagsRaw = textData.Flags ?? '0x0000';
+  if (flagsRaw) {
+    result.flags = flagsRaw;
+    const decodedFlags = decodeJunkFlags(flagsRaw);
+    if (decodedFlags) {
+      result.flagsDecoded = decodedFlags;
+    }
+  }
+
+  return result;
 }
 
 // Converter for öops resource
@@ -758,7 +956,7 @@ function convertOutf(row) {
   const id = parseNum(row['ID']);
   const textData = parseOutfTextFile(id);
 
-  return {
+  const result = {
     id,
     name: row['Name'] || '',
     missionBit: textData.MissionBit ?? -1,
@@ -767,9 +965,20 @@ function convertOutf(row) {
     modType: textData.ModType ?? parseNum(row['Mod Type']),
     modVal: textData.ModVal ?? parseNum(row['Mod Value']),
     max: textData.Max ?? parseNum(row['Maximum']),
-    flags: textData.Flags ?? row['Flags'] ?? '',
     cost: textData.Cost ?? parseNum(row['Cost'])
   };
+
+  // Decode flags
+  const flagsRaw = textData.Flags ?? row['Flags'] ?? '';
+  if (flagsRaw) {
+    result.flags = flagsRaw;
+    const decodedFlags = decodeOutfFlags(flagsRaw);
+    if (decodedFlags) {
+      result.flagsDecoded = decodedFlags;
+    }
+  }
+
+  return result;
 }
 
 // Converter for përs resource
@@ -778,7 +987,7 @@ function convertPers(row) {
   const id = parseNum(row['ID']);
   const textData = parsePersTextFile(id);
 
-  return {
+  const result = {
     id,
     name: row['Name'] || '',
     linkSyst: textData.LinkSyst ?? parseNum(row['Link System']),
@@ -810,9 +1019,20 @@ function convertPers(row) {
     missionBit: textData.MissionBit ?? -1,
     commQuote: textData.CommQuote ?? parseNum(row['Comm Quote']),
     hailQuote: textData.HailQuote ?? parseNum(row['Hail Quote']),
-    linkMission: textData.LinkMission ?? parseNum(row['Link Mission']),
-    flags: textData.Flags ?? row['Flags 1'] ?? ''
+    linkMission: textData.LinkMission ?? parseNum(row['Link Mission'])
   };
+
+  // Decode flags
+  const flagsRaw = textData.Flags ?? row['Flags 1'] ?? '';
+  if (flagsRaw) {
+    result.flags = flagsRaw;
+    const decodedFlags = decodePersFlags(flagsRaw);
+    if (decodedFlags) {
+      result.flagsDecoded = decodedFlags;
+    }
+  }
+
+  return result;
 }
 
 // Converter for shïp resource
@@ -872,13 +1092,12 @@ function convertSpob(row) {
   const id = parseNum(row['ID']);
   const textData = parseSpobTextFile(id);
 
-  return {
+  const result = {
     id,
     name: row['Name'] || '',
     xPos: textData.xPos ?? parseNum(row['Position X']),
     yPos: textData.yPos ?? parseNum(row['Position Y']),
     type: textData.Type ?? parseNum(row['Graphic Type']),
-    flags: textData.Flags ?? row['Flags'] ?? '',
     system: textData.System ?? parseNum(row['Tribute']), // CSV incorrectly labels this as "Tribute"
     techLevel: textData.TechLevel ?? parseNum(row['Tech Level']),
     specialTech1: textData.SpecialTech1 ?? parseNum(row['Tech 1']),
@@ -891,6 +1110,18 @@ function convertSpob(row) {
     defDude: textData.DefDude ?? parseNum(row['Defense Dude']),
     defCount: textData.DefCount ?? parseNum(row['Defense Count'])
   };
+
+  // Decode flags
+  const flagsRaw = textData.Flags ?? row['Flags'] ?? '';
+  if (flagsRaw) {
+    result.flags = flagsRaw;
+    const decodedFlags = decodeSpobFlags(flagsRaw);
+    if (decodedFlags) {
+      result.flagsDecoded = decodedFlags;
+    }
+  }
+
+  return result;
 }
 
 // Converter for gövt resource
@@ -909,10 +1140,10 @@ function convertGovt(row) {
   // CSV 'Initial Record' → InitialRec
   // Everything after is EVN-specific and not used for EV
 
-  return {
+  const result = {
     id: parseNum(row['ID']),
     name: row['Name'] || '',
-    flags: row['Flags 1'] || '',  // Keep as hex string
+    flags: row['Flags 1'] || '',
     ally: hexToDecimal(row['Flags 2']),  // Convert hex to decimal
     enemy: parseNum(row['Scan Fine']),
     crimeTol: parseNum(row['Crime Tolerance']),
@@ -923,6 +1154,14 @@ function convertGovt(row) {
     shootPenalty: parseNum(row['Shoot Penalty']),
     initialRec: parseNum(row['Initial Record'])
   };
+
+  // Decode flags
+  const decodedFlags = decodeGovtFlags(row['Flags 1']);
+  if (decodedFlags) {
+    result.flagsDecoded = decodedFlags;
+  }
+
+  return result;
 }
 
 // Converter for flët resource
