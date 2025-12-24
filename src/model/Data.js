@@ -149,18 +149,24 @@ class DataClass {
 			color: "#f00",
 		});
 
+		// Use actual spob data from JSON (Earth = ID 128, Mars = ID 130)
+		const earthData = this.spobs.find(s => s.id === 128);
+		const marsData = this.spobs.find(s => s.id === 130);
+
 		this.demoPlanet = {
-			name: "Demo Planet",
+			name: earthData ? earthData.name : "Demo Planet",
 			x: 100,
 			y: 100,
 			sprite: "images/sprites/Spob 2000.png",
+			spobData: earthData // Attach full spob data
 		};
-		
+
 		this.demoPlanet2 = {
-			name: "Demo Planet 2",
+			name: marsData ? marsData.name : "Demo Planet 2",
 			x: 100,
 			y: 100,
 			sprite: "images/sprites/Spob 2000.png",
+			spobData: marsData // Attach full spob data
 		};
 	}
 };

@@ -131,6 +131,28 @@
 	</div>
 </div>
 
+<!-- Refuel -->
+<div id="refuel" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Refuel Ship</h4>
+			</div>
+			<div class="modal-body">
+				<p><strong>Fuel:</strong> <span id="refuelCurrent">0</span>/<span id="refuelMax">0</span> units</p>
+				<p><strong>Credits:</strong> <span id="refuelCredits">0</span> cr</p>
+				<p style="margin-top: 15px;"><strong>Cost to Refuel:</strong> <span id="refuelCost">0</span> cr</p>
+				<div id="refuelMessage" style="color: red; margin-top: 10px;"></div>
+			</div>
+			<div class="modal-footer">
+				<button id="refuelButton" type="button" class="btn btn-success">Refuel</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- Commodity Exchange -->
 <div id="modalCommodity" class="modal fade" role="dialog">
 	<div class="modal-dialog">
@@ -140,7 +162,27 @@
 				<h4 class="modal-title">Commodity Exchange</h4>
 			</div>
 			<div class="modal-body">
-				<p>Some text in the modal.</p>
+				<div style="margin-bottom: 15px;">
+					<strong>Credits:</strong> <span id="commodityCredits">0</span> cr &nbsp;&nbsp;
+					<strong>Cargo:</strong> <span id="commodityCargo">0</span>/<span id="commodityCargoMax">0</span> tons
+				</div>
+
+				<table class="table table-bordered" style="margin-bottom: 20px;">
+					<thead>
+						<tr>
+							<th>Commodity</th>
+							<th>In Hold</th>
+							<th>Buy Price</th>
+							<th>Sell Price</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody id="commodityTableBody">
+						<!-- Populated dynamically -->
+					</tbody>
+				</table>
+
+				<div id="commodityMessage" style="color: red; margin-top: 10px;"></div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

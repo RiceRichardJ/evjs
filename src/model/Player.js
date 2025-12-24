@@ -10,6 +10,26 @@ export default class Player extends Ship {
 		this.paused = false;
 		this.hyperNav = null;
 		this.weapInd = -1;
+
+		// Economic state
+		this.credits = 100000; // Starting credits
+		this.cargo = {
+			food: 0,
+			industrial: 0,
+			medical: 0,
+			luxury: 0,
+			metal: 0,
+			equipment: 0
+		};
+		this.cargoSpace = shipType.holds; // Total cargo capacity
+		this.cargoUsed = 0; // Current cargo used
+
+		// Fuel management
+		this.fuel = shipType.fuel; // Current fuel
+		this.fuelMax = shipType.fuel; // Maximum fuel capacity
+
+		// Outfits
+		this.outfits = []; // Installed outfits
 	}
 
 	cycleTargets(actors) {
