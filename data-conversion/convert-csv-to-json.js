@@ -1473,22 +1473,25 @@ function convertStrResources() {
 
 // Convert spïn resources from text files
 function convertSpinResources() {
-  console.log('Converting spïn resources → spin.js...');
+  console.log('Converting spïn resources → spin.ts...');
 
   try {
     // Find all spïn files
     const files = fs.readdirSync(GRAPHICS_DIR);
     const spinFiles = files.filter(f => f.includes('_spïn_'));
 
-    const spinArray = [];
+    const spinMap = {};
 
     for (const filename of spinFiles) {
-      // Parse filename: EV Graphics_spïn_<id>_<name>.txt
-      const match = filename.match(/spïn_(\d+)_(.+?)\.txt$/);
+      // Parse filename: EV Graphics_spïn_<id>_<name>.txt or EV Graphics_spïn_<id>.txt
+      const matchWithName = filename.match(/spïn_(\d+)_(.+?)\.txt$/);
+      const matchWithoutName = filename.match(/spïn_(\d+)\.txt$/);
+
+      const match = matchWithName || matchWithoutName;
       if (!match) continue;
 
       const id = parseInt(match[1]);
-      const name = match[2];
+      const name = matchWithName ? match[2] : '';
 
       // Read and parse the text file
       const filePath = path.join(GRAPHICS_DIR, filename);
@@ -1507,25 +1510,34 @@ function convertSpinResources() {
         }
       }
 
-      spinArray.push(data);
+      spinMap[id] = data;
     }
 
-    // Sort by ID
-    spinArray.sort((a, b) => a.id - b.id);
+    // Read the TypeScript file header (type definition and comment)
+    const tsPath = path.join(__dirname, '..', 'src', 'resources', 'spin.ts');
+    let tsContent = fs.readFileSync(tsPath, 'utf-8');
 
-    // Create output object
-    const output = {
-      spin: spinArray
-    };
+    // Extract the header (everything before 'const spin:')
+    const headerMatch = tsContent.match(/([\s\S]*?)(const spin: Record<number, Spin> = {)/);
+    const header = headerMatch ? headerMatch[1] + headerMatch[2] : '// Unable to preserve header\n\nconst spin: Record<number, Spin> = {';
 
-    // Format as JS module
-    const jsContent = `export default ${JSON.stringify(output, null, '\t')}\n`;
+    // Generate the spin entries
+    const spinEntries = Object.keys(spinMap)
+      .map(id => parseInt(id))
+      .sort((a, b) => a - b)
+      .map(id => {
+        const entry = spinMap[id];
+        return `\t${id}: ${JSON.stringify(entry, null, '\t').replace(/\n/g, '\n\t')}`;
+      })
+      .join(',\n');
 
-    // Write output file
-    const outPath = path.join(OUTPUT_DIR, 'spin.js');
-    fs.writeFileSync(outPath, jsContent, 'utf-8');
+    // Construct the full TypeScript content
+    const newTsContent = `${header}\n${spinEntries}\n};\n\nexport default spin;\n`;
 
-    console.log(`  ✓ Wrote ${spinArray.length} spïn resources to spin.js`);
+    // Write to TypeScript file
+    fs.writeFileSync(tsPath, newTsContent, 'utf-8');
+
+    console.log(`  ✓ Wrote ${Object.keys(spinMap).length} spïn resources to spin.ts`);
   } catch (error) {
     console.error('  ✗ Error converting spïn resources:', error.message);
   }
