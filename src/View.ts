@@ -62,6 +62,33 @@ export default class View {
 			this.mapCnv.style.cursor = 'grab';
 		});
 
+		// Mouse wheel zoom
+		this.mapCnv.addEventListener('wheel', (e: WheelEvent) => {
+			e.preventDefault();
+
+			// Zoom in smaller increments for smoother scrolling
+			const zoomFactor = 1.1; // Smaller than button zoom (1.2)
+			const oldZoom = this.mapZoom;
+
+			if (e.deltaY < 0) {
+				// Scroll up = zoom in
+				this.mapZoom = Math.min(this.mapZoom * zoomFactor, 10);
+			} else {
+				// Scroll down = zoom out
+				this.mapZoom = Math.max(this.mapZoom / zoomFactor, 0.5);
+			}
+
+			// Zoom towards mouse cursor position
+			const rect = this.mapCnv.getBoundingClientRect();
+			const mouseX = e.clientX - rect.left;
+			const mouseY = e.clientY - rect.top;
+
+			// Adjust offset to zoom towards cursor
+			const zoomRatio = this.mapZoom / oldZoom;
+			this.mapOffsetX = mouseX - (mouseX - this.mapOffsetX) * zoomRatio;
+			this.mapOffsetY = mouseY - (mouseY - this.mapOffsetY) * zoomRatio;
+		});
+
 		// Set initial cursor
 		this.mapCnv.style.cursor = 'grab';
 	}
