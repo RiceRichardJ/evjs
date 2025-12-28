@@ -25,6 +25,7 @@ export default class View {
 	public selectedSystemId: number | null = null;
 	public currentSystemId: number = 129; // Default to Sol
 	private selectedLinkIndex: number = -1; // Index of selected linked system for Tab cycling
+	private playerRef: Player | null = null; // Reference to player for map navigation
 
 	constructor(
 		private cnv: HTMLCanvasElement,
@@ -73,7 +74,7 @@ export default class View {
 
 			if (wasDragging && !mouseMoved && timeSinceDown < 300) {
 				// It's a click! Find which system was clicked
-				this.handleSystemClick(e.offsetX, e.offsetY, e.shiftKey);
+				this.handleSystemClick(e.offsetX, e.offsetY, e.shiftKey, this.playerRef || undefined);
 			}
 		});
 
@@ -158,7 +159,11 @@ export default class View {
 		this.selectedSystemId = null;
 	}
 
-	private handleSystemClick(clickX: number, clickY: number, shiftKey: boolean) {
+	public setPlayer(player: Player) {
+		this.playerRef = player;
+	}
+
+	private handleSystemClick(clickX: number, clickY: number, shiftKey: boolean, player?: Player) {
 		// Convert click coordinates to map space
 		const mapX = (clickX - this.mapOffsetX) / this.mapZoom;
 		const mapY = (clickY - this.mapOffsetY) / this.mapZoom;
@@ -189,16 +194,39 @@ export default class View {
 			});
 			window.dispatchEvent(event);
 
-			// Check if this system is linked to current system
-			const currentSyst = Data.systs[this.currentSystemId];
-			const isLinked = currentSyst && currentSyst.links.includes(nearestSystem.id);
+			// Determine which system we need to check linkage against
+			let checkAgainstSystemId = this.currentSystemId;
+			if (shiftKey && player) {
+				const hyperNav = player.getHyperNav();
+				if (hyperNav.length > 0) {
+					// Check against the last system in the planned path
+					checkAgainstSystemId = hyperNav[hyperNav.length - 1];
+				}
+			}
 
-			if (isLinked || shiftKey) {
-				// Dispatch event to add to hyperNav
+			// Check if this system is linked to the reference system
+			const refSyst = Data.systs[checkAgainstSystemId];
+			const isLinked = refSyst && refSyst.links.includes(nearestSystem.id);
+
+			if (shiftKey) {
+				// For shift-click, ONLY allow if linked
+				if (isLinked) {
+					const linkedEvent = new CustomEvent('linkedSystemSelected', {
+						detail: {
+							systemId: nearestSystem.id,
+							shiftKey: true
+						}
+					});
+					window.dispatchEvent(linkedEvent);
+				} else {
+					console.log("Cannot add to path: system is not linked");
+				}
+			} else if (isLinked) {
+				// Regular click on linked system: replace path
 				const linkedEvent = new CustomEvent('linkedSystemSelected', {
 					detail: {
 						systemId: nearestSystem.id,
-						shiftKey: shiftKey
+						shiftKey: false
 					}
 				});
 				window.dispatchEvent(linkedEvent);

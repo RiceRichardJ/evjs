@@ -17,6 +17,9 @@ const view = new View(
 const model = new Model();
 const input = new Input(model, view);
 
+// Set player reference for map navigation
+view.setPlayer(model.player);
+
 // Track currently landed spob
 let currentSpob: any = null;
 
@@ -83,7 +86,7 @@ if (starmapDialog) {
 			// Show current system info by default
 			StarMapUI.updateSystemInfo(view.currentSystemId, model);
 		} else {
-			console.log("Star map closed");
+			console.log("Star map closed", model.player.getHyperNav());
 			model.mapView = false;
 			// Reset selection and clear hyperNav
 			view.resetMapSelection();
