@@ -10,16 +10,68 @@ import Player from './model/Player';
  * Handles all rendering.
  */
 export default class View {
-	private cnv: HTMLCanvasElement;
 	private ctx: CanvasRenderingContext2D;
+	private mapCtx: CanvasRenderingContext2D;
 	private hud: Sidebar;
 	private stars: StarField;
 
-	constructor(canvas: HTMLCanvasElement) {
-		this.cnv = canvas;
-		this.ctx = canvas.getContext("2d")!;
+	// Map view state
+	public mapZoom: number = 2.0;
+	public mapOffsetX: number = 200;
+	public mapOffsetY: number = 100;
+	private isDragging: boolean = false;
+	private dragStartX: number = 0;
+	private dragStartY: number = 0;
+
+	constructor(
+		private cnv: HTMLCanvasElement,
+		private mapCnv: HTMLCanvasElement,
+	) {
+		this.cnv = cnv;
+		this.ctx = cnv.getContext("2d")!;
 		this.hud = new Sidebar(this.ctx);
 		this.stars = new StarField(this.ctx);
+		this.mapCtx = mapCnv.getContext("2d");
+
+		// Setup map canvas dragging
+		this.setupMapDragging();
+	}
+
+	private setupMapDragging() {
+		this.mapCnv.addEventListener('mousedown', (e: MouseEvent) => {
+			this.isDragging = true;
+			this.dragStartX = e.offsetX - this.mapOffsetX;
+			this.dragStartY = e.offsetY - this.mapOffsetY;
+			this.mapCnv.style.cursor = 'grabbing';
+		});
+
+		this.mapCnv.addEventListener('mousemove', (e: MouseEvent) => {
+			if (this.isDragging) {
+				this.mapOffsetX = e.offsetX - this.dragStartX;
+				this.mapOffsetY = e.offsetY - this.dragStartY;
+			}
+		});
+
+		this.mapCnv.addEventListener('mouseup', () => {
+			this.isDragging = false;
+			this.mapCnv.style.cursor = 'grab';
+		});
+
+		this.mapCnv.addEventListener('mouseleave', () => {
+			this.isDragging = false;
+			this.mapCnv.style.cursor = 'grab';
+		});
+
+		// Set initial cursor
+		this.mapCnv.style.cursor = 'grab';
+	}
+
+	public zoomIn() {
+		this.mapZoom = Math.min(this.mapZoom * 1.2, 10);
+	}
+
+	public zoomOut() {
+		this.mapZoom = Math.max(this.mapZoom / 1.2, 0.5);
 	}
 
 	/**
@@ -148,15 +200,15 @@ export default class View {
 	}
 
 	mapRender() {
-		const ZOOM = 2.0;
-		const OFFSET_X = 200;
-		const OFFSET_Y = 100;
+		const ZOOM = this.mapZoom;
+		const OFFSET_X = this.mapOffsetX;
+		const OFFSET_Y = this.mapOffsetY;
 		const SYST_SZ = ZOOM * 2;
 
 		this.mapCtx.fillStyle = '#333';
 		this.mapCtx.fillRect(0, 0, this.mapCnv.width, this.mapCnv.height);
-		for (let syst of Data.systs.slice(1)) {
-			
+		for (let [systId, syst] of Object.entries(Data.systs)) {
+
 			for (let link of syst.links) {
 				this.mapCtx.beginPath();
 				this.mapCtx.moveTo(ZOOM * syst.x + OFFSET_X + 1, ZOOM * syst.y + OFFSET_Y + 1);

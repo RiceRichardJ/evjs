@@ -7,10 +7,12 @@ function closeAllDialogs() {
 }
 
 import Model from './Model';
+import View from './View';
 
 export default class Input {
 	constructor(
 		private model: Model,
+		private view: View,
 		private keyPressed: {[key: string]: boolean} = {},
 		private keyPrev = {},
 
@@ -167,6 +169,12 @@ export default class Input {
 		}
 		if (this.keyPressed["220"]) { // [\]
 			// hyper select
+		}
+		if (this.keyPressed["187"] || this.keyPressed["61"]) { // [+] or [=]
+			this.view.zoomIn();
+		}
+		if (this.keyPressed["189"] || this.keyPressed["173"]) { // [-]
+			this.view.zoomOut();
 		}
 	}
 }

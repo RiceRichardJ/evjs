@@ -58,7 +58,7 @@
 </dialog>
 
 <!-- Refuel -->
-<dialog id="dialogRefuel">
+<!-- <dialog id="dialogRefuel">
 	<div class="dialog-header">
 		<h4>Refuel Ship</h4>
 		<button type="button" class="close-btn" onclick="this.closest('dialog').close()">&times;</button>
@@ -73,7 +73,7 @@
 		<button id="refuelButton" type="button" class="btn btn-success">Refuel</button>
 		<button type="button" class="btn" onclick="this.closest('dialog').close()">Close</button>
 	</div>
-</dialog>
+</dialog> -->
 
 <!-- Commodity Exchange -->
 <dialog id="dialogCommodity">
@@ -158,8 +158,12 @@
 		<button type="button" class="close-btn" onclick="this.closest('dialog').close()">&times;</button>
 	</div>
 	<div class="dialog-body">
-		<p>Some text in the modal.</p>
-		<!-- <canvas id='mapGc' width="400" height="300"></canvas> -->
+		<div style="margin-bottom: 10px;">
+			<button type="button" id="mapZoomOut" class="btn" style="width: 40px;">-</button>
+			<button type="button" id="mapZoomIn" class="btn" style="width: 40px;">+</button>
+			<span style="margin-left: 10px; color: #999; font-size: 12px;">Drag to pan, +/- to zoom</span>
+		</div>
+		<canvas id='mapGc' width="600" height="450"></canvas>
 	</div>
 	<div class="dialog-footer">
 		<button type="button" class="btn" onclick="this.closest('dialog').close()">Close</button>

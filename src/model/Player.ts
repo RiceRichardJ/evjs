@@ -1,5 +1,6 @@
 "use strict";
 
+import { ShipType } from '@/json/ship';
 import Ship   from './Ship';
 import Vector from './Vector'
 
@@ -24,8 +25,10 @@ export default class Player extends Ship {
 	fuelMax: number = 0;
 	outfits: any[] = [];
 
-	constructor(shipType: any, data: any) {
-		super(shipType, 0, data);
+	hyperNavPath: number[];
+
+	constructor(shipType: ShipType, data: Data) {
+		super(shipType);
 		this.targInd = -1;
 		this.paused = false;
 		this.hyperNav = null;
@@ -74,7 +77,7 @@ export default class Player extends Ship {
 		const dist = Vector.distance(this.x, this.y,
 			this.ai.nav.x, this.ai.nav.y);
 
-		if (dist < 50 && !this.paused) {
+		if (dist < 75 && !this.paused) {
 			if (this.travel.magnitude > 0.5) {
 				// stage.ctx.font = "9pt Arial";
 				// stage.ctx.fillText("Moving too fast to land!",10,590);
@@ -156,11 +159,9 @@ export default class Player extends Ship {
 	}
 
 	map() {
-		if (!this.paused) {
-			openDialog('dialogStarmap');
-			return true;
-		}
-		return false;
+		// Allow star map to open even when paused (when landed)
+		openDialog('dialogStarmap');
+		return true;
 	}
 
 	playerInfo() {

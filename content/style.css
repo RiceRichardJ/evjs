@@ -31,7 +31,7 @@ dialog p {
 
 dialog td p {
 	font-size: 65%;
-	margin: 0px 10px 0px 10px;
+	margin: 10px;
 }
 
 .dialog-header {
@@ -74,7 +74,7 @@ dialog td p {
 }
 .stdBtn {
 	background-color: #abaaaa;
-	//border: 3px inset #eee;
+	/* //border: 3px inset #eee; */
 	font: 75% "Kredit", arial, sans-serif;
 	font-weight: bold;
 	color: white;
@@ -83,7 +83,7 @@ dialog td p {
 }
 .stdBtn:active {
 	background-color: #7c7;
-	//border: 3px outset #eee;
+	/* //border: 3px outset #eee; */
 } 
 .blockBtn {
 	display: block;

@@ -9,9 +9,12 @@ import View from './View';
 // Load modals HTML before initializing game (top-level await - ES2025)
 await loadModals();
 
-const view = new View(document.getElementById("gc") as HTMLCanvasElement);
+const view = new View(
+	document.getElementById("gc") as HTMLCanvasElement,
+	document.getElementById("mapGc") as HTMLCanvasElement
+);
 const model = new Model();
-const input = new Input(model);
+const input = new Input(model, view);
 
 // Track currently landed spob
 let currentSpob: any = null;
@@ -67,6 +70,22 @@ if (spaceportDialog) {
 		}
 	});
 	observer.observe(spaceportDialog, { attributes: true, attributeFilter: ['open'] });
+}
+
+// Setup star map zoom buttons
+const mapZoomInBtn = document.getElementById('mapZoomIn');
+const mapZoomOutBtn = document.getElementById('mapZoomOut');
+
+if (mapZoomInBtn) {
+	mapZoomInBtn.addEventListener('click', () => {
+		view.zoomIn();
+	});
+}
+
+if (mapZoomOutBtn) {
+	mapZoomOutBtn.addEventListener('click', () => {
+		view.zoomOut();
+	});
 }
 
 /**
