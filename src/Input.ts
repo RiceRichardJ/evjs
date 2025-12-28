@@ -7,12 +7,12 @@ function closeAllDialogs() {
 }
 
 import Model from './Model';
-import View from './View';
+import StarMapUI from './view/StarMapUI';
 
 export default class Input {
 	constructor(
 		private model: Model,
-		private view: View,
+		private starMapUI: StarMapUI,
 		private keyPressed: {[key: string]: boolean} = {},
 		private keyPrev = {},
 
@@ -32,7 +32,7 @@ export default class Input {
 			if (e.keyCode == 9) { // [TAB]
 				if (this.model.mapView) {
 					// If map is open, cycle through linked systems
-					this.view.cycleLinkedSystem();
+					this.starMapUI.cycleLinkedSystem();
 				} else {
 					// Otherwise, cycle through targets
 					this.model.player.cycleTargets(this.model.actors);
@@ -176,10 +176,10 @@ export default class Input {
 			// hyper select
 		}
 		if (this.keyPressed["187"] || this.keyPressed["61"]) { // [+] or [=]
-			this.view.zoomIn();
+			this.starMapUI.zoomIn();
 		}
 		if (this.keyPressed["189"] || this.keyPressed["173"]) { // [-]
-			this.view.zoomOut();
+			this.starMapUI.zoomOut();
 		}
 	}
 }

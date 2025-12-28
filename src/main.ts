@@ -11,14 +11,17 @@ import StarMapUI from './view/StarMapUI';
 await loadModals();
 
 const view = new View(
-	document.getElementById("gc") as HTMLCanvasElement,
-	document.getElementById("mapGc") as HTMLCanvasElement
+	document.getElementById("gc") as HTMLCanvasElement
 );
 const model = new Model();
-const input = new Input(model, view);
+const starMapUI = new StarMapUI(
+	document.getElementById("mapGc") as HTMLCanvasElement,
+	model
+);
+const input = new Input(model, starMapUI);
 
 // Set player reference for map navigation
-view.setPlayer(model.player);
+starMapUI.setPlayer(model.player);
 
 // Track currently landed spob
 let currentSpob: any = null;
@@ -84,12 +87,12 @@ if (starmapDialog) {
 			console.log("Star map opened");
 			model.mapView = true;
 			// Show current system info by default
-			StarMapUI.updateSystemInfo(view.currentSystemId, model);
+			starMapUI.updateSystemInfo(starMapUI.currentSystemId);
 		} else {
 			console.log("Star map closed", model.player.getHyperNav());
 			model.mapView = false;
 			// Reset selection and clear hyperNav
-			view.resetMapSelection();
+			starMapUI.resetMapSelection();
 			model.player.clearHyperNav();
 		}
 	});
@@ -101,7 +104,7 @@ window.addEventListener('systemSelected', (e: Event) => {
 	const customEvent = e as CustomEvent;
 	const systemId = customEvent.detail.systemId;
 	console.log("System selected event:", systemId);
-	StarMapUI.updateSystemInfo(systemId, model);
+	starMapUI.updateSystemInfo(systemId);
 });
 
 // Listen for linked system selection events (Tab or click on linked system)
@@ -126,13 +129,13 @@ const mapZoomOutBtn = document.getElementById('mapZoomOut');
 
 if (mapZoomInBtn) {
 	mapZoomInBtn.addEventListener('click', () => {
-		view.zoomIn();
+		starMapUI.zoomIn();
 	});
 }
 
 if (mapZoomOutBtn) {
 	mapZoomOutBtn.addEventListener('click', () => {
-		view.zoomOut();
+		starMapUI.zoomOut();
 	});
 }
 
@@ -144,7 +147,7 @@ setInterval((): void => {
 	input.poll();
 
 	if (model.mapView) {
-		view.mapRender(model.player);
+		starMapUI.render(model.player);
 	}
 
 	// Don't update if any dialog is open
