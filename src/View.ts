@@ -3,6 +3,8 @@
 import Sidebar   from './view/Sidebar';
 import StarField from './view/StarField';
 import Data      from './model/Data';
+import Actor from './model/Actor';
+import Player from './model/Player';
 
 /**
  * Handles all rendering.
@@ -12,16 +14,12 @@ export default class View {
 	private ctx: CanvasRenderingContext2D;
 	private hud: Sidebar;
 	private stars: StarField;
-	private mapCnv: HTMLCanvasElement;
-	private mapCtx: CanvasRenderingContext2D;
 
-	constructor(canvas: HTMLCanvasElement, mapCanvas: HTMLCanvasElement) {
+	constructor(canvas: HTMLCanvasElement) {
 		this.cnv = canvas;
 		this.ctx = canvas.getContext("2d")!;
 		this.hud = new Sidebar(this.ctx);
 		this.stars = new StarField(this.ctx);
-		this.mapCnv = mapCanvas;
-		this.mapCtx = mapCanvas.getContext("2d")!;
 	}
 
 	/**
@@ -31,7 +29,7 @@ export default class View {
 	 * @param {Actor[]} actors List of all actors to be drawn.
 	 * @param {Actor} player The player to be drawn.
 	 */
-	render(spobs, projs, actors, player) {
+	render(spobs: Actor[], projs: Actor[], actors: Actor[], player: Player) {
 		this.renderBackground(player);
 		spobs.map(  (spob)  => this.renderActor(player, spob)  );
 		projs.map(  (proj)  => this.renderActor(player, proj)  );
@@ -43,7 +41,7 @@ export default class View {
 	/** 
 	 * Refresh black background and starfield.
 	 */
-	renderBackground(player) {
+	renderBackground(player: Player) {
 		this.ctx.fillStyle = 'black';
 		this.ctx.fillRect(0, 0, this.cnv.width, this.cnv.height);
 		this.ctx.fillStyle = 'white';
@@ -55,7 +53,7 @@ export default class View {
 	 * @param {Actor} player Camera relative to player.
 	 * @param {Actor} actor Actor to render.
 	 */
-	renderActor(player, actor) {
+	renderActor(player: Player, actor: Actor) {
 		// Translate
 		this.ctx.save();
 		this.ctx.setTransform(1,0,0,1,0,0);
@@ -110,7 +108,7 @@ export default class View {
 		}
 	}
 
-	angleToSprite(degrees, actor) {
+	angleToSprite(degrees: number, actor: Actor) {
 		console.log(degrees);
 		degrees = (degrees + 360) % 360;
 		var spriteIndex = Math.floor(degrees / 10);
@@ -125,7 +123,7 @@ export default class View {
 	 * @param {Actor} actor (location to draw boom)
 	 * @param {number} dmg Magnitude.
 	 */
-	boom(player, actor, dmg) {
+	boom(player: Player, actor: Actor, dmg: number) {
 		this.ctx.save();
 		this.ctx.setTransform(1,0,0,1,0,0);
 		this.ctx.translate(

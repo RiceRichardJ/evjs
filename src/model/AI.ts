@@ -1,5 +1,6 @@
 "use strict";
 
+import Actor from './Actor';
 import {Constants as C} from './Data';
 import Vector from './Vector';
 
@@ -11,8 +12,8 @@ export default class AI {
 	myShip: any;
 	mood: number = 1;
 	pers: number = 2;
-	nav: any = null;
-	target: any = null;
+	nav: Actor = null;
+	target: Actor = null;
 	suspects: Record<string, any> = {};
 	enemies: Record<string, any> = {};
 	landing: boolean = false;

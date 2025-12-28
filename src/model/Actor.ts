@@ -28,6 +28,8 @@ export default class Actor {
 			this.sprite.src = spob.sprite;
 			this.className = 'Spob';
 			this.name = spob.name;
+			this.x = spob.x;
+			this.y = spob.y;
 		}
 	}
 

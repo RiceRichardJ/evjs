@@ -7,7 +7,7 @@ import Model from './Model';
 
 export default class Input {
 	constructor(
-		private model: Model = new Model(),
+		private model: Model,
 		private keyPressed: {[key: string]: boolean} = {},
 		private keyPrev = {},
 
@@ -18,7 +18,7 @@ export default class Input {
 	/**
 	 * Register Key Listeners.
 	 */
-	registerKeyListeners() {
+	private registerKeyListeners() {
 		document.addEventListener('keydown', (e: KeyboardEvent) => {
 			// console.log(e.keyCode);
 			if ([9, 16, 27, 32, 37, 38, 39, 40].includes(e.keyCode)) {
@@ -45,7 +45,7 @@ export default class Input {
 	/**
 	 * Controls: Key Listeners.
 	 */
-	poll() {
+	public poll() {
 		if (this.keyPressed["27"]) { // [esc]
 			($('.modal') as any).modal('hide');
 		}

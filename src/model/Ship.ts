@@ -7,6 +7,7 @@ import Data   from './Data';
 import Proj   from './Proj';
 import Vector from './Vector';
 import Weapon from './Weapon';
+import { ShipType } from '@/json/ship';
 
 /**
  * Ship class.
@@ -17,26 +18,28 @@ export default class Ship extends Actor {
 	shieldMax: number = 0;
 	armor: number = 0;
 	armorMax: number = 0;
-	weapons: any[] = [];
-	ai: any;
+	weapons: Weapon[] = [];
+	ai: AI;
 	newProj: any[] = [];
 	newShip: any[] = [];
 	disabled: boolean = false;
 	sender: any = null;
 	targetImg: HTMLImageElement = new Image();
 
+	private static num = 0;
+ 
 	/**
 	 * Construct a Ship object given a type to base it off of.
 	 * @param {ShipType} type The ship type to build off of.
 	 * @param {number} num ID number; for debugging.
 	 */
-	constructor(type: any, num: number, data: any) {
+	constructor(type: ShipType) {
 		console.log("SHIP CONSTRUCTOR...");
 		super();
 		this.type = type;
 		this.className = 'Ship';
 
-		this.name             = type.name + ":" + num;
+		this.name             = type.name + ":" + (Ship.num++);
 		this.speed            = type.speed * C.sMod;
 		this.turn             = type.turn  * C.tMod;
 		this.thrust.magnitude = type.accel * C.aMod;
@@ -49,7 +52,7 @@ export default class Ship extends Actor {
 		this.sprite.src = type.sprite;
 		
 		this.weapons = [];
-		this.populateWeapons(type, data);
+		this.populateWeapons(type);
 		this.ai = new AI(this);
 		this.newProj = []; // Allow Stage to handle adding to projs array.
 		this.newShip = []; // ditto but for fighters
@@ -65,7 +68,7 @@ export default class Ship extends Actor {
 	 * Build Weapon objects.
 	 * @param {*} shipType 
 	 */
-	populateWeapons(shipType, data) {
+	populateWeapons(shipType) {
 		for (var weap of shipType.weapons) {
 			var weapType = Data.weaps[parseInt(weap.id)-127];
 			var newWeap = new Weapon(

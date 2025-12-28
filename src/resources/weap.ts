@@ -73,7 +73,7 @@
  * Source: Escape Velocity Resource Bible, Pages 35-37
  */
 
-export type weap = {
+export type Weap = {
 	id: number;
 	name: string;
 	massDmg: number;
@@ -94,7 +94,7 @@ export type weap = {
 	flagsDecoded?: Record<string, boolean>;
 };
 
-const weap: weap[] = [
+const weap: Weap[] = [
 	{
 			"id": 128,
 			"name": "Laser Cannon",

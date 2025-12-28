@@ -1,56 +1,53 @@
-import { loadModals } from './utils/loadModals';
+// import { loadModals } from './utils/loadModals';
 import { Constants as C } from './model/Data';
 import Data from './model/Data';
 import Input from './Input';
 import Model from './Model';
 import View from './View';
-import SpaceportUI from './view/SpaceportUI';
+// import SpaceportUI from './view/SpaceportUI';
 
-import $ from "jquery";
+// import $ from "jquery";
 
 // Load modals HTML before initializing game (top-level await - ES2025)
-await loadModals();
+// await loadModals();
 
-const view = new View(
-  document.getElementById("gc") as HTMLCanvasElement,
-  $("#mapGc")[0] as HTMLCanvasElement
-);
+const view = new View(document.getElementById("gc") as HTMLCanvasElement);
 const model = new Model();
 const input = new Input(model);
 
 // Track currently landed spob
 let currentSpob: any = null;
 
-$('.modal').on('hidden.bs.modal', (): void => {
-	console.log("DEPART, modalSpaceport hidden");
-	// Reset Ship Position // Reset Shields, Armor. Refuel. Etc.
-	model.player.paused = false;
-});
+// $('.modal').on('hidden.bs.modal', (): void => {
+// 	console.log("DEPART, modalSpaceport hidden");
+// 	// Reset Ship Position // Reset Shields, Armor. Refuel. Etc.
+// 	model.player.paused = false;
+// });
 
-// Initialize spaceport modal when landing
-$('#modalSpaceport').on('shown.bs.modal', (): void => {
-	console.log("LANDED at spaceport");
-	// Get the spob the player is near (their nav target)
-	currentSpob = model.player.ai.nav;
+// // Initialize spaceport modal when landing
+// $('#modalSpaceport').on('shown.bs.modal', (): void => {
+// 	console.log("LANDED at spaceport");
+// 	// Get the spob the player is near (their nav target)
+// 	currentSpob = model.player.ai.nav;
 
-	if (currentSpob?.spobData) {
-		SpaceportUI.initLandingModal(model.player, currentSpob.spobData, Data.descs);
-	}
-});
+// 	if (currentSpob?.spobData) {
+// 		SpaceportUI.initLandingModal(model.player, currentSpob.spobData, Data.descs);
+// 	}
+// });
 
-// Initialize commodity exchange when modal opens
-$('#modalCommodity').on('shown.bs.modal', (): void => {
-	console.log("OPENED commodity exchange", currentSpob);
-	if (currentSpob?.spobData) {
-		SpaceportUI.initCommodityExchange(model.player, currentSpob.spobData);
-	}
-});
+// // Initialize commodity exchange when modal opens
+// $('#modalCommodity').on('shown.bs.modal', (): void => {
+// 	console.log("OPENED commodity exchange", currentSpob);
+// 	if (currentSpob?.spobData) {
+// 		SpaceportUI.initCommodityExchange(model.player, currentSpob.spobData);
+// 	}
+// });
 
-// Initialize refuel when modal opens
-$('#refuel').on('shown.bs.modal', (): void => {
-	console.log("OPENED refuel");
-	SpaceportUI.initRefuel(model.player);
-});
+// // Initialize refuel when modal opens
+// $('#refuel').on('shown.bs.modal', (): void => {
+// 	console.log("OPENED refuel");
+// 	SpaceportUI.initRefuel(model.player);
+// });
 
 /**
  * Main Loop. Each frame.

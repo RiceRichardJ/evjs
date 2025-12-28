@@ -60,7 +60,7 @@ export default class Player extends Ship {
 
 	land() {
 		if (!this.ai.nav) { return 1; }
-		var dist = Vector.distance(this.x, this.y,
+		const dist = Vector.distance(this.x, this.y,
 			this.ai.nav.x, this.ai.nav.y);
 
 		if (dist < 50 && !this.paused) {

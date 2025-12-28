@@ -4,6 +4,47 @@ import {Constants as C} from './Data';
 import Actor  from './Actor';
 import Data   from './Data';
 import Vector from './Vector';
+import { Weap } from '@/resources/weap';
+
+const tempWeapSpins = {
+	400 : {
+		src : "images/sprites/Small Explosion.png"
+	},  401 : {
+		src : "images/sprites/Medium Explosion.png"
+	},  402 : {
+		src : "images/sprites/Large Explosion.png"
+	},  500 : {
+		src : "images/sprites/Box.png"
+	},  800 : {
+		src : "images/sprites/Asteroid.png"
+	},  801 : {
+		src : "images/sprites/Large Asteroid.png"
+	}, 3000 : {
+		src : "images/sprites/Laser.png"
+	}, 3001 : {
+		src : "images/sprites/Neutron.png"
+	}, 3002 : {
+		src : "images/sprites/Proton.png"
+	}, 3003 : {
+		src : "images/sprites/Torpedo.png"
+	}, 3004 : {
+		src : "images/sprites/Missile.png"
+	}, 3005 : {
+		src : "images/sprites/Mass Dart.png"
+	}, 3006 : {
+		src : "images/sprites/Heavy Rocket.png"
+	}, 3007 : {
+		src : "images/sprites/Bomb.png"
+	}, 3008 : {
+		src : "images/sprites/Javelin.png"
+	}, 3009 : {
+		src : "images/sprites/Flare.png"
+	}, 3010 : {
+		src : "images/sprites/Seeker.png"
+	}, 3063 : {
+		src : "images/sprites/Forklift.png"
+	}
+}
 
 /**
  * Projectile Class.
@@ -15,7 +56,7 @@ export default class Proj extends Actor {
 	target: any;
 	sound: HTMLAudioElement;
 
-	constructor(type: any, xPos: number, yPos: number, dir: number, sender: any, target: any) {
+	constructor(type: Weap, xPos: number, yPos: number, dir: number, sender: any, target: any) {
 		super();
 		
 		this.speed  = type.speed * C.sMod;
@@ -53,8 +94,10 @@ export default class Proj extends Actor {
 		// }
 
 		// Assign Graphic
-		if (Data.spins[type.graphic]) {
-			this.sprite.src = Data.spins[type.graphic].src;
+		// if (Data.spins[type.graphic]) {
+		// 		this.sprite.src = Data.spins[type.graphic].src;
+		if (tempWeapSpins[type.graphic]) {
+			this.sprite.src = tempWeapSpins[type.graphic].src;
 		} else {
 			console.log(type);
 		}
