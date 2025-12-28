@@ -34,7 +34,7 @@ export default class Player extends Ship {
 		super(shipType);
 		this.targInd = -1;
 		this.paused = false;
-		this.hyperNav = null;
+		this.hyperNav = [];
 		this.weapInd = -1;
 
 		// // Economic state
@@ -177,5 +177,33 @@ export default class Player extends Ship {
 		if (!this.paused) {
 			openDialog('dialogInfo');
 		}
+	}
+
+	/**
+	 * Get the hyperspace navigation path.
+	 */
+	getHyperNav(): number[] {
+		return this.hyperNav;
+	}
+
+	/**
+	 * Add a system to the hyperspace navigation path.
+	 */
+	addToHyperNav(systemId: number) {
+		this.hyperNav.push(systemId);
+	}
+
+	/**
+	 * Set the entire hyperspace navigation path.
+	 */
+	setHyperNav(path: number[]) {
+		this.hyperNav = path;
+	}
+
+	/**
+	 * Clear the hyperspace navigation path.
+	 */
+	clearHyperNav() {
+		this.hyperNav = [];
 	}
 }

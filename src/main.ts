@@ -85,6 +85,9 @@ if (starmapDialog) {
 		} else {
 			console.log("Star map closed");
 			model.mapView = false;
+			// Reset selection and clear hyperNav
+			view.resetMapSelection();
+			model.player.clearHyperNav();
 		}
 	});
 	observer.observe(starmapDialog, { attributes: true, attributeFilter: ['open'] });
@@ -96,6 +99,22 @@ window.addEventListener('systemSelected', (e: Event) => {
 	const systemId = customEvent.detail.systemId;
 	console.log("System selected event:", systemId);
 	StarMapUI.updateSystemInfo(systemId, model);
+});
+
+// Listen for linked system selection events (Tab or click on linked system)
+window.addEventListener('linkedSystemSelected', (e: Event) => {
+	const customEvent = e as CustomEvent;
+	const systemId = customEvent.detail.systemId;
+	const shiftKey = customEvent.detail.shiftKey || false;
+	console.log("Linked system selected:", systemId, shiftKey ? "(shift)" : "");
+
+	if (shiftKey) {
+		// Shift+click: add to path
+		model.player.addToHyperNav(systemId);
+	} else {
+		// Tab or regular click on linked system: replace path
+		model.player.setHyperNav([systemId]);
+	}
 });
 
 // Setup star map zoom buttons
@@ -122,7 +141,7 @@ setInterval((): void => {
 	input.poll();
 
 	if (model.mapView) {
-		view.mapRender();
+		view.mapRender(model.player);
 	}
 
 	// Don't update if any dialog is open

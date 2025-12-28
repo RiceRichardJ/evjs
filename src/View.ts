@@ -24,6 +24,7 @@ export default class View {
 	private dragStartY: number = 0;
 	public selectedSystemId: number | null = null;
 	public currentSystemId: number = 129; // Default to Sol
+	private selectedLinkIndex: number = -1; // Index of selected linked system for Tab cycling
 
 	constructor(
 		private cnv: HTMLCanvasElement,
@@ -72,7 +73,7 @@ export default class View {
 
 			if (wasDragging && !mouseMoved && timeSinceDown < 300) {
 				// It's a click! Find which system was clicked
-				this.handleSystemClick(e.offsetX, e.offsetY);
+				this.handleSystemClick(e.offsetX, e.offsetY, e.shiftKey);
 			}
 		});
 
@@ -120,7 +121,44 @@ export default class View {
 		this.mapZoom = Math.max(this.mapZoom / 1.2, 0.5);
 	}
 
-	private handleSystemClick(clickX: number, clickY: number) {
+	public cycleLinkedSystem() {
+		const currentSyst = Data.systs[this.currentSystemId];
+		if (!currentSyst || currentSyst.links.length === 0) {
+			return;
+		}
+
+		// Filter out -1 (unused) links
+		const validLinks = currentSyst.links.filter(link => link !== -1);
+		if (validLinks.length === 0) {
+			return;
+		}
+
+		// Cycle to next valid link
+		this.selectedLinkIndex = (this.selectedLinkIndex + 1) % validLinks.length;
+		const selectedSystemId = validLinks[this.selectedLinkIndex];
+
+		// Update selected system
+		this.selectedSystemId = selectedSystemId;
+
+		// Dispatch custom event for system selection
+		const event = new CustomEvent('systemSelected', {
+			detail: { systemId: selectedSystemId }
+		});
+		window.dispatchEvent(event);
+
+		// Also dispatch a custom event for linked system selection (to add to hyperNav)
+		const linkedEvent = new CustomEvent('linkedSystemSelected', {
+			detail: { systemId: selectedSystemId }
+		});
+		window.dispatchEvent(linkedEvent);
+	}
+
+	public resetMapSelection() {
+		this.selectedLinkIndex = -1;
+		this.selectedSystemId = null;
+	}
+
+	private handleSystemClick(clickX: number, clickY: number, shiftKey: boolean) {
 		// Convert click coordinates to map space
 		const mapX = (clickX - this.mapOffsetX) / this.mapZoom;
 		const mapY = (clickY - this.mapOffsetY) / this.mapZoom;
@@ -143,13 +181,28 @@ export default class View {
 
 		if (nearestSystem) {
 			this.selectedSystemId = nearestSystem.id;
-			console.log("Selected system:", nearestSystem.name);
+			console.log("Selected system:", nearestSystem.name, shiftKey ? "(shift-click)" : "");
 
 			// Dispatch custom event for system selection
 			const event = new CustomEvent('systemSelected', {
 				detail: { systemId: nearestSystem.id }
 			});
 			window.dispatchEvent(event);
+
+			// Check if this system is linked to current system
+			const currentSyst = Data.systs[this.currentSystemId];
+			const isLinked = currentSyst && currentSyst.links.includes(nearestSystem.id);
+
+			if (isLinked || shiftKey) {
+				// Dispatch event to add to hyperNav
+				const linkedEvent = new CustomEvent('linkedSystemSelected', {
+					detail: {
+						systemId: nearestSystem.id,
+						shiftKey: shiftKey
+					}
+				});
+				window.dispatchEvent(linkedEvent);
+			}
 		}
 	}
 
@@ -278,7 +331,7 @@ export default class View {
 		}
 	}
 
-	mapRender() {
+	mapRender(player?: Player) {
 		const ZOOM = this.mapZoom;
 		const OFFSET_X = this.mapOffsetX;
 		const OFFSET_Y = this.mapOffsetY;
@@ -314,6 +367,57 @@ export default class View {
 					this.mapCtx.strokeStyle = '#4a7c8a';
 					this.mapCtx.lineWidth = Math.max(1, ZOOM * 0.3);
 					this.mapCtx.stroke();
+				}
+			}
+		}
+
+		// Draw bright green edge to currently selected linked system
+		if (this.selectedSystemId !== null) {
+			const currentSyst = Data.systs[this.currentSystemId];
+			const selectedSyst = Data.systs[this.selectedSystemId];
+			if (currentSyst && selectedSyst && currentSyst.links.includes(this.selectedSystemId)) {
+				this.mapCtx.beginPath();
+				this.mapCtx.moveTo(
+					ZOOM * currentSyst.x + OFFSET_X,
+					ZOOM * currentSyst.y + OFFSET_Y
+				);
+				this.mapCtx.lineTo(
+					ZOOM * selectedSyst.x + OFFSET_X,
+					ZOOM * selectedSyst.y + OFFSET_Y
+				);
+				this.mapCtx.strokeStyle = '#00ff00';
+				this.mapCtx.lineWidth = Math.max(2, ZOOM * 0.5);
+				this.mapCtx.stroke();
+			}
+		}
+
+		// Draw double-thick green path for hyperNav
+		if (player) {
+			const hyperNav = player.getHyperNav();
+			if (hyperNav.length > 0) {
+				// Start from current system
+				let prevSystemId = this.currentSystemId;
+
+				for (const systemId of hyperNav) {
+					const prevSyst = Data.systs[prevSystemId];
+					const nextSyst = Data.systs[systemId];
+
+					if (prevSyst && nextSyst) {
+						this.mapCtx.beginPath();
+						this.mapCtx.moveTo(
+							ZOOM * prevSyst.x + OFFSET_X,
+							ZOOM * prevSyst.y + OFFSET_Y
+						);
+						this.mapCtx.lineTo(
+							ZOOM * nextSyst.x + OFFSET_X,
+							ZOOM * nextSyst.y + OFFSET_Y
+						);
+						this.mapCtx.strokeStyle = '#00ff00';
+						this.mapCtx.lineWidth = Math.max(4, ZOOM * 1.0); // Double thickness
+						this.mapCtx.stroke();
+
+						prevSystemId = systemId;
+					}
 				}
 			}
 		}

@@ -30,7 +30,13 @@ export default class Input {
 				e.preventDefault();
 			}
 			if (e.keyCode == 9) { // [TAB]
-				this.model.player.cycleTargets(this.model.actors);
+				if (this.model.mapView) {
+					// If map is open, cycle through linked systems
+					this.view.cycleLinkedSystem();
+				} else {
+					// Otherwise, cycle through targets
+					this.model.player.cycleTargets(this.model.actors);
+				}
 			} else if (e.keyCode == 87) { // [W]
 				this.model.player.switchSecondary();
 			} else if (e.keyCode == 16) { // [SHIFT]
