@@ -205,25 +205,59 @@ export default class View {
 		const OFFSET_Y = this.mapOffsetY;
 		const SYST_SZ = ZOOM * 2;
 
-		this.mapCtx.fillStyle = '#333';
+		// Clear background
+		this.mapCtx.fillStyle = '#1a1a1a';
 		this.mapCtx.fillRect(0, 0, this.mapCnv.width, this.mapCnv.height);
-		for (let [systId, syst] of Object.entries(Data.systs)) {
 
+		// First pass: Draw all hyperspace links (edges)
+		const drawnLinks = new Set<string>();
+		for (let [systId, syst] of Object.entries(Data.systs)) {
 			for (let link of syst.links) {
-				this.mapCtx.beginPath();
-				this.mapCtx.moveTo(ZOOM * syst.x + OFFSET_X + 1, ZOOM * syst.y + OFFSET_Y + 1);
-				let linkSyst = Data.systs[link - 127];
+				if (link === -1) continue;
+
+				const linkSyst = Data.systs[link];
 				if (linkSyst) {
-					this.mapCtx.lineTo(ZOOM * linkSyst.x + OFFSET_X + (SYST_SZ/2), ZOOM * linkSyst.y + OFFSET_Y + (SYST_SZ/2));
-					this.mapCtx.strokeStyle = '#999';
+					// Create a unique key for this edge (sorted IDs to avoid duplicates)
+					const edgeKey = [syst.id, linkSyst.id].sort().join('-');
+					if (drawnLinks.has(edgeKey)) continue;
+					drawnLinks.add(edgeKey);
+
+					// Draw hyperspace link
+					this.mapCtx.beginPath();
+					this.mapCtx.moveTo(
+						ZOOM * syst.x + OFFSET_X + (SYST_SZ/2),
+						ZOOM * syst.y + OFFSET_Y + (SYST_SZ/2)
+					);
+					this.mapCtx.lineTo(
+						ZOOM * linkSyst.x + OFFSET_X + (SYST_SZ/2),
+						ZOOM * linkSyst.y + OFFSET_Y + (SYST_SZ/2)
+					);
+					this.mapCtx.strokeStyle = '#4a7c8a';
+					this.mapCtx.lineWidth = Math.max(1, ZOOM * 0.3);
 					this.mapCtx.stroke();
 				}
 			}
+		}
+
+		// Second pass: Draw all systems (nodes)
+		for (let [systId, syst] of Object.entries(Data.systs)) {
+			// Draw system as a filled square
 			this.mapCtx.fillStyle = '#08f';
-			this.mapCtx.fillRect(ZOOM * syst.x + OFFSET_X, ZOOM * syst.y + OFFSET_Y, SYST_SZ, SYST_SZ);
+			this.mapCtx.fillRect(
+				ZOOM * syst.x + OFFSET_X,
+				ZOOM * syst.y + OFFSET_Y,
+				SYST_SZ,
+				SYST_SZ
+			);
+
+			// Draw system name
 			this.mapCtx.fillStyle = '#fff';
-			this.ctx.font='10px sans-serif';
-			this.mapCtx.fillText(syst.name, ZOOM * syst.x + OFFSET_X, ZOOM * syst.y + OFFSET_Y);
+			this.mapCtx.font = `${Math.max(8, ZOOM * 5)}px sans-serif`;
+			this.mapCtx.fillText(
+				syst.name,
+				ZOOM * syst.x + OFFSET_X + SYST_SZ + 2,
+				ZOOM * syst.y + OFFSET_Y + SYST_SZ
+			);
 		}
 	}
 }

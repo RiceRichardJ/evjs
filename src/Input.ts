@@ -121,9 +121,8 @@ export default class Input {
 			}
 		}
 		if (this.keyPressed["77"]) { // [M]
-			if (this.model.player.map()) {
-				this.model.mapView = true;
-			}
+			this.model.player.map();
+			// mapView is now set by dialog observer in main.ts
 		}
 		if (this.keyPressed["78"]) { // [N]
 			this.model.player.navSelect(null);

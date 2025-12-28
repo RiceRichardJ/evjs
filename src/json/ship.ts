@@ -1,3 +1,4 @@
+// TODO eventually use ship.ts in resources folder...
 
 export type ShipId = number & { readonly __brand: "ShipId" };
 
@@ -35,9 +36,6 @@ export type ShipType = {
 	govt?: number,
 	sprite?: string
 }
-
-// TODO convert to:
-// const shipTypesMap: Record<ShipId, ShipType>;
 
 // TODO get rid of defaults and convert to actual evc resource fork format
 const shipTypes: ShipType[] = [

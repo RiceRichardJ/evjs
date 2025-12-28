@@ -3,6 +3,8 @@
 import { ShipType } from '@/json/ship';
 import Ship   from './Ship';
 import Vector from './Vector'
+import Data      from './Data'
+import Pilot from './Pilot';
 
 // Helper to open dialogs
 function openDialog(id: string) {
@@ -13,46 +15,47 @@ function openDialog(id: string) {
 }
 
 export default class Player extends Ship {
-	targInd: number = -1;
-	paused: boolean = false;
-	hyperNav: any = null;
-	weapInd: number = -1;
-	credits: number = 100000;
-	cargo: Record<string, number> = {};
-	cargoSpace: number = 0;
-	cargoUsed: number = 0;
-	fuel: number = 0;
-	fuelMax: number = 0;
-	outfits: any[] = [];
+	private targInd: number = -1;                // 
+	private paused: boolean = false;             // should be higher up (Model.ts, etc)
+	private hyperNav: number[] = [];             // 
+	private weapInd: number = -1;                // 
+	
+	// private credits: number = 100000;            // 
+	// private cargo: Record<string, number> = {};  // cargo id -> qty in tons
+	// private cargoSpace: number = 0;              // 
+	// private cargoUsed: number = 0;               // should be calculated
+	// private fuel: number = 0;                    // 
+	// private fuelMax: number = 0;                 // 
+	// private outfits: any[] = [];                 // needs to sync with Pilot.ts
 
-	hyperNavPath: number[];
+	private pilot: Pilot = new Pilot();
 
-	constructor(shipType: ShipType, data: Data) {
+	constructor(shipType: ShipType) {
 		super(shipType);
 		this.targInd = -1;
 		this.paused = false;
 		this.hyperNav = null;
 		this.weapInd = -1;
 
-		// Economic state
-		this.credits = 100000; // Starting credits
-		this.cargo = {
-			food: 0,
-			industrial: 0,
-			medical: 0,
-			luxury: 0,
-			metal: 0,
-			equipment: 0
-		};
-		this.cargoSpace = shipType.holds; // Total cargo capacity
-		this.cargoUsed = 0; // Current cargo used
+		// // Economic state
+		// this.credits = 100000; // Starting credits
+		// this.cargo = {
+		// 	food: 0,
+		// 	industrial: 0,
+		// 	medical: 0,
+		// 	luxury: 0,
+		// 	metal: 0,
+		// 	equipment: 0
+		// };
+		// this.cargoSpace = shipType.cargo; // Total cargo capacity
+		// this.cargoUsed = 0; // Current cargo used
 
-		// Fuel management
-		this.fuel = shipType.fuel; // Current fuel
-		this.fuelMax = shipType.fuel; // Maximum fuel capacity
+		// // Fuel management
+		// this.fuel = shipType.fuel[0]; // Current fuel
+		// this.fuelMax = shipType.fuel[0]; // Maximum fuel capacity
 
-		// Outfits
-		this.outfits = []; // Installed outfits
+		// // Outfits
+		// this.outfits = []; // Installed outfits
 	}
 
 	cycleTargets(actors) {

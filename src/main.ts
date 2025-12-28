@@ -72,6 +72,21 @@ if (spaceportDialog) {
 	observer.observe(spaceportDialog, { attributes: true, attributeFilter: ['open'] });
 }
 
+// Initialize star map dialog
+const starmapDialog = document.getElementById('dialogStarmap') as HTMLDialogElement;
+if (starmapDialog) {
+	const observer = new MutationObserver(() => {
+		if (starmapDialog.open) {
+			console.log("Star map opened");
+			model.mapView = true;
+		} else {
+			console.log("Star map closed");
+			model.mapView = false;
+		}
+	});
+	observer.observe(starmapDialog, { attributes: true, attributeFilter: ['open'] });
+}
+
 // Setup star map zoom buttons
 const mapZoomInBtn = document.getElementById('mapZoomIn');
 const mapZoomOutBtn = document.getElementById('mapZoomOut');

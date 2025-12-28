@@ -26,4 +26,12 @@ export default class Pilot {
 	outfitIds: number[];
 	outfitQtys: number[];
 
+
+	save() {
+		// write to file
+	}
+
+	load() {
+		// read from file
+	}
 }
