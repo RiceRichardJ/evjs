@@ -22,6 +22,8 @@ export default class View {
 	private isDragging: boolean = false;
 	private dragStartX: number = 0;
 	private dragStartY: number = 0;
+	public selectedSystemId: number | null = null;
+	public currentSystemId: number = 129; // Default to Sol
 
 	constructor(
 		private cnv: HTMLCanvasElement,
@@ -38,10 +40,17 @@ export default class View {
 	}
 
 	private setupMapDragging() {
+		let mouseDownX = 0;
+		let mouseDownY = 0;
+		let mouseDownTime = 0;
+
 		this.mapCnv.addEventListener('mousedown', (e: MouseEvent) => {
 			this.isDragging = true;
 			this.dragStartX = e.offsetX - this.mapOffsetX;
 			this.dragStartY = e.offsetY - this.mapOffsetY;
+			mouseDownX = e.offsetX;
+			mouseDownY = e.offsetY;
+			mouseDownTime = Date.now();
 			this.mapCnv.style.cursor = 'grabbing';
 		});
 
@@ -52,9 +61,19 @@ export default class View {
 			}
 		});
 
-		this.mapCnv.addEventListener('mouseup', () => {
+		this.mapCnv.addEventListener('mouseup', (e: MouseEvent) => {
+			const wasDragging = this.isDragging;
 			this.isDragging = false;
 			this.mapCnv.style.cursor = 'grab';
+
+			// Detect click vs drag: if mouse didn't move much and time was short, it's a click
+			const mouseMoved = Math.abs(e.offsetX - mouseDownX) > 5 || Math.abs(e.offsetY - mouseDownY) > 5;
+			const timeSinceDown = Date.now() - mouseDownTime;
+
+			if (wasDragging && !mouseMoved && timeSinceDown < 300) {
+				// It's a click! Find which system was clicked
+				this.handleSystemClick(e.offsetX, e.offsetY);
+			}
 		});
 
 		this.mapCnv.addEventListener('mouseleave', () => {
@@ -67,7 +86,7 @@ export default class View {
 			e.preventDefault();
 
 			// Zoom in smaller increments for smoother scrolling
-			const zoomFactor = 1.1; // Smaller than button zoom (1.2)
+			const zoomFactor = 1.05; // Even slower for finer control
 			const oldZoom = this.mapZoom;
 
 			if (e.deltaY < 0) {
@@ -99,6 +118,39 @@ export default class View {
 
 	public zoomOut() {
 		this.mapZoom = Math.max(this.mapZoom / 1.2, 0.5);
+	}
+
+	private handleSystemClick(clickX: number, clickY: number) {
+		// Convert click coordinates to map space
+		const mapX = (clickX - this.mapOffsetX) / this.mapZoom;
+		const mapY = (clickY - this.mapOffsetY) / this.mapZoom;
+
+		// Find nearest system within click threshold
+		let nearestSystem: any = null;
+		let nearestDistance = Infinity;
+		const clickThreshold = 10 / this.mapZoom; // Scales with zoom
+
+		for (let [systId, syst] of Object.entries(Data.systs)) {
+			const dx = syst.x - mapX;
+			const dy = syst.y - mapY;
+			const distance = Math.sqrt(dx * dx + dy * dy);
+
+			if (distance < clickThreshold && distance < nearestDistance) {
+				nearestDistance = distance;
+				nearestSystem = syst;
+			}
+		}
+
+		if (nearestSystem) {
+			this.selectedSystemId = nearestSystem.id;
+			console.log("Selected system:", nearestSystem.name);
+
+			// Dispatch custom event for system selection
+			const event = new CustomEvent('systemSelected', {
+				detail: { systemId: nearestSystem.id }
+			});
+			window.dispatchEvent(event);
+		}
 	}
 
 	/**
@@ -230,7 +282,7 @@ export default class View {
 		const ZOOM = this.mapZoom;
 		const OFFSET_X = this.mapOffsetX;
 		const OFFSET_Y = this.mapOffsetY;
-		const SYST_SZ = ZOOM * 2;
+		const RADIUS = Math.max(3, ZOOM * 2);
 
 		// Clear background
 		this.mapCtx.fillStyle = '#1a1a1a';
@@ -252,12 +304,12 @@ export default class View {
 					// Draw hyperspace link
 					this.mapCtx.beginPath();
 					this.mapCtx.moveTo(
-						ZOOM * syst.x + OFFSET_X + (SYST_SZ/2),
-						ZOOM * syst.y + OFFSET_Y + (SYST_SZ/2)
+						ZOOM * syst.x + OFFSET_X,
+						ZOOM * syst.y + OFFSET_Y
 					);
 					this.mapCtx.lineTo(
-						ZOOM * linkSyst.x + OFFSET_X + (SYST_SZ/2),
-						ZOOM * linkSyst.y + OFFSET_Y + (SYST_SZ/2)
+						ZOOM * linkSyst.x + OFFSET_X,
+						ZOOM * linkSyst.y + OFFSET_Y
 					);
 					this.mapCtx.strokeStyle = '#4a7c8a';
 					this.mapCtx.lineWidth = Math.max(1, ZOOM * 0.3);
@@ -268,22 +320,44 @@ export default class View {
 
 		// Second pass: Draw all systems (nodes)
 		for (let [systId, syst] of Object.entries(Data.systs)) {
-			// Draw system as a filled square
-			this.mapCtx.fillStyle = '#08f';
-			this.mapCtx.fillRect(
-				ZOOM * syst.x + OFFSET_X,
-				ZOOM * syst.y + OFFSET_Y,
-				SYST_SZ,
-				SYST_SZ
-			);
+			const centerX = ZOOM * syst.x + OFFSET_X;
+			const centerY = ZOOM * syst.y + OFFSET_Y;
+			const isCurrentSystem = syst.id === this.currentSystemId;
+			const isSelectedSystem = syst.id === this.selectedSystemId;
+
+			// Draw hollow dark blue circle
+			this.mapCtx.beginPath();
+			this.mapCtx.arc(centerX, centerY, RADIUS, 0, 2 * Math.PI);
+			this.mapCtx.strokeStyle = '#2a5a7a';
+			this.mapCtx.lineWidth = Math.max(1.5, ZOOM * 0.5);
+			this.mapCtx.stroke();
+
+			// Fill current system with light blue
+			if (isCurrentSystem) {
+				this.mapCtx.fillStyle = '#4a9ed6';
+				this.mapCtx.fill();
+			}
+
+			// Draw green box around selected system
+			if (isSelectedSystem) {
+				const boxSize = RADIUS * 2.5;
+				this.mapCtx.strokeStyle = '#00ff00';
+				this.mapCtx.lineWidth = Math.max(2, ZOOM * 0.7);
+				this.mapCtx.strokeRect(
+					centerX - boxSize / 2,
+					centerY - boxSize / 2,
+					boxSize,
+					boxSize
+				);
+			}
 
 			// Draw system name
 			this.mapCtx.fillStyle = '#fff';
 			this.mapCtx.font = `${Math.max(8, ZOOM * 5)}px sans-serif`;
 			this.mapCtx.fillText(
 				syst.name,
-				ZOOM * syst.x + OFFSET_X + SYST_SZ + 2,
-				ZOOM * syst.y + OFFSET_Y + SYST_SZ
+				centerX + RADIUS + 2,
+				centerY + RADIUS / 2
 			);
 		}
 	}

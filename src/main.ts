@@ -4,6 +4,7 @@ import Data from './model/Data';
 import Input from './Input';
 import Model from './Model';
 import View from './View';
+import StarMapUI from './view/StarMapUI';
 // import SpaceportUI from './view/SpaceportUI';
 
 // Load modals HTML before initializing game (top-level await - ES2025)
@@ -79,6 +80,8 @@ if (starmapDialog) {
 		if (starmapDialog.open) {
 			console.log("Star map opened");
 			model.mapView = true;
+			// Show current system info by default
+			StarMapUI.updateSystemInfo(view.currentSystemId, model);
 		} else {
 			console.log("Star map closed");
 			model.mapView = false;
@@ -86,6 +89,14 @@ if (starmapDialog) {
 	});
 	observer.observe(starmapDialog, { attributes: true, attributeFilter: ['open'] });
 }
+
+// Listen for system selection events
+window.addEventListener('systemSelected', (e: Event) => {
+	const customEvent = e as CustomEvent;
+	const systemId = customEvent.detail.systemId;
+	console.log("System selected event:", systemId);
+	StarMapUI.updateSystemInfo(systemId, model);
+});
 
 // Setup star map zoom buttons
 const mapZoomInBtn = document.getElementById('mapZoomIn');

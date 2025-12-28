@@ -158,15 +158,32 @@
 		<button type="button" class="close-btn" onclick="this.closest('dialog').close()">&times;</button>
 	</div>
 	<div class="dialog-body">
-		<div style="margin-bottom: 10px;">
-			<button type="button" id="mapZoomOut" class="btn" style="width: 40px;">-</button>
-			<button type="button" id="mapZoomIn" class="btn" style="width: 40px;">+</button>
-			<span style="margin-left: 10px; color: #999; font-size: 12px;">Drag to pan, +/- to zoom</span>
+		<div class="map-container">
+			<div class="map-left">
+				<div class="zoom-controls">
+					<button type="button" id="mapZoomOut" class="btn" style="width: 40px;">-</button>
+					<button type="button" id="mapZoomIn" class="btn" style="width: 40px;">+</button>
+					<span style="margin-left: 10px; color: #999; font-size: 11px;">Drag to pan, +/- to zoom, click to select</span>
+				</div>
+				<canvas id='mapGc' width="600" height="450"></canvas>
+			</div>
+			<div class="map-right">
+				<div id="systemInfoPanel">
+					<h3 id="systemName" style="margin: 0 0 10px 0; color: #fff;">Select a system</h3>
+					<div id="systemGovernment" style="margin-bottom: 8px;"></div>
+					<div id="systemLegalStatus" style="margin-bottom: 8px;"></div>
+					<div id="systemGoods" style="margin-bottom: 8px;"></div>
+					<div id="systemServices" style="margin-bottom: 8px;"></div>
+				</div>
+			</div>
 		</div>
-		<canvas id='mapGc' width="600" height="450"></canvas>
+		<div class="map-bottom">
+			<div id="systemPorts" style="margin-bottom: 5px;"></div>
+			<div id="systemHazards"></div>
+		</div>
 	</div>
 	<div class="dialog-footer">
-		<button type="button" class="btn" onclick="this.closest('dialog').close()">Close</button>
+		<button type="button" class="btn" onclick="this.closest('dialog').close()">Done</button>
 	</div>
 </dialog>
 
