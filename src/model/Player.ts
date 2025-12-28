@@ -3,6 +3,8 @@
 import Ship   from './Ship';
 import Vector from './Vector'
 
+import $ from "jquery";
+
 export default class Player extends Ship {
 	targInd: number = -1;
 	paused: boolean = false;
@@ -59,21 +61,30 @@ export default class Player extends Ship {
 	}
 
 	land() {
-		if (!this.ai.nav) { return 1; }
+		if (!this.ai.nav) { 
+			console.log("No Nav");
+			return 1;
+		}
 		const dist = Vector.distance(this.x, this.y,
 			this.ai.nav.x, this.ai.nav.y);
 
-		if (dist < 50 && !this.paused) {
+		if (dist < 50) { // } && !this.paused) {
 			if (this.travel.magnitude > 0.5) {
 				// stage.ctx.font = "9pt Arial";
 				// stage.ctx.fillText("Moving too fast to land!",10,590);
+				console.log(`Too Fast, speed=${this.travel.magnitude}`);
+
 				return 2;
+			} else {
+				console.log("open land modal")
+				$("#landButton").click();
+				return 0;
 			}
-			this.paused = true;
-			$("#landButton").click();
-			return 0;
+		} else {
+			console.log(`Too Far, dist=${dist}, paused=${this.paused}`);
+			return 3;
 		}
-		return 3;
+		
 	}
 
 	/**
@@ -134,14 +145,12 @@ export default class Player extends Ship {
 				// stage.ctx.font = "9pt Arial";
 				// stage.ctx.fillText("Moving too fast to land!",10,590);
 		if (!this.paused) {
-			this.paused = true;
 			$("#boardButton").click();
 		}
 	}
 
 	map() {
 		if (!this.paused) {
-			this.paused = true;
 			$("#mapButton").click();
 			return true;
 		}
@@ -150,14 +159,12 @@ export default class Player extends Ship {
 
 	playerInfo() {
 		if (!this.paused) {
-			this.paused = true;
 			$("#playerButton").click();
 		}
 	}
 
 	missionInfo() {
 		if (!this.paused) {
-			this.paused = true;
 			$("#infoButton").click();
 		}
 	}

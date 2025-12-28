@@ -1,4 +1,4 @@
-// import { loadModals } from './utils/loadModals';
+import { loadModals } from './utils/loadModals';
 import { Constants as C } from './model/Data';
 import Data from './model/Data';
 import Input from './Input';
@@ -6,10 +6,10 @@ import Model from './Model';
 import View from './View';
 // import SpaceportUI from './view/SpaceportUI';
 
-// import $ from "jquery";
+import $ from "jquery";
 
 // Load modals HTML before initializing game (top-level await - ES2025)
-// await loadModals();
+await loadModals();
 
 const view = new View(document.getElementById("gc") as HTMLCanvasElement);
 const model = new Model();
@@ -18,22 +18,28 @@ const input = new Input(model);
 // Track currently landed spob
 let currentSpob: any = null;
 
-// $('.modal').on('hidden.bs.modal', (): void => {
-// 	console.log("DEPART, modalSpaceport hidden");
-// 	// Reset Ship Position // Reset Shields, Armor. Refuel. Etc.
-// 	model.player.paused = false;
-// });
+// Pause game when ANY modal opens
+$('.modal').on('shown.bs.modal', (): void => {
+	console.log("Modal opened - pausing game");
+	model.player.paused = true;
+});
 
-// // Initialize spaceport modal when landing
-// $('#modalSpaceport').on('shown.bs.modal', (): void => {
-// 	console.log("LANDED at spaceport");
-// 	// Get the spob the player is near (their nav target)
-// 	currentSpob = model.player.ai.nav;
+// Unpause game when ANY modal closes
+$('.modal').on('hidden.bs.modal', (): void => {
+	console.log("Modal closed - unpausing game");
+	model.player.paused = false;
+});
 
-// 	if (currentSpob?.spobData) {
-// 		SpaceportUI.initLandingModal(model.player, currentSpob.spobData, Data.descs);
-// 	}
-// });
+// Initialize spaceport modal when landing
+$('#modalSpaceport').on('shown.bs.modal', (): void => {
+	console.log("LANDED at spaceport");
+	// Get the spob the player is near (their nav target)
+	currentSpob = model.player.ai.nav;
+
+	// if (currentSpob?.spobData) {
+	// 	SpaceportUI.initLandingModal(model.player, currentSpob.spobData, Data.descs);
+	// }
+});
 
 // // Initialize commodity exchange when modal opens
 // $('#modalCommodity').on('shown.bs.modal', (): void => {
