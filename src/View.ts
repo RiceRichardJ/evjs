@@ -419,10 +419,11 @@ export default class View {
 			}
 		}
 
-		// Draw double-thick green path for hyperNav
+		// Draw double-thick green path for hyperNav (only for multi-jump paths)
 		if (player) {
 			const hyperNav = player.getHyperNav();
-			if (hyperNav.length > 0) {
+			// Only draw thick path when there are multiple systems (shift+click path planning)
+			if (hyperNav.length > 1) {
 				// Start from current system
 				let prevSystemId = this.currentSystemId;
 

@@ -3,6 +3,7 @@
 import Actor from "@/model/Actor";
 import Player from "@/model/Player";
 import Ship from "@/model/Ship";
+import Data from "@/model/Data";
 
 /**
  * Sidebar.
@@ -111,6 +112,23 @@ export default class Sidebar {
 		this.ctx.fillRect(655, 195, 140, 40);
 
 		this.ctx.fillStyle = '#03900E';
+
+		// Check if there's a hyperNav system selected
+		const hyperNav = player.getHyperNav();
+		if (hyperNav && hyperNav.length > 0) {
+			// Show the first system in the hyperNav path
+			const nextSystemId = hyperNav[0];
+			const nextSystem = Data.systs[nextSystemId];
+			if (nextSystem) {
+				this.ctx.moveTo(655, 0);
+				this.ctx.textAlign = 'center';
+				this.ctx.fillText(nextSystem.name, 655 + 70, 217);
+				this.ctx.textAlign = 'start';
+				return;
+			}
+		}
+
+		// Fall back to spob/planet nav target
 		let nav = player.ai.nav;
 		if (nav) {
 			this.ctx.moveTo(655, 0);
