@@ -6,8 +6,6 @@ import Model from './Model';
 import View from './View';
 // import SpaceportUI from './view/SpaceportUI';
 
-import $ from "jquery";
-
 // Load modals HTML before initializing game (top-level await - ES2025)
 await loadModals();
 
@@ -18,42 +16,58 @@ const input = new Input(model);
 // Track currently landed spob
 let currentSpob: any = null;
 
-// Pause game when ANY modal opens
-$('.modal').on('shown.bs.modal', (): void => {
-	console.log("Modal opened - pausing game");
-	model.player.paused = true;
+// Get all dialog elements
+const dialogs = document.querySelectorAll('dialog');
+
+console.log("Found dialogs:", dialogs.length);
+
+// Pause game when ANY dialog opens (using MutationObserver)
+dialogs.forEach(dialog => {
+	// Listen for dialog open events
+	const observer = new MutationObserver(() => {
+		if (dialog.open) {
+			console.log("Dialog opened - pausing game");
+			model.player.paused = true;
+		}
+	});
+
+	observer.observe(dialog, { attributes: true, attributeFilter: ['open'] });
+
+	// Also listen for close event
+	dialog.addEventListener('close', () => {
+		console.log("Dialog closed - unpausing game");
+		model.player.paused = false;
+	});
 });
 
-// Unpause game when ANY modal closes
-$('.modal').on('hidden.bs.modal', (): void => {
-	console.log("Modal closed - unpausing game");
-	model.player.paused = false;
+// Handle data-dialog buttons (for opening sub-dialogs from spaceport)
+document.addEventListener('click', (e: MouseEvent) => {
+	const target = e.target as HTMLElement;
+	if (target.hasAttribute('data-dialog')) {
+		const dialogId = target.getAttribute('data-dialog');
+		const dialog = document.getElementById(dialogId) as HTMLDialogElement;
+		if (dialog) {
+			dialog.showModal();
+		}
+	}
 });
 
 // Initialize spaceport modal when landing
-$('#modalSpaceport').on('shown.bs.modal', (): void => {
-	console.log("LANDED at spaceport");
-	// Get the spob the player is near (their nav target)
-	currentSpob = model.player.ai.nav;
+const spaceportDialog = document.getElementById('dialogSpaceport') as HTMLDialogElement;
+if (spaceportDialog) {
+	const observer = new MutationObserver(() => {
+		if (spaceportDialog.open) {
+			console.log("LANDED at spaceport");
+			// Get the spob the player is near (their nav target)
+			currentSpob = model.player.ai.nav;
 
-	// if (currentSpob?.spobData) {
-	// 	SpaceportUI.initLandingModal(model.player, currentSpob.spobData, Data.descs);
-	// }
-});
-
-// // Initialize commodity exchange when modal opens
-// $('#modalCommodity').on('shown.bs.modal', (): void => {
-// 	console.log("OPENED commodity exchange", currentSpob);
-// 	if (currentSpob?.spobData) {
-// 		SpaceportUI.initCommodityExchange(model.player, currentSpob.spobData);
-// 	}
-// });
-
-// // Initialize refuel when modal opens
-// $('#refuel').on('shown.bs.modal', (): void => {
-// 	console.log("OPENED refuel");
-// 	SpaceportUI.initRefuel(model.player);
-// });
+			// if (currentSpob?.spobData) {
+			// 	SpaceportUI.initLandingModal(model.player, currentSpob.spobData, Data.descs);
+			// }
+		}
+	});
+	observer.observe(spaceportDialog, { attributes: true, attributeFilter: ['open'] });
+}
 
 /**
  * Main Loop. Each frame.
@@ -66,8 +80,9 @@ setInterval((): void => {
 		view.mapRender();
 	}
 
-	// Don't update if we're landed.
-	if ($('.modal').hasClass('in')) {
+	// Don't update if any dialog is open
+	const anyDialogOpen = Array.from(dialogs).some(d => d.open);
+	if (anyDialogOpen) {
 		return;
 	}
 

@@ -1,5 +1,9 @@
 "use strict";
 
+import Actor from "@/model/Actor";
+import Player from "@/model/Player";
+import Ship from "@/model/Ship";
+
 /**
  * Sidebar.
  */
@@ -13,7 +17,7 @@ export default class Sidebar {
 	}//879F85
 
 	// Render
-	render(player, actors, spobs, cnv) {
+	render(player: Player, actors: Actor[], spobs: Actor[], cnv: HTMLCanvasElement) {
 		this.chevrons(player, cnv);
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
@@ -28,7 +32,7 @@ export default class Sidebar {
 	/**
 	 * Minimap/Radar
 	 */
-	radar(player, actors, spobs) {
+	radar(player: Player, actors: Actor[], spobs: Actor[]) {
 		this.ctx.fillStyle = '#000';
 		this.ctx.fillRect(655, 5, 140, 140);
 
@@ -45,7 +49,13 @@ export default class Sidebar {
 			}
 
 			if (blip.className == "Ship") {
-				this.ctx.fillRect(mapX, mapY, 1, 1);
+				const ship = blip as Ship;
+				if (ship.type.mass > 99) {
+					this.ctx.fillRect(mapX, mapY, 2, 2);
+				} else {
+					this.ctx.fillRect(mapX, mapY, 1, 1);
+				}
+				
 			}
 			if (blip.className == "Spob") {
 				//this.ctx.fillRect(mapX, mapY, 3, 3);

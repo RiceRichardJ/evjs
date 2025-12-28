@@ -1,10 +1,6 @@
 "use strict";
 
-import Actor     from './Actor';
-import AI        from './AI';
-import Sidebar   from '../view/Sidebar';
-import StarField from '../view/StarField';
-import Vector    from './Vector';
+import Actor     from './Actor';;
 import { Syst } from '@/resources/syst';
 import Ship from './Ship';
 import Data from './Data';

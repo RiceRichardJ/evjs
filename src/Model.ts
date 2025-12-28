@@ -18,6 +18,8 @@ import View from './View';
  */
 export default class Model {
 
+	private currentSystem: System;
+
 	/**
 	 * Create a Model object.
 	 */
@@ -27,8 +29,7 @@ export default class Model {
 		public spobs: Actor[] = [],
 		public actors: Ship[] = [],
 		public projs: Proj[] = [],
-		public mapView: boolean = false,
-		private currentSystem: System
+		public mapView: boolean = false
 	) {
 		this.addTestData();
 	}

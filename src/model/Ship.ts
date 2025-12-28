@@ -13,7 +13,7 @@ import { ShipType } from '@/json/ship';
  * Ship class.
  */
 export default class Ship extends Actor {
-	type: any;
+	type: ShipType;
 	shield: number = 0;
 	shieldMax: number = 0;
 	armor: number = 0;

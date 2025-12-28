@@ -1,7 +1,10 @@
 "use strict";
 
-import $ from "jquery";
-import "bootstrap"; // runtime side-effect import
+// Helper to close all dialogs
+function closeAllDialogs() {
+	const dialogs = document.querySelectorAll('dialog[open]');
+	dialogs.forEach(dialog => (dialog as HTMLDialogElement).close());
+}
 
 import Model from './Model';
 
@@ -47,7 +50,7 @@ export default class Input {
 	 */
 	public poll() {
 		if (this.keyPressed["27"]) { // [esc]
-			($('.modal') as any).modal('hide');
+			closeAllDialogs();
 		}
 		if (this.keyPressed["32"]) { // spacebar
 			this.model.player.fire();
@@ -63,7 +66,6 @@ export default class Input {
 		}
 		if (this.keyPressed["40"]) { // [Down]
 			this.model.player.reverse();
-			console.log($('#modalSpaceport').hasClass('in'));
 			//if (velocity > 0) { velocity -= thrust; }
 			//if (velocity < 0) { velocity = 0; }
 		}

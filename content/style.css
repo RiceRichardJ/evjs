@@ -5,24 +5,72 @@ right {
 	font-family: "Kredit";
 	src: url("./kredit front.ttf") format("truetype");
 }
-.modal-content {
-	margin-top: 200px;
+/* Native dialog styles */
+dialog {
 	background-color: black;
 	border: 1px solid #777;
 	border-radius: 3px;
 	width: 600px;
-	//height: 350px;
-}
-.modal p, .modal h4 {
+	max-width: 90vw;
+	padding: 0;
 	color: #fff;
 }
-.modal p {
+
+dialog::backdrop {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+dialog p, dialog h4 {
+	color: #fff;
+}
+
+dialog p {
 	font: 75% Arial, sans-serif;
 	letter-spacing: 0.5px;
 }
-.modal td p {
+
+dialog td p {
 	font-size: 65%;
 	margin: 0px 10px 0px 10px;
+}
+
+.dialog-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	border-bottom: 1px solid #777;
+}
+
+.dialog-header h4 {
+	margin: 0;
+	font-size: 18px;
+}
+
+.dialog-body {
+	padding: 20px;
+}
+
+.dialog-footer {
+	padding: 15px;
+	border-top: 1px solid #777;
+	text-align: right;
+}
+
+.close-btn {
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+}
+
+.close-btn:hover {
+	color: #ccc;
 }
 .stdBtn {
 	background-color: #abaaaa;
