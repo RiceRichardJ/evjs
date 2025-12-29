@@ -26,6 +26,14 @@ export default class Pilot {
 	outfitIds: number[];
 	outfitQtys: number[];
 
+	// Explored Map
+
+	exploredSystems: Record<number, boolean>;
+	// does this also need to store system specific govt friendliness ratings?
+
+	// Flags
+	// Todo - need to create a "mission bits" object to track this
+
 
 	save() {
 		// write to file

@@ -18,7 +18,9 @@ export default class Sidebar {
 	}//879F85
 
 	// Render
-	render(player: Player, actors: Actor[], spobs: Actor[], cnv: HTMLCanvasElement) {
+	render(player: Player, actors: Actor[], spobs: Actor[], 
+		cnv: HTMLCanvasElement, message: string
+	) {
 		this.chevrons(player, cnv);
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
@@ -28,6 +30,7 @@ export default class Sidebar {
 		this.weap(player);
 		this.target(player);
 		this.cargo();
+		this.message(message);
 	}
 
 	/**
@@ -107,7 +110,7 @@ export default class Sidebar {
 	}
 
 	// Nav
-	nav(player) {
+	nav(player: Player) {
 		this.ctx.fillStyle = '#022101';
 		this.ctx.fillRect(655, 195, 140, 40);
 
@@ -241,5 +244,13 @@ export default class Sidebar {
 		this.ctx.strokeRect(-50, -50, 100, 100);
 		
 		this.ctx.restore();
+	}
+
+	message(message: string) {
+		// this.ctx.moveTo(20, 600);
+		if (message) {
+			this.ctx.fillStyle = '#FFFFFF';
+			this.ctx.fillText(message, 10, 590);
+		}
 	}
 }

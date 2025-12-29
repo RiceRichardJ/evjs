@@ -34,7 +34,7 @@ export default class Ship extends Actor {
 	 * @param {number} num ID number; for debugging.
 	 */
 	constructor(type: ShipType) {
-		console.log("SHIP CONSTRUCTOR...");
+		console.log("SHIP CONSTRUCTOR...", type);
 		super();
 		this.type = type;
 		this.className = 'Ship';
@@ -60,8 +60,17 @@ export default class Ship extends Actor {
 		this.disabled = false;
 		this.sender = null;
 
+		// Temp hacks for sprite names
+		this.sprite.src = "images/sprites/" + type.name + ".png";
+		if (type.id == 133 || type.id == 134) { 
+			this.sprite.src = "images/sprites/" + type.shortName + ".png";
+		}
+		if (type.id == 153) {
+			this.sprite.src = "images/sprites/Bulk Freighter.png";
+		}
+
 		this.targetImg = new Image();
-		this.targetImg.src = this.type.sprite.replace("sprite", "target").replace("png", "jpeg");
+		this.targetImg.src = this.sprite.src.replace("sprite", "target").replace("png", "jpeg");
 	}
 
 	/**
@@ -232,5 +241,15 @@ export default class Ship extends Actor {
 
 	rechargeFuel() {
 		// if ramscoop...
+	}
+
+	jump(currentSystId: number, targetSystId: number) {
+		Vector.angleBetween({
+			x: Data.systs[currentSystId].x,
+			y: Data.systs[currentSystId].y
+		},{
+			x: Data.systs[targetSystId].x,
+			y: Data.systs[targetSystId].y
+		})
 	}
 }

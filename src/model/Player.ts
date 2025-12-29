@@ -5,6 +5,8 @@ import Ship   from './Ship';
 import Vector from './Vector'
 import Data      from './Data'
 import Pilot from './Pilot';
+import Model from '@/Model';
+import System from './System';
 
 // Helper to open dialogs
 function openDialog(id: string) {
@@ -15,8 +17,11 @@ function openDialog(id: string) {
 }
 
 export default class Player extends Ship {
+
+	private currentSystem: System;
+
 	private targInd: number = -1;                // 
-	private paused: boolean = false;             // should be higher up (Model.ts, etc)
+	// private paused: boolean = false;             // TODO should be higher up (Model.ts, etc)
 	private hyperNav: number[] = [];             // 
 	private weapInd: number = -1;                // 
 	
@@ -30,10 +35,10 @@ export default class Player extends Ship {
 
 	private pilot: Pilot = new Pilot();
 
-	constructor(shipType: ShipType) {
+	constructor(shipType: ShipType, private model: Model) {
 		super(shipType);
 		this.targInd = -1;
-		this.paused = false;
+		// this.paused = false;
 		this.hyperNav = [];
 		this.weapInd = -1;
 
@@ -73,14 +78,14 @@ export default class Player extends Ship {
 	}
 
 	land() {
-		if (!this.ai.nav) { 
+		if (!this.ai.nav) {
 			console.log("No Nav");
 			return 1;
 		}
 		const dist = Vector.distance(this.x, this.y,
 			this.ai.nav.x, this.ai.nav.y);
 
-		if (dist < 75 && !this.paused) {
+		if (dist < 75 && !this.model.paused) {
 			if (this.travel.magnitude > 0.5) {
 				// stage.ctx.font = "9pt Arial";
 				// stage.ctx.fillText("Moving too fast to land!",10,590);
@@ -93,7 +98,7 @@ export default class Player extends Ship {
 				return 0;
 			}
 		} else {
-			console.log(`Too Far, dist=${dist}, paused=${this.paused}`);
+			console.log(`Too Far, dist=${dist}, paused=${this.model.paused}`);
 			return 3;
 		}
 		
@@ -156,7 +161,7 @@ export default class Player extends Ship {
 		if (Vector.distance(this.x, this.y, targ.x, targ.y) > 50) { console.log("C"); return; }
 				// stage.ctx.font = "9pt Arial";
 				// stage.ctx.fillText("Moving too fast to land!",10,590);
-		if (!this.paused) {
+		if (!this.model.paused) {
 			openDialog('dialogBoard');
 		}
 	}
@@ -168,13 +173,13 @@ export default class Player extends Ship {
 	}
 
 	playerInfo() {
-		if (!this.paused) {
+		if (!this.model.paused) {
 			openDialog('dialogPlayer');
 		}
 	}
 
 	missionInfo() {
-		if (!this.paused) {
+		if (!this.model.paused) {
 			openDialog('dialogInfo');
 		}
 	}
@@ -198,12 +203,26 @@ export default class Player extends Ship {
 	 */
 	setHyperNav(path: number[]) {
 		this.hyperNav = path;
+		console.log("setHyperNav", this.hyperNav, this.getHyperNav())
 	}
 
 	/**
 	 * Clear the hyperspace navigation path.
 	 */
 	clearHyperNav() {
+		console.log("clearHyperNav")
 		this.hyperNav = [];
+	}
+
+	jump() {
+		const dist = Vector.distance(this.x, this.y, 0, 0);
+
+		if (!this.hyperNav[0]) {
+			this.model.scheduleMessage("No hyper nav selected");
+		} else if (dist < 300) {
+			this.model.scheduleMessage("Can't initiate hyperspace jump - not yet far enough away from system center.");
+		} else {
+			super.jump(this.currentSystem.syst.id, this.hyperNav[0]);
+		}
 	}
 }

@@ -18,7 +18,9 @@ import View from './View';
  */
 export default class Model {
 
-	private currentSystem: System;
+	public paused: boolean = false;
+
+	private message: string;
 
 	/**
 	 * Create a Model object.
@@ -46,7 +48,7 @@ export default class Model {
 
 		this.collision();
 		AI.runAll(this.actors);
-		view.render(this.spobs, this.projs, this.actors, this.player);
+		view.render(this.spobs, this.projs, this.actors, this.player, this.message);
 		this.pruneDead();
 	}
 
@@ -119,104 +121,54 @@ export default class Model {
 
 
 
-
-
-
-
-
 	/**
 	 * new Ship() < ships < shipjson
 	 */
 	private addTestData() {
 
-		// this.currentSystem = new System({
-		// 	id: 0,
-		// 	name: "Test System",
-		// 	x: 0,
-		// 	y: 0,
-		// 	links: [],
-		// 	spobs: [128, 129], // this.data.demoPlanet, this.data.demoPlanet2],
-		// 	dudes: [],
-		// 	avgShips: 4,
-		// 	government: 0,
-		// 	message: 0,
-		// 	asteroids: 0,
-		// 	interference: 0,
-		// 	visbit: 0
-		// });
+		const currentSystem = new System(Data.systs[129]);
 
-		this.currentSystem = new System(Data.systs[129]);
+		this.spobs = currentSystem.spobs;
+		this.actors = currentSystem.ships;
 
-		this.spobs = this.currentSystem.spobs;
+		// this.spobs = currentSystem.spobs;
 
 		const planet = this.spobs[0];
 
-		// // Demo Populate.
-		// var planet  = new Actor(this.data.demoPlanet);
-		// var planet2 = new Actor(this.data.demoPlanet2);
-		// // var dude1  = new Ship(  this.data.rebelCruiser, 1, this.data);
-		// // var dude2  = new Ship(  this.data.rebelCruiser, 2, this.data);
-		// // var dude3  = new Ship(  this.data.rebelCruiser, 3, this.data);
-		
-		// planet.x = 500;
-		// planet.y = 500;
-		
-		// // dude1.x = 10;
-		// // dude1.y = 200;
-		
-		// // dude2.y = -200;
-		// // dude3.x = 200;
-		
-		// // dude1.travel.magnitude = 5;
-		// // dude2.travel.magnitude = 4;
-		// // dude3.travel.magnitude = 6;
+		// let i = 0;
 
-		// // dude1.ai.nav = planet;
-		// // dude2.ai.nav = planet;
-		// // dude3.ai.nav = planet;
-		
-		// this.spobs.push(planet);
-		// this.spobs.push(planet2);
-		// this.actors.push(dude1);
-		// this.actors.push(dude2);
-		// this.actors.push(dude3);
+		// // Load from SHIPS JSON & target images
+		// for (const [shipId, ship] of Object.entries(Data.ships)) {
 
-		let i = 0;
+		// 	const newShip = new Ship(ship);
+		// 	const angle = 360 * Math.random();
+		// 	const v = new Vector(angle, 1500 + (500 * Math.random()));
+		// 	newShip.x = v.getX();
+		// 	newShip.y = v.getY();
+		// 	newShip.thrust.degrees = angle + 180;
+		// 	// newShip.targetImg = new Image();
+		// 	// newShip.targetImg.src = ship.sprite.replace("sprite", "target").replace("png", "jpeg");
 
-		// Load from SHIPS JSON & target images
-		for (const ship of Data.ships.slice(1)) {
+		// 	this.actors.push(newShip);
+		// 	this.actors.slice(-1)[0].ai.nav = planet;
+		// }
 
-			// Set sprite paths
-
-			ship.sprite = "images/sprites/" + ship.name + ".png"; //"content/RebelCruiserSprite.png";
-			if (ship.id == 133 || ship.id == 134) { 
-				ship.sprite = "images/sprites/" + ship.shortName + ".png";
-			}
-			if (ship.id == 153) {
-				ship.sprite = "images/sprites/Bulk Freighter.png";
-			}
-
-			
-			const newShip = new Ship(
-				Object.assign({}, this.data.ships[0], ship), // merged ship type
-			);
-			const angle = 360 * Math.random();
-			const v = new Vector(angle, 1500 + (500 * Math.random()));
-			newShip.x = v.getX();
-			newShip.y = v.getY();
-			newShip.thrust.degrees = angle + 180;
-			// newShip.targetImg = new Image();
-			// newShip.targetImg.src = ship.sprite.replace("sprite", "target").replace("png", "jpeg");
-
-			this.actors.push(newShip);
-			this.actors.slice(-1)[0].ai.nav = planet;
-		}
-
-		this.player = new Player(this.data.ships[141-127], this.data);
+		this.player = new Player(this.data.ships[141], this);
 		this.player.x = -200;
 		this.player.y = -200;
 		this.player.ai.nav = planet;
 		this.player.ai.govt = null;
 
+	}
+
+	scheduleMessage(newMessage: string) {
+		this.message = newMessage;
+		window.setTimeout(() => {
+			this.message = null;
+		}, 5000)
+	}
+
+	getMessage() {
+		return this.message;
 	}
 }

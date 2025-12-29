@@ -38,5 +38,7 @@ setInterval((): void => {
 	}
 
 	// Draw output, run AI.
-	model.action(view);
+	model.action(view); // is this backwards?, should the model should be passed into view?
+
+
 }, 1000 / C.fps); // 60fps

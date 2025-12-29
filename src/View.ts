@@ -30,13 +30,13 @@ export default class View {
 	 * @param {Actor[]} actors List of all actors to be drawn.
 	 * @param {Actor} player The player to be drawn.
 	 */
-	render(spobs: Actor[], projs: Actor[], actors: Actor[], player: Player) {
+	render(spobs: Actor[], projs: Actor[], actors: Actor[], player: Player, message: string) {
 		this.renderBackground(player);
 		spobs.map(  (spob)  => this.renderActor(player, spob)  );
 		projs.map(  (proj)  => this.renderActor(player, proj)  );
 		actors.map( (actor) => this.renderActor(player, actor) );
 		this.renderActor(player, player);
-		this.hud.render(player, actors, spobs, this.cnv);
+		this.hud.render(player, actors, spobs, this.cnv, message);
 	}
 
 	/**

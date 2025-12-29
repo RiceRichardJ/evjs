@@ -192,7 +192,14 @@ const junk: junk[] = [
 			"boughtAt": 150,
 			"basePrice": 17,
 			"flags": "0x0000"
-		}
+		},
+////////////////////////////////////////////////////////////////////////////////
+		{ "id": 0,  "name": "Food",       "soldAt": -1,  "boughtAt": -1,  "basePrice": 120,  "flags": "0x1000" },
+		{ "id": 1,  "name": "Industrial", "soldAt": -1,  "boughtAt": -1,  "basePrice": 240,  "flags": "0x1000" },
+		{ "id": 2,  "name": "Medical",    "soldAt": -1,  "boughtAt": -1,  "basePrice": 600,  "flags": "0x1000" },
+		{ "id": 3,  "name": "Luxury",     "soldAt": -1,  "boughtAt": -1,  "basePrice": 420,  "flags": "0x1000" },
+		{ "id": 4,  "name": "Metal",      "soldAt": -1,  "boughtAt": -1,  "basePrice": 180,  "flags": "0x1000" },
+		{ "id": 5,  "name": "Equipment",  "soldAt": -1,  "boughtAt": -1,  "basePrice": 360,  "flags": "0x1000" },
 ];
 
 export default junk;

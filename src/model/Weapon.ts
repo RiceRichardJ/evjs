@@ -55,8 +55,8 @@ export default class Weapon {
 // 			// return new Actor();//Data.ships[this.type.ammo - 127], 0, Data);
 // Object.assign(...Data.ships[0], shipType) // wtf is this
 
-			let shipType = Data.ships[this.type.ammo - 127]; console.log( shipType );
-			let newShip = new Ship(shipType, 99, null);
+			let shipType = Data.ships[this.type.ammo]; console.log( shipType );
+			let newShip = new Ship(shipType);
 			newShip.type = shipType;
 			newShip.x = sender.x;
 			newShip.y = sender.y;

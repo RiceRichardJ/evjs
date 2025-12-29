@@ -14,7 +14,7 @@ import jsonoops from '../json/oops';
 import jsonoutf from '../json/outf';
 import jsonpers from '../json/pers';
 import jsonroid from '../json/roid';
-import jsonship, { ShipType } from '../json/ship';
+import jsonship, { ShipId, ShipType } from '../json/ship';
 import jsonsnd  from '../json/snd';
 import spin, { Spin } from '@/resources/spin'; // import jsonspin from '../json/spin';
 import spob, { Spob } from '../resources/spob'; // import jsonspob from '../json/spob';
@@ -57,7 +57,7 @@ class DataClass {
 	outfs: any[] = [];
 	perss: any[] = [];
 	roids: any[] = [];
-	ships: ShipType[] = [];
+	ships: Record<ShipId, ShipType> = {};
 	snds: Record<number, any> = {};
 	spins: Record<number, Spin> = {};
 	spobs: Record<number, Spob> = {};

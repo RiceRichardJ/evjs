@@ -4,6 +4,7 @@ import Actor     from './Actor';;
 import { Syst } from '@/resources/syst';
 import Ship from './Ship';
 import Data from './Data';
+import Vector from './Vector';
 
 /**
  * Manages Actors(data), and renders them with Canvas.
@@ -23,6 +24,7 @@ export default class System {
 	init(syst: Syst) {
 		this.syst = syst;
 		console.log(`syst`, syst)
+
 		this.spobs = syst.spobs.map(spobId => {
 			console.log(`spobId`, spobId);
 			const spobSpinId = 300 + Data.spobs[spobId].type;
@@ -39,8 +41,27 @@ export default class System {
 				spob: Data.spobs[spobId]
 			})
 		});
+		
 		console.log(this.spobs)
-		System.generateDudeIds(this.syst);
+
+		const dudeIds = System.generateDudeIds(this.syst);
+		const shipIds = dudeIds.map(dudeId => System.generateShipsForDude(dudeId));
+
+		console.log('dudeIds', dudeIds);
+		console.log('shipIds', shipIds);
+
+		this.ships = shipIds.map(shipId => {
+			console.log(Data.ships[shipId], Data);
+			const ship = new Ship(Data.ships[shipId]);
+			const angle = 360 * Math.random();
+			const v = new Vector(angle, (500 * Math.random()));
+			ship.x = v.getX();
+			ship.y = v.getY();
+			ship.thrust.degrees = angle + 180;
+			ship.ai.nav = this.spobs[0];
+
+			return ship;
+		});
 	}
 
 	private static generateDudeIds(syst: Syst): number[] {
@@ -63,8 +84,19 @@ export default class System {
 		return dudes;
 	}
 
-	private static generateShipsForDude() {
+	private static generateShipsForDude(dudeId: number): number {
+		let sumShipProb = 0;
+		const r = Math.trunc(Math.random() * 100); // 0-99
 
+		for (let i = 0; i < 4; i++) {
+			const ship = Data.dudes[dudeId].shipTypes[i];
+			const prob = Data.dudes[dudeId].probability[i];
+			
+			sumShipProb += prob;
+			if (r < sumShipProb) {
+				return ship
+			}
+		}
 	}
 
 	// TODO - move to utils

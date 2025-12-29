@@ -14,7 +14,7 @@ export default class Input {
 
 	constructor(
 		private model: Model,
-		private starMapUI: StarMapUI,
+		private starMapUI: StarMapUI, // TODO this should be refactored out of here since it is a View object and Input should not directly manipulate View
 		private keyPressed: {[key: string]: boolean} = {},
 		private keyPrev = {},
 
@@ -67,7 +67,7 @@ export default class Input {
 			const observer = new MutationObserver(() => {
 				if (dialog.open) {
 					console.log("Dialog opened - pausing game");
-					this.model.player.paused = true;
+					this.model.paused = true;
 				}
 			});
 
@@ -76,7 +76,7 @@ export default class Input {
 			// Also listen for close event
 			dialog.addEventListener('close', () => {
 				console.log("Dialog closed - unpausing game");
-				this.model.player.paused = false;
+				this.model.paused = false;
 			});
 		});
 
@@ -240,8 +240,11 @@ export default class Input {
 		if (this.keyPressed["73"]) { // [I]
 			this.model.player.missionInfo();
 		}
-		if (this.keyPressed["74"] || this.keyPressed["75"]) { // [J][K]
-			// jettison cargo
+		if (this.keyPressed["74"]) { // [J]
+			this.model.player.jump();
+		}
+		if (this.keyPressed["75"]) { // [K]
+			// jettison cargo // need to hold cmd
 		}
 		if (this.keyPressed["76"]) { // [L]
 			var status = this.model.player.land();
