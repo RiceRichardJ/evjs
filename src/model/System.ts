@@ -22,6 +22,11 @@ export default class System {
 	}
 
 	init(syst: Syst) {
+		if (this.syst) {
+			this.spobs = []; // hmm
+			this.ships = []; // hmmmmm
+		}
+
 		this.syst = syst;
 		console.log(`syst`, syst)
 
@@ -106,6 +111,4 @@ export default class System {
 		return Math.floor(Math.random() * (max - min + 1)) + min; 
 		// The maximum and the minimum are both inclusive
 	}
-
-
 }

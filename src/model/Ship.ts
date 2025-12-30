@@ -244,12 +244,12 @@ export default class Ship extends Actor {
 	}
 
 	jump(currentSystId: number, targetSystId: number) {
-		Vector.angleBetween({
-			x: Data.systs[currentSystId].x,
-			y: Data.systs[currentSystId].y
-		},{
-			x: Data.systs[targetSystId].x,
-			y: Data.systs[targetSystId].y
-		})
+		const targetAngle = Vector.angleBetweenPoints(
+			Data.systs[currentSystId].x,
+			Data.systs[currentSystId].y,
+			Data.systs[targetSystId].x,
+			Data.systs[targetSystId].y
+		);
+		console.log("Target Angle =", targetAngle);
 	}
 }

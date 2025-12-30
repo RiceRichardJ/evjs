@@ -22,6 +22,8 @@ export default class Model {
 
 	private message: string;
 
+	public currentSystem: System;
+
 	/**
 	 * Create a Model object.
 	 */
@@ -126,10 +128,14 @@ export default class Model {
 	 */
 	private addTestData() {
 
-		const currentSystem = new System(Data.systs[129]);
+		this.player = new Player(this.data.ships[141], this);
 
-		this.spobs = currentSystem.spobs;
-		this.actors = currentSystem.ships;
+		this.currentSystem = new System(Data.systs[129]);
+
+		// const currentSystem = 
+
+		this.spobs  = this.currentSystem.spobs;
+		this.actors = this.currentSystem.ships;
 
 		// this.spobs = currentSystem.spobs;
 
@@ -153,7 +159,7 @@ export default class Model {
 		// 	this.actors.slice(-1)[0].ai.nav = planet;
 		// }
 
-		this.player = new Player(this.data.ships[141], this);
+		
 		this.player.x = -200;
 		this.player.y = -200;
 		this.player.ai.nav = planet;

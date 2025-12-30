@@ -38,11 +38,6 @@ export default class Vector {
 		return Math.sqrt( a*a + b*b );
 	}
 
-	static angleBetweenPoints(x1, y1, x2, y2) {
-		var rad = Math.atan2(y2 - y1, x2 - x1);
-		return Vector.radToDeg(rad);
-	}
-
 	static fixDeg(deg) {
 		deg = deg % 360;
 		if (deg < 0) { deg += 360; }
@@ -69,7 +64,12 @@ export default class Vector {
 		
 		return targetAngle;
 	}
-	
+
+	static angleBetweenPoints(x1, y1, x2, y2) {
+		var rad = Math.atan2(y2 - y1, x2 - x1);
+		return Vector.radToDeg(rad);
+	}
+
 	// static sum(v1, v2) {
 	// 	console.log("v1x: " + v1.getX() +", v1y: " + v1.getY());
 	// 	console.log("v2x: " + v2.getX() +", v2y: " + v2.getY());

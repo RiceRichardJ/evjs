@@ -238,6 +238,9 @@ export default class StarMapUI {
 		const OFFSET_Y = this.mapOffsetY;
 		const RADIUS = Math.max(3, ZOOM * 2);
 
+		// TODO - this whole menu menu system is jacked up
+		this.currentSystemId = this.model.currentSystem.syst.id;
+
 		// Clear background
 		this.mapCtx.fillStyle = '#1a1a1a';
 		this.mapCtx.fillRect(0, 0, this.mapCnv.width, this.mapCnv.height);

@@ -18,7 +18,7 @@ function openDialog(id: string) {
 
 export default class Player extends Ship {
 
-	private currentSystem: System;
+	// public currentSystem: System;
 
 	private targInd: number = -1;                // 
 	// private paused: boolean = false;             // TODO should be higher up (Model.ts, etc)
@@ -77,7 +77,7 @@ export default class Player extends Ship {
 		this.ai.nav = target;
 	}
 
-	land() {
+	async land() {
 		if (!this.ai.nav) {
 			console.log("No Nav");
 			return 1;
@@ -95,13 +95,22 @@ export default class Player extends Ship {
 			} else {
 				console.log("open land modal")
 				openDialog('dialogSpaceport');
+
+				// Auto-save on landing
+				try {
+					await this.pilot.save();
+					this.model.scheduleMessage("Game saved");
+				} catch (error) {
+					console.error("Auto-save failed:", error);
+				}
+
 				return 0;
 			}
 		} else {
 			console.log(`Too Far, dist=${dist}, paused=${this.model.paused}`);
 			return 3;
 		}
-		
+
 	}
 
 	/**
@@ -219,10 +228,16 @@ export default class Player extends Ship {
 
 		if (!this.hyperNav[0]) {
 			this.model.scheduleMessage("No hyper nav selected");
-		} else if (dist < 300) {
+		}/* else if (dist < 300) {
 			this.model.scheduleMessage("Can't initiate hyperspace jump - not yet far enough away from system center.");
-		} else {
-			super.jump(this.currentSystem.syst.id, this.hyperNav[0]);
+		} */else {
+			super.jump(this.model.currentSystem.syst.id, this.hyperNav[0]);
+
+			// warn - This should be a funtion in Model
+			this.model.currentSystem.init(Data.systs[this.hyperNav[0]]);
+			this.model.spobs  = this.model.currentSystem.spobs;
+			this.model.actors = this.model.currentSystem.ships;
+
 		}
 	}
 }
