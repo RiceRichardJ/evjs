@@ -116,6 +116,8 @@ export default class Input {
 				if (starmapDialog.open) {
 					console.log("Star map opened");
 					this.model.mapView = true;
+					// Center map on current system
+					this.starMapUI.centerOnCurrentSystem();
 					// Show current system info by default
 					this.starMapUI.updateSystemInfo(this.starMapUI.currentSystemId);
 				} else {
@@ -183,6 +185,14 @@ export default class Input {
 	public poll() {
 		if (this.keyPressed["27"]) { // [esc]
 			closeAllDialogs();
+		}
+		if (this.keyPressed["13"]) { // [Enter]
+			if (this.model.mapView) {
+				const starmapDialog = document.getElementById('dialogStarmap') as HTMLDialogElement;
+				if (starmapDialog) {
+					starmapDialog.close();
+				}
+			}
 		}
 		if (this.keyPressed["32"]) { // [spacebar]
 			this.model.player.fire();

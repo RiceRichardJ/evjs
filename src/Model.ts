@@ -105,7 +105,7 @@ export default class Model {
 	// TODO - shouldn't this be in "View.ts"? An output is not part of Model.
 	private playSound(proj) {
 		const distance = Vector.distance(proj.x, proj.y, this.player.x, this.player.y);
-		const fade = ((-0.001 * distance) + 1) / 100;
+		const fade = ((-0.001 * distance) + 1) / 10;
 		proj.sound.src = "sounds/" + Data.snds[proj.type.sound];
 		// console.log(proj.sound.src);
 		proj.sound.volume = fade; //  < 0.01 ? 0.01 : fade;

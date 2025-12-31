@@ -120,6 +120,15 @@ export default class StarMapUI {
 		this.mapZoom = Math.max(this.mapZoom / 1.2, 0.5);
 	}
 
+	public centerOnCurrentSystem() {
+		const currentSystem = Data.systs[this.currentSystemId];
+		if (!currentSystem) return;
+
+		// Calculate offsets to center the current system
+		this.mapOffsetX = (this.mapCnv.width / 2) - (this.mapZoom * currentSystem.x);
+		this.mapOffsetY = (this.mapCnv.height / 2) - (this.mapZoom * currentSystem.y);
+	}
+
 	public cycleLinkedSystem() {
 		const currentSyst = Data.systs[this.currentSystemId];
 		if (!currentSyst || currentSyst.links.length === 0) {
