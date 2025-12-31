@@ -38,44 +38,78 @@ export default class Pilot {
 
 
 	/**
-	 * Save this pilot to file
+	 * Save this pilot to localStorage
 	 */
-	async save(): Promise<Pilot> {
+	save(): Pilot {
 		try {
-			if (FileSystem.isSupported()) {
-				await FileSystem.writeJSON('pilot.json', this);
-			} else {
-				localStorage.setItem('evjs-pilot', JSON.stringify(this));
-			}
-			return this
-		} catch (error) {
-			console.error('Save failed, using localStorage:', error);
 			localStorage.setItem('evjs-pilot', JSON.stringify(this));
+			console.log('Game saved');
+			return this;
+		} catch (error) {
+			console.error('Save failed:', error);
+			return this;
 		}
 	}
 
 	/**
-	 * Load pilot from file
+	 * Load pilot from localStorage
 	 * Returns null if no save exists
 	 */
-	static async load(): Promise<Pilot | null> {
+	static load(): Pilot | null {
 		try {
-			if (FileSystem.isSupported()) {
-				const data = await FileSystem.readJSON('pilot.json');
-				return Pilot.deserialize(data);
-			} else {
-				return Pilot.loadFromLocalStorage();
-			}
+			const stored = localStorage.getItem('evjs-pilot');
+			if (!stored) return null;
+
+			const data = JSON.parse(stored);
+			console.log('Game loaded');
+			return Pilot.deserialize(data);
 		} catch (error) {
-			console.log('Load failed, trying localStorage:', error);
-			return Pilot.loadFromLocalStorage();
+			console.error('Load failed:', error);
+			return null;
+		}
+	}
+
+	/**
+	 * Export pilot to file using File System Access API
+	 */
+	async export(): Promise<void> {
+		try {
+			if (!FileSystem.isSupported()) {
+				throw new Error('File System Access API not supported. Use a Chromium-based browser.');
+			}
+
+			await FileSystem.writeJSON('pilot.json', this);
+			console.log('Pilot exported to pilot.json');
+		} catch (error) {
+			console.error('Export failed:', error);
+			throw error;
+		}
+	}
+
+	/**
+	 * Import pilot from file and save to localStorage
+	 */
+	static async import(): Promise<Pilot> {
+		try {
+			if (!FileSystem.isSupported()) {
+				throw new Error('File System Access API not supported. Use a Chromium-based browser.');
+			}
+
+			const data = await FileSystem.readJSON('pilot.json');
+			const pilot = Pilot.deserialize(data);
+			pilot.save(); // Save to localStorage
+			console.log('Pilot imported from pilot.json');
+			return pilot;
+		} catch (error) {
+			console.error('Import failed:', error);
+			throw error;
 		}
 	}
 
 	/**
 	 * Create a new pilot with default values and save it
 	 */
-	static async createNew(pilotName: string = "Pilot"): Promise<Pilot> {
+	static createNew(pilotName: string = "Pilot"): Pilot {
 		const pilot = new Pilot();
 
 		// Set default values
@@ -94,31 +128,15 @@ export default class Pilot {
 		pilot.outfitQtys = [];
 		pilot.exploredSystems = {};
 
-		return await pilot.save();
+		return pilot.save();
 	}
 
 	/**
 	 * Helper: Deserialize data into Pilot instance
 	 */
 	private static deserialize(data: any): Pilot {
-		const pilot = Object.assign(new Pilot(), data); 
+		const pilot = Object.assign(new Pilot(), data);
 		pilot.currentDate = data.currentDate ? new Date(data.currentDate) : data.currentDate;
 		return pilot;
-	}
-
-	/**
-	 * Helper: Load from localStorage
-	 */
-	private static loadFromLocalStorage(): Pilot | null {
-		try {
-			const stored = localStorage.getItem('evjs-pilot');
-			if (!stored) return null;
-
-			const data = JSON.parse(stored);
-			console.log('Loaded from localStorage');
-			return Pilot.deserialize(data);
-		} catch {
-			return null;
-		}
 	}
 }

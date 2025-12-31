@@ -9,8 +9,8 @@ import Pilot from './model/Pilot';
 // Load modals HTML before initializing game (top-level await - ES2025)
 await loadModals();
 
-// Load existing pilot or create new one
-const pilot = await Pilot.load() || await Pilot.createNew();
+// Load existing pilot or create new one from localStorage
+const pilot = Pilot.load() || Pilot.createNew();
 console.log(`Pilot loaded: ${pilot.pilotName}, System: ${pilot.systId}`);
 
 const view = new View(

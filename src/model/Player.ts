@@ -77,7 +77,7 @@ export default class Player extends Ship {
 		this.ai.nav = target;
 	}
 
-	async land() {
+	land() {
 		if (!this.ai.nav) {
 			console.log("No Nav");
 			return 1;
@@ -97,12 +97,8 @@ export default class Player extends Ship {
 				openDialog('dialogSpaceport');
 
 				// Auto-save on landing
-				try {
-					await this.pilot.save();
-					this.model.scheduleMessage("Game saved");
-				} catch (error) {
-					console.error("Auto-save failed:", error);
-				}
+				this.pilot.save();
+				this.model.scheduleMessage("Game saved");
 
 				return 0;
 			}

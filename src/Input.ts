@@ -247,12 +247,11 @@ export default class Input {
 			// jettison cargo // need to hold cmd
 		}
 		if (this.keyPressed["76"]) { // [L]
-			this.model.player.land().then(status => {
-				if (status == 2) {
-					// stage.ctx.font = "9pt Arial";	// TODO uhhhh
-					// stage.ctx.fillText("Moving too fast to land!",10,590);
-				}
-			});
+			var status = this.model.player.land();
+			if (status == 2) {
+				// stage.ctx.font = "9pt Arial";	// TODO uhhhh
+				// stage.ctx.fillText("Moving too fast to land!",10,590);
+			}
 		}
 		if (this.keyPressed["77"]) { // [M]
 			this.model.player.map();
