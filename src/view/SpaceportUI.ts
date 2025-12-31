@@ -226,7 +226,10 @@ export default class SpaceportUI {
 		const description = desc ? desc.description : "A mysterious location in space.";
 
 		// Update modal content
-		$('#modalSpaceport .modal-body p').text(description);
+		const descEl = document.getElementById('spaceportDescription');
+		if (descEl) {
+			descEl.textContent = description;
+		}
 
 		// TODO: Update planet image based on spob.type
 		// TODO: Show/hide facility buttons based on spob.flagsDecoded.facilities

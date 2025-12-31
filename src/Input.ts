@@ -8,6 +8,8 @@ function closeAllDialogs() {
 
 import Model from './Model';
 import StarMapUI from './view/StarMapUI';
+import SpaceportUI from './view/SpaceportUI';
+import Data from './model/Data';
 
 export default class Input {
 	private dialogs: NodeListOf<HTMLDialogElement>;
@@ -101,9 +103,9 @@ export default class Input {
 					// Get the spob the player is near (their nav target)
 					const currentSpob = this.model.player.ai.nav;
 
-					// if (currentSpob?.spobData) {
-					// 	SpaceportUI.initLandingModal(this.model.player, currentSpob.spobData, Data.descs);
-					// }
+					if (currentSpob) {
+						SpaceportUI.initLandingModal(this.model.player, currentSpob, Data.descs);
+					}
 				}
 			});
 			observer.observe(spaceportDialog, { attributes: true, attributeFilter: ['open'] });
