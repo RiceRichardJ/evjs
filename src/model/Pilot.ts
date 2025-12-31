@@ -40,16 +40,17 @@ export default class Pilot {
 	/**
 	 * Save this pilot to file
 	 */
-	async save(): Promise<void> {
+	async save(): Promise<Pilot> {
 		try {
 			if (FileSystem.isSupported()) {
 				await FileSystem.writeJSON('pilot.json', this);
 			} else {
-				Pilot.saveToLocalStorage(this);
+				localStorage.setItem('evjs-pilot', JSON.stringify(this));
 			}
+			return this
 		} catch (error) {
 			console.error('Save failed, using localStorage:', error);
-			Pilot.saveToLocalStorage(this);
+			localStorage.setItem('evjs-pilot', JSON.stringify(this));
 		}
 	}
 
@@ -74,16 +75,17 @@ export default class Pilot {
 	/**
 	 * Create a new pilot with default values and save it
 	 */
-	static async createNew(): Promise<Pilot> {
+	static async createNew(pilotName: string = "Pilot"): Promise<Pilot> {
 		const pilot = new Pilot();
 
 		// Set default values
-		pilot.pilotName = "Pilot";
+		pilot.pilotName = pilotName;
 		pilot.currentDate = new Date();
-		pilot.systId = 129; // Sol
+		pilot.currentDate.setFullYear(2275); // add 250 years // 1000 * 60 * 60 * 24 * 365 * 250
+		pilot.systId = 128; // Levo
 		pilot.legalStatus = 0;
 		pilot.combatRating = 0;
-		pilot.shipId = 141; // Rebel Destroyer
+		pilot.shipId = 128; // Shuttlecraft
 		pilot.fuelStatus = 400;
 		pilot.credits = 10000;
 		pilot.cargoTypeIds = [];
@@ -92,29 +94,16 @@ export default class Pilot {
 		pilot.outfitQtys = [];
 		pilot.exploredSystems = {};
 
-		// Save the new pilot
-		await pilot.save();
-
-		return pilot;
+		return await pilot.save();
 	}
 
 	/**
 	 * Helper: Deserialize data into Pilot instance
 	 */
 	private static deserialize(data: any): Pilot {
-		const pilot = Object.assign(new Pilot(), data);
-		if (data.currentDate) {
-			pilot.currentDate = new Date(data.currentDate);
-		}
+		const pilot = Object.assign(new Pilot(), data); 
+		pilot.currentDate = data.currentDate ? new Date(data.currentDate) : data.currentDate;
 		return pilot;
-	}
-
-	/**
-	 * Helper: Save to localStorage
-	 */
-	private static saveToLocalStorage(pilot: Pilot): void {
-		localStorage.setItem('evjs-pilot', JSON.stringify(pilot));
-		console.log('Saved to localStorage');
 	}
 
 	/**
