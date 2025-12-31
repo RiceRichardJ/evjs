@@ -3,13 +3,13 @@
 import Actor     from './model/Actor';
 import AI        from './model/AI';
 import Data      from './model/Data'
+import Pilot     from './model/Pilot';
 import Player    from './model/Player'
-import Proj from './model/Proj';
+import Proj      from './model/Proj';
 import Ship      from './model/Ship';
-import System from './model/System';
+import System    from './model/System';
 import Vector    from './model/Vector';
-import Weapon    from './model/Weapon';
-import View from './View';
+import View      from './View';
 
 /**
  * Model stores the current state of the game.
@@ -24,18 +24,50 @@ export default class Model {
 
 	public currentSystem: System;
 
+	public player: Player = null
+	public spobs: Actor[] = []
+	public actors: Ship[] = []
+	public projs: Proj[] = []
+	public mapView: boolean = false
+
 	/**
 	 * Create a Model object.
 	 */
-	constructor(
-		public data = Data,
-		public player: Player = null,
-		public spobs: Actor[] = [],
-		public actors: Ship[] = [],
-		public projs: Proj[] = [],
-		public mapView: boolean = false
-	) {
-		this.addTestData();
+	constructor() {
+		this.player = new Player(
+			Data.ships[141],
+			this,
+			Pilot.load() || new Pilot()
+		);
+
+		this.currentSystem = new System(Data.systs[this.player.pilot.systId]);
+
+		this.spobs  = this.currentSystem.spobs;
+		this.actors = this.currentSystem.ships;
+
+		// this.spobs = currentSystem.spobs;
+
+		const planet = this.spobs[0];
+
+		// let i = 0;
+		// // Load from SHIPS JSON & target images
+		// for (const [shipId, ship] of Object.entries(Data.ships)) {
+		// 	const newShip = new Ship(ship);
+		// 	const angle = 360 * Math.random();
+		// 	const v = new Vector(angle, 1500 + (500 * Math.random()));
+		// 	newShip.x = v.getX();
+		// 	newShip.y = v.getY();
+		// 	newShip.thrust.degrees = angle + 180;
+		// 	// newShip.targetImg = new Image();
+		// 	// newShip.targetImg.src = ship.sprite.replace("sprite", "target").replace("png", "jpeg");
+		// 	this.actors.push(newShip);
+		// 	this.actors.slice(-1)[0].ai.nav = planet;
+		// }
+		
+		this.player.x = -200;
+		this.player.y = -200;
+		this.player.ai.nav = planet;
+		this.player.ai.govt = null;
 	}
 
 	/**
@@ -73,10 +105,10 @@ export default class Model {
 	// TODO - shouldn't this be in "View.ts"? An output is not part of Model.
 	private playSound(proj) {
 		const distance = Vector.distance(proj.x, proj.y, this.player.x, this.player.y);
-		const fade = (-0.001 * distance + 1) / 10;
-		proj.sound.src = "sounds/" + this.data.snds[proj.type.sound];
+		const fade = ((-0.001 * distance) + 1) / 100;
+		proj.sound.src = "sounds/" + Data.snds[proj.type.sound];
 		// console.log(proj.sound.src);
-		proj.sound.volume = fade < 0.25 ? 0.25 : fade;
+		proj.sound.volume = fade; //  < 0.01 ? 0.01 : fade;
 		// console.log(distance + " | " + proj.sound.volume);
 		proj.sound.play();
 	}
@@ -119,52 +151,6 @@ export default class Model {
 			// this.view.boom(proj.x, proj.y, proj.type.damage);
 			this.projs.splice( this.projs.indexOf(proj), 1 );
 		}
-	}
-
-
-
-	/**
-	 * new Ship() < ships < shipjson
-	 */
-	private addTestData() {
-
-		this.player = new Player(this.data.ships[141], this);
-
-		this.currentSystem = new System(Data.systs[129]);
-
-		// const currentSystem = 
-
-		this.spobs  = this.currentSystem.spobs;
-		this.actors = this.currentSystem.ships;
-
-		// this.spobs = currentSystem.spobs;
-
-		const planet = this.spobs[0];
-
-		// let i = 0;
-
-		// // Load from SHIPS JSON & target images
-		// for (const [shipId, ship] of Object.entries(Data.ships)) {
-
-		// 	const newShip = new Ship(ship);
-		// 	const angle = 360 * Math.random();
-		// 	const v = new Vector(angle, 1500 + (500 * Math.random()));
-		// 	newShip.x = v.getX();
-		// 	newShip.y = v.getY();
-		// 	newShip.thrust.degrees = angle + 180;
-		// 	// newShip.targetImg = new Image();
-		// 	// newShip.targetImg.src = ship.sprite.replace("sprite", "target").replace("png", "jpeg");
-
-		// 	this.actors.push(newShip);
-		// 	this.actors.slice(-1)[0].ai.nav = planet;
-		// }
-
-		
-		this.player.x = -200;
-		this.player.y = -200;
-		this.player.ai.nav = planet;
-		this.player.ai.govt = null;
-
 	}
 
 	scheduleMessage(newMessage: string) {

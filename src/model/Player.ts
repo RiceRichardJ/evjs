@@ -16,6 +16,7 @@ function openDialog(id: string) {
 	}
 }
 
+// Rename to PlayerShip
 export default class Player extends Ship {
 
 	// public currentSystem: System;
@@ -33,10 +34,18 @@ export default class Player extends Ship {
 	// private fuelMax: number = 0;                 // 
 	// private outfits: any[] = [];                 // needs to sync with Pilot.ts
 
-	private pilot: Pilot = new Pilot();
+	// public pilot: Pilot;
 
-	constructor(shipType: ShipType, private model: Model) {
+	constructor(
+		shipType: ShipType,
+		private model: Model,
+		public pilot: Pilot,
+	) {
 		super(shipType);
+
+		this.x = Data.spobs[pilot.spobId].xPos;
+		this.y = Data.spobs[pilot.spobId].yPos;
+
 		this.targInd = -1;
 		// this.paused = false;
 		this.hyperNav = [];
@@ -97,13 +106,13 @@ export default class Player extends Ship {
 				openDialog('dialogSpaceport');
 
 				// Auto-save on landing
-				this.pilot.save();
+				this.pilot.save(this.model);
 				this.model.scheduleMessage("Game saved");
 
 				return 0;
 			}
 		} else {
-			console.log(`Too Far, dist=${dist}, paused=${this.model.paused}`);
+			// console.log(`Too Far, dist=${dist}, paused=${this.model.paused}`);
 			return 3;
 		}
 

@@ -4,19 +4,16 @@ import Input from './Input';
 import Model from './Model';
 import View from './View';
 import StarMapUI from './view/StarMapUI';
-import Pilot from './model/Pilot';
 
 // Load modals HTML before initializing game (top-level await - ES2025)
 await loadModals();
 
-// Load existing pilot or create new one from localStorage
-const pilot = Pilot.load() || Pilot.createNew();
-console.log(`Pilot loaded: ${pilot.pilotName}, System: ${pilot.systId}`);
-
 const view = new View(
 	document.getElementById("gc") as HTMLCanvasElement
 );
+
 const model = new Model();
+
 const starMapUI = new StarMapUI(
 	document.getElementById("mapGc") as HTMLCanvasElement,
 	model

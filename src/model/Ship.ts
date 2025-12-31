@@ -34,7 +34,7 @@ export default class Ship extends Actor {
 	 * @param {number} num ID number; for debugging.
 	 */
 	constructor(type: ShipType) {
-		console.log("SHIP CONSTRUCTOR...", type);
+		console.log("SHIP CONSTRUCTOR...", type.id, type.name);
 		super();
 		this.type = type;
 		this.className = 'Ship';
@@ -250,6 +250,6 @@ export default class Ship extends Actor {
 			Data.systs[targetSystId].x,
 			Data.systs[targetSystId].y
 		);
-		console.log("Target Angle =", targetAngle);
+		// console.log("Target Angle =", targetAngle);
 	}
 }

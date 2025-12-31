@@ -184,7 +184,7 @@ export default class Input {
 		if (this.keyPressed["27"]) { // [esc]
 			closeAllDialogs();
 		}
-		if (this.keyPressed["32"]) { // spacebar
+		if (this.keyPressed["32"]) { // [spacebar]
 			this.model.player.fire();
 		}
 		if (this.keyPressed["37"]) { // [Left]

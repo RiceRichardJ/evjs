@@ -1,5 +1,6 @@
 "use strict";
 
+import Model from "@/Model";
 import FileSystem from "../utils/FileSystem";
 
 /**
@@ -9,39 +10,43 @@ export default class Pilot {
 
 	// General
 
-	pilotName: string;
-	currentDate: Date;
-	systId: number;
-	legalStatus: number;
-	combatRating: number;
-	shipId: number;
-	fuelStatus: number;
-	credits: number;
+	pilotName: string = "Pilot";
+	currentDate: Date = new Date(new Date().setFullYear(new Date().getFullYear() + 250));
+	systId: number = 128; // Levo
+	spobId: number = 133;
+	legalStatus: number = 0;
+	combatRating: number = 0;
+	shipId: number = 128; // Shuttlecraft
+	fuelStatus: number = 400;
+	credits: number = 10000;
 
 	// Cargo
 
-	cargoTypeIds: number[]; // TODO define cargo type IDs. Would live at same level of "jünk" -> "carg" or "comd" or "stuf"
-	cargoTypeQty: number[];
+	cargoTypeIds: number[] = []; // TODO define cargo type IDs. Would live at same level of "jünk" -> "carg" or "comd" or "stuf"
+	cargoTypeQty: number[] = [];
 
 	// Extras
 
-	outfitIds: number[];
-	outfitQtys: number[];
+	outfitIds: number[] = [];
+	outfitQtys: number[] = [];
 
 	// Explored Map
 
-	exploredSystems: Record<number, boolean>;
+	exploredSystems: Record<number, boolean> = {};
+	exploredStellar: Record<number, boolean> = {};
 	// does this also need to store system specific govt friendliness ratings?
 
 	// Flags
 	// Todo - need to create a "mission bits" object to track this
 
-
 	/**
 	 * Save this pilot to localStorage
 	 */
-	save(): Pilot {
+	save(model: Model): Pilot {
 		try {
+			this.systId = model.currentSystem.syst.id;
+
+			console.log(JSON.stringify(this), this);
 			localStorage.setItem('evjs-pilot', JSON.stringify(this));
 			console.log('Game saved');
 			return this;
@@ -58,10 +63,10 @@ export default class Pilot {
 	static load(): Pilot | null {
 		try {
 			const stored = localStorage.getItem('evjs-pilot');
-			if (!stored) return null;
+			if (!stored) { return null; }
 
 			const data = JSON.parse(stored);
-			console.log('Game loaded');
+			console.log('Game loaded', data);
 			return Pilot.deserialize(data);
 		} catch (error) {
 			console.error('Load failed:', error);
@@ -110,6 +115,8 @@ export default class Pilot {
 	 * Create a new pilot with default values and save it
 	 */
 	static createNew(pilotName: string = "Pilot"): Pilot {
+		console.log("Create new pilot")
+
 		const pilot = new Pilot();
 
 		// Set default values

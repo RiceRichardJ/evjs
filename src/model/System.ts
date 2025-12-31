@@ -28,15 +28,15 @@ export default class System {
 		}
 
 		this.syst = syst;
-		console.log(`syst`, syst)
+		// console.log(`syst`, syst)
 
 		this.spobs = syst.spobs.map(spobId => {
-			console.log(`spobId`, spobId);
+			// console.log(`spobId`, spobId);
 			const spobSpinId = 300 + Data.spobs[spobId].type;
-			console.log(`spobSpinId`, spobSpinId);
+			// console.log(`spobSpinId`, spobSpinId);
 			const spriteId = Data.spins[spobSpinId].SpritesID;
 
-			console.log(`sprite`, `images/sprites/Spob ${spriteId}.png`);
+			// console.log(`sprite`, `images/sprites/Spob ${spriteId}.png`);
 
 			return new Actor({
 				name: Data.spobs[spobId].name,
@@ -47,16 +47,16 @@ export default class System {
 			})
 		});
 		
-		console.log(this.spobs)
+		// console.log(this.spobs)
 
 		const dudeIds = System.generateDudeIds(this.syst);
 		const shipIds = dudeIds.map(dudeId => System.generateShipsForDude(dudeId));
 
-		console.log('dudeIds', dudeIds);
-		console.log('shipIds', shipIds);
+		// console.log('dudeIds', dudeIds);
+		// console.log('shipIds', shipIds);
 
 		this.ships = shipIds.map(shipId => {
-			console.log(Data.ships[shipId], Data);
+			// console.log(Data.ships[shipId], Data);
 			const ship = new Ship(Data.ships[shipId]);
 			const angle = 360 * Math.random();
 			const v = new Vector(angle, (500 * Math.random()));
