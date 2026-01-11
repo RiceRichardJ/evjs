@@ -1,16 +1,15 @@
 "use strict";
 
 export default class StarField {
-	xStar: number[] = [];
-	yStar: number[] = [];
-	nStar: number = 50;
-	ctx: CanvasRenderingContext2D;
+	private xStar: number[] = [];
+	private yStar: number[] = [];
+	private nStar: number = 50;
 
-	constructor(ctx: CanvasRenderingContext2D) {
-		this.ctx = ctx;
-		this.xStar = [];
-		this.yStar = [];
-		this.nStar = 50;
+	readonly viewportWidth = 800;
+	readonly viewportHeight = 600;
+
+
+	constructor(private ctx: CanvasRenderingContext2D) {
 		this.init(0, 0);
 	}
 
@@ -19,30 +18,34 @@ export default class StarField {
 	 * @param {*} px X Center of screen.
 	 * @param {*} py Y Center of screen.
 	 */
-	init(px, py) {
+	private init(px, py) {
 		for (var i = 0; i < this.nStar; i++) {
-	 		this.xStar.push( (Math.random() * 800) + px);
-	 		this.yStar.push( (Math.random() * 600) + py);
+	 		this.xStar.push( (Math.random() * this.viewportWidth) + px);
+	 		this.yStar.push( (Math.random() * this.viewportHeight) + py);
 		}
 	}
 
-	render(px, py, zoom = 1.0) {
+	public render(px, py, zoom = 1.0) {
 		// Calculate visible area in game coordinates (expands when zoomed out)
-		const viewportWidth = 800 / zoom;
-		const viewportHeight = 600 / zoom;
 
 		for (var i = 0; i < this.nStar; i++) {
 			// Wrap stars at the edges of the visible viewport
-			if ( (this.xStar[i] - px) < -viewportWidth / 2)  { this.xStar[i] += viewportWidth; }
-			if ( (this.xStar[i] - px) > viewportWidth / 2)   { this.xStar[i] -= viewportWidth; }
-			if ( (this.yStar[i] - py) < -viewportHeight / 2) { this.yStar[i] += viewportHeight; }
-			if ( (this.yStar[i] - py) > viewportHeight / 2)  { this.yStar[i] -= viewportHeight; }
+			if ( (this.xStar[i] - px) < 0)                    { this.xStar[i] += this.viewportWidth; }
+			if ( (this.xStar[i] - px) > this.viewportWidth)   { this.xStar[i] -= this.viewportWidth; }
+			if ( (this.yStar[i] - py) < 0)                    { this.yStar[i] += this.viewportHeight; }
+			if ( (this.yStar[i] - py) > this.viewportHeight)  { this.yStar[i] -= this.viewportHeight; }
 
-			// Render star at screen position (accounting for 150px sidebar)
-			const screenX = (this.xStar[i] - px) * zoom + (800 - 150) / 2;
-			const screenY = (this.yStar[i] - py) * zoom + 600 / 2;
+			// // Render star at screen position (accounting for 150px sidebar)
+			// const screenX = (this.xStar[i] - px) * zoom + (800 - 150) / 2;
+			// const screenY = (this.yStar[i] - py) * zoom + 600 / 2;
 
-			this.ctx.fillRect(screenX, screenY, 1, 1);
+			// this.ctx.fillRect(screenX, screenY, 1, 1);
+
+			this.ctx.fillRect(
+				this.xStar[i] - px,
+				this.yStar[i] - py,
+				1, 1
+			);
 		}
 	}
 	

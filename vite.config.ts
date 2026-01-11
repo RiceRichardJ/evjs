@@ -4,7 +4,7 @@ export default defineConfig({
   root: './',
   publicDir: 'content',  // Static assets
   server: {
-    port: 8080,
+    port: 9000,
     open: true,
     hmr: true
   },
