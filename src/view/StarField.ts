@@ -5,8 +5,8 @@ export default class StarField {
 	private yStar: number[] = [];
 	private nStar: number = 50;
 
-	readonly viewportWidth = 800;
-	readonly viewportHeight = 600;
+	readonly w = 800;
+	readonly h = 600;
 
 
 	constructor(private ctx: CanvasRenderingContext2D) {
@@ -20,8 +20,8 @@ export default class StarField {
 	 */
 	private init(px, py) {
 		for (var i = 0; i < this.nStar; i++) {
-	 		this.xStar.push( (Math.random() * this.viewportWidth) + px);
-	 		this.yStar.push( (Math.random() * this.viewportHeight) + py);
+	 		this.xStar.push( (Math.random() * this.w) + px);
+	 		this.yStar.push( (Math.random() * this.h) + py);
 		}
 	}
 
@@ -30,10 +30,10 @@ export default class StarField {
 
 		for (var i = 0; i < this.nStar; i++) {
 			// Wrap stars at the edges of the visible viewport
-			if ( (this.xStar[i] - px) < 0)                    { this.xStar[i] += this.viewportWidth; }
-			if ( (this.xStar[i] - px) > this.viewportWidth)   { this.xStar[i] -= this.viewportWidth; }
-			if ( (this.yStar[i] - py) < 0)                    { this.yStar[i] += this.viewportHeight; }
-			if ( (this.yStar[i] - py) > this.viewportHeight)  { this.yStar[i] -= this.viewportHeight; }
+			if ( (this.xStar[i] - px) < 0)       { this.xStar[i] += this.w; }
+			if ( (this.xStar[i] - px) > this.w)  { this.xStar[i] -= this.w; }
+			if ( (this.yStar[i] - py) < 0)       { this.yStar[i] += this.h; }
+			if ( (this.yStar[i] - py) > this.h)  { this.yStar[i] -= this.h; }
 
 			// // Render star at screen position (accounting for 150px sidebar)
 			// const screenX = (this.xStar[i] - px) * zoom + (800 - 150) / 2;
