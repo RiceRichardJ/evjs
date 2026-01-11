@@ -18,10 +18,10 @@ export default class Sidebar {
 	}//879F85
 
 	// Render
-	render(player: Player, actors: Actor[], spobs: Actor[], 
-		cnv: HTMLCanvasElement, message: string
+	render(player: Player, actors: Actor[], spobs: Actor[],
+		cnv: HTMLCanvasElement, message: string, zoom: number = 1.0
 	) {
-		this.chevrons(player, cnv);
+		this.chevrons(player, cnv, zoom);
 		this.ctx.fillStyle = '#888';
 		this.ctx.fillRect(650, 0, 150, 485);
 		this.radar(player, actors, spobs);
@@ -216,7 +216,7 @@ export default class Sidebar {
 	}
 	
 	// Chevrons
-	chevrons(player, cnv) {
+	chevrons(player, cnv, zoom = 1.0) {
 		if (player.ai.target && !player.ai.target.dead) {
 			let color = '#88f';
 			if (player.ai.target.disabled) {
@@ -224,25 +224,33 @@ export default class Sidebar {
 			} else if (player.ai.target.ai.target == player) {
 				color = '#f20';
 			}
-			this.box(cnv, player, player.ai.target, color);
+			this.box(cnv, player, player.ai.target, color, zoom);
 		}
 		if (player.ai.nav) {
-			this.box(cnv, player, player.ai.nav, '#ff8');
+			this.box(cnv, player, player.ai.nav, '#ff8', zoom);
 		}
 	}
 
-	box(cnv, player, actor, color) {
+	box(cnv, player, actor, color, zoom = 1.0) {
 		this.ctx.save();
 		this.ctx.setTransform(1,0,0,1,0,0);
+
+		// Calculate camera center (accounting for 150px sidebar)
+		const cameraCenterX = (cnv.width - 150) / 2;
+		const cameraCenterY = cnv.height / 2;
+
+		// Apply player-centered zoom: translate to center, scale, translate by offset
+		this.ctx.translate(cameraCenterX, cameraCenterY);
+		this.ctx.scale(zoom, zoom);
 		this.ctx.translate(
-			actor.x - player.x + ((cnv.width - 150)  / 2),
-			actor.y - player.y + ( cnv.height        / 2)
+			actor.x - player.x,
+			actor.y - player.y
 		);
-		
+
 		this.ctx.strokeStyle = color;
 		this.ctx.lineWidth = 2;
 		this.ctx.strokeRect(-50, -50, 100, 100);
-		
+
 		this.ctx.restore();
 	}
 

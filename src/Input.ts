@@ -338,11 +338,26 @@ export default class Input {
 		if (this.keyPressed["220"]) { // [\]
 			// hyper select
 		}
+		if (this.keyPressed["48"]) { // [0]
+			if (this.model.mapView) {
+				// Reset map zoom (if we add this feature later)
+			} else {
+				this.view.setZoom(1.0);
+			}
+		}
 		if (this.keyPressed["187"] || this.keyPressed["61"]) { // [+] or [=]
-			this.starMapUI.zoomIn();
+			if (this.model.mapView) {
+				this.starMapUI.zoomIn();
+			} else {
+				this.view.zoomIn();
+			}
 		}
 		if (this.keyPressed["189"] || this.keyPressed["173"]) { // [-]
-			this.starMapUI.zoomOut();
+			if (this.model.mapView) {
+				this.starMapUI.zoomOut();
+			} else {
+				this.view.zoomOut();
+			}
 		}
 	}
 }

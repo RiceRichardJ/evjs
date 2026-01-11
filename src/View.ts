@@ -37,7 +37,7 @@ export default class View {
 		projs.map(  (proj)  => this.renderActor(player, proj)  );
 		actors.map( (actor) => this.renderActor(player, actor) );
 		this.renderActor(player, player);
-		this.hud.render(player, actors, spobs, this.cnv, message);
+		this.hud.render(player, actors, spobs, this.cnv, message, this.gameZoom);
 	}
 
 	/**
@@ -47,7 +47,7 @@ export default class View {
 		this.ctx.fillStyle = 'black';
 		this.ctx.fillRect(0, 0, this.cnv.width, this.cnv.height);
 		this.ctx.fillStyle = 'white';
-		this.stars.render(player.x, player.y);
+		this.stars.render(player.x, player.y, this.gameZoom);
 	}
 
 	/**

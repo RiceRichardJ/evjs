@@ -26,7 +26,14 @@ export default class StarField {
 		}
 	}
 
-	render(px, py) {
+	render(px, py, zoom = 1.0) {
+		// Apply zoom transform for stars
+		this.ctx.save();
+		const cameraCenterX = (800 - 150) / 2;  // 325
+		const cameraCenterY = 600 / 2;           // 300
+		this.ctx.translate(cameraCenterX, cameraCenterY);
+		this.ctx.scale(zoom, zoom);
+
 		for (var i = 0; i < this.nStar; i++) {
 			if ( (this.xStar[i] - px) < 0)   { this.xStar[i] += 800; }
 			if ( (this.xStar[i] - px) > 800) { this.xStar[i] -= 800; }
@@ -34,11 +41,13 @@ export default class StarField {
 			if ( (this.yStar[i] - py) > 600) { this.yStar[i] -= 600; }
 
 			this.ctx.fillRect(
-				this.xStar[i] - px,
-				this.yStar[i] - py,
-				1, 1
+				this.xStar[i] - px - cameraCenterX / zoom,
+				this.yStar[i] - py - cameraCenterY / zoom,
+				1 / zoom, 1 / zoom
 			);
 		}
+
+		this.ctx.restore();
 	}
 	
 	// WRAP (temporary)
