@@ -4,7 +4,6 @@ import {Constants as C} from './Data';
 import Actor  from './Actor';
 import AI     from './AI';
 import Data   from './Data';
-import Proj   from './Proj';
 import Vector from './Vector';
 import Weapon from './Weapon';
 import { ShipType } from '@/json/ship';
@@ -13,18 +12,19 @@ import { ShipType } from '@/json/ship';
  * Ship class.
  */
 export default class Ship extends Actor {
-	type: ShipType;
-	shield: number = 0;
-	shieldMax: number = 0;
-	armor: number = 0;
-	armorMax: number = 0;
-	weapons: Weapon[] = [];
+	// readonly type: ShipType;
+	
+	private shield: number = 0;
+	private shieldMax: number = 0;
+	private armor: number = 0;
+	private armorMax: number = 0;
+	private weapons: Weapon[] = [];
 	ai: AI;
-	newProj: any[] = [];
-	newShip: any[] = [];
-	disabled: boolean = false;
-	sender: any = null;
-	targetImg: HTMLImageElement = new Image();
+	private newProj: any[] = [];
+	private newShip: any[] = [];
+	private disabled: boolean = false;
+	private sender: any = null;
+	private targetImg: HTMLImageElement = new Image();
 
 	private static num = 0;
  
@@ -33,7 +33,9 @@ export default class Ship extends Actor {
 	 * @param {ShipType} type The ship type to build off of.
 	 * @param {number} num ID number; for debugging.
 	 */
-	constructor(type: ShipType) {
+	constructor(
+		public readonly type: ShipType
+	) {
 		console.log("SHIP CONSTRUCTOR...", type.id, type.name);
 		super();
 		this.type = type;
@@ -77,7 +79,7 @@ export default class Ship extends Actor {
 	 * Build Weapon objects.
 	 * @param {*} shipType 
 	 */
-	populateWeapons(shipType) {
+	private populateWeapons(shipType) {
 		for (var weap of shipType.weapons) {
 			var weapType = Data.weaps[parseInt(weap.id)-127];
 			var newWeap = new Weapon(
@@ -147,7 +149,7 @@ export default class Ship extends Actor {
 	}
 
 	orbit(target, radius = 300) {
-		var distance = Vector.distance(this.x, this.y, target.x, target.y);
+		var distance = this.distance(target);
 		if (distance > radius + 50) {
 			this.autoPilot(target);
 		}

@@ -45,6 +45,7 @@ export default class Pilot {
 	save(model: Model): Pilot {
 		try {
 			this.systId = model.currentSystem.syst.id;
+			this.spobId = model.player.ai.nav.spob.id;
 
 			console.log(JSON.stringify(this), this);
 			localStorage.setItem('evjs-pilot', JSON.stringify(this));

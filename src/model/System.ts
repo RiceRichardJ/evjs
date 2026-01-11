@@ -38,13 +38,17 @@ export default class System {
 
 			// console.log(`sprite`, `images/sprites/Spob ${spriteId}.png`);
 
-			return new Actor({
-				name: Data.spobs[spobId].name,
-				x: Data.spobs[spobId].xPos,
-				y: Data.spobs[spobId].yPos,
-				sprite: `images/sprites/Spob ${spriteId}.png`,
-				spob: Data.spobs[spobId]
-			})
+			// return new Actor({
+			// 	name: Data.spobs[spobId].name,
+			// 	x: Data.spobs[spobId].xPos,
+			// 	y: Data.spobs[spobId].yPos,
+			// 	sprite: `images/sprites/Spob ${spriteId}.png`,
+			// 	spob: Data.spobs[spobId]
+			// })
+			return new Actor(
+				Data.spobs[spobId],
+				 `images/sprites/Spob ${spriteId}.png`,
+			)
 		});
 		
 		// console.log(this.spobs)

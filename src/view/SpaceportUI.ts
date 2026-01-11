@@ -221,12 +221,16 @@ export default class SpaceportUI {
 	 * @param {object} descData - Description data
 	 */
 	static initLandingModal(player, spob, descData) {
+		console.log("initLandingModal, descData =", descData)
+
 		// Find description for this spob
 		const desc = descData.find(d => d.id === spob.id);
 		const description = desc ? desc.description : "A mysterious location in space.";
 
 		// Update modal content
 		const descEl = document.getElementById('spaceportDescription');
+		console.log(`description =`, description);
+		console.log(`descEl =`, descEl);
 		if (descEl) {
 			descEl.textContent = description;
 		}

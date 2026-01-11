@@ -138,7 +138,7 @@ export default class AI {
 	attack(target) {
 		this.myShip.autoPilot(target);
 		this.myShip.applyThrust();
-		var dist = Vector.distance(this.myShip.x, this.myShip.y, target.x, target.y);
+		var dist = this.myShip.distance(target);
 		if (dist < 300) {
 			this.myShip.fire(target);
 		}
@@ -159,7 +159,7 @@ export default class AI {
 	 */
 	land() {
 		if (! this.nav) { return; }
-		var dist = Vector.distance(this.myShip.x, this.myShip.y, this.nav.x, this.nav.y);
+		const dist = this.myShip.distance(this.nav);
 		// if (this.landing == 'stopping') { this.stop(this.nav, dist); }
 		// else if (this.landing == 'final') { this.finalApproach(this.nav, dist); }
 		if (dist < 300) {

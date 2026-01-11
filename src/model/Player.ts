@@ -7,6 +7,7 @@ import Data      from './Data'
 import Pilot from './Pilot';
 import Model from '@/Model';
 import System from './System';
+import Point from './Point';
 
 // Helper to open dialogs
 function openDialog(id: string) {
@@ -43,8 +44,11 @@ export default class Player extends Ship {
 	) {
 		super(shipType);
 
+		console.log('wtf')
+		console.log(pilot.spobId ,Data.spobs[pilot.spobId].xPos);
 		this.x = Data.spobs[pilot.spobId].xPos;
 		this.y = Data.spobs[pilot.spobId].yPos;
+		console.log(this.x);
 
 		this.targInd = -1;
 		// this.paused = false;
@@ -91,8 +95,7 @@ export default class Player extends Ship {
 			console.log("No Nav");
 			return 1;
 		}
-		const dist = Vector.distance(this.x, this.y,
-			this.ai.nav.x, this.ai.nav.y);
+		const dist = this.distance(this.ai.nav);
 
 		if (dist < 75 && !this.model.paused) {
 			if (this.travel.magnitude > 0.5) {
@@ -172,7 +175,7 @@ export default class Player extends Ship {
 	board(targ = this.ai.target) {
 		if (!targ || targ.className != 'Ship' || !targ.disabled) { console.log("A"); return; }
 		if (this.travel.magnitude > 0.5) { console.log("B"); return; }
-		if (Vector.distance(this.x, this.y, targ.x, targ.y) > 50) { console.log("C"); return; }
+		if (this.distance(targ) > 50) { console.log("C"); return; }
 				// stage.ctx.font = "9pt Arial";
 				// stage.ctx.fillText("Moving too fast to land!",10,590);
 		if (!this.model.paused) {
@@ -229,7 +232,7 @@ export default class Player extends Ship {
 	}
 
 	jump() {
-		const dist = Vector.distance(this.x, this.y, 0, 0);
+		const dist =  this.distance(new Point());
 
 		if (!this.hyperNav[0]) {
 			this.model.scheduleMessage("No hyper nav selected");
