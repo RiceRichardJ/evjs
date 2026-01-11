@@ -18,7 +18,7 @@ const starMapUI = new StarMapUI(
 	document.getElementById("mapGc") as HTMLCanvasElement,
 	model
 );
-const input = new Input(model, starMapUI);
+const input = new Input(model, starMapUI, view);
 
 // Set player reference for map navigation
 starMapUI.setPlayer(model.player);

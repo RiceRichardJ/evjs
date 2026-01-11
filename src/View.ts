@@ -13,6 +13,7 @@ export default class View {
 	private ctx: CanvasRenderingContext2D;
 	private hud: Sidebar;
 	private stars: StarField;
+	private gameZoom: number = 1.0;
 
 	constructor(
 		private cnv: HTMLCanvasElement,
@@ -55,12 +56,20 @@ export default class View {
 	 * @param {Actor} actor Actor to render.
 	 */
 	renderActor(player: Player, actor: Actor) {
-		// Translate
+		// Translate with zoom
 		this.ctx.save();
 		this.ctx.setTransform(1,0,0,1,0,0);
+
+		// Calculate camera center (accounting for 150px sidebar)
+		const cameraCenterX = (this.cnv.width - 150) / 2;
+		const cameraCenterY = this.cnv.height / 2;
+
+		// Apply player-centered zoom: translate to center, scale, translate by offset
+		this.ctx.translate(cameraCenterX, cameraCenterY);
+		this.ctx.scale(this.gameZoom, this.gameZoom);
 		this.ctx.translate(
-			actor.x - player.x + ((this.cnv.width - 150)  / 2),
-			actor.y - player.y + ( this.cnv.height        / 2)
+			actor.x - player.x,
+			actor.y - player.y
 		);
 
 		// Rotate
@@ -127,9 +136,17 @@ export default class View {
 	boom(player: Player, actor: Actor, dmg: number) {
 		this.ctx.save();
 		this.ctx.setTransform(1,0,0,1,0,0);
+
+		// Calculate camera center (accounting for 150px sidebar)
+		const cameraCenterX = (this.cnv.width - 150) / 2;
+		const cameraCenterY = this.cnv.height / 2;
+
+		// Apply player-centered zoom: translate to center, scale, translate by offset
+		this.ctx.translate(cameraCenterX, cameraCenterY);
+		this.ctx.scale(this.gameZoom, this.gameZoom);
 		this.ctx.translate(
-			actor.x - player.x + ((this.cnv.width - 150)  / 2),
-			actor.y - player.y + ( this.cnv.height        / 2)
+			actor.x - player.x,
+			actor.y - player.y
 		);
 
 		this.ctx.beginPath();
@@ -146,5 +163,20 @@ export default class View {
 		} else if (actor.className == 'Ship' && actor != player) {
 			new Audio("sounds/ShipExplodes.mp3").play();
 		}
+	}
+
+	/**
+	 * Zoom control methods.
+	 */
+	public zoomIn() {
+		this.gameZoom = Math.min(this.gameZoom * 1.05, 2.0);
+	}
+
+	public zoomOut() {
+		this.gameZoom = Math.max(this.gameZoom / 1.05, 0.1);
+	}
+
+	public setZoom(zoom: number) {
+		this.gameZoom = Math.max(0.1, Math.min(zoom, 2.0));
 	}
 }

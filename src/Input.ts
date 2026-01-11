@@ -10,6 +10,7 @@ import Model from './Model';
 import StarMapUI from './view/StarMapUI';
 import SpaceportUI from './view/SpaceportUI';
 import Data from './model/Data';
+import View from './View';
 
 export default class Input {
 	private dialogs: NodeListOf<HTMLDialogElement>;
@@ -17,6 +18,7 @@ export default class Input {
 	constructor(
 		private model: Model,
 		private starMapUI: StarMapUI, // TODO this should be refactored out of here since it is a View object and Input should not directly manipulate View
+		private view: View,
 		private keyPressed: {[key: string]: boolean} = {},
 		private keyPrev = {},
 
@@ -24,6 +26,7 @@ export default class Input {
 		this.dialogs = document.querySelectorAll('dialog');
 		this.registerKeyListeners();
 		this.registerModalListeners();
+		this.registerGameViewZoom();
 	}
 
 	/**
@@ -172,6 +175,27 @@ export default class Input {
 				this.starMapUI.zoomOut();
 			});
 		}
+	}
+
+	/**
+	 * Register wheel event for game view zoom.
+	 */
+	private registerGameViewZoom() {
+		const canvas = document.getElementById('gc') as HTMLCanvasElement;
+		if (!canvas) return;
+
+		canvas.addEventListener('wheel', (e: WheelEvent) => {
+			// Only zoom if no dialog is open (game is active)
+			if (this.isAnyDialogOpen()) return;
+
+			e.preventDefault();
+
+			if (e.deltaY < 0) {
+				this.view.zoomIn();
+			} else {
+				this.view.zoomOut();
+			}
+		});
 	}
 
 	/**
