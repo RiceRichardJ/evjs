@@ -25,21 +25,12 @@ export default class StarField {
 		}
 	}
 
-	public render(px, py, zoom = 1.0) {
-		// Calculate visible area in game coordinates (expands when zoomed out)
-
+	public render(px, py) {
 		for (var i = 0; i < this.nStar; i++) {
-			// Wrap stars at the edges of the visible viewport
 			if ( (this.xStar[i] - px) < 0)       { this.xStar[i] += this.w; }
 			if ( (this.xStar[i] - px) > this.w)  { this.xStar[i] -= this.w; }
 			if ( (this.yStar[i] - py) < 0)       { this.yStar[i] += this.h; }
 			if ( (this.yStar[i] - py) > this.h)  { this.yStar[i] -= this.h; }
-
-			// // Render star at screen position (accounting for 150px sidebar)
-			// const screenX = (this.xStar[i] - px) * zoom + (800 - 150) / 2;
-			// const screenY = (this.yStar[i] - py) * zoom + 600 / 2;
-
-			// this.ctx.fillRect(screenX, screenY, 1, 1);
 
 			this.ctx.fillRect(
 				this.xStar[i] - px,

@@ -47,7 +47,7 @@ export default class View {
 		this.ctx.fillStyle = 'black';
 		this.ctx.fillRect(0, 0, this.cnv.width, this.cnv.height);
 		this.ctx.fillStyle = 'white';
-		this.stars.render(player.x, player.y, this.gameZoom);
+		this.stars.render(player.x, player.y);
 	}
 
 	/**
@@ -169,11 +169,11 @@ export default class View {
 	 * Zoom control methods.
 	 */
 	public zoomIn() {
-		this.gameZoom = Math.min(this.gameZoom * 1.05, 2.0);
+		this.gameZoom = Math.min(this.gameZoom * 1.025, 2.0);
 	}
 
 	public zoomOut() {
-		this.gameZoom = Math.max(this.gameZoom / 1.05, 0.1);
+		this.gameZoom = Math.max(this.gameZoom / 1.025, 0.1);
 	}
 
 	public setZoom(zoom: number) {
