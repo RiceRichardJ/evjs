@@ -27,27 +27,23 @@ export default class StarField {
 	}
 
 	render(px, py, zoom = 1.0) {
-		// Apply zoom transform for stars
-		this.ctx.save();
-		const cameraCenterX = (800 - 150) / 2;  // 325
-		const cameraCenterY = 600 / 2;           // 300
-		this.ctx.translate(cameraCenterX, cameraCenterY);
-		this.ctx.scale(zoom, zoom);
+		// Calculate visible area in game coordinates (expands when zoomed out)
+		const viewportWidth = 800 / zoom;
+		const viewportHeight = 600 / zoom;
 
 		for (var i = 0; i < this.nStar; i++) {
-			if ( (this.xStar[i] - px) < 0)   { this.xStar[i] += 800; }
-			if ( (this.xStar[i] - px) > 800) { this.xStar[i] -= 800; }
-			if ( (this.yStar[i] - py) < 0)   { this.yStar[i] += 600; }
-			if ( (this.yStar[i] - py) > 600) { this.yStar[i] -= 600; }
+			// Wrap stars at the edges of the visible viewport
+			if ( (this.xStar[i] - px) < -viewportWidth / 2)  { this.xStar[i] += viewportWidth; }
+			if ( (this.xStar[i] - px) > viewportWidth / 2)   { this.xStar[i] -= viewportWidth; }
+			if ( (this.yStar[i] - py) < -viewportHeight / 2) { this.yStar[i] += viewportHeight; }
+			if ( (this.yStar[i] - py) > viewportHeight / 2)  { this.yStar[i] -= viewportHeight; }
 
-			this.ctx.fillRect(
-				this.xStar[i] - px - cameraCenterX / zoom,
-				this.yStar[i] - py - cameraCenterY / zoom,
-				1 / zoom, 1 / zoom
-			);
+			// Render star at screen position (accounting for 150px sidebar)
+			const screenX = (this.xStar[i] - px) * zoom + (800 - 150) / 2;
+			const screenY = (this.yStar[i] - py) * zoom + 600 / 2;
+
+			this.ctx.fillRect(screenX, screenY, 1, 1);
 		}
-
-		this.ctx.restore();
 	}
 	
 	// WRAP (temporary)
