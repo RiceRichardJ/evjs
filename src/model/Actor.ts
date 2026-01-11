@@ -1,53 +1,36 @@
 "use strict";
 
-import { Spob } from '@/resources/spob';
-import Point from './Point';
 import Vector from './Vector';
-import { ShipType } from '@/json/ship';
-import { Weap } from '@/resources/weap';
 
 /**
  * Any space object.
  */
-// This is a problem. Actor NEEDs to store a reference to it's type.
-export default class Actor extends Point {
-
-	// public spob: Spob;
-	// public ship: ShipType;
-	// public weap: Weap;
-
-
-
-	public travel = new Vector(-90.0, 0.0);
-	public thrust = new Vector(-90.0, 0.0);
-	public speed: number = 0.0;
-	public turn: number = 0.0;
-	public sprite = new Image();
-	public born = new Date();
-	public lifespan: number = -1;
-	public className: string = 'Actor';
-	public dead: boolean = false;
-	public dying: boolean = false;
-	public color: string = '#0f0';
-	public spin: number[] = [1, 1];
-	public name: string = '';
-
+export default class Actor {
 	constructor(
-		spob: Spob = null,
-		spriteSrc: string = null
+		spob: any = null,
+		public x: number = 0.0,
+		public y: number = 0.0,
+		public travel = new Vector(-90.0, 0.0),
+		public thrust = new Vector(-90.0, 0.0),
+		public speed: number = 0.0,
+		public turn: number = 0.0,
+		public sprite = new Image(),
+		public born = new Date(),
+		public lifespan: number = -1,
+		public className: string = 'Actor',
+		public dead: boolean = false,
+		public dying: boolean = false,
+		public color: string = '#0f0',
+		public spin: number[] = [1, 1],
+		public name: string = '',
 	) {
-		super();
-		if (spob && spriteSrc) {
+		if (spob) {
+			this.sprite.src = spob.sprite;
 			this.className = 'Spob';
-			this.sprite.src = spriteSrc,
 			this.name = spob.name;
-			this.x = spob.xPos;
-			this.y = spob.yPos;
+			this.x = spob.x;
+			this.y = spob.y;
 		}
-	}
-
-	getType() {
-		return this.className;
 	}
 
 	/**

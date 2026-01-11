@@ -104,7 +104,7 @@ export default class Model {
 
 	// TODO - shouldn't this be in "View.ts"? An output is not part of Model.
 	private playSound(proj) {
-		const distance = this.player.distance(proj);
+		const distance = Vector.distance(proj.x, proj.y, this.player.x, this.player.y);
 		const fade = ((-0.001 * distance) + 1) / 10;
 		proj.sound.src = "sounds/" + Data.snds[proj.type.sound];
 		// console.log(proj.sound.src);
@@ -127,7 +127,7 @@ export default class Model {
 					continue;
 				}
 				if ( ship.className == 'Ship' && proj.sender !== ship) { // can't shoot self
-					const dist = ship.distance(proj);
+					var dist = Vector.distance(proj.x, proj.y, ship.x, ship.y);
 					if (dist < 20) {
 						ship.hit(proj);
 						proj.die();

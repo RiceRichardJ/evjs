@@ -1,8 +1,5 @@
 "use strict";
 
-import Actor from "./Actor";
-import Point from "./Point";
-
 export default class Vector {
 	degrees: number;
 	magnitude: number;
@@ -35,6 +32,11 @@ export default class Vector {
 	/**
 	 * Static Functions. (Namespace)
 	 */
+	static distance(x1, y1, x2, y2) {
+		var a = x1 - x2;
+		var b = y1 - y2;
+		return Math.sqrt( a*a + b*b );
+	}
 
 	static fixDeg(deg) {
 		deg = deg % 360;
@@ -50,7 +52,7 @@ export default class Vector {
 		return (deg * Math.PI / 180.0)
 	}
 	
-	static angleBetween(ship: Actor, target: Point) {
+	static angleBetween(ship, target) {
 		var  targetAngle = Vector.radToDeg( Math.atan2(ship.y - target.y, ship.x - target.x) );
 			 targetAngle = Vector.fixDeg(targetAngle + 180);
 		var currentAngle = Vector.fixDeg(ship.thrust.degrees);

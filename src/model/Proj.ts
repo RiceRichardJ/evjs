@@ -5,8 +5,6 @@ import Actor  from './Actor';
 import Data   from './Data';
 import Vector from './Vector';
 import { Weap } from '@/resources/weap';
-import Point from './Point';
-import Ship from './Ship';
 
 const tempWeapSpins = {
 	400 : {
@@ -53,18 +51,12 @@ const tempWeapSpins = {
  * Constructor and instance variables.
  */
 export default class Proj extends Actor {
+	type: any;
 	sender: any;
 	target: any;
 	sound: HTMLAudioElement;
 
-	constructor(
-		public readonly type: Weap, 
-		xPos: number, 
-		yPos: number, 
-		dir: number, 
-		sender: Ship, 
-		target: Point
-	) {
+	constructor(type: Weap, xPos: number, yPos: number, dir: number, sender: any, target: any) {
 		super();
 		
 		this.speed  = type.speed * C.sMod;

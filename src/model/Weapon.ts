@@ -1,6 +1,5 @@
 "use strict";
 
-import Actor from './Actor';
 import {Constants as C} from './Data';
 import Data   from './Data';
 import Proj   from './Proj';
@@ -8,10 +7,10 @@ import Ship   from './Ship';
 import Vector from './Vector';
 
 export default class Weapon {
-	private type: any;
-	private count: number;
-	private ammo: number;
-	private lastFire: number = 0;
+	type: any;
+	count: number;
+	ammo: number;
+	lastFire: number = 0;
 
 	constructor(type: any, count: number, ammo: number) {
 		this.type = type;
@@ -20,15 +19,15 @@ export default class Weapon {
 		this.lastFire = 0;
 	}
 
-	fire(targ: Ship, sender: Ship) {
-		if (this.canFire()) {
+	fire(targ, sender) {
+		if (this.canFire(targ)) {
 			return this.buildProjectile(targ, sender);
 		} else {
 			return null;
 		}
 	}
 
-	private canFire() {
+	canFire(targ) {
 		var now = new Date().getTime();
 		var delayMs = this.type.reload * C.f2ms;
 		if (now < this.lastFire + (delayMs / this.count)) { return false; }
@@ -45,7 +44,7 @@ export default class Weapon {
 		}
 	}
 
-	private buildProjectile(targ: Ship, sender: Ship) {
+	buildProjectile(targ, sender) {
 		var spread = Math.random() * (this.type.spread);// / 2);
 		var targetAngle = 0;
 		if (targ != null && this.type.type == 'turret') {
@@ -56,8 +55,9 @@ export default class Weapon {
 // 			// return new Actor();//Data.ships[this.type.ammo - 127], 0, Data);
 // Object.assign(...Data.ships[0], shipType) // wtf is this
 
-			const shipType = Data.ships[this.type.ammo]; console.log( shipType );
-			const newShip = new Ship(shipType);
+			let shipType = Data.ships[this.type.ammo]; console.log( shipType );
+			let newShip = new Ship(shipType);
+			newShip.type = shipType;
 			newShip.x = sender.x;
 			newShip.y = sender.y;
 			newShip.travel.degrees   = sender.travel.degrees;
