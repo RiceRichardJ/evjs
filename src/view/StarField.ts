@@ -25,18 +25,26 @@ export default class StarField {
 		}
 	}
 
-	public render(px, py) {
-		for (var i = 0; i < this.nStar; i++) {
-			if ( (this.xStar[i] - px) < 0)       { this.xStar[i] += this.w; }
-			if ( (this.xStar[i] - px) > this.w)  { this.xStar[i] -= this.w; }
-			if ( (this.yStar[i] - py) < 0)       { this.yStar[i] += this.h; }
-			if ( (this.yStar[i] - py) > this.h)  { this.yStar[i] -= this.h; }
+	public render(px, py, zoom = 1.0) {
+		// Expand viewport based on zoom - when zoomed out, show more stars
+		const viewportWidth = this.w / zoom;
+		const viewportHeight = this.h / zoom;
 
-			this.ctx.fillRect(
-				this.xStar[i] - px,
-				this.yStar[i] - py,
-				1, 1
-			);
+		for (var i = 0; i < this.nStar; i++) {
+			// Wrap stars around expanded viewport centered on player
+			const offsetX = this.xStar[i] - px;
+			const offsetY = this.yStar[i] - py;
+
+			if (offsetX < -viewportWidth / 2)  { this.xStar[i] += viewportWidth; }
+			if (offsetX > viewportWidth / 2)   { this.xStar[i] -= viewportWidth; }
+			if (offsetY < -viewportHeight / 2) { this.yStar[i] += viewportHeight; }
+			if (offsetY > viewportHeight / 2)  { this.yStar[i] -= viewportHeight; }
+
+			// Render star at screen position - moves with player/camera
+			const screenX = (this.xStar[i] - px) * zoom + (this.w - 150) / 2;
+			const screenY = (this.yStar[i] - py) * zoom + this.h / 2;
+
+			this.ctx.fillRect(screenX, screenY, 1, 1);
 		}
 	}
 	
